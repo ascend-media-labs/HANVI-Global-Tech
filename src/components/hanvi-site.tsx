@@ -391,7 +391,6 @@ function SectionHeading({
 }
 
 export function HanviSite() {
-  const [showNotice, setShowNotice] = useState(true);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -615,40 +614,63 @@ export function HanviSite() {
   return (
     <div className="min-h-screen w-full overflow-x-hidden bg-background text-foreground">
       <header className="sticky top-0 z-50 border-b border-border/50 bg-background/85 backdrop-blur-xl transition-all duration-300 shadow-[0_4px_24px_rgba(0,0,0,0.03)]">
-        {showNotice && (
-          <aside
-            aria-label="Important Announcement"
-            className="relative border-b border-brand-orange/30 bg-gradient-to-r from-slate-950 via-neutral-900 to-slate-950 px-4 py-2 text-white shadow-sm"
-          >
-            <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-3 text-xs sm:px-2">
-              <div className="flex flex-1 items-center justify-center gap-2 sm:gap-3 text-center flex-wrap">
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-orange/20 px-2.5 py-0.5 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-brand-gold border border-brand-orange/40 shadow-xs">
-                  <span className="size-1.5 rounded-full bg-brand-orange animate-ping" aria-hidden="true" />
-                  Notice
-                </span>
-                <span className="text-white/90 text-[11px] sm:text-xs">
-                  Enterprise Turnkey Life-Safety, Fire Hydrants, Cyber Data Centers &amp; Smart Automation.
-                </span>
-                <button
-                  type="button"
-                  onClick={() => navigateTo("contact")}
-                  className="inline-flex items-center gap-1 text-[11px] sm:text-xs font-semibold text-brand-gold hover:text-brand-orange underline underline-offset-2 transition-colors cursor-pointer"
-                >
-                  Consult an Engineer <ArrowUpRight className="size-3" aria-hidden="true" />
-                </button>
-              </div>
-
-              <button
-                type="button"
-                onClick={() => setShowNotice(false)}
-                className="shrink-0 rounded-md p-1 text-white/60 hover:bg-white/10 hover:text-white transition-colors cursor-pointer"
-                aria-label="Dismiss notice"
+        {/* Top Utility Bar (Sample Reference with Social Icons & Contact Info) */}
+        <aside
+          aria-label="Contact and Social Info"
+          className="border-b border-black/10 bg-[#00A8B5] text-white"
+        >
+          <div className="mx-auto flex h-9 sm:h-9.5 w-full items-center justify-between px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 text-xs font-medium">
+            {/* Left: Social Media Icons */}
+            <div className="flex items-center gap-3.5 sm:gap-4.5">
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="text-white/90 hover:text-white transition-all duration-200 hover:scale-115 flex items-center"
               >
-                <X className="size-3.5" aria-hidden="true" />
-              </button>
+                <Facebook className="size-3.5 sm:size-4 fill-white stroke-none" />
+              </a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="text-white/90 hover:text-white transition-all duration-200 hover:scale-115 flex items-center"
+              >
+                <Instagram className="size-3.5 sm:size-4" />
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="text-white/90 hover:text-white transition-all duration-200 hover:scale-115 flex items-center"
+              >
+                <Linkedin className="size-3.5 sm:size-4 fill-white stroke-none" />
+              </a>
             </div>
-          </aside>
-        )}
+
+            {/* Right: Contact Information */}
+            <div className="flex items-center gap-4 sm:gap-6 text-[11px] sm:text-xs">
+              <a
+                href="mailto:saie@hanviglobaltech.com"
+                className="inline-flex items-center gap-1.5 text-white/95 hover:text-white hover:underline transition-colors"
+              >
+                <Mail className="size-3.5 sm:size-4" />
+                <span className="hidden min-[420px]:inline">saie@hanviglobaltech.com</span>
+                <span className="min-[420px]:hidden">Email</span>
+              </a>
+              <a
+                href="tel:+919392673103"
+                className="inline-flex items-center gap-1.5 text-white font-semibold hover:underline transition-colors"
+              >
+                <Phone className="size-3.5 sm:size-4" />
+                <span>+91 9392673103</span>
+              </a>
+            </div>
+          </div>
+        </aside>
         <div className="mx-auto flex h-[76px] w-full items-center justify-between px-4 sm:px-6 md:px-8 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:px-10 xl:px-12 2xl:px-16">
           <div className="flex items-center justify-start">
             <button
