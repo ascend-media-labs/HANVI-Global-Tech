@@ -1,4 +1,4 @@
-import { useEffect, useState, type FormEvent } from "react";
+import { useEffect, useState, useRef, type FormEvent } from "react";
 import {
   Activity,
   AlertCircle,
@@ -393,11 +393,94 @@ const whyChooseUsPillars = [
 ] as const;
 
 const whyChooseUsStats = [
-  { value: "100+", label: "Enterprise Projects Completed" },
-  { value: "99.9%", label: "System Reliability & Uptime" },
-  { value: "15+", label: "Global OEM Alliances" },
-  { value: "24/7", label: "Mission-Critical Support" },
+  { target: 100, decimals: 0, suffix: "+", label: "Enterprise Projects Completed" },
+  { target: 99.9, decimals: 1, suffix: "%", label: "System Reliability & Uptime" },
+  { target: 15, decimals: 0, suffix: "+", label: "Global OEM Alliances" },
+  { target: 24, decimals: 0, suffix: "/7", label: "Mission-Critical Support" },
 ] as const;
+
+function AnimatedCounter({
+  target,
+  decimals = 0,
+  prefix = "",
+  suffix = "",
+  duration = 1800,
+}: {
+  target: number;
+  decimals?: number;
+  prefix?: string;
+  suffix?: string;
+  duration?: number;
+}) {
+  const [count, setCount] = useState(0);
+  const [hasStarted, setHasStarted] = useState(false);
+  const elementRef = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    if (typeof IntersectionObserver === "undefined") {
+      setHasStarted(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting) {
+          setHasStarted(true);
+        }
+      },
+      { threshold: 0.25 }
+    );
+
+    const currentEl = elementRef.current;
+    if (currentEl) {
+      observer.observe(currentEl);
+    }
+
+    return () => {
+      if (currentEl) {
+        observer.unobserve(currentEl);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!hasStarted) return;
+
+    let startTime: number | null = null;
+    let animationFrameId: number;
+
+    const animate = (currentTime: number) => {
+      if (!startTime) startTime = currentTime;
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+
+      // Snappy cubic ease-out curve
+      const easeOut = 1 - Math.pow(1 - progress, 3);
+      const currentVal = easeOut * target;
+
+      setCount(currentVal);
+
+      if (progress < 1) {
+        animationFrameId = requestAnimationFrame(animate);
+      } else {
+        setCount(target);
+      }
+    };
+
+    animationFrameId = requestAnimationFrame(animate);
+
+    return () => cancelAnimationFrame(animationFrameId);
+  }, [hasStarted, target, duration]);
+
+  return (
+    <span ref={elementRef} className="tabular-nums">
+      {prefix}
+      {count.toFixed(decimals)}
+      {suffix}
+    </span>
+  );
+}
 
 function CompanyName({ light = false }: { light?: boolean }) {
   return (
@@ -1492,7 +1575,11 @@ export function HanviSite() {
                   {whyChooseUsStats.map((stat, i) => (
                     <div key={stat.label} className={`flex flex-col items-center text-center ${i >= 2 ? "pt-3 sm:pt-0" : ""}`}>
                       <span className="font-display text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight text-brand-orange">
-                        {stat.value}
+                        <AnimatedCounter
+                          target={stat.target}
+                          decimals={stat.decimals}
+                          suffix={stat.suffix}
+                        />
                       </span>
                       <span className="mt-1 text-[11px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                         {stat.label}
