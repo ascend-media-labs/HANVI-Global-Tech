@@ -566,8 +566,56 @@ export function HanviSite() {
   function navigateTo(sectionId: string) {
     setActiveSection(sectionId);
     setMenuOpen(false);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    if (sectionId === "home") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      const el = document.getElementById(sectionId);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }
   }
+
+  // Scroll Spy: dynamically update active navbar button as user scrolls through sections
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const navSections = ["home", "about", "services", "clients", "partners"];
+
+    const handleScroll = () => {
+      // Near top of page, Home is active
+      if (window.scrollY < 140) {
+        setActiveSection("home");
+        return;
+      }
+
+      // Check if scrolled near the bottom of the page
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 100) {
+        setActiveSection("contact");
+        return;
+      }
+
+      // Check each section position relative to viewport top (offset for sticky navbar)
+      const threshold = 220;
+
+      for (let i = navSections.length - 1; i >= 0; i--) {
+        const id = navSections[i];
+        const el = document.getElementById(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= threshold) {
+            setActiveSection(id);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     if (isPaused) return;
@@ -598,17 +646,13 @@ export function HanviSite() {
     );
     const revealTargets = document.querySelectorAll<HTMLElement>("[data-reveal]");
     revealTargets.forEach((target) => {
-      if (activeSection !== "home") {
-        target.setAttribute("data-visible", "true");
-      } else {
-        revealObserver.observe(target);
-      }
+      revealObserver.observe(target);
     });
 
     return () => {
       revealObserver.disconnect();
     };
-  }, [activeSection]);
+  }, []);
 
   function moveSlide(direction: -1 | 1) {
     setCurrentSlide((current) => (current + direction + slides.length) % slides.length);
@@ -942,23 +986,7 @@ export function HanviSite() {
       </header>
 
       <main>
-        {activeSection !== "home" && (
-          <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 pt-5 pb-2">
-            <button
-              type="button"
-              onClick={() => navigateTo("home")}
-              className="inline-flex items-center gap-2 text-xs font-semibold text-brand-orange hover:text-brand-coral transition-colors group cursor-pointer"
-            >
-              <span className="flex size-6 items-center justify-center rounded-full bg-brand-orange/10 border border-brand-orange/30 group-hover:scale-105 transition-transform">
-                ←
-              </span>
-              <span>Back to Full Home Overview</span>
-            </button>
-          </div>
-        )}
-
-        {activeSection === "home" && (
-          <section id="home" className="relative isolate h-[calc(100svh-76px)] min-h-[520px] max-h-[820px] scroll-mt-20 overflow-hidden bg-brand-charcoal text-background">
+        <section id="home" className="relative isolate h-[calc(100svh-76px)] min-h-[520px] max-h-[820px] scroll-mt-20 overflow-hidden bg-brand-charcoal text-background">
             <div className="absolute inset-0" aria-hidden="true">
               {slides.map((slide, index) => (
                 <img
@@ -1078,10 +1106,8 @@ export function HanviSite() {
               </div>
             </div>
           </section>
-        )}
 
-        {(activeSection === "home" || activeSection === "about") && (
-          <section id="about" className={`relative isolate scroll-mt-20 overflow-hidden bg-background min-h-[500px] flex items-center justify-center py-8 sm:py-10 ${activeSection === "about" ? "min-h-[calc(100svh-120px)] lg:h-[calc(100svh-120px)] lg:max-h-[820px]" : "lg:h-[calc(100svh-76px)] lg:max-h-[760px] lg:py-0"}`}>
+          <section id="about" className="relative isolate scroll-mt-20 overflow-hidden bg-background min-h-[500px] flex items-center justify-center py-8 sm:py-10 lg:h-[calc(100svh-76px)] lg:max-h-[760px] lg:py-0">
             {/* Subtle Ambient Glow Background Orbs */}
             <div className="absolute -left-20 top-1/2 -translate-y-1/2 size-96 rounded-full bg-brand-orange/5 blur-3xl pointer-events-none" />
             <div className="absolute right-0 top-1/4 size-80 rounded-full bg-brand-rose/5 blur-3xl pointer-events-none" />
@@ -1204,10 +1230,8 @@ export function HanviSite() {
               </div>
             </div>
           </section>
-        )}
 
-        {(activeSection === "home" || activeSection === "services") && (
-          <section id="services" className={`scroll-mt-20 bg-brand-cream pt-6 pb-6 sm:pt-8 sm:pb-8 lg:pt-10 lg:pb-10 text-foreground border-t border-brand-orange/10 ${activeSection === "services" ? "min-h-[calc(100svh-120px)] flex flex-col justify-center py-10" : ""}`}>
+          <section id="services" className="scroll-mt-20 bg-brand-cream pt-6 pb-6 sm:pt-8 sm:pb-8 lg:pt-10 lg:pb-10 text-foreground border-t border-brand-orange/10">
             <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
               <div className="flex flex-col gap-2" data-reveal>
                 <div className="flex flex-col justify-between gap-2.5 sm:flex-row sm:items-end">
@@ -1371,10 +1395,8 @@ export function HanviSite() {
               </div>
             </div>
           </section>
-        )}
 
-        {(activeSection === "home" || activeSection === "clients") && (
-          <section id="clients" className={`scroll-mt-20 bg-brand-cream-alt pt-4 pb-4 sm:pt-5 sm:pb-5 text-foreground border-t border-brand-orange/10 ${activeSection === "clients" ? "min-h-[calc(100svh-120px)] flex flex-col justify-center py-12" : ""}`}>
+          <section id="clients" className="scroll-mt-20 bg-brand-cream-alt pt-4 pb-4 sm:pt-5 sm:pb-5 text-foreground border-t border-brand-orange/10">
             <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
               <div className="flex flex-col gap-1.5" data-reveal>
                 <div className="flex flex-col justify-between gap-2.5 sm:flex-row sm:items-end">
@@ -1439,10 +1461,8 @@ export function HanviSite() {
               </div>
             </div>
           </section>
-        )}
 
-        {(activeSection === "home" || activeSection === "partners") && (
-          <section id="partners" className={`scroll-mt-20 bg-brand-cream pt-4 pb-4 sm:pt-5 sm:pb-5 text-foreground border-t border-brand-orange/10 ${activeSection === "partners" ? "min-h-[calc(100svh-120px)] flex flex-col justify-center py-12" : ""}`}>
+          <section id="partners" className="scroll-mt-20 bg-brand-cream pt-4 pb-4 sm:pt-5 sm:pb-5 text-foreground border-t border-brand-orange/10">
             <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
               <div className="flex flex-col gap-1.5" data-reveal>
                 <div className="flex flex-col justify-between gap-2.5 sm:flex-row sm:items-end">
@@ -1506,9 +1526,7 @@ export function HanviSite() {
               </div>
             </div>
           </section>
-        )}
 
-        {(activeSection === "home" || activeSection === "about" || activeSection === "why-us") && (
           <section id="why-us" className="scroll-mt-20 bg-brand-cream-alt pt-5 pb-5 sm:pt-7 sm:pb-7 text-foreground border-t border-brand-orange/10">
             <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
               {/* Header */}
@@ -1590,10 +1608,8 @@ export function HanviSite() {
               </div>
             </div>
           </section>
-        )}
 
-        {(activeSection === "home" || activeSection === "contact") && (
-          <section id="contact" className={`scroll-mt-20 bg-brand-cream pt-4 pb-5 sm:pt-5 sm:pb-6 text-foreground border-t border-brand-orange/10 ${activeSection === "contact" ? "min-h-[calc(100svh-120px)] flex flex-col justify-center" : ""}`}>
+          <section id="contact" className="scroll-mt-20 bg-brand-cream pt-4 pb-5 sm:pt-5 sm:pb-6 text-foreground border-t border-brand-orange/10">
             <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
               <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-10 items-center">
                 <div data-reveal>
@@ -1870,7 +1886,6 @@ export function HanviSite() {
               </div>
             </div>
           </section>
-        )}
       </main>
 
       <footer className="bg-brand-charcoal text-background border-t border-white/5">
