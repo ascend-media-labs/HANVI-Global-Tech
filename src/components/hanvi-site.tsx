@@ -1086,8 +1086,8 @@ export function HanviSite() {
                       loading="lazy"
                     />
 
-                    {/* Gradient Dark Overlay for Superior Text Legibility */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/75 to-black/45 transition-opacity duration-300 group-hover:via-black/70" />
+                    {/* Gradient Dark Overlay (Subtle scrim so images remain bright and crystal clear) */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 via-50% to-transparent transition-opacity duration-300 group-hover:via-black/25" />
 
                     {/* Top Edge Gradient Light Beam */}
                     <div className="pointer-events-none absolute inset-x-0 top-0 h-[2.5px] bg-gradient-to-r from-brand-orange via-brand-gold to-brand-rose opacity-90 transition-opacity duration-500 group-hover:opacity-100 z-10" />
@@ -1108,11 +1108,11 @@ export function HanviSite() {
 
                     {/* Bottom Area: Title, Description, Tags & Action Button */}
                     <div className="relative z-10 mt-14 sm:mt-16 flex flex-col justify-end">
-                      <h3 className="font-display text-base sm:text-[17px] font-bold tracking-tight text-white transition-colors duration-300 group-hover:text-brand-gold">
+                      <h3 className="font-display text-base sm:text-[17px] font-bold tracking-tight text-white transition-colors duration-300 group-hover:text-brand-gold drop-shadow-[0_2px_4px_rgba(0,0,0,0.85)]">
                         {service.title}
                       </h3>
 
-                      <p className="mt-2 text-xs sm:text-[13px] leading-relaxed text-white/80 line-clamp-2">
+                      <p className="mt-2 text-xs sm:text-[13px] leading-relaxed text-white/90 line-clamp-2 drop-shadow-[0_1px_3px_rgba(0,0,0,0.85)]">
                         {service.description}
                       </p>
 
@@ -1155,8 +1155,8 @@ export function HanviSite() {
                   loading="lazy"
                 />
 
-                {/* Gradient Dark Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/75 to-black/45 transition-opacity duration-300 group-hover:via-black/70" />
+                {/* Gradient Dark Overlay (Subtle scrim so images remain bright and crystal clear) */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 via-50% to-transparent transition-opacity duration-300 group-hover:via-black/25" />
 
                 <div className="pointer-events-none absolute inset-x-0 top-0 h-[2.5px] bg-gradient-to-r from-brand-orange via-brand-gold to-brand-rose z-10" />
                 <div className="pointer-events-none absolute -right-8 -top-8 size-36 rounded-full bg-brand-orange/20 blur-2xl opacity-75 group-hover:opacity-100 transition-opacity z-10" />
@@ -1172,11 +1172,11 @@ export function HanviSite() {
                 </div>
 
                 <div className="relative z-10 mt-14 sm:mt-16 flex flex-col justify-end">
-                  <h3 className="font-display text-base sm:text-[17px] font-bold tracking-tight text-white transition-colors duration-300 group-hover:text-brand-gold">
+                  <h3 className="font-display text-base sm:text-[17px] font-bold tracking-tight text-white transition-colors duration-300 group-hover:text-brand-gold drop-shadow-[0_2px_4px_rgba(0,0,0,0.85)]">
                     CUSTOM TURNKEY ENGINEERING &amp; CONSULTING
                   </h3>
 
-                  <p className="mt-2 text-xs sm:text-[13px] leading-relaxed text-white/80 line-clamp-2">
+                  <p className="mt-2 text-xs sm:text-[13px] leading-relaxed text-white/90 line-clamp-2 drop-shadow-[0_1px_3px_rgba(0,0,0,0.85)]">
                     Comprehensive industrial, commercial, or residential blueprints designed and executed end-to-end.
                   </p>
 
