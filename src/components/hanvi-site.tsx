@@ -613,64 +613,66 @@ export function HanviSite() {
 
   return (
     <div className="min-h-screen w-full overflow-x-hidden bg-background text-foreground">
-      <header className="sticky top-0 z-50 border-b border-border/50 bg-background/85 backdrop-blur-xl transition-all duration-300 shadow-[0_4px_24px_rgba(0,0,0,0.03)]">
-        {/* Top Utility Bar (Sample Reference with Social Icons & Contact Info) */}
-        <aside
-          aria-label="Contact and Social Info"
-          className="border-b border-black/10 bg-[#00A8B5] text-white"
-        >
-          <div className="mx-auto flex h-9 sm:h-9.5 w-full items-center justify-between px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 text-xs font-medium">
-            {/* Left: Social Media Icons */}
-            <div className="flex items-center gap-3.5 sm:gap-4.5">
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                className="text-white/90 hover:text-white transition-all duration-200 hover:scale-115 flex items-center"
-              >
-                <Facebook className="size-3.5 sm:size-4 fill-white stroke-none" />
-              </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="text-white/90 hover:text-white transition-all duration-200 hover:scale-115 flex items-center"
-              >
-                <Instagram className="size-3.5 sm:size-4" />
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="text-white/90 hover:text-white transition-all duration-200 hover:scale-115 flex items-center"
-              >
-                <Linkedin className="size-3.5 sm:size-4 fill-white stroke-none" />
-              </a>
-            </div>
-
-            {/* Right: Contact Information */}
-            <div className="flex items-center gap-4 sm:gap-6 text-[11px] sm:text-xs">
-              <a
-                href="mailto:saie@hanviglobaltech.com"
-                className="inline-flex items-center gap-1.5 text-white/95 hover:text-white hover:underline transition-colors"
-              >
-                <Mail className="size-3.5 sm:size-4" />
-                <span className="hidden min-[420px]:inline">saie@hanviglobaltech.com</span>
-                <span className="min-[420px]:hidden">Email</span>
-              </a>
-              <a
-                href="tel:+919392673103"
-                className="inline-flex items-center gap-1.5 text-white font-semibold hover:underline transition-colors"
-              >
-                <Phone className="size-3.5 sm:size-4" />
-                <span>+91 9392673103</span>
-              </a>
-            </div>
+      {/* Top Utility Bar (Matches footer background color bg-brand-charcoal; non-sticky) */}
+      <aside
+        aria-label="Contact and Social Info"
+        className="relative z-40 border-b border-white/10 bg-brand-charcoal text-background shadow-xs"
+      >
+        <div className="mx-auto flex h-9 sm:h-9.5 w-full items-center justify-between px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 text-xs font-medium">
+          {/* Left: Social Media Icons */}
+          <div className="flex items-center gap-3.5 sm:gap-4.5">
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="text-background/70 hover:text-brand-orange transition-all duration-200 hover:scale-115 flex items-center"
+            >
+              <Facebook className="size-3.5 sm:size-4 fill-current stroke-none" />
+            </a>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="text-background/70 hover:text-brand-orange transition-all duration-200 hover:scale-115 flex items-center"
+            >
+              <Instagram className="size-3.5 sm:size-4" />
+            </a>
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="text-background/70 hover:text-brand-orange transition-all duration-200 hover:scale-115 flex items-center"
+            >
+              <Linkedin className="size-3.5 sm:size-4 fill-current stroke-none" />
+            </a>
           </div>
-        </aside>
+
+          {/* Right: Contact Information */}
+          <div className="flex items-center gap-4 sm:gap-6 text-[11px] sm:text-xs">
+            <a
+              href="mailto:saie@hanviglobaltech.com"
+              className="inline-flex items-center gap-1.5 text-background/80 hover:text-brand-gold hover:underline transition-colors"
+            >
+              <Mail className="size-3.5 sm:size-4 text-brand-orange" />
+              <span className="hidden min-[420px]:inline">saie@hanviglobaltech.com</span>
+              <span className="min-[420px]:hidden">Email</span>
+            </a>
+            <a
+              href="tel:+919392673103"
+              className="inline-flex items-center gap-1.5 text-background font-semibold hover:text-brand-gold hover:underline transition-colors"
+            >
+              <Phone className="size-3.5 sm:size-4 text-brand-orange" />
+              <span>+91 9392673103</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+
+      {/* Main Navbar - Only this is sticky */}
+      <header className="sticky top-0 z-50 border-b border-border/50 bg-background/85 backdrop-blur-xl transition-all duration-300 shadow-[0_4px_24px_rgba(0,0,0,0.03)]">
         <div className="mx-auto flex h-[76px] w-full items-center justify-between px-4 sm:px-6 md:px-8 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:px-10 xl:px-12 2xl:px-16">
           <div className="flex items-center justify-start">
             <button
