@@ -1332,38 +1332,79 @@ export function HanviSite() {
                 Collaborating with world-class OEM hardware manufacturers, cybersecurity alliances, and IoT smart ecosystem providers.
               </p>
             </div>
-            <div className="mt-4 sm:mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4">
-              {partnerPlaceholders.map((partner, index) => (
-                <div
-                  key={`${partner.name}-${index}`}
-                  data-reveal
-                  style={{ '--reveal-delay': `${index * 60}ms` } as React.CSSProperties}
-                  className="group relative flex flex-col justify-between overflow-hidden rounded-xl border border-brand-orange/20 bg-white/95 p-4 shadow-sm backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_16px_36px_-6px_rgba(255,106,0,0.28),0_0_22px_rgba(255,106,0,0.18)] transition-all duration-300"
-                >
-                  <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-brand-orange via-brand-gold to-brand-rose opacity-85 group-hover:opacity-100 transition-opacity" />
-                  <div className="pointer-events-none absolute -right-4 -top-4 size-20 rounded-full bg-brand-gold/15 blur-xl opacity-60 group-hover:opacity-100 transition-opacity" />
+            {/* Infinite Horizontal Scroll Animated Tracks for Partners */}
+            <div className="relative mt-5 sm:mt-6 overflow-hidden pause-hover select-none">
+              {/* Left Edge Subtle Fade Mask */}
+              <div className="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-24 bg-gradient-to-r from-brand-cream via-brand-cream/80 to-transparent z-10" />
 
-                  <div className="relative z-10 flex flex-col h-full justify-between">
-                    <div>
-                      <div className="flex items-center justify-between gap-2 mb-3">
-                        <div className="flex size-11 shrink-0 items-center justify-center rounded-xl overflow-hidden border border-black/5 shadow-xs transition-transform duration-300 group-hover:scale-105">
-                          {partner.logo}
+              {/* Right Edge Subtle Fade Mask */}
+              <div className="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-24 bg-gradient-to-l from-brand-cream via-brand-cream/80 to-transparent z-10" />
+
+              {/* Row 1: Scrolling Left */}
+              <div className="animate-marquee-left flex gap-4 sm:gap-5 pb-3.5">
+                {[...partnerPlaceholders.slice(0, 4), ...partnerPlaceholders.slice(0, 4), ...partnerPlaceholders.slice(0, 4), ...partnerPlaceholders.slice(0, 4)].map((partner, index) => (
+                  <div
+                    key={`pr1-${partner.name}-${index}`}
+                    className="group relative flex w-[280px] sm:w-[315px] md:w-[335px] shrink-0 flex-col justify-between overflow-hidden rounded-xl border border-brand-orange/20 bg-white/95 p-4 shadow-sm backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_16px_36px_-6px_rgba(255,106,0,0.28),0_0_22px_rgba(255,106,0,0.18)] transition-all duration-300"
+                  >
+                    <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-brand-orange via-brand-gold to-brand-rose opacity-85 group-hover:opacity-100 transition-opacity" />
+                    <div className="pointer-events-none absolute -right-4 -top-4 size-20 rounded-full bg-brand-gold/15 blur-xl opacity-60 group-hover:opacity-100 transition-opacity" />
+
+                    <div className="relative z-10 flex flex-col h-full justify-between">
+                      <div>
+                        <div className="flex items-center justify-between gap-2 mb-3">
+                          <div className="flex size-11 shrink-0 items-center justify-center rounded-xl overflow-hidden border border-black/5 shadow-xs transition-transform duration-300 group-hover:scale-105">
+                            {partner.logo}
+                          </div>
+                          <span className="shrink-0 text-[10px] font-bold uppercase tracking-wider text-amber-700 px-2.5 py-0.5 rounded-full bg-brand-gold/15 border border-brand-gold/30">
+                            {partner.tag}
+                          </span>
                         </div>
-                        <span className="shrink-0 text-[10px] font-bold uppercase tracking-wider text-amber-700 px-2.5 py-0.5 rounded-full bg-brand-gold/15 border border-brand-gold/30">
-                          {partner.tag}
-                        </span>
-                      </div>
 
-                      <h3 className="font-display text-xs sm:text-sm font-bold text-foreground group-hover:text-brand-orange transition-colors line-clamp-1">
-                        {partner.name}
-                      </h3>
-                      <p className="mt-1 text-[11px] sm:text-xs text-muted-foreground line-clamp-1">
-                        {partner.sector}
-                      </p>
+                        <h3 className="font-display text-xs sm:text-sm font-bold text-foreground group-hover:text-brand-orange transition-colors line-clamp-1">
+                          {partner.name}
+                        </h3>
+                        <p className="mt-1 text-[11px] sm:text-xs text-muted-foreground line-clamp-1">
+                          {partner.sector}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
+
+              {/* Row 2: Scrolling Right */}
+              <div className="animate-marquee-right flex gap-4 sm:gap-5 pt-1">
+                {[...partnerPlaceholders.slice(4, 8), ...partnerPlaceholders.slice(4, 8), ...partnerPlaceholders.slice(4, 8), ...partnerPlaceholders.slice(4, 8)].map((partner, index) => (
+                  <div
+                    key={`pr2-${partner.name}-${index}`}
+                    className="group relative flex w-[280px] sm:w-[315px] md:w-[335px] shrink-0 flex-col justify-between overflow-hidden rounded-xl border border-brand-orange/20 bg-white/95 p-4 shadow-sm backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_16px_36px_-6px_rgba(255,106,0,0.28),0_0_22px_rgba(255,106,0,0.18)] transition-all duration-300"
+                  >
+                    <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-brand-orange via-brand-gold to-brand-rose opacity-85 group-hover:opacity-100 transition-opacity" />
+                    <div className="pointer-events-none absolute -right-4 -top-4 size-20 rounded-full bg-brand-gold/15 blur-xl opacity-60 group-hover:opacity-100 transition-opacity" />
+
+                    <div className="relative z-10 flex flex-col h-full justify-between">
+                      <div>
+                        <div className="flex items-center justify-between gap-2 mb-3">
+                          <div className="flex size-11 shrink-0 items-center justify-center rounded-xl overflow-hidden border border-black/5 shadow-xs transition-transform duration-300 group-hover:scale-105">
+                            {partner.logo}
+                          </div>
+                          <span className="shrink-0 text-[10px] font-bold uppercase tracking-wider text-amber-700 px-2.5 py-0.5 rounded-full bg-brand-gold/15 border border-brand-gold/30">
+                            {partner.tag}
+                          </span>
+                        </div>
+
+                        <h3 className="font-display text-xs sm:text-sm font-bold text-foreground group-hover:text-brand-orange transition-colors line-clamp-1">
+                          {partner.name}
+                        </h3>
+                        <p className="mt-1 text-[11px] sm:text-xs text-muted-foreground line-clamp-1">
+                          {partner.sector}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
