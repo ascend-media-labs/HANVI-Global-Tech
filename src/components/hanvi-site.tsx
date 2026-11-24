@@ -65,9 +65,9 @@ const navigation = [
 ] as const;
 
 const slides = [
+  { image: globalImage, alt: "A connected city at dusk viewed through a glass office", label: "A connected world" },
   { image: infrastructureImage, alt: "Rows of servers in a modern data center", label: "Digital infrastructure" },
   { image: collaborationImage, alt: "Technology professionals collaborating around a digital display", label: "Collaborative thinking" },
-  { image: globalImage, alt: "A connected city at dusk viewed through a glass office", label: "A connected world" },
 ] as const;
 
 const services = [
@@ -1050,7 +1050,7 @@ export function HanviSite() {
       </header>
 
       <main>
-        <section id="home" className="relative isolate h-[calc(100svh-125px)] min-h-[350px] max-h-[510px] scroll-mt-20 overflow-hidden bg-brand-charcoal text-background">
+        <section id="home" className="relative isolate h-[calc(100svh-135px)] min-h-[320px] max-h-[465px] scroll-mt-20 overflow-hidden bg-brand-charcoal text-background">
             <div className="absolute inset-0" aria-hidden="true">
               {slides.map((slide, index) => (
                 <img
@@ -1067,7 +1067,7 @@ export function HanviSite() {
               <div className="hero-grid absolute inset-0 pointer-events-none opacity-50" />
             </div>
 
-            <div className="relative mx-auto flex h-full w-full flex-col justify-center px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 pb-12 pt-2 sm:pb-12 sm:pt-3">
+            <div className="relative mx-auto flex h-full w-full flex-col justify-center px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 pb-10 pt-2 sm:pb-11 sm:pt-2.5">
               <div className="max-w-3xl" data-reveal>
                 <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 py-0.5 px-3 text-xs font-medium text-background/90 backdrop-blur-md shadow-inner shadow-white/5 sm:mb-2.5 sm:px-3">
                   <span className="relative flex h-2 w-2">
