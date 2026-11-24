@@ -2120,86 +2120,107 @@ export function HanviSite() {
         </DialogContent>
       </Dialog>
 
-      {/* Individual Service Detail Modal */}
+      {/* Individual Service Detail Modal (Full Width, No Scrollbar) */}
       <Dialog open={selectedService !== null} onOpenChange={(open) => { if (!open) setSelectedService(null); }}>
-        <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto p-0 rounded-2xl bg-slate-950 border border-slate-800 text-white shadow-2xl">
+        <DialogContent className="!max-w-4xl lg:!max-w-5xl w-[94vw] p-0 rounded-2xl bg-slate-950 border border-slate-800 text-white shadow-2xl overflow-hidden [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
           {selectedService && (
-            <div>
-              {/* Header Banner Image */}
-              <div className="relative h-48 sm:h-56 w-full overflow-hidden">
+            <div className="grid grid-cols-1 md:grid-cols-[1fr_1.35fr] min-h-[440px]">
+              {/* Left Column: Visual Image & Branding Banner */}
+              <div className="relative overflow-hidden flex flex-col justify-between p-6 sm:p-7 bg-slate-900 min-h-[220px] md:min-h-[440px]">
                 <img
                   src={selectedService.image}
                   alt={selectedService.title}
-                  className="w-full h-full object-cover"
+                  className="absolute inset-0 h-full w-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent" />
-                <div className="absolute bottom-4 left-5 right-5 flex items-end gap-3.5">
-                  <div className="flex size-12 sm:size-14 shrink-0 items-center justify-center rounded-2xl bg-[#E02424] text-white shadow-lg">
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/75 to-slate-950/35" />
+
+                {/* Top Tag */}
+                <div className="relative z-10">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-white bg-[#E02424] px-3 py-1 rounded-full inline-block shadow-md">
+                    HANVI Specialized Solution
+                  </span>
+                </div>
+
+                {/* Bottom Title & Icon */}
+                <div className="relative z-10 mt-auto pt-10 md:pt-16">
+                  <div className="flex size-13 items-center justify-center rounded-2xl bg-[#E02424] text-white shadow-xl mb-3">
                     <selectedService.icon className="size-6 sm:size-7 text-white" />
                   </div>
-                  <div>
-                    <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-[#E02424] bg-red-950/80 border border-red-800/60 px-2.5 py-0.5 rounded-full inline-block mb-1">
-                      HANVI Specialized Solution
-                    </span>
-                    <h2 className="text-xl sm:text-2xl font-bold text-white leading-tight">
-                      {selectedService.title}
-                    </h2>
-                  </div>
+                  <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white leading-tight">
+                    {selectedService.title}
+                  </h2>
+                  <p className="mt-2 text-xs text-slate-300 leading-snug line-clamp-2">
+                    {selectedService.description}
+                  </p>
                 </div>
               </div>
 
-              {/* Body Content */}
-              <div className="p-5 sm:p-6 space-y-4">
-                {/* Description */}
-                <div>
-                  <h4 className="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">Overview</h4>
-                  <p className="text-xs sm:text-sm text-slate-200 leading-relaxed">
-                    {selectedService.details}
-                  </p>
-                </div>
-
-                {/* Key Technical Features */}
-                <div>
-                  <h4 className="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Key Technical Capabilities</h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                    {selectedService.features.map((feature, i) => (
-                      <div key={i} className="flex items-start gap-2 rounded-xl border border-slate-800/80 bg-slate-900/60 p-2.5">
-                        <CheckCircle2 className="size-4 text-[#E02424] shrink-0 mt-0.5" />
-                        <span className="text-xs text-slate-300 font-medium leading-snug">{feature}</span>
-                      </div>
-                    ))}
+              {/* Right Column: Technical Details, Capabilities & Actions */}
+              <div className="p-5 sm:p-7 flex flex-col justify-between bg-slate-950 space-y-4">
+                <div className="space-y-3.5">
+                  {/* Overview */}
+                  <div>
+                    <h4 className="text-[11px] font-bold uppercase tracking-wider text-[#E02424] mb-1">
+                      Engineering Overview
+                    </h4>
+                    <p className="text-xs sm:text-[13px] text-slate-200 leading-relaxed">
+                      {selectedService.details}
+                    </p>
                   </div>
-                </div>
 
-                {/* Standards & Suitability */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2 border-t border-slate-800">
-                  <div className="rounded-xl bg-slate-900/80 border border-slate-800/80 p-2.5">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#E02424] block mb-0.5">Standards &amp; Compliance</span>
-                    <p className="text-xs font-semibold text-slate-300">{selectedService.standards}</p>
+                  {/* Key Capabilities */}
+                  <div>
+                    <h4 className="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">
+                      Key Technical Capabilities
+                    </h4>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      {selectedService.features.map((feature, i) => (
+                        <div key={i} className="flex items-start gap-2 rounded-xl border border-slate-800 bg-slate-900/60 p-2.5">
+                          <CheckCircle2 className="size-3.5 text-[#E02424] shrink-0 mt-0.5" />
+                          <span className="text-xs text-slate-300 font-medium leading-snug">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                  <div className="rounded-xl bg-slate-900/80 border border-slate-800/80 p-2.5">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#E02424] block mb-0.5">Suitable Applications</span>
-                    <p className="text-xs font-semibold text-slate-300">{selectedService.suitableFor}</p>
+
+                  {/* Standards & Suitability */}
+                  <div className="grid grid-cols-2 gap-2.5 pt-1">
+                    <div className="rounded-xl bg-slate-900/80 border border-slate-800/80 p-2.5">
+                      <span className="text-[9.5px] font-bold uppercase tracking-wider text-[#E02424] block mb-0.5">
+                        Standards &amp; Compliance
+                      </span>
+                      <p className="text-[11.5px] font-semibold text-slate-300 leading-tight">
+                        {selectedService.standards}
+                      </p>
+                    </div>
+                    <div className="rounded-xl bg-slate-900/80 border border-slate-800/80 p-2.5">
+                      <span className="text-[9.5px] font-bold uppercase tracking-wider text-[#E02424] block mb-0.5">
+                        Suitable Applications
+                      </span>
+                      <p className="text-[11.5px] font-semibold text-slate-300 leading-tight line-clamp-2">
+                        {selectedService.suitableFor}
+                      </p>
+                    </div>
                   </div>
                 </div>
 
                 {/* Action Footer */}
-                <div className="pt-3 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3">
-                  <div className="text-xs text-slate-400 text-center sm:text-left">
+                <div className="pt-3 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-3">
+                  <span className="text-xs text-slate-400 hidden sm:inline">
                     Need technical consultation or site inspection?
-                  </div>
-                  <div className="flex items-center gap-2 w-full sm:w-auto">
+                  </span>
+                  <div className="flex items-center gap-2.5 w-full sm:w-auto justify-end">
                     <Button
                       variant="outline"
                       size="sm"
-                      className="w-full sm:w-auto rounded-full border-slate-700 text-slate-200 hover:bg-slate-800 cursor-pointer"
+                      className="rounded-full border-slate-700 text-slate-200 hover:bg-slate-800 cursor-pointer text-xs"
                       onClick={() => setSelectedService(null)}
                     >
                       Close
                     </Button>
                     <Button
                       size="sm"
-                      className="w-full sm:w-auto rounded-full bg-[#E02424] hover:bg-red-700 text-white font-semibold cursor-pointer"
+                      className="rounded-full bg-[#E02424] hover:bg-red-700 text-white font-semibold text-xs cursor-pointer shadow-md"
                       onClick={() => {
                         const sTitle = selectedService.title;
                         setSelectedService(null);
