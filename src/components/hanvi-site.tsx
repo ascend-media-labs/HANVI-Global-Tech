@@ -17,7 +17,9 @@ import {
   Eye,
   Facebook,
   Flame,
+  Headphones,
   Instagram,
+  Layers,
   Layers3,
   Linkedin,
   Mail,
@@ -29,10 +31,14 @@ import {
   Play,
   Rocket,
   Server,
+  Settings,
   ShieldCheck,
   Sparkles,
+  Target,
   User,
+  Users,
   Workflow,
+  Wrench,
   X,
 } from "lucide-react";
 
@@ -40,6 +46,7 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import aboutBuilding from "@/assets/about-building.jpg";
 import collaborationImage from "@/assets/hero-collaboration.webp";
 import globalImage from "@/assets/hero-global.webp";
 import infrastructureImage from "@/assets/hero-infrastructure.webp";
@@ -1107,126 +1114,123 @@ export function HanviSite() {
             </div>
           </section>
 
-          <section id="about" className="relative isolate scroll-mt-20 overflow-hidden bg-background min-h-[500px] flex items-center justify-center py-8 sm:py-10 lg:h-[calc(100svh-76px)] lg:max-h-[760px] lg:py-0">
-            {/* Subtle Ambient Glow Background Orbs */}
-            <div className="absolute -left-20 top-1/2 -translate-y-1/2 size-96 rounded-full bg-brand-orange/5 blur-3xl pointer-events-none" />
-            <div className="absolute right-0 top-1/4 size-80 rounded-full bg-brand-rose/5 blur-3xl pointer-events-none" />
-
-            <div className="relative mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
-              <div className="grid items-center gap-8 lg:grid-cols-[1.1fr_0.9fr] xl:gap-14">
-
-                {/* Left Column: Content, Vision & Mission with Transitions */}
-                <div data-reveal className="flex flex-col justify-center">
-
-                  {/* Eyebrow Badge with Pulse */}
-                  <div className="mb-3.5 inline-flex w-fit items-center gap-2 rounded-full border border-brand-orange/25 bg-brand-orange/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-brand-orange backdrop-blur-md shadow-sm transition-transform duration-300 hover:scale-105">
-                    <span className="relative flex h-2 w-2">
-                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-orange opacity-75" />
-                      <span className="relative inline-flex h-2 w-2 rounded-full bg-brand-orange" />
-                    </span>
-                    <span>About HANVI</span>
-                    <span className="text-brand-orange/40">•</span>
-                    <span className="text-[11px] font-medium text-foreground/75">Enterprise Engineering</span>
+          {/* 4-Item Feature Strip Below Hero */}
+          <div className="w-full border-b border-border/60 bg-white py-3.5 shadow-xs">
+            <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-border/60">
+                {/* Item 1 */}
+                <div className="flex items-center gap-3 sm:justify-center px-3 py-1">
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-red-50 text-[#E02424]">
+                    <Award className="size-6 text-[#E02424]" />
                   </div>
+                  <div className="text-left text-xs sm:text-[13px] font-bold leading-snug text-foreground">
+                    <div>End-to-End</div>
+                    <div>Technology Solutions</div>
+                  </div>
+                </div>
 
-                  {/* Main Heading with Gradient Text */}
-                  <h2 className="font-display text-2xl font-semibold leading-tight tracking-tight sm:text-3xl lg:text-4xl">
-                    Make room for <span className="brand-text-gradient drop-shadow-sm">what’s next.</span>
+                {/* Item 2 */}
+                <div className="flex items-center gap-3 sm:justify-center px-3 py-1">
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-red-50 text-[#E02424]">
+                    <Settings className="size-6 text-[#E02424]" />
+                  </div>
+                  <div className="text-left text-xs sm:text-[13px] font-bold leading-snug text-foreground">
+                    <div>Expert Installation</div>
+                    <div>&amp; Integration</div>
+                  </div>
+                </div>
+
+                {/* Item 3 */}
+                <div className="flex items-center gap-3 sm:justify-center px-3 py-1">
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-red-50 text-[#E02424]">
+                    <Users className="size-6 text-[#E02424]" />
+                  </div>
+                  <div className="text-left text-xs sm:text-[13px] font-bold leading-snug text-foreground">
+                    <div>Reliable</div>
+                    <div>After-Sales Support</div>
+                  </div>
+                </div>
+
+                {/* Item 4 */}
+                <div className="flex items-center gap-3 sm:justify-center px-3 py-1">
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-red-50 text-[#E02424]">
+                    <ShieldCheck className="size-6 text-[#E02424]" />
+                  </div>
+                  <div className="text-left text-xs sm:text-[13px] font-bold leading-snug text-foreground">
+                    <div>Safe, Secure &amp;</div>
+                    <div>Future-Ready Systems</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <section id="about" className="relative isolate scroll-mt-20 overflow-hidden bg-white py-10 sm:py-14 lg:py-16">
+            <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
+              <div className="grid items-center gap-8 lg:grid-cols-[1fr_1.15fr] xl:gap-12" data-reveal>
+                {/* Left Column: Building Photo */}
+                <div className="relative group overflow-hidden rounded-2xl border border-slate-200/80 shadow-md">
+                  <img
+                    src={aboutBuilding}
+                    alt="HANVI GLOBAL TECH PVT LTD Building & Headquarters"
+                    loading="lazy"
+                    className="w-full h-auto max-h-[420px] object-cover transition-transform duration-500 ease-out group-hover:scale-102"
+                  />
+                </div>
+
+                {/* Right Column: About Content & 4 Cards */}
+                <div className="flex flex-col justify-center">
+                  <h2 className="font-display text-2xl font-bold tracking-tight text-foreground sm:text-3xl lg:text-[2.25rem] leading-tight">
+                    About <span className="text-[#E02424] font-black">Hanvi Global Tech</span>
                   </h2>
 
-                  {/* Description */}
-                  <p className="mt-3.5 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base sm:leading-7">
-                    HANVI GLOBAL TECH PVT LTD specializes in mission-critical technology, life safety systems, tier-grade data center infrastructure, and luxury IoT home automation. We bridge complex engineering with seamless execution.
+                  <p className="mt-4 text-xs sm:text-sm lg:text-[15px] leading-relaxed text-muted-foreground">
+                    Hanvi Global Tech Pvt Ltd is a technology solutions company delivering reliable, scalable, and integrated systems for safety, security, communication, and smart automation. We help businesses, institutions, and homeowners build safer, smarter, and more connected environments.
                   </p>
 
-                  {/* 3 Quick Capability Chips */}
-                  <div className="mt-4 flex flex-wrap items-center gap-2">
-                    <span className="inline-flex items-center gap-1.5 rounded-full border border-border/80 bg-muted/40 px-3 py-1 text-xs font-medium text-foreground transition-all duration-300 ease-out hover:scale-105 hover:border-brand-orange/50 hover:shadow-[0_0_15px_rgba(255,106,0,0.25)] hover:bg-muted/70">
-                      <CheckCircle2 className="size-3.5 text-brand-orange" /> Turnkey Life Safety
-                    </span>
-                    <span className="inline-flex items-center gap-1.5 rounded-full border border-border/80 bg-muted/40 px-3 py-1 text-xs font-medium text-foreground transition-all duration-300 ease-out hover:scale-105 hover:border-brand-coral/50 hover:shadow-[0_0_15px_rgba(255,80,30,0.25)] hover:bg-muted/70">
-                      <CheckCircle2 className="size-3.5 text-brand-coral" /> Cyber Data Centers
-                    </span>
-                    <span className="inline-flex items-center gap-1.5 rounded-full border border-border/80 bg-muted/40 px-3 py-1 text-xs font-medium text-foreground transition-all duration-300 ease-out hover:scale-105 hover:border-brand-gold/50 hover:shadow-[0_0_15px_rgba(245,158,11,0.25)] hover:bg-muted/70">
-                      <CheckCircle2 className="size-3.5 text-brand-gold" /> Smart Automation
-                    </span>
-                  </div>
-
-                  {/* Vision & Mission Interactive Cards with Hover Glow */}
-                  <div className="mt-5 grid gap-4 border-t border-border/70 pt-4 sm:grid-cols-2 sm:gap-5">
-
-                    {/* Vision Card */}
-                    <div className="group relative overflow-hidden rounded-2xl border border-border/70 bg-card/60 p-4 shadow-sm backdrop-blur-sm glow-card-hover hover:border-brand-orange/50 hover:bg-card hover:shadow-[0_16px_36px_-6px_rgba(255,106,0,0.22),0_0_20px_rgba(255,106,0,0.12)]">
-                      <div className="absolute -right-8 -top-8 size-20 rounded-full bg-brand-orange/10 blur-xl transition-all duration-300 group-hover:bg-brand-orange/20" />
-                      <div className="flex items-center gap-2.5">
-                        <div className="flex size-8 items-center justify-center rounded-xl bg-gradient-to-br from-brand-orange/20 to-brand-rose/20 text-brand-orange shadow-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
-                          <Eye className="size-4" />
-                        </div>
-                        <h3 className="font-display text-sm font-semibold tracking-tight text-foreground transition-colors group-hover:text-brand-orange">
-                          Our Vision
-                        </h3>
+                  {/* 4 Feature Cards matching reference design */}
+                  <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
+                    {/* Card 1: Customized Solutions */}
+                    <div className="flex flex-col items-center justify-center rounded-xl border border-slate-200/90 bg-slate-50/70 p-4 text-center transition-all duration-300 hover:bg-white hover:border-[#E02424]/40 hover:shadow-md">
+                      <div className="flex size-11 items-center justify-center rounded-lg bg-red-50 text-[#E02424] mb-2.5">
+                        <Target className="size-6 text-[#E02424]" />
                       </div>
-                      <p className="mt-2.5 text-xs leading-relaxed text-muted-foreground sm:text-sm">
-                        To empower enterprises and modern living spaces with robust, future-ready infrastructure and intelligent automation.
-                      </p>
+                      <span className="text-xs sm:text-[13px] font-bold text-foreground leading-tight">
+                        Customized<br />Solutions
+                      </span>
                     </div>
 
-                    {/* Mission Card */}
-                    <div className="group relative overflow-hidden rounded-2xl border border-border/70 bg-card/60 p-4 shadow-sm backdrop-blur-sm glow-card-hover hover:border-brand-coral/50 hover:bg-card hover:shadow-[0_16px_36px_-6px_rgba(255,80,30,0.22),0_0_20px_rgba(255,80,30,0.12)]">
-                      <div className="absolute -right-8 -top-8 size-20 rounded-full bg-brand-coral/10 blur-xl transition-all duration-300 group-hover:bg-brand-coral/20" />
-                      <div className="flex items-center gap-2.5">
-                        <div className="flex size-8 items-center justify-center rounded-xl bg-gradient-to-br from-brand-coral/20 to-brand-gold/20 text-brand-coral shadow-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
-                          <Rocket className="size-4" />
-                        </div>
-                        <h3 className="font-display text-sm font-semibold tracking-tight text-foreground transition-colors group-hover:text-brand-coral">
-                          Our Mission
-                        </h3>
+                    {/* Card 2: Industry-Grade Products */}
+                    <div className="flex flex-col items-center justify-center rounded-xl border border-slate-200/90 bg-slate-50/70 p-4 text-center transition-all duration-300 hover:bg-white hover:border-[#E02424]/40 hover:shadow-md">
+                      <div className="flex size-11 items-center justify-center rounded-lg bg-red-50 text-[#E02424] mb-2.5">
+                        <Layers className="size-6 text-[#E02424]" />
                       </div>
-                      <p className="mt-2.5 text-xs leading-relaxed text-muted-foreground sm:text-sm">
-                        Deliver zero-compromise safety, enterprise resilience, and high-performance engineering tailored to your operational goals.
-                      </p>
+                      <span className="text-xs sm:text-[13px] font-bold text-foreground leading-tight">
+                        Industry-Grade<br />Products
+                      </span>
+                    </div>
+
+                    {/* Card 3: Professional Installation */}
+                    <div className="flex flex-col items-center justify-center rounded-xl border border-slate-200/90 bg-slate-50/70 p-4 text-center transition-all duration-300 hover:bg-white hover:border-[#E02424]/40 hover:shadow-md">
+                      <div className="flex size-11 items-center justify-center rounded-lg bg-red-50 text-[#E02424] mb-2.5">
+                        <Wrench className="size-6 text-[#E02424]" />
+                      </div>
+                      <span className="text-xs sm:text-[13px] font-bold text-foreground leading-tight">
+                        Professional<br />Installation
+                      </span>
+                    </div>
+
+                    {/* Card 4: Ongoing Support */}
+                    <div className="flex flex-col items-center justify-center rounded-xl border border-slate-200/90 bg-slate-50/70 p-4 text-center transition-all duration-300 hover:bg-white hover:border-[#E02424]/40 hover:shadow-md">
+                      <div className="flex size-11 items-center justify-center rounded-lg bg-red-50 text-[#E02424] mb-2.5">
+                        <Headphones className="size-6 text-[#E02424]" />
+                      </div>
+                      <span className="text-xs sm:text-[13px] font-bold text-foreground leading-tight">
+                        Ongoing<br />Support
+                      </span>
                     </div>
                   </div>
-
                 </div>
-
-                {/* Right Column: Premium Interactive Photo with Floating Badges & Animations */}
-                <div className="relative group" data-reveal>
-
-                  {/* Ambient Soft Glow Behind Photo */}
-                  <div className="absolute -inset-1.5 rounded-3xl bg-gradient-to-tr from-brand-orange/20 via-brand-coral/10 to-brand-gold/20 opacity-40 blur-xl transition-opacity duration-500 group-hover:opacity-75" />
-
-                  {/* Photo Frame Container */}
-                  <figure className="relative h-[290px] sm:h-[350px] lg:h-[410px] w-full overflow-hidden rounded-2xl border border-border/80 bg-secondary shadow-xl transition-transform duration-500 group-hover:shadow-2xl">
-                    <img
-                      src={collaborationImage}
-                      alt="Technology professionals collaborating around a digital display"
-                      loading="lazy"
-                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                    />
-                    {/* Subtle Gradient Vignette */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-
-                    {/* Floating Brand Badge (Bottom-Left) */}
-                    <figcaption className="absolute bottom-4 left-4 flex items-center gap-2.5 rounded-xl border border-white/20 bg-black/60 px-3.5 py-2 text-xs font-semibold uppercase text-white shadow-lg backdrop-blur-md transition-all duration-300 group-hover:bg-black/80">
-                      <img src={logoIcon} alt="" className="h-5 w-auto object-contain transition-transform duration-300 group-hover:scale-110" aria-hidden="true" />
-                      <span className="tracking-wide">HANVI GLOBAL TECH PVT LTD</span>
-                    </figcaption>
-
-                    {/* Floating Live Badge (Top-Right) */}
-                    <div className="absolute top-4 right-4 flex items-center gap-2 rounded-full border border-white/20 bg-black/60 px-3.5 py-1.5 shadow-lg backdrop-blur-md text-[11px] font-semibold text-white transition-all duration-300 group-hover:border-brand-orange/40">
-                      <Sparkles className="size-3.5 text-brand-gold animate-pulse" />
-                      <span>Future-Ready Engineering</span>
-                    </div>
-
-                    {/* Floating Live Telemetry Chip (Bottom-Right on sm screens) */}
-                    <div className="absolute bottom-4 right-4 hidden sm:flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-950/80 px-2.5 py-1 text-[10px] font-medium text-emerald-400 backdrop-blur-md">
-                      <span className="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                      <span>Certified Safety Standards</span>
-                    </div>
-                  </figure>
-                </div>
-
               </div>
             </div>
           </section>
