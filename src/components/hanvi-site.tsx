@@ -1050,7 +1050,7 @@ export function HanviSite() {
       </header>
 
       <main>
-        <section id="home" className="relative isolate h-[calc(100svh-148px)] min-h-[460px] max-h-[660px] scroll-mt-20 overflow-hidden bg-brand-charcoal text-background">
+        <section id="home" className="relative isolate h-[calc(100svh-125px)] min-h-[350px] max-h-[510px] scroll-mt-20 overflow-hidden bg-brand-charcoal text-background">
             <div className="absolute inset-0" aria-hidden="true">
               {slides.map((slide, index) => (
                 <img
@@ -1067,23 +1067,23 @@ export function HanviSite() {
               <div className="hero-grid absolute inset-0 pointer-events-none opacity-50" />
             </div>
 
-            <div className="relative mx-auto flex h-full w-full flex-col justify-center px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 pb-14 pt-3 sm:pb-14 sm:pt-4">
+            <div className="relative mx-auto flex h-full w-full flex-col justify-center px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 pb-12 pt-2 sm:pb-12 sm:pt-3">
               <div className="max-w-3xl" data-reveal>
-                <div className="mb-2.5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 py-1 px-3 text-xs font-medium text-background/90 backdrop-blur-md shadow-inner shadow-white/5 sm:mb-3 sm:px-3.5">
+                <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 py-0.5 px-3 text-xs font-medium text-background/90 backdrop-blur-md shadow-inner shadow-white/5 sm:mb-2.5 sm:px-3">
                   <span className="relative flex h-2 w-2">
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-orange opacity-75" />
                     <span className="relative inline-flex h-2 w-2 rounded-full bg-brand-orange" />
                   </span>
-                  <span className="font-semibold tracking-wider uppercase text-[10px] sm:text-xs text-background/90">
+                  <span className="font-semibold tracking-wider uppercase text-[9.5px] sm:text-[11px] text-background/90">
                     Next-Gen Enterprise Tech
                   </span>
                   <span className="text-white/25">|</span>
-                  <span className="font-medium text-brand-gold text-[10px] sm:text-xs">
+                  <span className="font-medium text-brand-gold text-[9.5px] sm:text-[11px]">
                     HANVI GLOBAL TECH
                   </span>
                 </div>
 
-                <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[2.85rem] font-semibold leading-[1.12] text-background tracking-tight">
+                <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[2.65rem] font-semibold leading-[1.12] text-background tracking-tight">
                   Technology for a{" "}
                   <span className="brand-text-gradient drop-shadow-[0_0_30px_rgba(255,106,0,0.35)]">
                     more connected
@@ -1091,14 +1091,14 @@ export function HanviSite() {
                   world.
                 </h1>
 
-                <p className="mt-2.5 max-w-2xl text-xs sm:text-sm md:text-[15px] leading-relaxed text-background/80 sm:mt-3">
+                <p className="mt-2 max-w-xl text-xs sm:text-[13px] leading-relaxed text-background/80 sm:mt-2.5">
                   Discover the story, services, and possibilities behind HANVI GLOBAL TECH PVT LTD. Powering resilient digital infrastructure and enterprise innovation.
                 </p>
 
-                <div className="mt-4 flex flex-wrap items-center gap-3 sm:mt-4.5">
+                <div className="mt-3.5 flex flex-wrap items-center gap-2.5 sm:mt-4">
                   <Button
                     size="default"
-                    className="brand-gradient glow-btn-hover group h-10 rounded-full px-5 text-xs sm:text-sm font-semibold text-primary-foreground shadow-[0_4px_20px_rgba(255,80,30,0.4)] cursor-pointer"
+                    className="brand-gradient glow-btn-hover group h-9 sm:h-9.5 rounded-full px-4.5 sm:px-5 text-xs sm:text-sm font-semibold text-primary-foreground shadow-[0_4px_18px_rgba(255,80,30,0.35)] cursor-pointer"
                     onClick={() => navigateTo("services")}
                   >
                     <span className="flex items-center gap-1.5">
@@ -1109,61 +1109,61 @@ export function HanviSite() {
                   <Button
                     variant="outline"
                     size="default"
-                    className="h-10 rounded-full border-white/20 bg-white/5 px-5 text-xs sm:text-sm font-medium text-background backdrop-blur-md transition-all duration-300 ease-out hover:scale-105 hover:bg-white/15 hover:border-white/50 hover:shadow-[0_0_22px_rgba(255,255,255,0.3)] cursor-pointer"
+                    className="h-9 sm:h-9.5 rounded-full border-white/20 bg-white/5 px-4.5 sm:px-5 text-xs sm:text-sm font-medium text-background backdrop-blur-md transition-all duration-300 ease-out hover:scale-105 hover:bg-white/15 hover:border-white/50 hover:shadow-[0_0_22px_rgba(255,255,255,0.3)] cursor-pointer"
                     onClick={() => navigateTo("contact")}
                   >
                     Contact us
                   </Button>
                 </div>
 
-                <div className="mt-4 flex flex-wrap items-center gap-4 sm:gap-6 border-t border-white/10 pt-3 sm:pt-3.5">
+                <div className="mt-3.5 flex flex-wrap items-center gap-4 sm:gap-6 border-t border-white/10 pt-2.5 sm:pt-3">
                   <div className="flex items-center gap-2">
-                    <div className="flex size-6 sm:size-7 items-center justify-center rounded-lg bg-brand-orange/20 text-brand-orange">
+                    <div className="flex size-6 sm:size-6.5 items-center justify-center rounded-lg bg-brand-orange/20 text-brand-orange">
                       <Server className="size-3 sm:size-3.5" />
                     </div>
                     <div>
-                      <div className="text-[11px] sm:text-xs font-bold text-background">99.9% Uptime</div>
-                      <div className="text-[9.5px] sm:text-[10px] text-background/60">Enterprise SLA</div>
+                      <div className="text-[11px] sm:text-xs font-bold text-background leading-tight">99.9% Uptime</div>
+                      <div className="text-[9px] sm:text-[10px] text-background/60 leading-tight">Enterprise SLA</div>
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="flex size-6 sm:size-7 items-center justify-center rounded-lg bg-brand-coral/20 text-brand-coral">
+                    <div className="flex size-6 sm:size-6.5 items-center justify-center rounded-lg bg-brand-coral/20 text-brand-coral">
                       <ShieldCheck className="size-3 sm:size-3.5" />
                     </div>
                     <div>
-                      <div className="text-[11px] sm:text-xs font-bold text-background">Zero-Trust</div>
-                      <div className="text-[9.5px] sm:text-[10px] text-background/60">Secure Architecture</div>
+                      <div className="text-[11px] sm:text-xs font-bold text-background leading-tight">Zero-Trust</div>
+                      <div className="text-[9px] sm:text-[10px] text-background/60 leading-tight">Secure Architecture</div>
                     </div>
                   </div>
                   <div className="hidden sm:flex items-center gap-2">
-                    <div className="flex size-6 sm:size-7 items-center justify-center rounded-lg bg-brand-gold/20 text-brand-gold">
+                    <div className="flex size-6 sm:size-6.5 items-center justify-center rounded-lg bg-brand-gold/20 text-brand-gold">
                       <Network className="size-3 sm:size-3.5" />
                     </div>
                     <div>
-                      <div className="text-[11px] sm:text-xs font-bold text-background">Global Scale</div>
-                      <div className="text-[9.5px] sm:text-[10px] text-background/60">Connected Mesh</div>
+                      <div className="text-[11px] sm:text-xs font-bold text-background leading-tight">Global Scale</div>
+                      <div className="text-[9px] sm:text-[10px] text-background/60 leading-tight">Connected Mesh</div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="absolute bottom-3 left-4 right-4 sm:bottom-4 sm:left-6 sm:right-6 md:left-8 md:right-8 lg:left-10 lg:right-10 xl:left-12 xl:right-12 2xl:left-16 2xl:right-16 flex items-center justify-between gap-4">
-                <div className="flex min-w-0 items-center gap-3 rounded-full border border-white/10 bg-black/35 px-3.5 py-1.5 backdrop-blur-md text-xs font-medium text-background/80 sm:text-sm">
-                  <span className="brand-gradient h-0.5 w-7 shrink-0" aria-hidden="true" />
+              <div className="absolute bottom-2.5 left-4 right-4 sm:bottom-3 sm:left-6 sm:right-6 md:left-8 md:right-8 lg:left-10 lg:right-10 xl:left-12 xl:right-12 2xl:left-16 2xl:right-16 flex items-center justify-between gap-4">
+                <div className="flex min-w-0 items-center gap-2.5 rounded-full border border-white/10 bg-black/40 px-3 py-1 backdrop-blur-md text-[11px] sm:text-xs font-medium text-background/85">
+                  <span className="brand-gradient h-0.5 w-6 shrink-0" aria-hidden="true" />
                   <span className="truncate">{slides[currentSlide]?.label ?? "Global technology"}</span>
                 </div>
-                <div className="flex shrink-0 items-center gap-1.5 rounded-full border border-white/10 bg-black/35 p-1.5 backdrop-blur-md">
+                <div className="flex shrink-0 items-center gap-1.5 rounded-full border border-white/10 bg-black/40 p-1 backdrop-blur-md">
                   {slides.map((slide, index) => (
                     <Button
                       key={slide.label}
                       variant="ghost"
                       size="icon"
-                      className="h-8 w-8 rounded-full p-0 text-background hover:bg-white/10 hover:text-background"
+                      className="h-7 w-7 rounded-full p-0 text-background hover:bg-white/10 hover:text-background"
                       aria-label={`Show slide ${index + 1}: ${slide.label}`}
                       aria-pressed={currentSlide === index}
                       onClick={() => setCurrentSlide(index)}
                     >
-                      <span className={`block h-1.5 rounded-full transition-all duration-500 ease-out ${currentSlide === index ? "brand-gradient w-6 shadow-[0_0_12px_rgba(255,106,0,0.85)]" : "w-1.5 bg-background/55 hover:bg-background/80"}`} />
+                      <span className={`block h-1.5 rounded-full transition-all duration-500 ease-out ${currentSlide === index ? "brand-gradient w-5 shadow-[0_0_12px_rgba(255,106,0,0.85)]" : "w-1.5 bg-background/55 hover:bg-background/80"}`} />
                     </Button>
                   ))}
                 </div>
@@ -1172,48 +1172,48 @@ export function HanviSite() {
           </section>
 
           {/* 4-Item Feature Strip Below Hero */}
-          <div className="w-full border-b border-border/60 bg-white py-2.5 sm:py-3 shadow-xs">
+          <div className="w-full border-b border-border/60 bg-white py-2 sm:py-2.5 shadow-xs">
             <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
-              <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-border/60">
+              <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-border/60">
                 {/* Item 1 */}
-                <div className="flex items-center gap-3 sm:justify-center px-2.5 py-0.5">
-                  <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-red-50 text-[#E02424]">
-                    <Award className="size-5 text-[#E02424]" />
+                <div className="flex items-center gap-3 sm:justify-center px-2 py-0.5">
+                  <div className="flex size-8.5 shrink-0 items-center justify-center rounded-lg bg-red-50 text-[#E02424]">
+                    <Award className="size-4.5 text-[#E02424]" />
                   </div>
-                  <div className="text-left text-xs sm:text-[13px] font-bold leading-tight text-foreground">
+                  <div className="text-left text-xs font-bold leading-tight text-foreground">
                     <div>End-to-End</div>
                     <div>Technology Solutions</div>
                   </div>
                 </div>
 
                 {/* Item 2 */}
-                <div className="flex items-center gap-3 sm:justify-center px-2.5 py-0.5">
-                  <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-red-50 text-[#E02424]">
-                    <Settings className="size-5 text-[#E02424]" />
+                <div className="flex items-center gap-3 sm:justify-center px-2 py-0.5">
+                  <div className="flex size-8.5 shrink-0 items-center justify-center rounded-lg bg-red-50 text-[#E02424]">
+                    <Settings className="size-4.5 text-[#E02424]" />
                   </div>
-                  <div className="text-left text-xs sm:text-[13px] font-bold leading-tight text-foreground">
+                  <div className="text-left text-xs font-bold leading-tight text-foreground">
                     <div>Expert Installation</div>
                     <div>&amp; Integration</div>
                   </div>
                 </div>
 
                 {/* Item 3 */}
-                <div className="flex items-center gap-3 sm:justify-center px-2.5 py-0.5">
-                  <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-red-50 text-[#E02424]">
-                    <Users className="size-5 text-[#E02424]" />
+                <div className="flex items-center gap-3 sm:justify-center px-2 py-0.5">
+                  <div className="flex size-8.5 shrink-0 items-center justify-center rounded-lg bg-red-50 text-[#E02424]">
+                    <Users className="size-4.5 text-[#E02424]" />
                   </div>
-                  <div className="text-left text-xs sm:text-[13px] font-bold leading-tight text-foreground">
+                  <div className="text-left text-xs font-bold leading-tight text-foreground">
                     <div>Reliable</div>
                     <div>After-Sales Support</div>
                   </div>
                 </div>
 
                 {/* Item 4 */}
-                <div className="flex items-center gap-3 sm:justify-center px-2.5 py-0.5">
-                  <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-red-50 text-[#E02424]">
-                    <ShieldCheck className="size-5 text-[#E02424]" />
+                <div className="flex items-center gap-3 sm:justify-center px-2 py-0.5">
+                  <div className="flex size-8.5 shrink-0 items-center justify-center rounded-lg bg-red-50 text-[#E02424]">
+                    <ShieldCheck className="size-4.5 text-[#E02424]" />
                   </div>
-                  <div className="text-left text-xs sm:text-[13px] font-bold leading-tight text-foreground">
+                  <div className="text-left text-xs font-bold leading-tight text-foreground">
                     <div>Safe, Secure &amp;</div>
                     <div>Future-Ready Systems</div>
                   </div>
