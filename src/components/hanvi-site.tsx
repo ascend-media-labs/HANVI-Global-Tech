@@ -74,38 +74,98 @@ const services = [
   {
     title: "Fire Alarm System",
     description: "Early detection and alert systems for complete fire safety.",
+    details:
+      "Engineered to deliver rapid, pinpoint fire detection and life-saving alerts before smoke spreads. Our intelligent addressable and conventional alarm systems integrate multi-criteria optical sensors, manual call points, hooters with flashers, and central control panels with 24/7 telemetry monitoring.",
     icon: Flame,
     image: "/services/ref-fire-alarm.jpg",
+    features: [
+      "Intelligent multi-criteria smoke, heat & multi-sensor detectors",
+      "Centralized addressable fire alarm control panels (FACP)",
+      "Automated voice evacuation & directional emergency sounders",
+      "Seamless BMS, access control, and HVAC damper trip integration",
+    ],
+    standards: "NFPA 72, EN 54, BIS & NBC Compliant",
+    suitableFor: "Commercial Towers, SEZs, Hospitals, Tech Parks & Residential Apartments",
   },
   {
     title: "Fire Hydrant System",
     description: "Reliable water-based fire protection for buildings and facilities.",
+    details:
+      "Industrial-grade water-based firefighting networks engineered for high-pressure suppression. Designed with automatic diesel and electrical booster pump assemblies, wet & dry riser pipelines, landing valves, hose reels, and automated sprinkler networks that activate instantly during thermal emergencies.",
     icon: Droplets,
     image: "/services/ref-fire-hydrant.jpg",
+    features: [
+      "Heavy-duty electric, diesel standby & jockey booster pump skids",
+      "Automated wet & dry riser pipeline systems with fire brigade inlets",
+      "High-velocity spray nozzles, hose reel drums & landing valves",
+      "Pressure maintenance valves and certified flow monitoring gauges",
+    ],
+    standards: "NFPA 13 & 14, IS 3844, NBC Fire Safety Norms",
+    suitableFor: "Manufacturing Plants, Warehouses, High-Rise Buildings & Infrastructure Hubs",
   },
   {
     title: "CCTV Surveillance",
     description: "Advanced video monitoring for homes, offices & commercial spaces.",
+    details:
+      "End-to-end IP video surveillance ecosystems offering crystal-clear visual monitoring, smart threat detection, and centralized evidence recording. Powered by AI-driven analytics including perimeter tripwire, facial detection, motion tracking, and ultra low-light night vision.",
     icon: Camera,
     image: "/services/ref-cctv.jpg",
+    features: [
+      "4K Ultra-HD IP dome, bullet, and 360° PTZ cameras with Starlight night vision",
+      "AI video analytics: intrusion detection, crowd density & license plate recognition",
+      "Network Video Recorders (NVR) with RAID redundancy & cloud backup",
+      "Multi-screen command center software and remote mobile streaming apps",
+    ],
+    standards: "ONVIF Profile S/G/T, NDAA Compliant Hardware, IP67 Weatherproof",
+    suitableFor: "Corporate Campuses, Banks, Retail Chains, Gated Communities & Smart Cities",
   },
   {
     title: "Cyber Security Data Center Design",
     description: "Secure, high-availability and scalable data center infrastructure.",
+    details:
+      "Tier-standard mission-critical IT infrastructure engineered for maximum uptime, physical cyber defense, and energy efficiency. We handle turnkey server room architecture, precision cooling, cold/hot aisle containment, redundant UPS backup, and physical security access control.",
     icon: Server,
     image: "/services/ref-data-center.jpg",
+    features: [
+      "Tier III & IV compliant modular server farm architecture",
+      "Precision air conditioning (PAC) with cold/hot aisle containment",
+      "Zero-trust network architecture, hardware security modules & firewall integration",
+      "2N redundant modular UPS systems, lithium battery banks & DG synchronization",
+    ],
+    standards: "TIA-942, Uptime Institute Standards, ISO 27001 Security",
+    suitableFor: "Enterprise IT, FinTech, Cloud Providers, Telecom Hubs & Government SEZs",
   },
   {
     title: "Network Communications & Intercom Solutions",
     description: "Seamless connectivity, intercom and communication systems.",
+    details:
+      "Enterprise-grade connectivity networks ensuring high-throughput data transmission, crystal-clear SIP intercom communications, and campus-wide broadcasting. Engineered with high-speed Cat6A/Fiber optic backbones, managed core switches, and commercial video door phones.",
     icon: Network,
     image: "/services/ref-networking.jpg",
+    features: [
+      "Structured Cat6A and multi-core fiber optic campus backbones",
+      "Enterprise managed switches, routers & high-density WiFi 6/7 access points",
+      "SIP-based IP multi-apartment video door phones & guard consoles",
+      "Digital Public Address (PA) and emergency voice broadcast systems",
+    ],
+    standards: "TIA/EIA-568-C, IEEE 802.3 Ethernet, SIP 2.0 Protocols",
+    suitableFor: "Corporate Offices, Educational Campuses, Gated Communities & Tech Centers",
   },
   {
     title: "Smart Node Home Automation & Touch Switch Boards",
     description: "Intelligent automation and premium touch switch panels for modern living.",
+    details:
+      "Luxury smart home ecosystems combining capacitive feather-touch glass switchboards with invisible IoT automation nodes. Control lights, air conditioning, motorized curtains, and custom ambiance scenes effortlessly through intuitive touch, voice commands, or mobile apps from anywhere.",
     icon: Cpu,
     image: "/services/ref-smart-home.jpg",
+    features: [
+      "Ultra-responsive capacitive glass touch switch panels with ambient backlighting",
+      "Retrofit micro smart nodes that fit behind existing modular gang boxes",
+      "Custom scene control: Welcome, Movie, Night & Away automated presets",
+      "Voice integration (Alexa & Google Home) + remote mobile app automation",
+    ],
+    standards: "BIS Certified, CE, RoHS Compliant, Secure 128-bit IoT Encryption",
+    suitableFor: "Luxury Villas, Premium Apartments, Executive Suites & Boutique Hotels",
   },
 ] as const;
 
@@ -562,6 +622,7 @@ export function HanviSite() {
   const [activeSection, setActiveSection] = useState("home");
   const [formMessage, setFormMessage] = useState("");
   const [legalPage, setLegalPage] = useState<string | null>(null);
+  const [selectedService, setSelectedService] = useState<(typeof services)[number] | null>(null);
 
   function navigateTo(sectionId: string) {
     setActiveSection(sectionId);
@@ -1258,7 +1319,8 @@ export function HanviSite() {
                   return (
                     <article
                       key={service.title}
-                      className="group relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-red-950/20"
+                      onClick={() => setSelectedService(service)}
+                      className="group relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-red-950/20 cursor-pointer"
                       data-reveal
                       style={{ '--reveal-delay': `${index * 80}ms` } as React.CSSProperties}
                     >
@@ -1292,8 +1354,11 @@ export function HanviSite() {
                         {/* Small Circular Arrow Button */}
                         <button
                           type="button"
-                          onClick={() => navigateTo("contact")}
-                          aria-label={`Enquire about ${service.title}`}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setSelectedService(service);
+                          }}
+                          aria-label={`View details of ${service.title}`}
                           className="flex size-7 sm:size-8 shrink-0 items-center justify-center rounded-full border border-[#E02424] text-[#E02424] transition-colors duration-200 hover:bg-[#E02424] hover:text-white cursor-pointer"
                         >
                           <ArrowRight className="size-3.5 sm:size-4" />
@@ -2052,6 +2117,106 @@ export function HanviSite() {
               Approved {legalPage?.toLowerCase()} content was not supplied. Add the company’s reviewed text before publishing.
             </DialogDescription>
           </DialogHeader>
+        </DialogContent>
+      </Dialog>
+
+      {/* Individual Service Detail Modal */}
+      <Dialog open={selectedService !== null} onOpenChange={(open) => { if (!open) setSelectedService(null); }}>
+        <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto p-0 rounded-2xl bg-slate-950 border border-slate-800 text-white shadow-2xl">
+          {selectedService && (
+            <div>
+              {/* Header Banner Image */}
+              <div className="relative h-48 sm:h-56 w-full overflow-hidden">
+                <img
+                  src={selectedService.image}
+                  alt={selectedService.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent" />
+                <div className="absolute bottom-4 left-5 right-5 flex items-end gap-3.5">
+                  <div className="flex size-12 sm:size-14 shrink-0 items-center justify-center rounded-2xl bg-[#E02424] text-white shadow-lg">
+                    <selectedService.icon className="size-6 sm:size-7 text-white" />
+                  </div>
+                  <div>
+                    <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-[#E02424] bg-red-950/80 border border-red-800/60 px-2.5 py-0.5 rounded-full inline-block mb-1">
+                      HANVI Specialized Solution
+                    </span>
+                    <h2 className="text-xl sm:text-2xl font-bold text-white leading-tight">
+                      {selectedService.title}
+                    </h2>
+                  </div>
+                </div>
+              </div>
+
+              {/* Body Content */}
+              <div className="p-5 sm:p-6 space-y-4">
+                {/* Description */}
+                <div>
+                  <h4 className="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">Overview</h4>
+                  <p className="text-xs sm:text-sm text-slate-200 leading-relaxed">
+                    {selectedService.details}
+                  </p>
+                </div>
+
+                {/* Key Technical Features */}
+                <div>
+                  <h4 className="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Key Technical Capabilities</h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    {selectedService.features.map((feature, i) => (
+                      <div key={i} className="flex items-start gap-2 rounded-xl border border-slate-800/80 bg-slate-900/60 p-2.5">
+                        <CheckCircle2 className="size-4 text-[#E02424] shrink-0 mt-0.5" />
+                        <span className="text-xs text-slate-300 font-medium leading-snug">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Standards & Suitability */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2 border-t border-slate-800">
+                  <div className="rounded-xl bg-slate-900/80 border border-slate-800/80 p-2.5">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#E02424] block mb-0.5">Standards &amp; Compliance</span>
+                    <p className="text-xs font-semibold text-slate-300">{selectedService.standards}</p>
+                  </div>
+                  <div className="rounded-xl bg-slate-900/80 border border-slate-800/80 p-2.5">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#E02424] block mb-0.5">Suitable Applications</span>
+                    <p className="text-xs font-semibold text-slate-300">{selectedService.suitableFor}</p>
+                  </div>
+                </div>
+
+                {/* Action Footer */}
+                <div className="pt-3 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3">
+                  <div className="text-xs text-slate-400 text-center sm:text-left">
+                    Need technical consultation or site inspection?
+                  </div>
+                  <div className="flex items-center gap-2 w-full sm:w-auto">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="w-full sm:w-auto rounded-full border-slate-700 text-slate-200 hover:bg-slate-800 cursor-pointer"
+                      onClick={() => setSelectedService(null)}
+                    >
+                      Close
+                    </Button>
+                    <Button
+                      size="sm"
+                      className="w-full sm:w-auto rounded-full bg-[#E02424] hover:bg-red-700 text-white font-semibold cursor-pointer"
+                      onClick={() => {
+                        const sTitle = selectedService.title;
+                        setSelectedService(null);
+                        setFormData((prev) => ({
+                          ...prev,
+                          subject: `Inquiry: ${sTitle}`,
+                        }));
+                        navigateTo("contact");
+                      }}
+                    >
+                      Enquire for this Service →
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
         </DialogContent>
       </Dialog>
     </div>
