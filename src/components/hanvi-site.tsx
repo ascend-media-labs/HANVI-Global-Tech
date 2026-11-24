@@ -296,6 +296,7 @@ function SectionHeading({
 }
 
 export function HanviSite() {
+  const [showNotice, setShowNotice] = useState(true);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -519,6 +520,40 @@ export function HanviSite() {
   return (
     <div className="min-h-screen w-full overflow-x-hidden bg-background text-foreground">
       <header className="sticky top-0 z-50 border-b border-border/50 bg-background/85 backdrop-blur-xl transition-all duration-300 shadow-[0_4px_24px_rgba(0,0,0,0.03)]">
+        {showNotice && (
+          <aside
+            aria-label="Important Announcement"
+            className="relative border-b border-brand-orange/30 bg-gradient-to-r from-slate-950 via-neutral-900 to-slate-950 px-4 py-2 text-white shadow-sm"
+          >
+            <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-3 text-xs sm:px-2">
+              <div className="flex flex-1 items-center justify-center gap-2 sm:gap-3 text-center flex-wrap">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-orange/20 px-2.5 py-0.5 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-brand-gold border border-brand-orange/40 shadow-xs">
+                  <span className="size-1.5 rounded-full bg-brand-orange animate-ping" aria-hidden="true" />
+                  Notice
+                </span>
+                <span className="text-white/90 text-[11px] sm:text-xs">
+                  Enterprise Turnkey Life-Safety, Fire Hydrants, Cyber Data Centers &amp; Smart Automation.
+                </span>
+                <button
+                  type="button"
+                  onClick={() => navigateTo("contact")}
+                  className="inline-flex items-center gap-1 text-[11px] sm:text-xs font-semibold text-brand-gold hover:text-brand-orange underline underline-offset-2 transition-colors cursor-pointer"
+                >
+                  Consult an Engineer <ArrowUpRight className="size-3" aria-hidden="true" />
+                </button>
+              </div>
+
+              <button
+                type="button"
+                onClick={() => setShowNotice(false)}
+                className="shrink-0 rounded-md p-1 text-white/60 hover:bg-white/10 hover:text-white transition-colors cursor-pointer"
+                aria-label="Dismiss notice"
+              >
+                <X className="size-3.5" aria-hidden="true" />
+              </button>
+            </div>
+          </aside>
+        )}
         <div className="mx-auto flex h-[76px] w-full items-center justify-between px-4 sm:px-6 md:px-8 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:px-10 xl:px-12 2xl:px-16">
           <div className="flex items-center justify-start">
             <button
