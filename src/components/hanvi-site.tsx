@@ -2209,18 +2209,18 @@ export function HanviSite() {
                   <span className="text-xs text-slate-400 hidden sm:inline">
                     Need technical consultation or site inspection?
                   </span>
-                  <div className="flex items-center gap-2.5 w-full sm:w-auto justify-end">
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="rounded-full border-slate-700 text-slate-200 hover:bg-slate-800 cursor-pointer text-xs"
+                  <div className="flex items-center gap-3 w-full sm:w-auto justify-end">
+                    <button
+                      type="button"
                       onClick={() => setSelectedService(null)}
+                      className="group inline-flex items-center gap-1.5 rounded-full border border-slate-700/80 bg-slate-900/90 px-4 py-2 text-xs font-semibold text-slate-300 shadow-sm transition-all duration-200 hover:border-slate-500 hover:bg-slate-800 hover:text-white hover:shadow-[0_0_15px_rgba(255,255,255,0.08)] cursor-pointer"
                     >
-                      Close
-                    </Button>
-                    <Button
-                      size="sm"
-                      className="rounded-full bg-[#E02424] hover:bg-red-700 text-white font-semibold text-xs cursor-pointer shadow-md"
+                      <X className="size-3.5 text-slate-400 transition-transform duration-200 group-hover:rotate-90 group-hover:text-white" />
+                      <span>Close</span>
+                    </button>
+                    <button
+                      type="button"
+                      className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-red-600 to-[#E02424] hover:from-red-500 hover:to-red-600 px-5 py-2 text-xs font-semibold text-white shadow-[0_4px_16px_rgba(224,36,36,0.35)] transition-all duration-200 hover:scale-[1.02] hover:shadow-[0_6px_20px_rgba(224,36,36,0.5)] cursor-pointer"
                       onClick={() => {
                         const sTitle = selectedService.title;
                         setSelectedService(null);
@@ -2231,8 +2231,9 @@ export function HanviSite() {
                         navigateTo("contact");
                       }}
                     >
-                      Enquire for this Service →
-                    </Button>
+                      <span>Enquire for this Service</span>
+                      <span aria-hidden="true">→</span>
+                    </button>
                   </div>
                 </div>
               </div>
