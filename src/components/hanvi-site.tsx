@@ -3,8 +3,10 @@ import {
   Activity,
   AlertCircle,
   ArrowDown,
+  ArrowRight,
   ArrowUpRight,
   Award,
+  Camera,
   CheckCircle2,
   ChevronLeft,
   ChevronRight,
@@ -70,49 +72,40 @@ const slides = [
 
 const services = [
   {
-    badge: "Life Safety",
-    title: "FIRE ALARM SYSTEM",
-    description:
-      "Advanced addressable and conventional fire detection networks, smart multi-criteria smoke & heat sensors, emergency voice evacuation systems, and certified life-safety alarm control panels.",
+    title: "Fire Alarm System",
+    description: "Early detection and alert systems for complete fire safety.",
     icon: Flame,
-    image: "/services/fire-alarm.jpg",
-    tags: ["Life Safety", "Addressable Detection", "Compliance Certified"],
+    image: "/services/ref-fire-alarm.jpg",
   },
   {
-    badge: "Fire Protection",
-    title: "FIRE HYDRANT SYSTEM",
-    description:
-      "Heavy-duty commercial and industrial fire protection infrastructure, high-pressure diesel/electric booster pump stations, automated wet/dry sprinkler piping, and fire brigade hydrant valves.",
+    title: "Fire Hydrant System",
+    description: "Reliable water-based fire protection for buildings and facilities.",
     icon: Droplets,
-    image: "/services/fire-hydrant.jpg",
-    tags: ["Industrial Hydrants", "Sprinkler Networks", "High-Pressure Pumps"],
+    image: "/services/ref-fire-hydrant.jpg",
   },
   {
-    badge: "Data Centers",
-    title: "CYBER SECURITY DATA CENTER DESIGN",
-    description:
-      "Tier-standard high-density server farm architecture, zero-trust cybersecurity protocols, cold/hot aisle containment, hardware security modules, precision HVAC, and redundant power infrastructure.",
+    title: "CCTV Surveillance",
+    description: "Advanced video monitoring for homes, offices & commercial spaces.",
+    icon: Camera,
+    image: "/services/ref-cctv.jpg",
+  },
+  {
+    title: "Cyber Security Data Center Design",
+    description: "Secure, high-availability and scalable data center infrastructure.",
     icon: Server,
-    image: "/services/data-center.jpg",
-    tags: ["Tier Architecture", "Zero-Trust Security", "Power Redundancy"],
+    image: "/services/ref-data-center.jpg",
   },
   {
-    badge: "Enterprise Fiber",
-    title: "NETWORK COMMUNICATIONS & INTERCOM SOLUTIONS",
-    description:
-      "Enterprise structured cabling (Cat6A / Fiber Optics), high-speed backbone routing, IP/SIP video intercoms, digital PA broadcast systems, and seamless unified telecommunication networks.",
+    title: "Network Communications & Intercom Solutions",
+    description: "Seamless connectivity, intercom and communication systems.",
     icon: Network,
-    image: "/services/networking.jpg",
-    tags: ["Structured Cabling", "Fiber Backbone", "SIP Intercom"],
+    image: "/services/ref-networking.jpg",
   },
   {
-    badge: "Smart Automation",
-    title: "SMART NODE HOME AUTOMATION & TOUCH SWITCH PANELS",
-    description:
-      "Intelligent IoT smart home ecosystems, luxury capacitive feather-touch switchboard panels, multi-room smart scene control, automated lighting, HVAC integration, and centralized mobile/touch management.",
+    title: "Smart Node Home Automation & Touch Switch Boards",
+    description: "Intelligent automation and premium touch switch panels for modern living.",
     icon: Cpu,
-    image: "/services/smart-home.jpg",
-    tags: ["IoT Smart Nodes", "Touch Switch Panels", "Intelligent Automation"],
+    image: "/services/ref-smart-home.jpg",
   },
 ] as const;
 
@@ -1235,168 +1228,104 @@ export function HanviSite() {
             </div>
           </section>
 
-          <section id="services" className="scroll-mt-20 bg-brand-cream pt-6 pb-6 sm:pt-8 sm:pb-8 lg:pt-10 lg:pb-10 text-foreground border-t border-brand-orange/10">
-            <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
-              <div className="flex flex-col gap-2" data-reveal>
-                <div className="flex flex-col justify-between gap-2.5 sm:flex-row sm:items-end">
-                  <div>
-                    <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-orange font-bold">
-                      <span className="brand-gradient h-0.5 w-5" aria-hidden="true" />
-                      <span>Specialized Services</span>
-                    </div>
-                    <h2 className="font-display text-xl font-semibold tracking-tight text-foreground sm:text-2xl lg:text-[1.85rem]">
-                      Engineering reliable, intelligent, and secure environments.
-                    </h2>
-                  </div>
-                  <button
-                    type="button"
-                    onClick={() => navigateTo("contact")}
-                    className="inline-flex shrink-0 items-center gap-1.5 pb-0.5 text-xs sm:text-sm font-semibold text-brand-orange transition-colors hover:text-brand-rose cursor-pointer"
-                  >
-                    Discuss an opportunity <ArrowUpRight aria-hidden="true" className="size-4" />
-                  </button>
+          <section id="services" className="relative isolate scroll-mt-20 overflow-hidden bg-[#0c0d12] py-12 sm:py-16 text-foreground">
+            {/* Ambient Background glow & particles */}
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900/40 via-[#0c0d12] to-[#0c0d12] pointer-events-none" />
+            <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 w-[900px] h-[260px] bg-red-600/10 blur-[120px] pointer-events-none" />
+
+            <div className="relative mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
+              {/* Section Header */}
+              <div className="flex flex-col items-center text-center mb-8 sm:mb-10" data-reveal>
+                <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-500/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-[#E02424]">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#E02424] animate-pulse" />
+                  <span>Specialized Services</span>
                 </div>
-                <p className="text-xs sm:text-sm text-muted-foreground lg:whitespace-nowrap">
-                  Comprehensive life safety, high-pressure fire systems, tier-standard cyber data centers, structured communications, and smart touch home automation.
+                <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white">
+                  Engineering reliable, intelligent, and secure environments.
+                </h2>
+                <p className="mt-2 text-xs sm:text-sm text-slate-400 max-w-2xl">
+                  Comprehensive life safety, high-pressure fire systems, tier-standard cyber data centers, structured communications, and smart automation.
                 </p>
               </div>
 
-              <div className="mt-5 sm:mt-6 grid gap-4 sm:gap-5 lg:gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {/* 6 Cards Grid matching Image 2 */}
+              <div className="grid gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
                 {services.map((service, index) => {
                   const Icon = service.icon;
                   return (
                     <article
-                      key={service.badge}
-                      className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-brand-orange/30 p-5 sm:p-5.5 lg:p-6 shadow-md backdrop-blur-md glow-card-hover hover:border-brand-orange/70 hover:shadow-[0_24px_50px_-6px_rgba(255,106,0,0.38),0_0_30px_rgba(255,106,0,0.22)] min-h-[380px] sm:min-h-[410px]"
+                      key={service.title}
+                      className="group relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-red-950/20"
                       data-reveal
-                      style={{ '--reveal-delay': `${index * 85}ms` } as React.CSSProperties}
+                      style={{ '--reveal-delay': `${index * 80}ms` } as React.CSSProperties}
                     >
-                      {/* Full Card Background Image Behind Text */}
-                      <img
-                        src={service.image}
-                        alt={service.title}
-                        className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-108"
-                        loading="lazy"
-                      />
-
-                      {/* Gradient Dark Overlay (Subtle scrim so images remain bright and crystal clear) */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 via-50% to-transparent transition-opacity duration-300 group-hover:via-black/25" />
-
-                      {/* Top Edge Gradient Light Beam */}
-                      <div className="pointer-events-none absolute inset-x-0 top-0 h-[2.5px] bg-gradient-to-r from-brand-orange via-brand-gold to-brand-rose opacity-90 transition-opacity duration-500 group-hover:opacity-100 z-10" />
-
-                      {/* Ambient Floating Glow Orb */}
-                      <div className="pointer-events-none absolute -right-8 -top-8 size-36 rounded-full bg-brand-orange/20 blur-2xl opacity-75 transition-opacity duration-500 group-hover:opacity-100 z-10" />
-
-                      {/* Top Row: Floating Icon + Custom Domain Badge */}
-                      <div className="relative z-10 flex items-center justify-between">
-                        <div className="flex size-9.5 sm:size-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-orange to-brand-rose text-white shadow-[0_0_16px_rgba(255,106,0,0.5)] transition-transform duration-300 group-hover:scale-110">
-                          <Icon aria-hidden="true" className="size-4.5" />
-                        </div>
-
-                        <span className="font-display text-[9.5px] sm:text-[10px] font-bold uppercase tracking-wider text-brand-gold px-2.5 py-1 rounded-full bg-black/80 backdrop-blur-md border border-brand-gold/40 shadow-sm">
-                          {service.badge}
-                        </span>
+                      {/* Top Image */}
+                      <div className="relative h-44 sm:h-48 w-full overflow-hidden bg-slate-900">
+                        <img
+                          src={service.image}
+                          alt={service.title}
+                          className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                          loading="lazy"
+                        />
                       </div>
 
-                      {/* Bottom Area: Title, Description, Tags & Action Button */}
-                      <div className="relative z-10 mt-14 sm:mt-16 flex flex-col justify-end">
-                        <h3 className="font-display text-base sm:text-[17px] font-bold tracking-tight text-white transition-colors duration-300 group-hover:text-brand-gold drop-shadow-[0_2px_4px_rgba(0,0,0,0.85)]">
-                          {service.title}
-                        </h3>
-
-                        <p className="mt-2 text-xs sm:text-[13px] leading-relaxed text-white/90 line-clamp-2 drop-shadow-[0_1px_3px_rgba(0,0,0,0.85)]">
-                          {service.description}
-                        </p>
-
-                        <div className="mt-3 flex flex-wrap gap-1.5">
-                          {service.tags.map((tag) => (
-                            <span
-                              key={tag}
-                              className="inline-flex rounded-full border border-brand-orange/35 bg-black/55 px-2.5 py-0.5 text-[11px] font-medium text-brand-gold backdrop-blur-sm transition-colors group-hover:border-brand-orange/60 group-hover:text-white"
-                            >
-                              {tag}
-                            </span>
-                          ))}
+                      {/* Bottom White Container */}
+                      <div className="flex items-center gap-3 p-3.5 sm:p-4 bg-white">
+                        {/* Red Square Icon Badge */}
+                        <div className="flex size-11 sm:size-12 shrink-0 items-center justify-center rounded-xl bg-[#E02424] text-white shadow-sm">
+                          <Icon aria-hidden="true" className="size-6 text-white" />
                         </div>
 
-                        <div className="mt-4 pt-3 border-t border-white/15 flex items-center justify-between">
-                          <button
-                            type="button"
-                            onClick={() => navigateTo("contact")}
-                            className="inline-flex items-center gap-1.5 rounded-full brand-gradient glow-btn-hover px-4 py-2 text-xs font-semibold text-white shadow-[0_4px_14px_rgba(255,80,30,0.3)] cursor-pointer"
-                          >
-                            Enquire about this service <ArrowUpRight aria-hidden="true" className="size-3.5" />
-                          </button>
+                        {/* Title & Description */}
+                        <div className="min-w-0 flex-1 text-left">
+                          <h3 className="font-display text-xs sm:text-[13px] md:text-sm font-bold text-slate-900 leading-snug">
+                            {service.title}
+                          </h3>
+                          <p className="mt-0.5 text-[10.5px] sm:text-[11.5px] text-slate-500 leading-snug line-clamp-2">
+                            {service.description}
+                          </p>
                         </div>
+
+                        {/* Small Circular Arrow Button */}
+                        <button
+                          type="button"
+                          onClick={() => navigateTo("contact")}
+                          aria-label={`Enquire about ${service.title}`}
+                          className="flex size-7 sm:size-8 shrink-0 items-center justify-center rounded-full border border-[#E02424] text-[#E02424] transition-colors duration-200 hover:bg-[#E02424] hover:text-white cursor-pointer"
+                        >
+                          <ArrowRight className="size-3.5 sm:size-4" />
+                        </button>
                       </div>
                     </article>
                   );
                 })}
-
-                {/* 6th Card: Custom Turnkey Engineering Consultation with full card background image */}
-                <article
-                  className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-brand-orange/30 p-5 sm:p-5.5 lg:p-6 shadow-md backdrop-blur-md glow-card-hover hover:border-brand-orange/70 hover:shadow-[0_24px_50px_-6px_rgba(255,106,0,0.38),0_0_30px_rgba(255,106,0,0.22)] min-h-[380px] sm:min-h-[410px]"
-                  data-reveal
-                  style={{ '--reveal-delay': '450ms' } as React.CSSProperties}
-                >
-                  {/* Full Card Background Image Behind Text */}
-                  <img
-                    src="/services/turnkey-consulting.jpg"
-                    alt="CUSTOM TURNKEY ENGINEERING & CONSULTING"
-                    className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-108"
-                    loading="lazy"
-                  />
-
-                  {/* Gradient Dark Overlay (Subtle scrim so images remain bright and crystal clear) */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 via-50% to-transparent transition-opacity duration-300 group-hover:via-black/25" />
-
-                  <div className="pointer-events-none absolute inset-x-0 top-0 h-[2.5px] bg-gradient-to-r from-brand-orange via-brand-gold to-brand-rose z-10" />
-                  <div className="pointer-events-none absolute -right-8 -top-8 size-36 rounded-full bg-brand-orange/20 blur-2xl opacity-75 group-hover:opacity-100 transition-opacity z-10" />
-
-                  <div className="relative z-10 flex items-center justify-between">
-                    <div className="flex size-9.5 sm:size-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-orange to-brand-rose text-white shadow-[0_0_16px_rgba(255,106,0,0.5)] transition-all duration-300 group-hover:scale-110">
-                      <Layers3 aria-hidden="true" className="size-4.5" />
-                    </div>
-
-                    <span className="font-display text-[9.5px] sm:text-[10px] font-bold uppercase tracking-wider text-brand-gold px-2.5 py-1 rounded-full bg-black/80 backdrop-blur-md border border-brand-gold/40 shadow-sm">
-                      Custom Solutions
-                    </span>
-                  </div>
-
-                  <div className="relative z-10 mt-14 sm:mt-16 flex flex-col justify-end">
-                    <h3 className="font-display text-base sm:text-[17px] font-bold tracking-tight text-white transition-colors duration-300 group-hover:text-brand-gold drop-shadow-[0_2px_4px_rgba(0,0,0,0.85)]">
-                      CUSTOM TURNKEY ENGINEERING &amp; CONSULTING
-                    </h3>
-
-                    <p className="mt-2 text-xs sm:text-[13px] leading-relaxed text-white/90 line-clamp-2 drop-shadow-[0_1px_3px_rgba(0,0,0,0.85)]">
-                      Comprehensive industrial, commercial, or residential blueprints designed and executed end-to-end.
-                    </p>
-
-                    <div className="mt-3 flex flex-wrap gap-1.5">
-                      <span className="inline-flex rounded-full border border-brand-orange/35 bg-black/55 px-2.5 py-0.5 text-[11px] font-medium text-brand-gold backdrop-blur-sm">
-                        Turnkey EPC
-                      </span>
-                      <span className="inline-flex rounded-full border border-brand-orange/35 bg-black/55 px-2.5 py-0.5 text-[11px] font-medium text-brand-gold backdrop-blur-sm">
-                        Site Auditing
-                      </span>
-                      <span className="inline-flex rounded-full border border-brand-orange/35 bg-black/55 px-2.5 py-0.5 text-[11px] font-medium text-brand-gold backdrop-blur-sm">
-                        AMC &amp; Support
-                      </span>
-                    </div>
-
-                    <div className="mt-4 pt-3 border-t border-white/15 flex items-center justify-between">
-                      <button
-                        type="button"
-                        onClick={() => navigateTo("contact")}
-                        className="inline-flex items-center gap-1.5 rounded-full brand-gradient glow-btn-hover px-4 py-2 text-xs font-semibold text-white shadow-[0_4px_14px_rgba(255,80,30,0.3)] cursor-pointer"
-                      >
-                        Request consultation <ArrowUpRight aria-hidden="true" className="size-3.5" />
-                      </button>
-                    </div>
-                  </div>
-                </article>
               </div>
+
+              {/* View All Solutions Red Pill Button */}
+              <div className="mt-8 sm:mt-10 flex justify-center relative z-10" data-reveal>
+                <button
+                  type="button"
+                  onClick={() => navigateTo("contact")}
+                  className="inline-flex items-center gap-2 rounded-full bg-[#E02424] hover:bg-red-700 text-white px-8 py-3 text-xs sm:text-sm font-bold shadow-lg shadow-red-950/40 transition-transform duration-200 hover:scale-105 cursor-pointer"
+                >
+                  <span>View All Solutions</span>
+                  <ArrowRight className="size-4" />
+                </button>
+              </div>
+            </div>
+
+            {/* Bottom Red Mesh Wave SVG Accent */}
+            <div className="absolute inset-x-0 bottom-0 h-24 pointer-events-none opacity-40 overflow-hidden flex items-end">
+              <svg viewBox="0 0 1440 120" fill="none" className="w-full h-full text-[#E02424]/40" preserveAspectRatio="none">
+                <path d="M0,64L60,69.3C120,75,240,85,360,80C480,75,600,53,720,53.3C840,53,960,75,1080,80C1200,85,1320,75,1380,69.3L1440,64L1440,120L1380,120C1320,120,1200,120,1080,120C960,120,840,120,720,120C600,120,480,120,360,120C240,120,120,120,60,120L0,120Z" fill="url(#redWaveGrad)" />
+                <defs>
+                  <linearGradient id="redWaveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#E02424" stopOpacity="0.4" />
+                    <stop offset="50%" stopColor="#E02424" stopOpacity="0.05" />
+                    <stop offset="100%" stopColor="#E02424" stopOpacity="0.4" />
+                  </linearGradient>
+                </defs>
+              </svg>
             </div>
           </section>
 
