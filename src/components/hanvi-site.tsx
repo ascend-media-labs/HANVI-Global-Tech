@@ -1243,6 +1243,7 @@ export function HanviSite() {
                   Trusted enterprise partners, institutions, and infrastructure clients across diverse commercial &amp; industrial domains.
                 </p>
               </div>
+
               {/* Infinite Horizontal Scroll Animated Tracks */}
               <div className="relative mt-5 sm:mt-6 overflow-hidden pause-hover select-none">
                 {/* Left Edge Subtle Fade Mask */}
@@ -1251,37 +1252,37 @@ export function HanviSite() {
                 {/* Right Edge Subtle Fade Mask */}
                 <div className="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-24 bg-gradient-to-l from-brand-cream-alt via-brand-cream-alt/80 to-transparent z-10" />
 
-              {/* Row 1: Scrolling Left */}
-              <div className="animate-marquee-left flex gap-4 sm:gap-5 pb-3.5">
-                {[...clientPlaceholders.slice(0, 4), ...clientPlaceholders.slice(0, 4), ...clientPlaceholders.slice(0, 4), ...clientPlaceholders.slice(0, 4)].map((client, index) => (
-                  <div
-                    key={`r1-${client.name}-${index}`}
-                    className="group relative flex w-[225px] sm:w-[255px] md:w-[275px] h-[100px] sm:h-[115px] shrink-0 items-center justify-center overflow-hidden rounded-2xl sm:rounded-3xl border border-brand-orange/20 bg-white px-4 py-2 shadow-sm backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_14px_30px_-6px_rgba(255,106,0,0.22)] hover:scale-105 transition-all duration-300"
-                    title={client.name}
-                  >
-                    <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-brand-orange via-brand-gold to-brand-rose opacity-80 group-hover:opacity-100 transition-opacity" />
-                    <div className="flex h-full w-full items-center justify-center">
-                      {client.logo}
+                {/* Row 1: Scrolling Left */}
+                <div className="animate-marquee-left flex gap-4 sm:gap-5 pb-3.5">
+                  {[...clientPlaceholders.slice(0, 4), ...clientPlaceholders.slice(0, 4), ...clientPlaceholders.slice(0, 4), ...clientPlaceholders.slice(0, 4)].map((client, index) => (
+                    <div
+                      key={`r1-${client.name}-${index}`}
+                      className="group relative flex w-[225px] sm:w-[255px] md:w-[275px] h-[100px] sm:h-[115px] shrink-0 items-center justify-center overflow-hidden rounded-2xl sm:rounded-3xl border border-brand-orange/20 bg-white px-4 py-2 shadow-sm backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_14px_30px_-6px_rgba(255,106,0,0.22)] hover:scale-105 transition-all duration-300"
+                      title={client.name}
+                    >
+                      <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-brand-orange via-brand-gold to-brand-rose opacity-80 group-hover:opacity-100 transition-opacity" />
+                      <div className="flex h-full w-full items-center justify-center">
+                        {client.logo}
+                      </div>
                     </div>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
 
-              {/* Row 2: Scrolling Right */}
-              <div className="animate-marquee-right flex gap-4 sm:gap-5 pt-1">
-                {[...clientPlaceholders.slice(4, 8), ...clientPlaceholders.slice(4, 8), ...clientPlaceholders.slice(4, 8), ...clientPlaceholders.slice(4, 8)].map((client, index) => (
-                  <div
-                    key={`r2-${client.name}-${index}`}
-                    className="group relative flex w-[225px] sm:w-[255px] md:w-[275px] h-[100px] sm:h-[115px] shrink-0 items-center justify-center overflow-hidden rounded-2xl sm:rounded-3xl border border-brand-orange/20 bg-white px-4 py-2 shadow-sm backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_14px_30px_-6px_rgba(255,106,0,0.22)] hover:scale-105 transition-all duration-300"
-                    title={client.name}
-                  >
-                    <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-brand-orange via-brand-gold to-brand-rose opacity-80 group-hover:opacity-100 transition-opacity" />
-                    <div className="flex h-full w-full items-center justify-center">
-                      {client.logo}
+                {/* Row 2: Scrolling Right */}
+                <div className="animate-marquee-right flex gap-4 sm:gap-5 pt-1">
+                  {[...clientPlaceholders.slice(4, 8), ...clientPlaceholders.slice(4, 8), ...clientPlaceholders.slice(4, 8), ...clientPlaceholders.slice(4, 8)].map((client, index) => (
+                    <div
+                      key={`r2-${client.name}-${index}`}
+                      className="group relative flex w-[225px] sm:w-[255px] md:w-[275px] h-[100px] sm:h-[115px] shrink-0 items-center justify-center overflow-hidden rounded-2xl sm:rounded-3xl border border-brand-orange/20 bg-white px-4 py-2 shadow-sm backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_14px_30px_-6px_rgba(255,106,0,0.22)] hover:scale-105 transition-all duration-300"
+                      title={client.name}
+                    >
+                      <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-brand-orange via-brand-gold to-brand-rose opacity-80 group-hover:opacity-100 transition-opacity" />
+                      <div className="flex h-full w-full items-center justify-center">
+                        {client.logo}
+                      </div>
                     </div>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
               </div>
             </div>
           </section>
