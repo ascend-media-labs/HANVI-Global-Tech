@@ -1063,46 +1063,45 @@ export function HanviSite() {
                 return (
                   <article
                     key={service.badge}
-                    className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-brand-orange/20 bg-white/95 p-4.5 sm:p-5 lg:p-5.5 shadow-sm backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_22px_45px_-6px_rgba(255,106,0,0.32),0_0_28px_rgba(255,106,0,0.2)]"
+                    className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-brand-orange/30 p-5 sm:p-5.5 lg:p-6 shadow-md backdrop-blur-md glow-card-hover hover:border-brand-orange/70 hover:shadow-[0_24px_50px_-6px_rgba(255,106,0,0.38),0_0_30px_rgba(255,106,0,0.22)] min-h-[380px] sm:min-h-[410px]"
                     data-reveal
                     style={{ '--reveal-delay': `${index * 85}ms` } as React.CSSProperties}
                   >
+                    {/* Full Card Background Image Behind Text */}
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-108"
+                      loading="lazy"
+                    />
+
+                    {/* Gradient Dark Overlay for Superior Text Legibility */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/75 to-black/45 transition-opacity duration-300 group-hover:via-black/70" />
+
                     {/* Top Edge Gradient Light Beam */}
-                    <div className="pointer-events-none absolute inset-x-0 top-0 h-[2.5px] bg-gradient-to-r from-brand-orange via-brand-gold to-brand-rose opacity-90 transition-opacity duration-500 group-hover:opacity-100" />
+                    <div className="pointer-events-none absolute inset-x-0 top-0 h-[2.5px] bg-gradient-to-r from-brand-orange via-brand-gold to-brand-rose opacity-90 transition-opacity duration-500 group-hover:opacity-100 z-10" />
 
                     {/* Ambient Floating Glow Orb */}
-                    <div className="pointer-events-none absolute -right-8 -top-8 size-36 rounded-full bg-brand-orange/10 blur-2xl opacity-75 transition-opacity duration-500 group-hover:opacity-100" />
+                    <div className="pointer-events-none absolute -right-8 -top-8 size-36 rounded-full bg-brand-orange/20 blur-2xl opacity-75 transition-opacity duration-500 group-hover:opacity-100 z-10" />
 
-                    {/* Ambient Bottom Corner Glow */}
-                    <div className="pointer-events-none absolute -bottom-8 -left-8 size-28 rounded-full bg-brand-gold/10 blur-2xl opacity-60 transition-opacity duration-500 group-hover:opacity-100" />
-
-                    <div className="relative z-10">
-                      {/* Enhanced Preview Image */}
-                      <div className="relative mb-3.5 h-40 sm:h-44 lg:h-48 w-full overflow-hidden rounded-xl border border-black/5 bg-muted/40 shadow-inner">
-                        <img
-                          src={service.image}
-                          alt={service.title}
-                          className="h-full w-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-108"
-                          loading="lazy"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/15" />
-
-                        {/* Floating Icon Badge */}
-                        <div className="absolute bottom-2.5 left-2.5 flex size-9 sm:size-9.5 items-center justify-center rounded-lg bg-gradient-to-br from-brand-orange to-brand-rose text-white shadow-[0_0_14px_rgba(255,106,0,0.45)] transition-transform duration-300 group-hover:scale-110">
-                          <Icon aria-hidden="true" className="size-4 sm:size-4.5" />
-                        </div>
-
-                        {/* Custom Domain Badge (Custom Solutions style) */}
-                        <span className="absolute top-2.5 right-2.5 font-display text-[9.5px] sm:text-[10px] font-bold uppercase tracking-wider text-brand-gold px-2.5 py-0.5 rounded-full bg-black/75 backdrop-blur-md border border-brand-gold/30 shadow-sm">
-                          {service.badge}
-                        </span>
+                    {/* Top Row: Floating Icon + Custom Domain Badge */}
+                    <div className="relative z-10 flex items-center justify-between">
+                      <div className="flex size-9.5 sm:size-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-orange to-brand-rose text-white shadow-[0_0_16px_rgba(255,106,0,0.5)] transition-transform duration-300 group-hover:scale-110">
+                        <Icon aria-hidden="true" className="size-4.5" />
                       </div>
 
-                      <h3 className="font-display text-[15px] sm:text-base font-bold tracking-tight text-foreground transition-colors duration-300 group-hover:text-brand-orange line-clamp-1">
+                      <span className="font-display text-[9.5px] sm:text-[10px] font-bold uppercase tracking-wider text-brand-gold px-2.5 py-1 rounded-full bg-black/80 backdrop-blur-md border border-brand-gold/40 shadow-sm">
+                        {service.badge}
+                      </span>
+                    </div>
+
+                    {/* Bottom Area: Title, Description, Tags & Action Button */}
+                    <div className="relative z-10 mt-14 sm:mt-16 flex flex-col justify-end">
+                      <h3 className="font-display text-base sm:text-[17px] font-bold tracking-tight text-white transition-colors duration-300 group-hover:text-brand-gold">
                         {service.title}
                       </h3>
 
-                      <p className="mt-1.5 text-xs sm:text-[13px] leading-relaxed text-muted-foreground transition-colors group-hover:text-foreground line-clamp-2">
+                      <p className="mt-2 text-xs sm:text-[13px] leading-relaxed text-white/80 line-clamp-2">
                         {service.description}
                       </p>
 
@@ -1110,85 +1109,87 @@ export function HanviSite() {
                         {service.tags.map((tag) => (
                           <span
                             key={tag}
-                            className="inline-flex rounded-full border border-brand-orange/25 bg-brand-orange/10 px-2.5 py-0.5 text-[11px] font-medium text-brand-orange transition-colors duration-300 group-hover:border-brand-orange/40 group-hover:bg-brand-orange/20"
+                            className="inline-flex rounded-full border border-brand-orange/35 bg-black/55 px-2.5 py-0.5 text-[11px] font-medium text-brand-gold backdrop-blur-sm transition-colors group-hover:border-brand-orange/60 group-hover:text-white"
                           >
                             {tag}
                           </span>
                         ))}
                       </div>
-                    </div>
 
-                    <div className="relative z-10 mt-3.5 pt-3 border-t border-border/60 flex items-center justify-between">
-                      <button
-                        type="button"
-                        onClick={() => navigateTo("contact")}
-                        className="inline-flex items-center gap-1.5 rounded-full brand-gradient glow-btn-hover px-4 py-2 text-xs font-semibold text-primary-foreground shadow-[0_4px_14px_rgba(255,80,30,0.25)] cursor-pointer"
-                      >
-                        Enquire about this service <ArrowUpRight aria-hidden="true" className="size-3.5" />
-                      </button>
+                      <div className="mt-4 pt-3 border-t border-white/15 flex items-center justify-between">
+                        <button
+                          type="button"
+                          onClick={() => navigateTo("contact")}
+                          className="inline-flex items-center gap-1.5 rounded-full brand-gradient glow-btn-hover px-4 py-2 text-xs font-semibold text-white shadow-[0_4px_14px_rgba(255,80,30,0.3)] cursor-pointer"
+                        >
+                          Enquire about this service <ArrowUpRight aria-hidden="true" className="size-3.5" />
+                        </button>
+                      </div>
                     </div>
                   </article>
                 );
               })}
 
-              {/* 6th Card: Custom Turnkey Engineering Consultation */}
+              {/* 6th Card: Custom Turnkey Engineering Consultation with full card background image */}
               <article
-                className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-brand-orange/30 bg-gradient-to-br from-white via-brand-orange/[0.04] to-brand-gold/[0.08] p-4.5 sm:p-5 lg:p-5.5 shadow-sm backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_22px_45px_-6px_rgba(255,106,0,0.32),0_0_28px_rgba(255,106,0,0.2)]"
+                className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-brand-orange/30 p-5 sm:p-5.5 lg:p-6 shadow-md backdrop-blur-md glow-card-hover hover:border-brand-orange/70 hover:shadow-[0_24px_50px_-6px_rgba(255,106,0,0.38),0_0_30px_rgba(255,106,0,0.22)] min-h-[380px] sm:min-h-[410px]"
                 data-reveal
                 style={{ '--reveal-delay': '450ms' } as React.CSSProperties}
               >
-                <div className="pointer-events-none absolute inset-x-0 top-0 h-[2.5px] bg-gradient-to-r from-brand-orange via-brand-gold to-brand-rose" />
-                <div className="pointer-events-none absolute -right-8 -top-8 size-36 rounded-full bg-brand-orange/15 blur-2xl opacity-75 group-hover:opacity-100 transition-opacity" />
+                {/* Full Card Background Image Behind Text */}
+                <img
+                  src="/services/turnkey-consulting.jpg"
+                  alt="CUSTOM TURNKEY ENGINEERING & CONSULTING"
+                  className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-108"
+                  loading="lazy"
+                />
 
-                <div className="relative z-10">
-                  {/* Contextual Visual Preview Image for 6th Card */}
-                  <div className="relative mb-3.5 h-40 sm:h-44 lg:h-48 w-full overflow-hidden rounded-xl border border-black/5 bg-muted/40 shadow-inner">
-                    <img
-                      src="/services/turnkey-consulting.jpg"
-                      alt="CUSTOM TURNKEY ENGINEERING & CONSULTING"
-                      className="h-full w-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-108"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/15" />
+                {/* Gradient Dark Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/75 to-black/45 transition-opacity duration-300 group-hover:via-black/70" />
 
-                    <div className="absolute bottom-2.5 left-2.5 flex size-9 sm:size-9.5 items-center justify-center rounded-lg bg-gradient-to-br from-brand-orange to-brand-rose text-white shadow-[0_0_15px_rgba(255,106,0,0.45)] transition-all duration-300 group-hover:scale-110">
-                      <Layers3 aria-hidden="true" className="size-4 sm:size-4.5" />
-                    </div>
+                <div className="pointer-events-none absolute inset-x-0 top-0 h-[2.5px] bg-gradient-to-r from-brand-orange via-brand-gold to-brand-rose z-10" />
+                <div className="pointer-events-none absolute -right-8 -top-8 size-36 rounded-full bg-brand-orange/20 blur-2xl opacity-75 group-hover:opacity-100 transition-opacity z-10" />
 
-                    <span className="absolute top-2.5 right-2.5 font-display text-[10px] font-bold uppercase tracking-wider text-brand-gold px-2.5 py-0.5 rounded-full bg-black/75 backdrop-blur-md border border-brand-gold/30 shadow-sm">
-                      Custom Solutions
-                    </span>
+                <div className="relative z-10 flex items-center justify-between">
+                  <div className="flex size-9.5 sm:size-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-orange to-brand-rose text-white shadow-[0_0_16px_rgba(255,106,0,0.5)] transition-all duration-300 group-hover:scale-110">
+                    <Layers3 aria-hidden="true" className="size-4.5" />
                   </div>
 
-                  <h3 className="font-display text-[15px] sm:text-base font-bold tracking-tight text-foreground line-clamp-1">
+                  <span className="font-display text-[9.5px] sm:text-[10px] font-bold uppercase tracking-wider text-brand-gold px-2.5 py-1 rounded-full bg-black/80 backdrop-blur-md border border-brand-gold/40 shadow-sm">
+                    Custom Solutions
+                  </span>
+                </div>
+
+                <div className="relative z-10 mt-14 sm:mt-16 flex flex-col justify-end">
+                  <h3 className="font-display text-base sm:text-[17px] font-bold tracking-tight text-white transition-colors duration-300 group-hover:text-brand-gold">
                     CUSTOM TURNKEY ENGINEERING &amp; CONSULTING
                   </h3>
 
-                  <p className="mt-1.5 text-xs sm:text-[13px] leading-relaxed text-muted-foreground line-clamp-2">
+                  <p className="mt-2 text-xs sm:text-[13px] leading-relaxed text-white/80 line-clamp-2">
                     Comprehensive industrial, commercial, or residential blueprints designed and executed end-to-end.
                   </p>
 
                   <div className="mt-3 flex flex-wrap gap-1.5">
-                    <span className="inline-flex rounded-full border border-brand-orange/25 bg-brand-orange/10 px-2.5 py-0.5 text-[11px] font-medium text-brand-orange">
+                    <span className="inline-flex rounded-full border border-brand-orange/35 bg-black/55 px-2.5 py-0.5 text-[11px] font-medium text-brand-gold backdrop-blur-sm">
                       Turnkey EPC
                     </span>
-                    <span className="inline-flex rounded-full border border-brand-orange/25 bg-brand-orange/10 px-2.5 py-0.5 text-[11px] font-medium text-brand-orange">
+                    <span className="inline-flex rounded-full border border-brand-orange/35 bg-black/55 px-2.5 py-0.5 text-[11px] font-medium text-brand-gold backdrop-blur-sm">
                       Site Auditing
                     </span>
-                    <span className="inline-flex rounded-full border border-brand-orange/25 bg-brand-orange/10 px-2.5 py-0.5 text-[11px] font-medium text-brand-orange">
+                    <span className="inline-flex rounded-full border border-brand-orange/35 bg-black/55 px-2.5 py-0.5 text-[11px] font-medium text-brand-gold backdrop-blur-sm">
                       AMC &amp; Support
                     </span>
                   </div>
-                </div>
 
-                <div className="relative z-10 mt-3.5 pt-3 border-t border-border/60 flex items-center justify-between">
-                  <button
-                    type="button"
-                    onClick={() => navigateTo("contact")}
-                    className="inline-flex items-center gap-1.5 rounded-full brand-gradient glow-btn-hover px-4 py-2 text-xs font-semibold text-primary-foreground shadow-[0_4px_14px_rgba(255,80,30,0.25)] cursor-pointer"
-                  >
-                    Request consultation <ArrowUpRight aria-hidden="true" className="size-3.5" />
-                  </button>
+                  <div className="mt-4 pt-3 border-t border-white/15 flex items-center justify-between">
+                    <button
+                      type="button"
+                      onClick={() => navigateTo("contact")}
+                      className="inline-flex items-center gap-1.5 rounded-full brand-gradient glow-btn-hover px-4 py-2 text-xs font-semibold text-white shadow-[0_4px_14px_rgba(255,80,30,0.3)] cursor-pointer"
+                    >
+                      Request consultation <ArrowUpRight aria-hidden="true" className="size-3.5" />
+                    </button>
+                  </div>
                 </div>
               </article>
             </div>
