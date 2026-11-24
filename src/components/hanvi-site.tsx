@@ -61,7 +61,7 @@ const slides = [
 
 const services = [
   {
-    number: "01",
+    badge: "Life Safety",
     title: "FIRE ALARM SYSTEM",
     description:
       "Advanced addressable and conventional fire detection networks, smart multi-criteria smoke & heat sensors, emergency voice evacuation systems, and certified life-safety alarm control panels.",
@@ -70,7 +70,7 @@ const services = [
     tags: ["Life Safety", "Addressable Detection", "Compliance Certified"],
   },
   {
-    number: "02",
+    badge: "Fire Protection",
     title: "FIRE HYDRANT SYSTEM",
     description:
       "Heavy-duty commercial and industrial fire protection infrastructure, high-pressure diesel/electric booster pump stations, automated wet/dry sprinkler piping, and fire brigade hydrant valves.",
@@ -79,7 +79,7 @@ const services = [
     tags: ["Industrial Hydrants", "Sprinkler Networks", "High-Pressure Pumps"],
   },
   {
-    number: "03",
+    badge: "Data Centers",
     title: "CYBER SECURITY DATA CENTER DESIGN",
     description:
       "Tier-standard high-density server farm architecture, zero-trust cybersecurity protocols, cold/hot aisle containment, hardware security modules, precision HVAC, and redundant power infrastructure.",
@@ -88,7 +88,7 @@ const services = [
     tags: ["Tier Architecture", "Zero-Trust Security", "Power Redundancy"],
   },
   {
-    number: "04",
+    badge: "Enterprise Fiber",
     title: "NETWORK COMMUNICATIONS & INTERCOM SOLUTIONS",
     description:
       "Enterprise structured cabling (Cat6A / Fiber Optics), high-speed backbone routing, IP/SIP video intercoms, digital PA broadcast systems, and seamless unified telecommunication networks.",
@@ -97,7 +97,7 @@ const services = [
     tags: ["Structured Cabling", "Fiber Backbone", "SIP Intercom"],
   },
   {
-    number: "05",
+    badge: "Smart Automation",
     title: "SMART NODE HOME AUTOMATION & TOUCH SWITCH PANELS",
     description:
       "Intelligent IoT smart home ecosystems, luxury capacitive feather-touch switchboard panels, multi-room smart scene control, automated lighting, HVAC integration, and centralized mobile/touch management.",
@@ -807,7 +807,7 @@ export function HanviSite() {
                 const Icon = service.icon;
                 return (
                   <article
-                    key={service.number}
+                    key={service.badge}
                     className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-brand-orange/20 bg-white/95 p-4.5 sm:p-5 lg:p-5.5 shadow-sm backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_22px_45px_-6px_rgba(255,106,0,0.32),0_0_28px_rgba(255,106,0,0.2)]"
                     data-reveal
                     style={{ '--reveal-delay': `${index * 85}ms` } as React.CSSProperties}
@@ -822,7 +822,7 @@ export function HanviSite() {
                     <div className="pointer-events-none absolute -bottom-8 -left-8 size-28 rounded-full bg-brand-gold/10 blur-2xl opacity-60 transition-opacity duration-500 group-hover:opacity-100" />
 
                     <div className="relative z-10">
-                      {/* Enhanced Preview Image (Increased size to fit screen generously) */}
+                      {/* Enhanced Preview Image */}
                       <div className="relative mb-3.5 h-40 sm:h-44 lg:h-48 w-full overflow-hidden rounded-xl border border-black/5 bg-muted/40 shadow-inner">
                         <img
                           src={service.image}
@@ -837,9 +837,9 @@ export function HanviSite() {
                           <Icon aria-hidden="true" className="size-4 sm:size-4.5" />
                         </div>
 
-                        {/* Number Badge */}
-                        <span className="absolute top-2.5 right-2.5 font-mono text-[11px] font-bold tracking-widest text-brand-gold px-2.5 py-0.5 rounded-full bg-black/75 backdrop-blur-md border border-brand-gold/30 shadow-sm">
-                          {service.number}
+                        {/* Custom Domain Badge (Custom Solutions style) */}
+                        <span className="absolute top-2.5 right-2.5 font-display text-[9.5px] sm:text-[10px] font-bold uppercase tracking-wider text-brand-gold px-2.5 py-0.5 rounded-full bg-black/75 backdrop-blur-md border border-brand-gold/30 shadow-sm">
+                          {service.badge}
                         </span>
                       </div>
 
@@ -1398,7 +1398,7 @@ export function HanviSite() {
               <h2 className="text-xs font-semibold uppercase text-background/55">Services</h2>
               <ul className="mt-4 space-y-2.5">
                 {services.map((service) => (
-                  <li key={service.number}>
+                  <li key={service.badge}>
                     <button
                       type="button"
                       onClick={() => navigateTo("services")}
