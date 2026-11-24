@@ -1,24 +1,45 @@
-# Pixel Perfect Match
+# HANVI GLOBAL TECH PVT LTD
 
-Implement exactly the screenshot and nothing else
+Official corporate website and digital platform for **HANVI GLOBAL TECH PVT LTD**.
 
-This project was built with [Lovable](https://lovable.dev).
+## Core Competencies & Solutions
 
-## Build with Lovable
+- **Life Safety & Intelligent Fire Detection**: Addressable fire alarm networks, optical smoke sensors, and emergency response integration.
+- **High-Pressure Fire Hydrant Infrastructure**: High-capacity pump stations, wet riser systems, and fire safety engineering.
+- **Cyber Data Centers & Power Infrastructure**: Tier-grade server room engineering, precision cooling, and APC uninterrupted power redundancy.
+- **Enterprise Networking & Structured Fiber**: High-speed campus network backbones, CommScope structured cabling, and VoIP/SIP comms.
+- **Smart IoT Automation & Touch Switch Panels**: Feather-touch luxury capacitive switchboards, smart home node networks, and intelligent lighting.
+- **Turnkey Consulting & Engineering EPC**: Design, auditing, regulatory clearance, and long-term AMC maintenance.
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/706409d5-9f88-4805-891a-1d3d0190f72b).
+## Tech Stack
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+- **Framework**: TanStack Start / React 19
+- **Bundler**: Vite
+- **Styling**: Tailwind CSS v4
+- **Icons**: Lucide React
+- **Testing**: Vitest
 
-## Development
+## Getting Started
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+### Prerequisites
+Node.js 18+ and npm installed.
 
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+### Setup & Installation
+```bash
+npm install
+```
+
+### Development
+```bash
 npm run dev
+```
+
+### Run Tests
+```bash
+npm test
+```
+
+### Production Build
+```bash
+npm run build
 ```
