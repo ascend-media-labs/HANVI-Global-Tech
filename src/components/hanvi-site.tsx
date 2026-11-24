@@ -1904,7 +1904,7 @@ export function HanviSite() {
                 Specializing in life safety fire alarm systems, fire hydrants, cyber data centers, enterprise networking, and smart IoT home automation.
               </p>
               <div className="mt-4">
-                <p className="text-[11px] font-semibold uppercase tracking-wider text-background/60">Social connections</p>
+                <p className="text-[11px] font-bold uppercase tracking-widest text-white/80">Social Connections</p>
                 <div className="mt-2.5 flex items-center gap-3 text-background/80" aria-label="Social media connections">
                   {/* Official LinkedIn */}
                   <a
@@ -1945,19 +1945,29 @@ export function HanviSite() {
                     </svg>
                   </a>
 
-                  <span className="text-xs text-background/60">Follow HANVI online</span>
+                  <span className="text-xs text-background/60">Follow HANVI Online</span>
                 </div>
               </div>
             </div>
+
+            {/* Column 2: Quick Links */}
             <div>
-              <h2 className="text-xs font-semibold uppercase text-background/55">Quick links</h2>
-              <ul className="mt-4 space-y-3">
-                {navigation.map((item) => (
+              <h3 className="text-xs font-bold uppercase tracking-widest text-white/90">Quick Links</h3>
+              <ul className="mt-4 space-y-2.5">
+                {[
+                  { label: "Home", id: "home" },
+                  { label: "About Us", id: "about" },
+                  { label: "Services", id: "services" },
+                  { label: "Clients", id: "clients" },
+                  { label: "Partners", id: "partners" },
+                  { label: "Why Choose Us", id: "why-us" },
+                  { label: "Contact Us", id: "contact" },
+                ].map((item) => (
                   <li key={item.id}>
                     <button
                       type="button"
                       onClick={() => navigateTo(item.id)}
-                      className={`text-sm text-left transition-colors cursor-pointer ${activeSection === item.id ? "text-brand-gold font-semibold" : "text-background/80 hover:text-brand-gold"
+                      className={`text-xs sm:text-sm text-left transition-colors cursor-pointer ${activeSection === item.id ? "text-brand-gold font-semibold" : "text-background/80 hover:text-brand-gold"
                         }`}
                     >
                       {item.label}
@@ -1966,33 +1976,49 @@ export function HanviSite() {
                 ))}
               </ul>
             </div>
+
+            {/* Column 3: Services */}
             <div>
-              <h2 className="text-xs font-semibold uppercase text-background/55">Services</h2>
+              <h3 className="text-xs font-bold uppercase tracking-widest text-white/90">Services</h3>
               <ul className="mt-4 space-y-2.5">
-                {services.map((service) => (
-                  <li key={service.badge}>
+                {[
+                  "Fire Alarm Systems",
+                  "Fire Hydrant Systems",
+                  "Cyber Security Data Center Design",
+                  "Network Communications & Intercom",
+                  "Smart Home Automation Panels",
+                  "Custom Turnkey Engineering",
+                ].map((serviceName) => (
+                  <li key={serviceName}>
                     <button
                       type="button"
                       onClick={() => navigateTo("services")}
                       className="text-xs text-left text-background/80 transition-colors hover:text-brand-gold line-clamp-1 block cursor-pointer"
                     >
-                      {service.title}
+                      {serviceName}
                     </button>
                   </li>
                 ))}
               </ul>
             </div>
+
+            {/* Column 4: Contact */}
             <div>
-              <h2 className="text-xs font-semibold uppercase text-background/55">Contact</h2>
-              <ul className="mt-4 space-y-3 text-sm text-background/80">
-                <li className="font-semibold text-white">SOURVI SAIE KUMAR</li>
+              <h3 className="text-xs font-bold uppercase tracking-widest text-white/90">Contact</h3>
+              <ul className="mt-4 space-y-3 text-xs sm:text-sm text-background/80">
                 <li>
-                  <a href="tel:+919392673103" className="transition-colors hover:text-brand-gold">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-brand-orange block mb-0.5">Contact Person</span>
+                  <span className="font-semibold text-white">Sourvi Saie Kumar</span>
+                </li>
+                <li>
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-brand-orange block mb-0.5">Phone</span>
+                  <a href="tel:+919392673103" className="transition-colors hover:text-brand-gold font-medium">
                     +91 9392673103
                   </a>
                 </li>
                 <li>
-                  <a href="mailto:saie@hanviglobaltech.com" className="transition-colors hover:text-brand-gold">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-brand-orange block mb-0.5">Email</span>
+                  <a href="mailto:saie@hanviglobaltech.com" className="transition-colors hover:text-brand-gold font-medium">
                     saie@hanviglobaltech.com
                   </a>
                 </li>
@@ -2001,20 +2027,20 @@ export function HanviSite() {
           </div>
 
           <div className="flex flex-col gap-4 pt-6 text-xs text-background/55 sm:flex-row sm:items-center sm:justify-between">
-            <p>© {new Date().getFullYear()} HANVI GLOBAL TECH PVT LTD</p>
+            <p>© {new Date().getFullYear()} HANVI GLOBAL TECH PVT LTD. All Rights Reserved.</p>
             <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
               <Button variant="link" size="sm" className="h-auto p-0 text-xs text-background/65 hover:text-brand-gold" onClick={() => setLegalPage("Privacy policy")}>
-                Privacy policy
+                Privacy Policy
               </Button>
               <Button variant="link" size="sm" className="h-auto p-0 text-xs text-background/65 hover:text-brand-gold" onClick={() => setLegalPage("Terms & conditions")}>
-                Terms &amp; conditions
+                Terms &amp; Conditions
               </Button>
               <button
                 type="button"
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                 className="inline-flex items-center gap-1 transition-colors hover:text-brand-gold cursor-pointer"
               >
-                Back to top <ArrowDown aria-hidden="true" className="size-3 rotate-180" />
+                Back to Top <ArrowDown aria-hidden="true" className="size-3 rotate-180" />
               </button>
             </div>
           </div>
