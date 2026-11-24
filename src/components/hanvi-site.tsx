@@ -4,9 +4,11 @@ import {
   AlertCircle,
   ArrowDown,
   ArrowUpRight,
+  Award,
   CheckCircle2,
   ChevronLeft,
   ChevronRight,
+  Clock,
   Cloud,
   Code2,
   Cpu,
@@ -344,6 +346,58 @@ const partnerPlaceholders = [
     ),
   },
 ];
+
+const whyChooseUsPillars = [
+  {
+    icon: Workflow,
+    badge: "Turnkey Delivery",
+    title: "End-to-End Single-Source Execution",
+    description:
+      "From initial engineering blueprints and OEM hardware procurement to precision installation, testing, commissioning, and regulatory clearances.",
+  },
+  {
+    icon: ShieldCheck,
+    badge: "Zero Compromise",
+    title: "Certified Safety & NBC Compliance",
+    description:
+      "Strict compliance with National Building Code (NBC), NFPA fire codes, ISO-aligned workflows, and Tier-standard cyber datacenter guidelines.",
+  },
+  {
+    icon: Award,
+    badge: "OEM Alliances",
+    title: "Tier-1 Global Technology Partners",
+    description:
+      "Authorized enterprise alliances with global OEMs including Honeywell, Schneider Electric, Cisco, Siemens, Bosch, Fortinet, and Legrand.",
+  },
+  {
+    icon: Clock,
+    badge: "24/7 SLA",
+    title: "Mission-Critical 24/7 Support",
+    description:
+      "Dedicated emergency response teams, remote telemetry, predictive maintenance, and industry-leading response times to prevent downtime.",
+  },
+  {
+    icon: CheckCircle2,
+    badge: "Proven Track Record",
+    title: "Trusted by Top Enterprise Leaders",
+    description:
+      "Proven execution across high-density tech parks, SEZs, aerospace hubs, and mega infrastructure projects including L&T, GMR, and Tata Projects.",
+  },
+  {
+    icon: Cpu,
+    badge: "Next-Gen Tech",
+    title: "Smart IoT & Cyber-Resilient Systems",
+    description:
+      "Smart capacitive touch switchboards, automated IoT building controls, zero-trust cybersecurity, and unified facility telemetry.",
+  },
+] as const;
+
+const whyChooseUsStats = [
+  { value: "100+", label: "Enterprise Projects Completed" },
+  { value: "99.9%", label: "System Reliability & Uptime" },
+  { value: "15+", label: "Global OEM Alliances" },
+  { value: "24/7", label: "Mission-Critical Support" },
+] as const;
 
 function CompanyName({ light = false }: { light?: boolean }) {
   return (
@@ -1371,8 +1425,88 @@ export function HanviSite() {
           </section>
         )}
 
+        {(activeSection === "home" || activeSection === "about" || activeSection === "why-us") && (
+          <section id="why-us" className="scroll-mt-20 bg-brand-cream-alt pt-5 pb-5 sm:pt-7 sm:pb-7 text-foreground border-t border-brand-orange/10">
+            <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
+              {/* Header */}
+              <div className="flex flex-col gap-1.5" data-reveal>
+                <div className="flex flex-col justify-between gap-2.5 sm:flex-row sm:items-end">
+                  <div>
+                    <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-orange font-bold">
+                      <span className="brand-gradient h-0.5 w-5" aria-hidden="true" />
+                      <span>Why Choose Us</span>
+                    </div>
+                    <h2 className="font-display text-xl font-semibold tracking-tight text-foreground sm:text-2xl lg:text-[1.75rem]">
+                      Engineered for excellence. Trusted for reliability.
+                    </h2>
+                  </div>
+                  <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-brand-orange px-3 py-1 rounded-full bg-brand-orange/10 border border-brand-orange/25 w-fit">
+                    <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" aria-hidden="true" />
+                    The HANVI Advantage
+                  </span>
+                </div>
+                <p className="text-xs sm:text-sm text-muted-foreground max-w-3xl">
+                  Empowering commercial and industrial enterprises with turnkey engineering, certified life-safety compliance, authorized OEM technology, and 24/7 mission-critical support.
+                </p>
+              </div>
+
+              {/* 6 Feature Pillars Grid */}
+              <div className="mt-5 sm:mt-6 grid grid-cols-1 gap-3.5 sm:grid-cols-2 lg:grid-cols-3 sm:gap-4.5">
+                {whyChooseUsPillars.map((pillar, index) => {
+                  const Icon = pillar.icon;
+                  return (
+                    <div
+                      key={pillar.title}
+                      data-reveal
+                      style={{ '--reveal-delay': `${index * 50}ms` } as React.CSSProperties}
+                      className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-brand-orange/20 bg-white/95 p-4.5 sm:p-5 shadow-sm backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_14px_32px_-6px_rgba(255,106,0,0.22)] hover:scale-[1.02] transition-all duration-300"
+                    >
+                      <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-brand-orange via-brand-gold to-brand-rose opacity-80 group-hover:opacity-100 transition-opacity" />
+                      <div>
+                        <div className="flex items-center justify-between gap-3 mb-3">
+                          <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-brand-orange to-brand-rose text-white shadow-sm transition-transform duration-300 group-hover:scale-110">
+                            <Icon className="size-5" aria-hidden="true" />
+                          </div>
+                          <span className="text-[10px] font-bold uppercase tracking-wider text-brand-orange px-2.5 py-0.5 rounded-full bg-brand-orange/10 border border-brand-orange/25">
+                            {pillar.badge}
+                          </span>
+                        </div>
+                        <h3 className="font-display text-xs sm:text-sm font-bold text-foreground group-hover:text-brand-orange transition-colors">
+                          {pillar.title}
+                        </h3>
+                        <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">
+                          {pillar.description}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Stats Bar */}
+              <div
+                data-reveal
+                className="mt-5 sm:mt-6 overflow-hidden rounded-2xl border border-brand-orange/20 bg-white/95 p-4 sm:p-5 shadow-sm backdrop-blur-md"
+              >
+                <div className="grid grid-cols-2 gap-4 divide-y divide-brand-orange/15 sm:grid-cols-4 sm:gap-6 sm:divide-y-0 sm:divide-x sm:divide-brand-orange/20">
+                  {whyChooseUsStats.map((stat, i) => (
+                    <div key={stat.label} className={`flex flex-col items-center text-center ${i >= 2 ? "pt-3 sm:pt-0" : ""}`}>
+                      <span className="font-display text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight text-brand-orange">
+                        {stat.value}
+                      </span>
+                      <span className="mt-1 text-[11px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                        {stat.label}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
         {(activeSection === "home" || activeSection === "contact") && (
-          <section id="contact" className={`scroll-mt-20 bg-brand-cream-alt pt-4 pb-5 sm:pt-5 sm:pb-6 text-foreground border-t border-brand-orange/10 ${activeSection === "contact" ? "min-h-[calc(100svh-120px)] flex flex-col justify-center" : ""}`}>
+          <section id="contact" className={`scroll-mt-20 bg-brand-cream pt-4 pb-5 sm:pt-5 sm:pb-6 text-foreground border-t border-brand-orange/10 ${activeSection === "contact" ? "min-h-[calc(100svh-120px)] flex flex-col justify-center" : ""}`}>
             <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
               <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-10 items-center">
                 <div data-reveal>
