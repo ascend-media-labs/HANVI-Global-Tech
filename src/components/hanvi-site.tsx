@@ -1115,48 +1115,48 @@ export function HanviSite() {
           </section>
 
           {/* 4-Item Feature Strip Below Hero */}
-          <div className="w-full border-b border-border/60 bg-white py-3.5 shadow-xs">
+          <div className="w-full border-b border-border/60 bg-white py-2.5 sm:py-3 shadow-xs">
             <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
-              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-border/60">
+              <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-border/60">
                 {/* Item 1 */}
-                <div className="flex items-center gap-3 sm:justify-center px-3 py-1">
-                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-red-50 text-[#E02424]">
-                    <Award className="size-6 text-[#E02424]" />
+                <div className="flex items-center gap-3 sm:justify-center px-2.5 py-0.5">
+                  <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-red-50 text-[#E02424]">
+                    <Award className="size-5 text-[#E02424]" />
                   </div>
-                  <div className="text-left text-xs sm:text-[13px] font-bold leading-snug text-foreground">
+                  <div className="text-left text-xs sm:text-[13px] font-bold leading-tight text-foreground">
                     <div>End-to-End</div>
                     <div>Technology Solutions</div>
                   </div>
                 </div>
 
                 {/* Item 2 */}
-                <div className="flex items-center gap-3 sm:justify-center px-3 py-1">
-                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-red-50 text-[#E02424]">
-                    <Settings className="size-6 text-[#E02424]" />
+                <div className="flex items-center gap-3 sm:justify-center px-2.5 py-0.5">
+                  <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-red-50 text-[#E02424]">
+                    <Settings className="size-5 text-[#E02424]" />
                   </div>
-                  <div className="text-left text-xs sm:text-[13px] font-bold leading-snug text-foreground">
+                  <div className="text-left text-xs sm:text-[13px] font-bold leading-tight text-foreground">
                     <div>Expert Installation</div>
                     <div>&amp; Integration</div>
                   </div>
                 </div>
 
                 {/* Item 3 */}
-                <div className="flex items-center gap-3 sm:justify-center px-3 py-1">
-                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-red-50 text-[#E02424]">
-                    <Users className="size-6 text-[#E02424]" />
+                <div className="flex items-center gap-3 sm:justify-center px-2.5 py-0.5">
+                  <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-red-50 text-[#E02424]">
+                    <Users className="size-5 text-[#E02424]" />
                   </div>
-                  <div className="text-left text-xs sm:text-[13px] font-bold leading-snug text-foreground">
+                  <div className="text-left text-xs sm:text-[13px] font-bold leading-tight text-foreground">
                     <div>Reliable</div>
                     <div>After-Sales Support</div>
                   </div>
                 </div>
 
                 {/* Item 4 */}
-                <div className="flex items-center gap-3 sm:justify-center px-3 py-1">
-                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-red-50 text-[#E02424]">
-                    <ShieldCheck className="size-6 text-[#E02424]" />
+                <div className="flex items-center gap-3 sm:justify-center px-2.5 py-0.5">
+                  <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-red-50 text-[#E02424]">
+                    <ShieldCheck className="size-5 text-[#E02424]" />
                   </div>
-                  <div className="text-left text-xs sm:text-[13px] font-bold leading-snug text-foreground">
+                  <div className="text-left text-xs sm:text-[13px] font-bold leading-tight text-foreground">
                     <div>Safe, Secure &amp;</div>
                     <div>Future-Ready Systems</div>
                   </div>
@@ -1165,67 +1165,67 @@ export function HanviSite() {
             </div>
           </div>
 
-          <section id="about" className="relative isolate scroll-mt-20 overflow-hidden bg-white py-10 sm:py-14 lg:py-16">
+          <section id="about" className="relative isolate scroll-mt-20 overflow-hidden bg-white py-5 sm:py-7 lg:py-8">
             <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
-              <div className="grid items-center gap-8 lg:grid-cols-[1fr_1.15fr] xl:gap-12" data-reveal>
+              <div className="grid items-center gap-6 lg:grid-cols-[1fr_1.15fr] xl:gap-10" data-reveal>
                 {/* Left Column: Building Photo */}
-                <div className="relative group overflow-hidden rounded-2xl border border-slate-200/80 shadow-md">
+                <div className="relative group overflow-hidden rounded-2xl border border-slate-200/80 shadow-xs max-w-[520px] mx-auto lg:mx-0 w-full">
                   <img
                     src={aboutBuilding}
                     alt="HANVI GLOBAL TECH PVT LTD Building & Headquarters"
                     loading="lazy"
-                    className="w-full h-auto max-h-[420px] object-cover transition-transform duration-500 ease-out group-hover:scale-102"
+                    className="w-full h-auto max-h-[330px] object-cover transition-transform duration-500 ease-out group-hover:scale-102"
                   />
                 </div>
 
                 {/* Right Column: About Content & 4 Cards */}
                 <div className="flex flex-col justify-center">
-                  <h2 className="font-display text-2xl font-bold tracking-tight text-foreground sm:text-3xl lg:text-[2.25rem] leading-tight">
+                  <h2 className="font-display text-2xl font-bold tracking-tight text-foreground sm:text-3xl lg:text-[2rem] leading-tight">
                     About <span className="text-[#E02424] font-black">Hanvi Global Tech</span>
                   </h2>
 
-                  <p className="mt-4 text-xs sm:text-sm lg:text-[15px] leading-relaxed text-muted-foreground">
+                  <p className="mt-2.5 text-xs sm:text-sm lg:text-[14px] leading-relaxed text-muted-foreground">
                     Hanvi Global Tech Pvt Ltd is a technology solutions company delivering reliable, scalable, and integrated systems for safety, security, communication, and smart automation. We help businesses, institutions, and homeowners build safer, smarter, and more connected environments.
                   </p>
 
                   {/* 4 Feature Cards matching reference design */}
-                  <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
+                  <div className="mt-5 grid grid-cols-2 gap-2.5 sm:grid-cols-4 sm:gap-3">
                     {/* Card 1: Customized Solutions */}
-                    <div className="flex flex-col items-center justify-center rounded-xl border border-slate-200/90 bg-slate-50/70 p-4 text-center transition-all duration-300 hover:bg-white hover:border-[#E02424]/40 hover:shadow-md">
-                      <div className="flex size-11 items-center justify-center rounded-lg bg-red-50 text-[#E02424] mb-2.5">
-                        <Target className="size-6 text-[#E02424]" />
+                    <div className="flex flex-col items-center justify-center rounded-xl border border-slate-200/90 bg-slate-50/70 p-2.5 sm:p-3 text-center transition-all duration-300 hover:bg-white hover:border-[#E02424]/40 hover:shadow-xs">
+                      <div className="flex size-9 items-center justify-center rounded-lg bg-red-50 text-[#E02424] mb-2">
+                        <Target className="size-5 text-[#E02424]" />
                       </div>
-                      <span className="text-xs sm:text-[13px] font-bold text-foreground leading-tight">
+                      <span className="text-[11px] sm:text-xs font-bold text-foreground leading-tight">
                         Customized<br />Solutions
                       </span>
                     </div>
 
                     {/* Card 2: Industry-Grade Products */}
-                    <div className="flex flex-col items-center justify-center rounded-xl border border-slate-200/90 bg-slate-50/70 p-4 text-center transition-all duration-300 hover:bg-white hover:border-[#E02424]/40 hover:shadow-md">
-                      <div className="flex size-11 items-center justify-center rounded-lg bg-red-50 text-[#E02424] mb-2.5">
-                        <Layers className="size-6 text-[#E02424]" />
+                    <div className="flex flex-col items-center justify-center rounded-xl border border-slate-200/90 bg-slate-50/70 p-2.5 sm:p-3 text-center transition-all duration-300 hover:bg-white hover:border-[#E02424]/40 hover:shadow-xs">
+                      <div className="flex size-9 items-center justify-center rounded-lg bg-red-50 text-[#E02424] mb-2">
+                        <Layers className="size-5 text-[#E02424]" />
                       </div>
-                      <span className="text-xs sm:text-[13px] font-bold text-foreground leading-tight">
+                      <span className="text-[11px] sm:text-xs font-bold text-foreground leading-tight">
                         Industry-Grade<br />Products
                       </span>
                     </div>
 
                     {/* Card 3: Professional Installation */}
-                    <div className="flex flex-col items-center justify-center rounded-xl border border-slate-200/90 bg-slate-50/70 p-4 text-center transition-all duration-300 hover:bg-white hover:border-[#E02424]/40 hover:shadow-md">
-                      <div className="flex size-11 items-center justify-center rounded-lg bg-red-50 text-[#E02424] mb-2.5">
-                        <Wrench className="size-6 text-[#E02424]" />
+                    <div className="flex flex-col items-center justify-center rounded-xl border border-slate-200/90 bg-slate-50/70 p-2.5 sm:p-3 text-center transition-all duration-300 hover:bg-white hover:border-[#E02424]/40 hover:shadow-xs">
+                      <div className="flex size-9 items-center justify-center rounded-lg bg-red-50 text-[#E02424] mb-2">
+                        <Wrench className="size-5 text-[#E02424]" />
                       </div>
-                      <span className="text-xs sm:text-[13px] font-bold text-foreground leading-tight">
+                      <span className="text-[11px] sm:text-xs font-bold text-foreground leading-tight">
                         Professional<br />Installation
                       </span>
                     </div>
 
                     {/* Card 4: Ongoing Support */}
-                    <div className="flex flex-col items-center justify-center rounded-xl border border-slate-200/90 bg-slate-50/70 p-4 text-center transition-all duration-300 hover:bg-white hover:border-[#E02424]/40 hover:shadow-md">
-                      <div className="flex size-11 items-center justify-center rounded-lg bg-red-50 text-[#E02424] mb-2.5">
-                        <Headphones className="size-6 text-[#E02424]" />
+                    <div className="flex flex-col items-center justify-center rounded-xl border border-slate-200/90 bg-slate-50/70 p-2.5 sm:p-3 text-center transition-all duration-300 hover:bg-white hover:border-[#E02424]/40 hover:shadow-xs">
+                      <div className="flex size-9 items-center justify-center rounded-lg bg-red-50 text-[#E02424] mb-2">
+                        <Headphones className="size-5 text-[#E02424]" />
                       </div>
-                      <span className="text-xs sm:text-[13px] font-bold text-foreground leading-tight">
+                      <span className="text-[11px] sm:text-xs font-bold text-foreground leading-tight">
                         Ongoing<br />Support
                       </span>
                     </div>
