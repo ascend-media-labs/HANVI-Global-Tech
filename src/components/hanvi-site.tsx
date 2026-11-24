@@ -571,7 +571,10 @@ export function HanviSite() {
     } else {
       const el = document.getElementById(sectionId);
       if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
+        const navHeight = 76;
+        const rect = el.getBoundingClientRect();
+        const targetY = rect.top + window.pageYOffset - navHeight;
+        window.scrollTo({ top: targetY, behavior: "smooth" });
       }
     }
   }
@@ -1822,23 +1825,29 @@ export function HanviSite() {
       </main>
 
       <footer className="bg-brand-charcoal text-background border-t border-white/5">
-        <div className="mx-auto w-full px-4 pb-6 pt-8 sm:px-6 sm:pt-10 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
-          <div className="grid gap-8 border-b border-background/15 pb-8 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_0.8fr_1fr] lg:gap-10">
+        <div className="mx-auto w-full px-4 py-6 sm:px-6 sm:py-8 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
+          <div className="grid gap-6 sm:gap-8 border-b border-white/10 pb-6 sm:grid-cols-2 lg:grid-cols-[1.3fr_0.9fr_1fr_1fr] lg:gap-8">
             <div>
-              <button
-                type="button"
-                onClick={() => navigateTo("home")}
+              <a
+                href="#home"
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigateTo("home");
+                }}
                 aria-label="HANVI Global Tech home"
-                className="text-left cursor-pointer transition-transform hover:scale-[1.02]"
+                className="inline-block text-left cursor-pointer transition-transform hover:scale-[1.02]"
               >
                 <CompanyName light />
-              </button>
-              <p className="mt-4 max-w-xs text-sm leading-6 text-background/65">
+              </a>
+              <p className="mt-3.5 max-w-xs text-xs sm:text-sm leading-relaxed text-background/65">
                 Specializing in life safety fire alarm systems, fire hydrants, cyber data centers, enterprise networking, and smart IoT home automation.
               </p>
-              <div className="mt-4">
-                <p className="text-[11px] font-bold uppercase tracking-widest text-white/80">Social Connections</p>
-                <div className="mt-2.5 flex items-center gap-3 text-background/80" aria-label="Social media connections">
+              <div className="mt-3.5">
+                <div className="flex items-center gap-1.5 mb-2">
+                  <span className="h-1 w-2.5 rounded-full bg-[#E02424]" />
+                  <p className="text-[11px] font-bold uppercase tracking-wider text-white/90">Social Connections</p>
+                </div>
+                <div className="flex items-center gap-3 text-background/80" aria-label="Social media connections">
                   {/* Official LinkedIn */}
                   <a
                     href="https://linkedin.com"
@@ -1885,8 +1894,11 @@ export function HanviSite() {
 
             {/* Column 2: Quick Links */}
             <div>
-              <h3 className="text-xs font-bold uppercase tracking-widest text-white/90">Quick Links</h3>
-              <ul className="mt-4 space-y-2.5">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="h-3.5 w-1 rounded-full bg-gradient-to-b from-[#E02424] to-brand-gold" />
+                <h3 className="text-xs font-bold uppercase tracking-widest text-white/95">Quick Links</h3>
+              </div>
+              <ul className="space-y-2">
                 {[
                   { label: "Home", id: "home" },
                   { label: "About Us", id: "about" },
@@ -1897,14 +1909,20 @@ export function HanviSite() {
                   { label: "Contact Us", id: "contact" },
                 ].map((item) => (
                   <li key={item.id}>
-                    <button
-                      type="button"
-                      onClick={() => navigateTo(item.id)}
-                      className={`text-xs sm:text-sm text-left transition-colors cursor-pointer ${activeSection === item.id ? "text-brand-gold font-semibold" : "text-background/80 hover:text-brand-gold"
-                        }`}
+                    <a
+                      href={`#${item.id}`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        navigateTo(item.id);
+                      }}
+                      className={`text-xs sm:text-sm inline-block transition-all duration-200 cursor-pointer ${
+                        activeSection === item.id
+                          ? "text-brand-gold font-semibold translate-x-1"
+                          : "text-background/75 hover:text-brand-gold hover:translate-x-1"
+                      }`}
                     >
                       {item.label}
-                    </button>
+                    </a>
                   </li>
                 ))}
               </ul>
@@ -1912,8 +1930,11 @@ export function HanviSite() {
 
             {/* Column 3: Services */}
             <div>
-              <h3 className="text-xs font-bold uppercase tracking-widest text-white/90">Services</h3>
-              <ul className="mt-4 space-y-2.5">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="h-3.5 w-1 rounded-full bg-gradient-to-b from-[#E02424] to-brand-gold" />
+                <h3 className="text-xs font-bold uppercase tracking-widest text-white/95">Services</h3>
+              </div>
+              <ul className="space-y-2">
                 {[
                   "Fire Alarm Systems",
                   "Fire Hydrant Systems",
@@ -1923,13 +1944,16 @@ export function HanviSite() {
                   "Custom Turnkey Engineering",
                 ].map((serviceName) => (
                   <li key={serviceName}>
-                    <button
-                      type="button"
-                      onClick={() => navigateTo("services")}
-                      className="text-xs text-left text-background/80 transition-colors hover:text-brand-gold line-clamp-1 block cursor-pointer"
+                    <a
+                      href="#services"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        navigateTo("services");
+                      }}
+                      className="text-xs sm:text-[13px] text-background/75 transition-all duration-200 hover:text-brand-gold hover:translate-x-1 inline-block cursor-pointer line-clamp-1"
                     >
                       {serviceName}
-                    </button>
+                    </a>
                   </li>
                 ))}
               </ul>
@@ -1937,21 +1961,24 @@ export function HanviSite() {
 
             {/* Column 4: Contact */}
             <div>
-              <h3 className="text-xs font-bold uppercase tracking-widest text-white/90">Contact</h3>
-              <ul className="mt-4 space-y-3 text-xs sm:text-sm text-background/80">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="h-3.5 w-1 rounded-full bg-gradient-to-b from-[#E02424] to-brand-gold" />
+                <h3 className="text-xs font-bold uppercase tracking-widest text-white/95">Contact</h3>
+              </div>
+              <ul className="space-y-2.5 text-xs sm:text-sm text-background/80">
                 <li>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-brand-orange block mb-0.5">Contact Person</span>
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-brand-orange/90 block mb-0.5">Contact Person</span>
                   <span className="font-semibold text-white">Sourvi Saie Kumar</span>
                 </li>
                 <li>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-brand-orange block mb-0.5">Phone</span>
-                  <a href="tel:+919392673103" className="transition-colors hover:text-brand-gold font-medium">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-brand-orange/90 block mb-0.5">Phone</span>
+                  <a href="tel:+919392673103" className="font-medium text-white/90 hover:text-brand-gold transition-colors inline-block">
                     +91 9392673103
                   </a>
                 </li>
                 <li>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-brand-orange block mb-0.5">Email</span>
-                  <a href="mailto:saie@hanviglobaltech.com" className="transition-colors hover:text-brand-gold font-medium">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-brand-orange/90 block mb-0.5">Email</span>
+                  <a href="mailto:saie@hanviglobaltech.com" className="font-medium text-white/90 hover:text-brand-gold transition-colors inline-block break-all">
                     saie@hanviglobaltech.com
                   </a>
                 </li>
@@ -1959,7 +1986,7 @@ export function HanviSite() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-4 pt-6 text-xs text-background/55 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-col gap-3 pt-4 text-xs text-background/55 sm:flex-row sm:items-center sm:justify-between">
             <p>© {new Date().getFullYear()} HANVI GLOBAL TECH PVT LTD. All Rights Reserved.</p>
             <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
               <Button variant="link" size="sm" className="h-auto p-0 text-xs text-background/65 hover:text-brand-gold" onClick={() => setLegalPage("Privacy policy")}>
@@ -1971,9 +1998,10 @@ export function HanviSite() {
               <button
                 type="button"
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                className="inline-flex items-center gap-1 transition-colors hover:text-brand-gold cursor-pointer"
+                className="inline-flex items-center gap-1.5 transition-colors hover:text-brand-gold cursor-pointer"
               >
-                Back to Top <ArrowDown aria-hidden="true" className="size-3 rotate-180" />
+                <span>Back to Top</span>
+                <ArrowDown aria-hidden="true" className="size-3 rotate-180" />
               </button>
             </div>
           </div>
