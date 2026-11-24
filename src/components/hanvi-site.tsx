@@ -113,12 +113,12 @@ const clientPlaceholders = [
     sector: "Industrial & Metro Transit",
     tag: "Metro & Infra",
     logo: (
-      <svg viewBox="0 0 160 48" className="h-9 sm:h-10.5 w-auto max-w-[88%]" fill="none">
-        <rect x="2" y="4" width="40" height="40" rx="8" fill="#0C2340" />
-        <text x="22" y="28" textAnchor="middle" fill="#FDB913" fontFamily="sans-serif" fontWeight="900" fontSize="16" letterSpacing="-0.5">L&amp;T</text>
-        <path d="M10 34h24" stroke="#FDB913" strokeWidth="1.8" strokeLinecap="round" />
-        <text x="50" y="24" fill="#0C2340" fontFamily="sans-serif" fontWeight="800" fontSize="12.5" letterSpacing="0.3">L&amp;T Construction</text>
-        <text x="50" y="36" fill="#64748B" fontFamily="sans-serif" fontWeight="600" fontSize="8" letterSpacing="0.8">INFRASTRUCTURE</text>
+      <svg viewBox="0 0 200 48" className="h-11 sm:h-13 md:h-14 w-auto max-w-[92%]" fill="none">
+        <rect x="4" y="4" width="40" height="40" rx="8" fill="#0C2340" />
+        <text x="24" y="29" textAnchor="middle" fill="#FDB913" fontFamily="sans-serif" fontWeight="900" fontSize="16" letterSpacing="-0.5">L&amp;T</text>
+        <path d="M12 34h24" stroke="#FDB913" strokeWidth="1.8" strokeLinecap="round" />
+        <text x="54" y="24" fill="#0C2340" fontFamily="sans-serif" fontWeight="800" fontSize="13.5" letterSpacing="0.3">L&amp;T Construction</text>
+        <text x="54" y="37" fill="#64748B" fontFamily="sans-serif" fontWeight="600" fontSize="8.5" letterSpacing="0.8">INFRASTRUCTURE</text>
       </svg>
     ),
   },
@@ -127,12 +127,12 @@ const clientPlaceholders = [
     sector: "Mission-Critical Facilities",
     tag: "Aviation Hub",
     logo: (
-      <svg viewBox="0 0 160 48" className="h-9 sm:h-10.5 w-auto max-w-[88%]" fill="none">
-        <rect x="2" y="4" width="40" height="40" rx="8" fill="#0A1E3F" />
-        <path d="M12 22C12 16 16 12 22 12C28 12 32 16 32 22C32 26 29 29 23 29H18" stroke="#FF6A00" strokeWidth="2.5" strokeLinecap="round" />
-        <path d="M22 22H30" stroke="#FDB913" strokeWidth="2.5" strokeLinecap="round" />
-        <text x="50" y="24" fill="#0A1E3F" fontFamily="sans-serif" fontWeight="900" fontSize="16" letterSpacing="1.2">GMR</text>
-        <text x="50" y="36" fill="#EA580C" fontFamily="sans-serif" fontWeight="700" fontSize="8" letterSpacing="0.8">AEROSPACE &amp; TECH</text>
+      <svg viewBox="0 0 200 48" className="h-11 sm:h-13 md:h-14 w-auto max-w-[92%]" fill="none">
+        <rect x="4" y="4" width="40" height="40" rx="8" fill="#0A1E3F" />
+        <path d="M14 22C14 16 18 12 24 12C30 12 34 16 34 22C34 26 31 29 25 29H20" stroke="#FF6A00" strokeWidth="2.5" strokeLinecap="round" />
+        <path d="M24 22H32" stroke="#FDB913" strokeWidth="2.5" strokeLinecap="round" />
+        <text x="54" y="24" fill="#0A1E3F" fontFamily="sans-serif" fontWeight="900" fontSize="16" letterSpacing="1.2">GMR</text>
+        <text x="54" y="37" fill="#EA580C" fontFamily="sans-serif" fontWeight="700" fontSize="8.5" letterSpacing="0.8">AEROSPACE &amp; TECH</text>
       </svg>
     ),
   },
@@ -141,12 +141,12 @@ const clientPlaceholders = [
     sector: "Cyber Data Centers & SEZ",
     tag: "Cyber SEZ",
     logo: (
-      <svg viewBox="0 0 160 48" className="h-9 sm:h-10.5 w-auto max-w-[88%]" fill="none">
-        <rect x="2" y="4" width="40" height="40" rx="8" fill="#1C0F0A" />
-        <path d="M22 9C24 15 29 17 31 23C33 28 30 33 22 34C14 33 11 28 13 23C15 17 20 15 22 9Z" fill="#FF501E" />
-        <path d="M22 16C23 19 26 21 27 25C28 28 26 30 22 31C18 30 16 28 17 25C18 21 21 19 22 16Z" fill="#FDB913" />
-        <text x="50" y="24" fill="#1C0F0A" fontFamily="sans-serif" fontWeight="800" fontSize="13.5" letterSpacing="0.8">PHOENIX</text>
-        <text x="50" y="36" fill="#64748B" fontFamily="sans-serif" fontWeight="600" fontSize="8" letterSpacing="1">CYBER TOWERS</text>
+      <svg viewBox="0 0 200 48" className="h-11 sm:h-13 md:h-14 w-auto max-w-[92%]" fill="none">
+        <rect x="4" y="4" width="40" height="40" rx="8" fill="#1C0F0A" />
+        <path d="M24 9C26 15 31 17 33 23C35 28 32 33 24 34C16 33 13 28 15 23C17 17 22 15 24 9Z" fill="#FF501E" />
+        <path d="M24 16C25 19 28 21 29 25C30 28 28 30 24 31C20 30 18 28 19 25C20 21 23 19 24 16Z" fill="#FDB913" />
+        <text x="54" y="24" fill="#1C0F0A" fontFamily="sans-serif" fontWeight="800" fontSize="14" letterSpacing="0.8">PHOENIX</text>
+        <text x="54" y="37" fill="#64748B" fontFamily="sans-serif" fontWeight="600" fontSize="8.5" letterSpacing="1">CYBER TOWERS</text>
       </svg>
     ),
   },
@@ -155,13 +155,13 @@ const clientPlaceholders = [
     sector: "Smart Living & High-Rise",
     tag: "Smart Living",
     logo: (
-      <svg viewBox="0 0 160 48" className="h-9 sm:h-10.5 w-auto max-w-[88%]" fill="none">
-        <rect x="2" y="4" width="40" height="40" rx="8" fill="#14241C" />
-        <path d="M14 32V20L22 13L30 20V32H25V24H19V32H14Z" fill="#2EAA68" />
-        <path d="M22 17L27 21V32H25V23H19V32H17V21L22 17Z" fill="#75D99F" />
-        <circle cx="22" cy="9.5" r="1.5" fill="#FDB913" />
-        <text x="50" y="24" fill="#14241C" fontFamily="sans-serif" fontWeight="800" fontSize="13" letterSpacing="0.5">MY HOME</text>
-        <text x="50" y="36" fill="#16A34A" fontFamily="sans-serif" fontWeight="700" fontSize="8" letterSpacing="1">GROUP HABITATS</text>
+      <svg viewBox="0 0 200 48" className="h-11 sm:h-13 md:h-14 w-auto max-w-[92%]" fill="none">
+        <rect x="4" y="4" width="40" height="40" rx="8" fill="#14241C" />
+        <path d="M16 32V20L24 13L32 20V32H27V24H21V32H16Z" fill="#2EAA68" />
+        <path d="M24 17L29 21V32H27V23H21V32H19V21L24 17Z" fill="#75D99F" />
+        <circle cx="24" cy="9.5" r="1.5" fill="#FDB913" />
+        <text x="54" y="24" fill="#14241C" fontFamily="sans-serif" fontWeight="800" fontSize="13.5" letterSpacing="0.5">MY HOME</text>
+        <text x="54" y="37" fill="#16A34A" fontFamily="sans-serif" fontWeight="700" fontSize="8.5" letterSpacing="1">GROUP HABITATS</text>
       </svg>
     ),
   },
@@ -170,12 +170,12 @@ const clientPlaceholders = [
     sector: "Industrial Mega EPC & Transit",
     tag: "Mega EPC",
     logo: (
-      <svg viewBox="0 0 160 48" className="h-9 sm:h-10.5 w-auto max-w-[88%]" fill="none">
-        <rect x="2" y="4" width="40" height="40" rx="8" fill="#002D62" />
-        <path d="M12 15H32M22 15V29" stroke="#FFFFFF" strokeWidth="3" strokeLinecap="round" />
-        <path d="M14 21H30" stroke="#38B6FF" strokeWidth="1.5" strokeLinecap="round" strokeDasharray="2 2" />
-        <text x="50" y="24" fill="#002D62" fontFamily="sans-serif" fontWeight="900" fontSize="13.5" letterSpacing="1">TATA PROJECTS</text>
-        <text x="50" y="36" fill="#0284C7" fontFamily="sans-serif" fontWeight="600" fontSize="8" letterSpacing="0.8">INFRASTRUCTURE</text>
+      <svg viewBox="0 0 200 48" className="h-11 sm:h-13 md:h-14 w-auto max-w-[92%]" fill="none">
+        <rect x="4" y="4" width="40" height="40" rx="8" fill="#002D62" />
+        <path d="M14 15H34M24 15V29" stroke="#FFFFFF" strokeWidth="3" strokeLinecap="round" />
+        <path d="M16 21H32" stroke="#38B6FF" strokeWidth="1.5" strokeLinecap="round" strokeDasharray="2 2" />
+        <text x="54" y="24" fill="#002D62" fontFamily="sans-serif" fontWeight="900" fontSize="13.5" letterSpacing="0.8">TATA PROJECTS</text>
+        <text x="54" y="37" fill="#0284C7" fontFamily="sans-serif" fontWeight="600" fontSize="8.5" letterSpacing="0.8">INFRASTRUCTURE</text>
       </svg>
     ),
   },
@@ -184,14 +184,14 @@ const clientPlaceholders = [
     sector: "Grade-A IT & Tech SEZ",
     tag: "Tech Parks",
     logo: (
-      <svg viewBox="0 0 160 48" className="h-9 sm:h-10.5 w-auto max-w-[88%]" fill="none">
-        <rect x="2" y="4" width="40" height="40" rx="8" fill="#0C2538" />
-        <circle cx="22" cy="14" r="3.5" fill="#00D2D3" />
-        <circle cx="14" cy="27" r="3" fill="#FF9F43" />
-        <circle cx="30" cy="27" r="3" fill="#54A0FF" />
-        <path d="M22 14L14 27M22 14L30 27M14 27H30" stroke="#FFFFFF" strokeWidth="1.5" strokeOpacity="0.75" />
-        <text x="50" y="24" fill="#0C2538" fontFamily="sans-serif" fontWeight="800" fontSize="13" letterSpacing="0.8">MINDSPACE</text>
-        <text x="50" y="36" fill="#0891B2" fontFamily="sans-serif" fontWeight="600" fontSize="8" letterSpacing="0.8">BUSINESS PARKS</text>
+      <svg viewBox="0 0 200 48" className="h-11 sm:h-13 md:h-14 w-auto max-w-[92%]" fill="none">
+        <rect x="4" y="4" width="40" height="40" rx="8" fill="#0C2538" />
+        <circle cx="24" cy="14" r="3.5" fill="#00D2D3" />
+        <circle cx="16" cy="27" r="3" fill="#FF9F43" />
+        <circle cx="32" cy="27" r="3" fill="#54A0FF" />
+        <path d="M24 14L16 27M24 14L32 27M16 27H32" stroke="#FFFFFF" strokeWidth="1.5" strokeOpacity="0.75" />
+        <text x="54" y="24" fill="#0C2538" fontFamily="sans-serif" fontWeight="800" fontSize="13.5" letterSpacing="0.8">MINDSPACE</text>
+        <text x="54" y="37" fill="#0891B2" fontFamily="sans-serif" fontWeight="600" fontSize="8.5" letterSpacing="0.8">BUSINESS PARKS</text>
       </svg>
     ),
   },
@@ -200,15 +200,15 @@ const clientPlaceholders = [
     sector: "Hyperscale Cloud Infrastructure",
     tag: "Hyperscale",
     logo: (
-      <svg viewBox="0 0 160 48" className="h-9 sm:h-10.5 w-auto max-w-[88%]" fill="none">
-        <rect x="2" y="4" width="40" height="40" rx="8" fill="#18132B" />
-        <rect x="12" y="12" width="8" height="8" rx="1.5" fill="#A855F7" />
-        <rect x="24" y="12" width="8" height="8" rx="1.5" fill="#6366F1" />
-        <rect x="12" y="24" width="8" height="8" rx="1.5" fill="#EC4899" />
-        <rect x="24" y="24" width="8" height="8" rx="1.5" fill="#3B82F6" />
-        <path d="M20 16H24M16 20V24M28 20V24M20 28H24" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round" />
-        <text x="50" y="24" fill="#18132B" fontFamily="sans-serif" fontWeight="800" fontSize="13" letterSpacing="0.5">adani <tspan fill="#7C3AED">conneX</tspan></text>
-        <text x="50" y="36" fill="#64748B" fontFamily="sans-serif" fontWeight="600" fontSize="8" letterSpacing="0.8">DATA CENTERS</text>
+      <svg viewBox="0 0 200 48" className="h-11 sm:h-13 md:h-14 w-auto max-w-[92%]" fill="none">
+        <rect x="4" y="4" width="40" height="40" rx="8" fill="#18132B" />
+        <rect x="14" y="12" width="8" height="8" rx="1.5" fill="#A855F7" />
+        <rect x="26" y="12" width="8" height="8" rx="1.5" fill="#6366F1" />
+        <rect x="14" y="24" width="8" height="8" rx="1.5" fill="#EC4899" />
+        <rect x="26" y="24" width="8" height="8" rx="1.5" fill="#3B82F6" />
+        <path d="M22 16H26M18 20V24M30 20V24M22 28H26" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round" />
+        <text x="54" y="24" fill="#18132B" fontFamily="sans-serif" fontWeight="800" fontSize="13.5" letterSpacing="0.5">adani <tspan fill="#7C3AED">conneX</tspan></text>
+        <text x="54" y="37" fill="#64748B" fontFamily="sans-serif" fontWeight="600" fontSize="8.5" letterSpacing="0.8">DATA CENTERS</text>
       </svg>
     ),
   },
@@ -217,12 +217,12 @@ const clientPlaceholders = [
     sector: "Enterprise Facilities & Digital Smart Hubs",
     tag: "Global Hub",
     logo: (
-      <svg viewBox="0 0 160 48" className="h-9 sm:h-10.5 w-auto max-w-[88%]" fill="none">
-        <rect x="2" y="4" width="40" height="40" rx="8" fill="#071B36" />
-        <path d="M13 22C13 17 18 15 22 22C26 29 31 27 31 22C31 17 26 15 22 22C18 29 13 27 13 22Z" stroke="#007CC3" strokeWidth="2.5" strokeLinecap="round" />
-        <circle cx="22" cy="22" r="2.2" fill="#FDB913" />
-        <text x="50" y="26" fill="#007CC3" fontFamily="sans-serif" fontWeight="900" fontSize="16" letterSpacing="0.5">Infosys</text>
-        <text x="50" y="38" fill="#F59E0B" fontFamily="sans-serif" fontWeight="700" fontSize="7.5" letterSpacing="0.8">NAVIGATE YOUR NEXT</text>
+      <svg viewBox="0 0 200 48" className="h-11 sm:h-13 md:h-14 w-auto max-w-[92%]" fill="none">
+        <rect x="4" y="4" width="40" height="40" rx="8" fill="#071B36" />
+        <path d="M15 22C15 17 20 15 24 22C28 29 33 27 33 22C33 17 28 15 24 22C20 29 15 27 15 22Z" stroke="#007CC3" strokeWidth="2.5" strokeLinecap="round" />
+        <circle cx="24" cy="22" r="2.2" fill="#FDB913" />
+        <text x="54" y="26" fill="#007CC3" fontFamily="sans-serif" fontWeight="900" fontSize="16.5" letterSpacing="0.5">Infosys</text>
+        <text x="54" y="38" fill="#F59E0B" fontFamily="sans-serif" fontWeight="700" fontSize="8" letterSpacing="0.8">NAVIGATE YOUR NEXT</text>
       </svg>
     ),
   },
@@ -1257,7 +1257,7 @@ export function HanviSite() {
                 {[...clientPlaceholders.slice(0, 4), ...clientPlaceholders.slice(0, 4), ...clientPlaceholders.slice(0, 4), ...clientPlaceholders.slice(0, 4)].map((client, index) => (
                   <div
                     key={`r1-${client.name}-${index}`}
-                    className="group relative flex w-[210px] sm:w-[240px] md:w-[260px] h-[95px] sm:h-[110px] shrink-0 items-center justify-center overflow-hidden rounded-2xl sm:rounded-3xl border border-brand-orange/20 bg-white p-4 shadow-sm backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_14px_30px_-6px_rgba(255,106,0,0.22)] hover:scale-105 transition-all duration-300"
+                    className="group relative flex w-[230px] sm:w-[260px] md:w-[280px] h-[105px] sm:h-[120px] shrink-0 items-center justify-center overflow-hidden rounded-2xl sm:rounded-3xl border border-brand-orange/20 bg-white p-3 sm:p-4 shadow-sm backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_14px_30px_-6px_rgba(255,106,0,0.22)] hover:scale-105 transition-all duration-300"
                     title={client.name}
                   >
                     <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-brand-orange via-brand-gold to-brand-rose opacity-80 group-hover:opacity-100 transition-opacity" />
@@ -1273,7 +1273,7 @@ export function HanviSite() {
                 {[...clientPlaceholders.slice(4, 8), ...clientPlaceholders.slice(4, 8), ...clientPlaceholders.slice(4, 8), ...clientPlaceholders.slice(4, 8)].map((client, index) => (
                   <div
                     key={`r2-${client.name}-${index}`}
-                    className="group relative flex w-[210px] sm:w-[240px] md:w-[260px] h-[95px] sm:h-[110px] shrink-0 items-center justify-center overflow-hidden rounded-2xl sm:rounded-3xl border border-brand-orange/20 bg-white p-4 shadow-sm backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_14px_30px_-6px_rgba(255,106,0,0.22)] hover:scale-105 transition-all duration-300"
+                    className="group relative flex w-[230px] sm:w-[260px] md:w-[280px] h-[105px] sm:h-[120px] shrink-0 items-center justify-center overflow-hidden rounded-2xl sm:rounded-3xl border border-brand-orange/20 bg-white p-3 sm:p-4 shadow-sm backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_14px_30px_-6px_rgba(255,106,0,0.22)] hover:scale-105 transition-all duration-300"
                     title={client.name}
                   >
                     <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-brand-orange via-brand-gold to-brand-rose opacity-80 group-hover:opacity-100 transition-opacity" />
