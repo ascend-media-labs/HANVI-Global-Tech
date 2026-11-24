@@ -776,7 +776,7 @@ export function HanviSite() {
         )}
 
         {(activeSection === "home" || activeSection === "services") && (
-          <section id="services" className={`scroll-mt-20 bg-brand-cream pt-6 pb-4 sm:pt-8 sm:pb-5 text-foreground border-t border-brand-orange/10 ${activeSection === "services" ? "min-h-[calc(100svh-120px)] flex flex-col justify-center" : ""}`}>
+          <section id="services" className={`scroll-mt-20 bg-brand-cream pt-6 pb-6 sm:pt-8 sm:pb-8 lg:pt-10 lg:pb-10 text-foreground border-t border-brand-orange/10 ${activeSection === "services" ? "min-h-[calc(100svh-120px)] flex flex-col justify-center py-10" : ""}`}>
             <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
               <div className="flex flex-col gap-2" data-reveal>
                 <div className="flex flex-col justify-between gap-2.5 sm:flex-row sm:items-end">
@@ -785,7 +785,7 @@ export function HanviSite() {
                       <span className="brand-gradient h-0.5 w-5" aria-hidden="true" />
                       <span>Specialized Services</span>
                     </div>
-                    <h2 className="font-display text-xl font-semibold tracking-tight text-foreground sm:text-2xl lg:text-[1.75rem]">
+                    <h2 className="font-display text-xl font-semibold tracking-tight text-foreground sm:text-2xl lg:text-[1.85rem]">
                       Engineering reliable, intelligent, and secure environments.
                     </h2>
                   </div>
@@ -802,13 +802,13 @@ export function HanviSite() {
               </p>
             </div>
 
-            <div className="mt-4 sm:mt-5 grid gap-3.5 sm:gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-5 sm:mt-6 grid gap-4 sm:gap-5 lg:gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {services.map((service, index) => {
                 const Icon = service.icon;
                 return (
                   <article
                     key={service.number}
-                    className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-brand-orange/20 bg-white/95 p-4 sm:p-4.5 shadow-sm backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_20px_42px_-6px_rgba(255,106,0,0.32),0_0_25px_rgba(255,106,0,0.2)]"
+                    className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-brand-orange/20 bg-white/95 p-4.5 sm:p-5 lg:p-5.5 shadow-sm backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_22px_45px_-6px_rgba(255,106,0,0.32),0_0_28px_rgba(255,106,0,0.2)]"
                     data-reveal
                     style={{ '--reveal-delay': `${index * 85}ms` } as React.CSSProperties}
                   >
@@ -822,40 +822,40 @@ export function HanviSite() {
                     <div className="pointer-events-none absolute -bottom-8 -left-8 size-28 rounded-full bg-brand-gold/10 blur-2xl opacity-60 transition-opacity duration-500 group-hover:opacity-100" />
 
                     <div className="relative z-10">
-                      {/* Compact Contextual Visual Preview Image */}
-                      <div className="relative mb-3 h-28 sm:h-32 w-full overflow-hidden rounded-xl border border-black/5 bg-muted/40 shadow-inner">
+                      {/* Enhanced Preview Image (Increased size to fit screen generously) */}
+                      <div className="relative mb-3.5 h-40 sm:h-44 lg:h-48 w-full overflow-hidden rounded-xl border border-black/5 bg-muted/40 shadow-inner">
                         <img
                           src={service.image}
                           alt={service.title}
                           className="h-full w-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-108"
                           loading="lazy"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/15" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/15" />
 
                         {/* Floating Icon Badge */}
-                        <div className="absolute bottom-2 left-2 flex size-8 items-center justify-center rounded-lg bg-gradient-to-br from-brand-orange to-brand-rose text-white shadow-[0_0_12px_rgba(255,106,0,0.4)] transition-transform duration-300 group-hover:scale-110">
-                          <Icon aria-hidden="true" className="size-3.5" />
+                        <div className="absolute bottom-2.5 left-2.5 flex size-9 sm:size-9.5 items-center justify-center rounded-lg bg-gradient-to-br from-brand-orange to-brand-rose text-white shadow-[0_0_14px_rgba(255,106,0,0.45)] transition-transform duration-300 group-hover:scale-110">
+                          <Icon aria-hidden="true" className="size-4 sm:size-4.5" />
                         </div>
 
                         {/* Number Badge */}
-                        <span className="absolute top-2 right-2 font-mono text-[10px] font-bold tracking-widest text-brand-gold px-2 py-0.5 rounded-full bg-black/70 backdrop-blur-md border border-brand-gold/30 shadow-sm">
+                        <span className="absolute top-2.5 right-2.5 font-mono text-[11px] font-bold tracking-widest text-brand-gold px-2.5 py-0.5 rounded-full bg-black/75 backdrop-blur-md border border-brand-gold/30 shadow-sm">
                           {service.number}
                         </span>
                       </div>
 
-                      <h3 className="font-display text-sm sm:text-[15px] font-bold tracking-tight text-foreground transition-colors duration-300 group-hover:text-brand-orange line-clamp-1">
+                      <h3 className="font-display text-[15px] sm:text-base font-bold tracking-tight text-foreground transition-colors duration-300 group-hover:text-brand-orange line-clamp-1">
                         {service.title}
                       </h3>
 
-                      <p className="mt-1 text-xs leading-relaxed text-muted-foreground transition-colors group-hover:text-foreground line-clamp-2">
+                      <p className="mt-1.5 text-xs sm:text-[13px] leading-relaxed text-muted-foreground transition-colors group-hover:text-foreground line-clamp-2">
                         {service.description}
                       </p>
 
-                      <div className="mt-2.5 flex flex-wrap gap-1">
+                      <div className="mt-3 flex flex-wrap gap-1.5">
                         {service.tags.map((tag) => (
                           <span
                             key={tag}
-                            className="inline-flex rounded-full border border-brand-orange/25 bg-brand-orange/10 px-2 py-0.5 text-[10px] font-medium text-brand-orange transition-colors duration-300 group-hover:border-brand-orange/40 group-hover:bg-brand-orange/20"
+                            className="inline-flex rounded-full border border-brand-orange/25 bg-brand-orange/10 px-2.5 py-0.5 text-[11px] font-medium text-brand-orange transition-colors duration-300 group-hover:border-brand-orange/40 group-hover:bg-brand-orange/20"
                           >
                             {tag}
                           </span>
@@ -863,13 +863,13 @@ export function HanviSite() {
                       </div>
                     </div>
 
-                    <div className="relative z-10 mt-3 pt-2.5 border-t border-border/60 flex items-center justify-between">
+                    <div className="relative z-10 mt-3.5 pt-3 border-t border-border/60 flex items-center justify-between">
                       <button
                         type="button"
                         onClick={() => navigateTo("contact")}
-                        className="inline-flex items-center gap-1.5 rounded-full brand-gradient glow-btn-hover px-3.5 py-1.5 text-[11px] font-semibold text-primary-foreground shadow-[0_4px_14px_rgba(255,80,30,0.25)] cursor-pointer"
+                        className="inline-flex items-center gap-1.5 rounded-full brand-gradient glow-btn-hover px-4 py-2 text-xs font-semibold text-primary-foreground shadow-[0_4px_14px_rgba(255,80,30,0.25)] cursor-pointer"
                       >
-                        Enquire about this service <ArrowUpRight aria-hidden="true" className="size-3" />
+                        Enquire about this service <ArrowUpRight aria-hidden="true" className="size-3.5" />
                       </button>
                     </div>
                   </article>
@@ -878,7 +878,7 @@ export function HanviSite() {
 
               {/* 6th Card: Custom Turnkey Engineering Consultation */}
               <article
-                className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-brand-orange/30 bg-gradient-to-br from-white via-brand-orange/[0.04] to-brand-gold/[0.08] p-4 sm:p-4.5 shadow-sm backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_20px_42px_-6px_rgba(255,106,0,0.32),0_0_25px_rgba(255,106,0,0.2)]"
+                className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-brand-orange/30 bg-gradient-to-br from-white via-brand-orange/[0.04] to-brand-gold/[0.08] p-4.5 sm:p-5 lg:p-5.5 shadow-sm backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_22px_45px_-6px_rgba(255,106,0,0.32),0_0_28px_rgba(255,106,0,0.2)]"
                 data-reveal
                 style={{ '--reveal-delay': '450ms' } as React.CSSProperties}
               >
@@ -887,52 +887,52 @@ export function HanviSite() {
 
                 <div className="relative z-10">
                   {/* Contextual Visual Preview Image for 6th Card */}
-                  <div className="relative mb-3 h-28 sm:h-32 w-full overflow-hidden rounded-xl border border-black/5 bg-muted/40 shadow-inner">
+                  <div className="relative mb-3.5 h-40 sm:h-44 lg:h-48 w-full overflow-hidden rounded-xl border border-black/5 bg-muted/40 shadow-inner">
                     <img
                       src="/services/turnkey-consulting.jpg"
                       alt="CUSTOM TURNKEY ENGINEERING & CONSULTING"
                       className="h-full w-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-108"
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/15" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/15" />
 
-                    <div className="absolute bottom-2 left-2 flex size-8 items-center justify-center rounded-lg bg-gradient-to-br from-brand-orange to-brand-rose text-white shadow-[0_0_15px_rgba(255,106,0,0.4)] transition-all duration-300 group-hover:scale-110">
-                      <Layers3 aria-hidden="true" className="size-3.5" />
+                    <div className="absolute bottom-2.5 left-2.5 flex size-9 sm:size-9.5 items-center justify-center rounded-lg bg-gradient-to-br from-brand-orange to-brand-rose text-white shadow-[0_0_15px_rgba(255,106,0,0.45)] transition-all duration-300 group-hover:scale-110">
+                      <Layers3 aria-hidden="true" className="size-4 sm:size-4.5" />
                     </div>
 
-                    <span className="absolute top-2 right-2 font-display text-[9px] font-bold uppercase tracking-wider text-brand-gold px-2 py-0.5 rounded-full bg-black/70 backdrop-blur-md border border-brand-gold/30 shadow-sm">
+                    <span className="absolute top-2.5 right-2.5 font-display text-[10px] font-bold uppercase tracking-wider text-brand-gold px-2.5 py-0.5 rounded-full bg-black/75 backdrop-blur-md border border-brand-gold/30 shadow-sm">
                       Custom Solutions
                     </span>
                   </div>
 
-                  <h3 className="font-display text-sm sm:text-[15px] font-bold tracking-tight text-foreground line-clamp-1">
+                  <h3 className="font-display text-[15px] sm:text-base font-bold tracking-tight text-foreground line-clamp-1">
                     CUSTOM TURNKEY ENGINEERING &amp; CONSULTING
                   </h3>
 
-                  <p className="mt-1 text-xs leading-relaxed text-muted-foreground line-clamp-2">
+                  <p className="mt-1.5 text-xs sm:text-[13px] leading-relaxed text-muted-foreground line-clamp-2">
                     Comprehensive industrial, commercial, or residential blueprints designed and executed end-to-end.
                   </p>
 
-                  <div className="mt-2.5 flex flex-wrap gap-1">
-                    <span className="inline-flex rounded-full border border-brand-orange/25 bg-brand-orange/10 px-2 py-0.5 text-[10px] font-medium text-brand-orange">
+                  <div className="mt-3 flex flex-wrap gap-1.5">
+                    <span className="inline-flex rounded-full border border-brand-orange/25 bg-brand-orange/10 px-2.5 py-0.5 text-[11px] font-medium text-brand-orange">
                       Turnkey EPC
                     </span>
-                    <span className="inline-flex rounded-full border border-brand-orange/25 bg-brand-orange/10 px-2 py-0.5 text-[10px] font-medium text-brand-orange">
+                    <span className="inline-flex rounded-full border border-brand-orange/25 bg-brand-orange/10 px-2.5 py-0.5 text-[11px] font-medium text-brand-orange">
                       Site Auditing
                     </span>
-                    <span className="inline-flex rounded-full border border-brand-orange/25 bg-brand-orange/10 px-2 py-0.5 text-[10px] font-medium text-brand-orange">
+                    <span className="inline-flex rounded-full border border-brand-orange/25 bg-brand-orange/10 px-2.5 py-0.5 text-[11px] font-medium text-brand-orange">
                       AMC &amp; Support
                     </span>
                   </div>
                 </div>
 
-                <div className="relative z-10 mt-3 pt-2.5 border-t border-border/60 flex items-center justify-between">
+                <div className="relative z-10 mt-3.5 pt-3 border-t border-border/60 flex items-center justify-between">
                   <button
                     type="button"
                     onClick={() => navigateTo("contact")}
-                    className="inline-flex items-center gap-1.5 rounded-full brand-gradient glow-btn-hover px-3.5 py-1.5 text-[11px] font-semibold text-primary-foreground shadow-[0_4px_14px_rgba(255,80,30,0.25)] cursor-pointer"
+                    className="inline-flex items-center gap-1.5 rounded-full brand-gradient glow-btn-hover px-4 py-2 text-xs font-semibold text-primary-foreground shadow-[0_4px_14px_rgba(255,80,30,0.25)] cursor-pointer"
                   >
-                    Request consultation <ArrowUpRight aria-hidden="true" className="size-3" />
+                    Request consultation <ArrowUpRight aria-hidden="true" className="size-3.5" />
                   </button>
                 </div>
               </article>
