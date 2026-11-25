@@ -1022,6 +1022,685 @@ export function HanviSite() {
     setMenuOpen(false);
   }
 
+
+  const renderAboutSection = () => (
+<section id="about" className="relative isolate scroll-mt-20 overflow-hidden bg-white py-8 sm:py-12 min-h-[40vh]">
+            <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
+              <div className="grid items-center gap-6 lg:grid-cols-[1fr_1.15fr] xl:gap-10" data-reveal>
+                {/* Left Column: Building Photo */}
+                <div className="relative group overflow-hidden rounded-2xl border border-slate-200/80 shadow-xs max-w-[520px] mx-auto lg:mx-0 w-full">
+                  <img
+                    src={aboutBuilding}
+                    alt="HANVI GLOBAL TECH PVT LTD Building & Headquarters"
+                    loading="lazy"
+                    className="w-full h-auto max-h-[330px] object-cover transition-transform duration-500 ease-out group-hover:scale-102"
+                  />
+                </div>
+
+                {/* Right Column: About Content & 4 Cards */}
+                <div className="flex flex-col justify-center">
+                  <h2 className="font-display text-2xl font-bold tracking-tight text-foreground sm:text-3xl lg:text-[2rem] leading-tight">
+                    About <span className="text-[#E02424] font-black">Hanvi Global Tech</span>
+                  </h2>
+
+                  <p className="mt-2.5 text-xs sm:text-sm lg:text-[14px] leading-relaxed text-muted-foreground text-justify">
+                    Hanvi Global Tech Pvt Ltd is a technology solutions company delivering reliable, scalable, and integrated systems for safety, security, communication, and smart automation. We help businesses, institutions, and homeowners build safer, smarter, and more connected environments.
+                  </p>
+
+                  {/* 4 Feature Cards matching reference design */}
+                  <div className="mt-5 grid grid-cols-2 gap-2.5 sm:grid-cols-4 sm:gap-3">
+                    {/* Card 1: Customized Solutions */}
+                    <div className="group relative flex flex-col items-center justify-center rounded-xl border border-slate-200/90 bg-slate-50/70 p-2.5 sm:p-3 text-center transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:border-[#E02424]/70 hover:shadow-[0_10px_28px_-4px_rgba(224,36,36,0.3),0_0_16px_rgba(255,106,0,0.2)] cursor-pointer">
+                      <div className="flex size-9 items-center justify-center rounded-lg bg-red-50 text-[#E02424] mb-2 transition-all duration-300 group-hover:bg-[#E02424] group-hover:text-white group-hover:scale-110 group-hover:shadow-[0_4px_12px_rgba(224,36,36,0.35)]">
+                        <Target className="size-5 transition-colors duration-300 text-[#E02424] group-hover:text-white" />
+                      </div>
+                      <span className="text-[11px] sm:text-xs font-bold text-foreground leading-tight transition-colors duration-300 group-hover:text-[#E02424]">
+                        Customized<br />Solutions
+                      </span>
+                    </div>
+
+                    {/* Card 2: Industry-Grade Products */}
+                    <div className="group relative flex flex-col items-center justify-center rounded-xl border border-slate-200/90 bg-slate-50/70 p-2.5 sm:p-3 text-center transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:border-[#E02424]/70 hover:shadow-[0_10px_28px_-4px_rgba(224,36,36,0.3),0_0_16px_rgba(255,106,0,0.2)] cursor-pointer">
+                      <div className="flex size-9 items-center justify-center rounded-lg bg-red-50 text-[#E02424] mb-2 transition-all duration-300 group-hover:bg-[#E02424] group-hover:text-white group-hover:scale-110 group-hover:shadow-[0_4px_12px_rgba(224,36,36,0.35)]">
+                        <Layers className="size-5 transition-colors duration-300 text-[#E02424] group-hover:text-white" />
+                      </div>
+                      <span className="text-[11px] sm:text-xs font-bold text-foreground leading-tight transition-colors duration-300 group-hover:text-[#E02424]">
+                        Industry-Grade<br />Products
+                      </span>
+                    </div>
+
+                    {/* Card 3: Professional Installation */}
+                    <div className="group relative flex flex-col items-center justify-center rounded-xl border border-slate-200/90 bg-slate-50/70 p-2.5 sm:p-3 text-center transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:border-[#E02424]/70 hover:shadow-[0_10px_28px_-4px_rgba(224,36,36,0.3),0_0_16px_rgba(255,106,0,0.2)] cursor-pointer">
+                      <div className="flex size-9 items-center justify-center rounded-lg bg-red-50 text-[#E02424] mb-2 transition-all duration-300 group-hover:bg-[#E02424] group-hover:text-white group-hover:scale-110 group-hover:shadow-[0_4px_12px_rgba(224,36,36,0.35)]">
+                        <Wrench className="size-5 transition-colors duration-300 text-[#E02424] group-hover:text-white" />
+                      </div>
+                      <span className="text-[11px] sm:text-xs font-bold text-foreground leading-tight transition-colors duration-300 group-hover:text-[#E02424]">
+                        Professional<br />Installation
+                      </span>
+                    </div>
+
+                    {/* Card 4: Ongoing Support */}
+                    <div className="group relative flex flex-col items-center justify-center rounded-xl border border-slate-200/90 bg-slate-50/70 p-2.5 sm:p-3 text-center transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:border-[#E02424]/70 hover:shadow-[0_10px_28px_-4px_rgba(224,36,36,0.3),0_0_16px_rgba(255,106,0,0.2)] cursor-pointer">
+                      <div className="flex size-9 items-center justify-center rounded-lg bg-red-50 text-[#E02424] mb-2 transition-all duration-300 group-hover:bg-[#E02424] group-hover:text-white group-hover:scale-110 group-hover:shadow-[0_4px_12px_rgba(224,36,36,0.35)]">
+                        <Headphones className="size-5 transition-colors duration-300 text-[#E02424] group-hover:text-white" />
+                      </div>
+                      <span className="text-[11px] sm:text-xs font-bold text-foreground leading-tight transition-colors duration-300 group-hover:text-[#E02424]">
+                        Ongoing<br />Support
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+  );
+
+  const renderWhyUsSection = () => (
+<section id="why-us" className="scroll-mt-20 bg-brand-cream-alt pt-8 pb-10 sm:pt-10 sm:pb-12 text-foreground border-t border-brand-orange/10">
+            <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
+              {/* Header */}
+              <div className="flex flex-col gap-1.5" data-reveal>
+                <div className="flex flex-col justify-between gap-2.5 sm:flex-row sm:items-end">
+                  <div>
+                    <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-orange font-bold">
+                      <span className="brand-gradient h-0.5 w-5" aria-hidden="true" />
+                      <span>Why Choose Us</span>
+                    </div>
+                    <h2 className="font-display text-xl font-semibold tracking-tight text-foreground sm:text-2xl lg:text-[1.75rem]">
+                      Engineered for excellence. Trusted for reliability.
+                    </h2>
+                  </div>
+                  <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-brand-orange px-3 py-1 rounded-full bg-brand-orange/10 border border-brand-orange/25 w-fit">
+                    <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" aria-hidden="true" />
+                    The HANVI Advantage
+                  </span>
+                </div>
+                <p className="text-xs sm:text-sm text-muted-foreground max-w-3xl">
+                  Empowering commercial and industrial enterprises with turnkey engineering, certified life-safety compliance, authorized OEM technology, and 24/7 mission-critical support.
+                </p>
+              </div>
+
+              {/* 6 Feature Pillars Grid */}
+              <div className="mt-5 sm:mt-6 grid grid-cols-1 gap-3.5 sm:grid-cols-2 lg:grid-cols-3 sm:gap-4.5">
+                {whyChooseUsPillars.map((pillar, index) => {
+                  const Icon = pillar.icon;
+                  return (
+                    <div
+                      key={pillar.title}
+                      data-reveal
+                      style={{ '--reveal-delay': `${index * 50}ms` } as React.CSSProperties}
+                      className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-brand-orange/20 bg-white/95 p-4.5 sm:p-5 shadow-sm backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_14px_32px_-6px_rgba(255,106,0,0.22)] hover:scale-[1.02] transition-all duration-300"
+                    >
+                      <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-brand-orange via-brand-gold to-brand-rose opacity-80 group-hover:opacity-100 transition-opacity" />
+                      <div>
+                        <div className="flex items-center justify-between gap-3 mb-3">
+                          <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-brand-orange to-brand-rose text-white shadow-sm transition-transform duration-300 group-hover:scale-110">
+                            <Icon className="size-5" aria-hidden="true" />
+                          </div>
+                          <span className="text-[10px] font-bold uppercase tracking-wider text-brand-orange px-2.5 py-0.5 rounded-full bg-brand-orange/10 border border-brand-orange/25">
+                            {pillar.badge}
+                          </span>
+                        </div>
+                        <h3 className="font-display text-xs sm:text-sm font-bold text-foreground group-hover:text-brand-orange transition-colors">
+                          {pillar.title}
+                        </h3>
+                        <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">
+                          {pillar.description}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Stats Bar */}
+              <div
+                data-reveal
+                className="mt-5 sm:mt-6 overflow-hidden rounded-2xl border border-brand-orange/20 bg-white/95 p-4 sm:p-5 shadow-sm backdrop-blur-md"
+              >
+                <div className="grid grid-cols-2 gap-4 divide-y divide-brand-orange/15 sm:grid-cols-4 sm:gap-6 sm:divide-y-0 sm:divide-x sm:divide-brand-orange/20">
+                  {whyChooseUsStats.map((stat, i) => (
+                    <div key={stat.label} className={`flex flex-col items-center text-center ${i >= 2 ? "pt-3 sm:pt-0" : ""}`}>
+                      <span className="font-display text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight text-brand-orange">
+                        <AnimatedCounter
+                          target={stat.target}
+                          decimals={stat.decimals}
+                          suffix={stat.suffix}
+                        />
+                      </span>
+                      <span className="mt-1 text-[11px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                        {stat.label}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+  );
+
+  const renderServicesSection = () => (
+<section id="services" className="relative isolate scroll-mt-20 overflow-hidden bg-brand-cream border-t border-brand-orange/10 py-12 sm:py-16 text-foreground min-h-[60vh]">
+            <div className="relative mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
+              {/* Section Header */}
+              <div className="flex flex-col items-start text-left mb-6 sm:mb-8" data-reveal>
+                <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-50 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-[#E02424]">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#E02424] animate-pulse" />
+                  <span>Specialized Services</span>
+                </div>
+                <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900">
+                  Engineering reliable, intelligent, and secure environments.
+                </h2>
+                <p className="mt-1.5 text-xs sm:text-sm text-slate-600 max-w-none whitespace-normal md:whitespace-nowrap">
+                  Comprehensive life safety, high-pressure fire systems, tier-standard cyber data centers, structured communications, and smart automation.
+                </p>
+              </div>
+
+              {/* 6 Cards Grid matching Image 2 */}
+              <div className="grid gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
+                {services.map((service, index) => {
+                  const Icon = service.icon;
+                  return (
+                    <article
+                      key={service.title}
+                      id={`service-card-${index}`}
+                      onClick={() => openService(service.id)}
+                      className="group relative flex flex-col overflow-hidden rounded-2xl bg-white border border-slate-200/90 shadow-md transition-all duration-300 hover:-translate-y-2 hover:border-[#E02424]/80 hover:shadow-[0_16px_40px_-8px_rgba(224,36,36,0.35),0_0_24px_rgba(255,106,0,0.2)] cursor-pointer scroll-mt-24"
+                      data-reveal
+                      style={{ '--reveal-delay': `${index * 80}ms` } as React.CSSProperties}
+                    >
+                      {/* Top Gradient Glow Accent on Hover */}
+                      <div className="pointer-events-none absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-[#E02424] via-brand-orange to-brand-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
+
+                      {/* Top Image */}
+                      <div className="relative h-44 sm:h-48 w-full overflow-hidden bg-slate-900">
+                        <img
+                          src={service.image}
+                          alt={service.title}
+                          className="h-full w-full object-cover transition-all duration-500 ease-out group-hover:scale-108 group-hover:brightness-105"
+                          loading="lazy"
+                        />
+                      </div>
+
+                      {/* Bottom White Container */}
+                      <div className="flex items-center gap-3 p-3.5 sm:p-4 bg-white transition-colors duration-300">
+                        {/* Red Square Icon Badge */}
+                        <div className="flex size-11 sm:size-12 shrink-0 items-center justify-center rounded-xl bg-[#E02424] text-white shadow-sm transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_16px_rgba(224,36,36,0.6)]">
+                          <Icon aria-hidden="true" className="size-6 text-white" />
+                        </div>
+
+                        {/* Title & Description */}
+                        <div className="min-w-0 flex-1 text-left">
+                          <h3 className="font-display text-xs sm:text-[13px] md:text-sm font-bold text-slate-900 leading-snug transition-colors duration-200 group-hover:text-[#E02424]">
+                            {service.title}
+                          </h3>
+                          <p className="mt-0.5 text-[10.5px] sm:text-[11.5px] text-slate-500 leading-snug line-clamp-2">
+                            {service.description}
+                          </p>
+                        </div>
+
+                        {/* Small Circular Arrow Button */}
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            openService(service.id);
+                          }}
+                          aria-label={`View details of ${service.title}`}
+                          className="flex size-7 sm:size-8 shrink-0 items-center justify-center rounded-full border border-[#E02424] text-[#E02424] transition-all duration-200 group-hover:bg-[#E02424] group-hover:text-white group-hover:shadow-[0_0_12px_rgba(224,36,36,0.5)] group-hover:translate-x-0.5 cursor-pointer"
+                        >
+                          <ArrowRight className="size-3.5 sm:size-4" />
+                        </button>
+                      </div>
+                    </article>
+                  );
+                })}
+              </div>
+
+              {/* View All Solutions Red Pill Button */}
+              <div className="mt-8 sm:mt-10 flex justify-center relative z-10" data-reveal>
+                <button
+                  type="button"
+                  onClick={() => navigateTo("contact")}
+                  className="inline-flex items-center gap-2 rounded-full bg-[#E02424] hover:bg-red-700 text-white px-8 py-3 text-xs sm:text-sm font-bold shadow-lg shadow-red-950/40 transition-transform duration-200 hover:scale-105 cursor-pointer"
+                >
+                  <span>View All Solutions</span>
+                  <ArrowRight className="size-4" />
+                </button>
+              </div>
+            </div>
+
+            {/* Bottom Red Mesh Wave SVG Accent */}
+            <div className="absolute inset-x-0 bottom-0 h-24 pointer-events-none opacity-40 overflow-hidden flex items-end">
+              <svg viewBox="0 0 1440 120" fill="none" className="w-full h-full text-[#E02424]/40" preserveAspectRatio="none">
+                <path d="M0,64L60,69.3C120,75,240,85,360,80C480,75,600,53,720,53.3C840,53,960,75,1080,80C1200,85,1320,75,1380,69.3L1440,64L1440,120L1380,120C1320,120,1200,120,1080,120C960,120,840,120,720,120C600,120,480,120,360,120C240,120,120,120,60,120L0,120Z" fill="url(#redWaveGrad)" />
+                <defs>
+                  <linearGradient id="redWaveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#E02424" stopOpacity="0.4" />
+                    <stop offset="50%" stopColor="#E02424" stopOpacity="0.05" />
+                    <stop offset="100%" stopColor="#E02424" stopOpacity="0.4" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+          </section>
+  );
+
+  const renderClientsSection = () => (
+<section id="clients" className="scroll-mt-20 bg-brand-cream-alt py-12 sm:py-16 text-foreground border-t border-brand-orange/10 min-h-[60vh]">
+            <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
+              <div className="flex flex-col gap-1.5" data-reveal>
+                <div className="flex flex-col justify-between gap-2.5 sm:flex-row sm:items-end">
+                  <div>
+                    <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-orange font-bold">
+                      <span className="brand-gradient h-0.5 w-5" aria-hidden="true" />
+                      <span>Clients</span>
+                    </div>
+                    <h2 className="font-display text-xl font-semibold tracking-tight text-foreground sm:text-2xl lg:text-[1.75rem]">
+                      Built on meaningful connections.
+                    </h2>
+                  </div>
+                  <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-brand-orange px-3 py-1 rounded-full bg-brand-orange/10 border border-brand-orange/25 w-fit">
+                    <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" aria-hidden="true" />
+                    Enterprise Network
+                  </span>
+                </div>
+                <p className="text-xs sm:text-sm text-muted-foreground lg:whitespace-nowrap">
+                  Trusted enterprise partners, institutions, and infrastructure clients across diverse commercial &amp; industrial domains.
+                </p>
+              </div>
+
+              {/* Infinite Horizontal Scroll Animated Tracks */}
+              <div className="relative mt-5 sm:mt-6 overflow-hidden pause-hover select-none">
+                {/* Left Edge Subtle Fade Mask */}
+                <div className="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-24 bg-gradient-to-r from-brand-cream-alt via-brand-cream-alt/80 to-transparent z-10" />
+
+                {/* Right Edge Subtle Fade Mask */}
+                <div className="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-24 bg-gradient-to-l from-brand-cream-alt via-brand-cream-alt/80 to-transparent z-10" />
+
+                {/* Row 1: Scrolling Left */}
+                <div className="animate-marquee-left flex gap-4 sm:gap-5 pb-3.5">
+                  {[...clientPlaceholders.slice(0, 4), ...clientPlaceholders.slice(0, 4), ...clientPlaceholders.slice(0, 4), ...clientPlaceholders.slice(0, 4)].map((client, index) => (
+                    <div
+                      key={`r1-${client.name}-${index}`}
+                      className="group relative flex w-[225px] sm:w-[255px] md:w-[275px] h-[100px] sm:h-[115px] shrink-0 items-center justify-center overflow-hidden rounded-2xl sm:rounded-3xl border border-brand-orange/20 bg-white px-4 py-2 shadow-sm backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_14px_30px_-6px_rgba(255,106,0,0.22)] hover:scale-105 transition-all duration-300"
+                      title={client.name}
+                    >
+                      <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-brand-orange via-brand-gold to-brand-rose opacity-80 group-hover:opacity-100 transition-opacity" />
+                      <div className="flex h-full w-full items-center justify-center">
+                        {client.logo}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Row 2: Scrolling Right */}
+                <div className="animate-marquee-right flex gap-4 sm:gap-5 pt-1">
+                  {[...clientPlaceholders.slice(4, 8), ...clientPlaceholders.slice(4, 8), ...clientPlaceholders.slice(4, 8), ...clientPlaceholders.slice(4, 8)].map((client, index) => (
+                    <div
+                      key={`r2-${client.name}-${index}`}
+                      className="group relative flex w-[225px] sm:w-[255px] md:w-[275px] h-[100px] sm:h-[115px] shrink-0 items-center justify-center overflow-hidden rounded-2xl sm:rounded-3xl border border-brand-orange/20 bg-white px-4 py-2 shadow-sm backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_14px_30px_-6px_rgba(255,106,0,0.22)] hover:scale-105 transition-all duration-300"
+                      title={client.name}
+                    >
+                      <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-brand-orange via-brand-gold to-brand-rose opacity-80 group-hover:opacity-100 transition-opacity" />
+                      <div className="flex h-full w-full items-center justify-center">
+                        {client.logo}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+  );
+
+  const renderPartnersSection = () => (
+<section id="partners" className="scroll-mt-20 bg-brand-cream py-12 sm:py-16 text-foreground border-t border-brand-orange/10 min-h-[60vh]">
+            <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
+              <div className="flex flex-col gap-1.5" data-reveal>
+                <div className="flex flex-col justify-between gap-2.5 sm:flex-row sm:items-end">
+                  <div>
+                    <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-orange font-bold">
+                      <span className="brand-gradient h-0.5 w-5" aria-hidden="true" />
+                      <span>Partners</span>
+                    </div>
+                    <h2 className="font-display text-xl font-semibold tracking-tight text-foreground sm:text-2xl lg:text-[1.75rem]">
+                      Stronger, side by side.
+                    </h2>
+                  </div>
+                  <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-brand-gold px-3 py-1 rounded-full bg-brand-gold/15 border border-brand-gold/30 text-amber-700 w-fit">
+                    <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" aria-hidden="true" />
+                    Global Alliances
+                  </span>
+                </div>
+                <p className="text-xs sm:text-sm text-muted-foreground lg:whitespace-nowrap">
+                  Collaborating with world-class OEM hardware manufacturers, cybersecurity alliances, and IoT smart ecosystem providers.
+                </p>
+              </div>
+              {/* Infinite Horizontal Scroll Animated Tracks for Partners */}
+              <div className="relative mt-5 sm:mt-6 overflow-hidden pause-hover select-none">
+                {/* Left Edge Subtle Fade Mask */}
+                <div className="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-24 bg-gradient-to-r from-brand-cream via-brand-cream/80 to-transparent z-10" />
+
+                {/* Right Edge Subtle Fade Mask */}
+                <div className="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-24 bg-gradient-to-l from-brand-cream via-brand-cream/80 to-transparent z-10" />
+
+                {/* Row 1: Scrolling Left */}
+                <div className="animate-marquee-left flex gap-4 sm:gap-5 pb-3.5">
+                  {[...partnerPlaceholders.slice(0, 4), ...partnerPlaceholders.slice(0, 4), ...partnerPlaceholders.slice(0, 4), ...partnerPlaceholders.slice(0, 4)].map((partner, index) => (
+                    <div
+                      key={`pr1-${partner.name}-${index}`}
+                      className="group relative flex w-[225px] sm:w-[255px] md:w-[275px] h-[100px] sm:h-[115px] shrink-0 items-center justify-center overflow-hidden rounded-2xl sm:rounded-3xl border border-brand-orange/20 bg-white px-4 py-2 shadow-sm backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_14px_30px_-6px_rgba(255,106,0,0.22)] hover:scale-105 transition-all duration-300"
+                      title={partner.name}
+                    >
+                      <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-brand-orange via-brand-gold to-brand-rose opacity-80 group-hover:opacity-100 transition-opacity" />
+                      <div className="flex h-full w-full items-center justify-center">
+                        {partner.logo}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Row 2: Scrolling Right */}
+                <div className="animate-marquee-right flex gap-4 sm:gap-5 pt-1">
+                  {[...partnerPlaceholders.slice(4, 8), ...partnerPlaceholders.slice(4, 8), ...partnerPlaceholders.slice(4, 8), ...partnerPlaceholders.slice(4, 8)].map((partner, index) => (
+                    <div
+                      key={`pr2-${partner.name}-${index}`}
+                      className="group relative flex w-[225px] sm:w-[255px] md:w-[275px] h-[100px] sm:h-[115px] shrink-0 items-center justify-center overflow-hidden rounded-2xl sm:rounded-3xl border border-brand-orange/20 bg-white px-4 py-2 shadow-sm backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_14px_30px_-6px_rgba(255,106,0,0.22)] hover:scale-105 transition-all duration-300"
+                      title={partner.name}
+                    >
+                      <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-brand-orange via-brand-gold to-brand-rose opacity-80 group-hover:opacity-100 transition-opacity" />
+                      <div className="flex h-full w-full items-center justify-center">
+                        {partner.logo}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+  );
+
+  const renderContactSection = () => (
+<section id="contact" className="scroll-mt-20 bg-brand-cream py-12 sm:py-16 text-foreground border-t border-brand-orange/10 min-h-[60vh]">
+            <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
+              <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-10 items-center">
+                <div data-reveal>
+                  <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-orange font-bold">
+                    <span className="brand-gradient h-0.5 w-5" aria-hidden="true" />
+                    <span>Contact us</span>
+                  </div>
+                  <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-semibold leading-tight text-foreground">
+                    Let’s start a conversation.
+                  </h2>
+                  <p className="mt-2 max-w-md text-xs sm:text-sm leading-relaxed text-muted-foreground">
+                    Get in touch with our team for enterprise project inquiries, site inspections, and customized safety &amp; automation solutions.
+                  </p>
+
+                  <dl className="mt-4 space-y-2.5 sm:space-y-3">
+                    {/* Contact Person Card */}
+                    <div
+                      data-reveal
+                      style={{ '--reveal-delay': '0ms' } as React.CSSProperties}
+                      className="group relative flex items-center gap-3.5 overflow-hidden rounded-xl border border-brand-orange/20 bg-white/95 p-3 sm:p-3.5 shadow-sm backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_12px_28px_-6px_rgba(255,106,0,0.25),0_0_18px_rgba(255,106,0,0.15)]"
+                    >
+                      <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-brand-orange via-brand-gold to-brand-rose opacity-80" />
+                      <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-brand-orange to-brand-rose text-white shadow-sm">
+                        <User aria-hidden="true" className="size-4" />
+                      </div>
+                      <div>
+                        <dt className="text-[10px] font-bold uppercase tracking-wider text-brand-orange">Contact Person</dt>
+                        <dd className="mt-0.5 text-xs sm:text-sm font-bold text-foreground">SOURVI SAIE KUMAR</dd>
+                      </div>
+                    </div>
+
+                    {/* Phone Number Card */}
+                    <div
+                      data-reveal
+                      style={{ '--reveal-delay': '90ms' } as React.CSSProperties}
+                      className="group relative flex items-center gap-3.5 overflow-hidden rounded-xl border border-brand-orange/20 bg-white/95 p-3 sm:p-3.5 shadow-sm backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_12px_28px_-6px_rgba(255,106,0,0.25),0_0_18px_rgba(255,106,0,0.15)]"
+                    >
+                      <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-brand-orange via-brand-gold to-brand-rose opacity-80" />
+                      <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-brand-orange to-brand-coral text-white shadow-sm">
+                        <Phone aria-hidden="true" className="size-4" />
+                      </div>
+                      <div>
+                        <dt className="text-[10px] font-bold uppercase tracking-wider text-brand-orange">Phone Number</dt>
+                        <dd className="mt-0.5 text-xs sm:text-sm font-bold text-foreground">
+                          <a href="tel:+919392673103" className="transition-colors hover:text-brand-orange">
+                            +91 9392673103
+                          </a>
+                        </dd>
+                      </div>
+                    </div>
+
+                    {/* Email Card */}
+                    <div
+                      data-reveal
+                      style={{ '--reveal-delay': '180ms' } as React.CSSProperties}
+                      className="group relative flex items-center gap-3.5 overflow-hidden rounded-xl border border-brand-orange/20 bg-white/95 p-3 sm:p-3.5 shadow-sm backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_12px_28px_-6px_rgba(255,106,0,0.25),0_0_18px_rgba(255,106,0,0.15)]"
+                    >
+                      <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-brand-orange via-brand-gold to-brand-rose opacity-80" />
+                      <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-brand-coral to-brand-gold text-white shadow-sm">
+                        <Mail aria-hidden="true" className="size-4" />
+                      </div>
+                      <div>
+                        <dt className="text-[10px] font-bold uppercase tracking-wider text-brand-orange">Email Address</dt>
+                        <dd className="mt-0.5 text-xs sm:text-sm font-bold text-foreground">
+                          <a href="mailto:saie@hanviglobaltech.com" className="transition-colors hover:text-brand-orange">
+                            saie@hanviglobaltech.com
+                          </a>
+                        </dd>
+                      </div>
+                    </div>
+                  </dl>
+                </div>
+
+                {/* Contact Form Card */}
+                <div
+                  className="group relative overflow-hidden rounded-2xl border border-brand-orange/25 bg-white p-4.5 sm:p-5 lg:p-6 shadow-md backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_16px_36px_-6px_rgba(255,106,0,0.25),0_0_24px_rgba(255,106,0,0.15)]"
+                  data-reveal
+                >
+                  <div className="pointer-events-none absolute inset-x-0 top-0 h-[2.5px] bg-gradient-to-r from-brand-orange via-brand-gold to-brand-rose" />
+                  <div className="pointer-events-none absolute -right-12 -top-12 size-40 rounded-full bg-brand-orange/10 blur-2xl opacity-75" />
+
+                  <h3 className="relative z-10 font-display text-base sm:text-lg font-bold text-foreground">Send us a message</h3>
+                  <p className="relative z-10 mt-0.5 text-[11px] sm:text-xs text-muted-foreground">Fill out the form below and our team will get back to you shortly.</p>
+
+                  {formSubmitted ? (
+                    <div className="relative z-10 my-3 rounded-xl border border-emerald-500/40 bg-emerald-500/10 p-4 sm:p-5 text-emerald-950 backdrop-blur-md animate-in fade-in zoom-in-95 duration-300">
+                      <div className="flex items-start gap-3">
+                        <div className="flex size-9 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-white shadow-sm">
+                          <CheckCircle2 className="size-5" />
+                        </div>
+                        <div className="space-y-1">
+                          <h4 className="font-display text-sm sm:text-base font-bold text-emerald-900">Inquiry Sent via WhatsApp!</h4>
+                          <p className="text-xs text-emerald-800 leading-relaxed">
+                            {formMessage}
+                          </p>
+                          <p className="text-[11px] text-emerald-700/90 pt-0.5">
+                            WhatsApp will open with your complete inquiry text ready to send to <strong>+91 9392673103</strong>. If it did not open automatically, click below:
+                          </p>
+                          <div className="mt-3 flex flex-wrap items-center gap-2.5">
+                            <a
+                              href={`https://wa.me/919392673103?text=${encodeURIComponent(
+                                [
+                                  `*New Project Inquiry - HANVI Global Tech*`,
+                                  ``,
+                                  `*Full Name:* ${formData.name.trim()}`,
+                                  `*Email:* ${formData.email.trim()}`,
+                                  `*Phone:* +91 ${formData.phone.trim()}`,
+                                  `*Subject:* ${formData.subject.trim()}`,
+                                  `*Message:* ${formData.message.trim()}`,
+                                ].join("\n")
+                              )}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1.5 rounded-full bg-[#25D366] px-3.5 py-1.5 text-xs font-semibold text-white shadow-md hover:bg-[#20ba59] transition-all hover:scale-105"
+                            >
+                              <svg className="size-3.5 fill-white" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.456 5.712 1.457h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                              </svg>
+                              Open WhatsApp Chat
+                            </a>
+                            <button
+                              type="button"
+                              onClick={() => {
+                                setFormSubmitted(false);
+                                setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+                                setFormErrors({});
+                                setFormMessage("");
+                              }}
+                              className="inline-flex items-center gap-1 text-xs font-semibold text-emerald-900 underline hover:text-emerald-700 cursor-pointer"
+                            >
+                              Send another inquiry →
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    <form noValidate className="relative z-10 mt-3 space-y-2 sm:space-y-2.5" onSubmit={handleFormSubmit}>
+                      <div className="grid gap-2 sm:grid-cols-2">
+                        <div className="space-y-1">
+                          <label htmlFor="contact-name" className="text-[11px] font-medium text-foreground">
+                            Full name <span className="text-brand-orange">*</span>
+                          </label>
+                          <Input
+                            id="contact-name"
+                            name="name"
+                            autoComplete="name"
+                            value={formData.name || ""}
+                            onChange={handleNameChange}
+                            onBlur={handleBlur}
+                            placeholder="Your full name (letters only)"
+                            className={`h-8.5 sm:h-9 rounded-lg bg-brand-cream text-xs text-foreground placeholder:text-muted-foreground transition-all duration-300 ${formErrors.name
+                              ? "border-red-500 bg-red-50/20 focus:border-red-500 focus:ring-red-500/20 shadow-[0_0_8px_rgba(239,68,68,0.2)]"
+                              : "border-border focus:border-brand-orange focus:ring-brand-orange/20 focus:shadow-[0_0_12px_rgba(255,106,0,0.18)]"
+                              }`}
+                          />
+                          {formErrors.name && (
+                            <p className="flex items-center gap-1 text-[10.5px] font-medium text-red-500 mt-1">
+                              <AlertCircle className="size-3 shrink-0" /> {formErrors.name}
+                            </p>
+                          )}
+                        </div>
+                        <div className="space-y-1">
+                          <label htmlFor="contact-email" className="text-[11px] font-medium text-foreground">
+                            Email address <span className="text-brand-orange">*</span>
+                          </label>
+                          <Input
+                            id="contact-email"
+                            name="email"
+                            type="email"
+                            autoComplete="email"
+                            value={formData.email || ""}
+                            onChange={handleInputChange}
+                            onBlur={handleBlur}
+                            placeholder="you@example.com"
+                            className={`h-8.5 sm:h-9 rounded-lg bg-brand-cream text-xs text-foreground placeholder:text-muted-foreground transition-all duration-300 ${formErrors.email
+                              ? "border-red-500 bg-red-50/20 focus:border-red-500 focus:ring-red-500/20 shadow-[0_0_8px_rgba(239,68,68,0.2)]"
+                              : "border-border focus:border-brand-orange focus:ring-brand-orange/20 focus:shadow-[0_0_12px_rgba(255,106,0,0.18)]"
+                              }`}
+                          />
+                          {formErrors.email && (
+                            <p className="flex items-center gap-1 text-[10.5px] font-medium text-red-500 mt-1">
+                              <AlertCircle className="size-3 shrink-0" /> {formErrors.email}
+                            </p>
+                          )}
+                        </div>
+                      </div>
+                      <div className="grid gap-2 sm:grid-cols-2">
+                        <div className="space-y-1">
+                          <div className="flex items-center justify-between">
+                            <label htmlFor="contact-phone" className="text-[11px] font-medium text-foreground">
+                              Phone number <span className="text-brand-orange">*</span>
+                            </label>
+                            <span className={`text-[10px] font-mono ${formData.phone.length === 10 ? "text-emerald-600 font-semibold" : "text-muted-foreground"}`}>
+                              {formData.phone.length}/10 digits
+                            </span>
+                          </div>
+                          <Input
+                            id="contact-phone"
+                            name="phone"
+                            type="tel"
+                            inputMode="numeric"
+                            maxLength={10}
+                            autoComplete="tel"
+                            value={formData.phone || ""}
+                            onChange={handlePhoneChange}
+                            onBlur={handleBlur}
+                            placeholder="10-digit mobile number"
+                            className={`h-8.5 sm:h-9 rounded-lg bg-brand-cream text-xs text-foreground placeholder:text-muted-foreground transition-all duration-300 ${formErrors.phone
+                              ? "border-red-500 bg-red-50/20 focus:border-red-500 focus:ring-red-500/20 shadow-[0_0_8px_rgba(239,68,68,0.2)]"
+                              : "border-border focus:border-brand-orange focus:ring-brand-orange/20 focus:shadow-[0_0_12px_rgba(255,106,0,0.18)]"
+                              }`}
+                          />
+                          {formErrors.phone && (
+                            <p className="flex items-center gap-1 text-[10.5px] font-medium text-red-500 mt-1">
+                              <AlertCircle className="size-3 shrink-0" /> {formErrors.phone}
+                            </p>
+                          )}
+                        </div>
+                        <div className="space-y-1">
+                          <label htmlFor="contact-subject" className="text-[11px] font-medium text-foreground">
+                            Subject <span className="text-brand-orange">*</span>
+                          </label>
+                          <Input
+                            id="contact-subject"
+                            name="subject"
+                            value={formData.subject || ""}
+                            onChange={handleInputChange}
+                            onBlur={handleBlur}
+                            placeholder="How can we help?"
+                            className={`h-8.5 sm:h-9 rounded-lg bg-brand-cream text-xs text-foreground placeholder:text-muted-foreground transition-all duration-300 ${formErrors.subject
+                              ? "border-red-500 bg-red-50/20 focus:border-red-500 focus:ring-red-500/20 shadow-[0_0_8px_rgba(239,68,68,0.2)]"
+                              : "border-border focus:border-brand-orange focus:ring-brand-orange/20 focus:shadow-[0_0_12px_rgba(255,106,0,0.18)]"
+                              }`}
+                          />
+                          {formErrors.subject && (
+                            <p className="flex items-center gap-1 text-[10.5px] font-medium text-red-500 mt-1">
+                              <AlertCircle className="size-3 shrink-0" /> {formErrors.subject}
+                            </p>
+                          )}
+                        </div>
+                      </div>
+                      <div className="space-y-1">
+                        <label htmlFor="contact-message" className="text-[11px] font-medium text-foreground">
+                          Message <span className="text-brand-orange">*</span>
+                        </label>
+                        <Textarea
+                          id="contact-message"
+                          name="message"
+                          value={formData.message || ""}
+                          onChange={handleInputChange}
+                          onBlur={handleBlur}
+                          placeholder="Tell us a little about your project or enquiry (min 10 characters)"
+                          className={`min-h-18 sm:min-h-20 resize-y rounded-lg bg-brand-cream text-xs text-foreground placeholder:text-muted-foreground transition-all duration-300 ${formErrors.message
+                            ? "border-red-500 bg-red-50/20 focus:border-red-500 focus:ring-red-500/20 shadow-[0_0_8px_rgba(239,68,68,0.2)]"
+                            : "border-border focus:border-brand-orange focus:ring-brand-orange/20 focus:shadow-[0_0_12px_rgba(255,106,0,0.18)]"
+                            }`}
+                        />
+                        {formErrors.message && (
+                          <p className="flex items-center gap-1 text-[10.5px] font-medium text-red-500 mt-1">
+                            <AlertCircle className="size-3 shrink-0" /> {formErrors.message}
+                          </p>
+                        )}
+                      </div>
+                      <div className="flex flex-col items-start gap-2 pt-0.5 sm:flex-row sm:items-center sm:justify-between">
+                        <Button type="submit" className="brand-gradient glow-btn-hover h-8.5 sm:h-9 rounded-full px-5 text-xs font-semibold text-primary-foreground shadow-[0_4px_14px_rgba(255,80,30,0.3)] cursor-pointer">
+                          Send inquiry <ArrowUpRight aria-hidden="true" className="ml-1 size-3" />
+                        </Button>
+                        <p className="text-[10px] text-muted-foreground">Enterprise response guaranteed.</p>
+                      </div>
+                    </form>
+                  )}
+                </div>
+              </div>
+            </div>
+          </section>
+  );
+
   return (
     <div className="min-h-screen w-full overflow-x-clip bg-background text-foreground">
       {/* Top Utility Bar (Matches footer background color bg-brand-charcoal; non-sticky) */}
@@ -1399,724 +2078,129 @@ export function HanviSite() {
             </div>
           </div>
 
-          {/* Quick Navigation Cards on Home */}
-          <section className="bg-brand-cream py-8 sm:py-12 border-b border-brand-orange/10">
-            <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
-              <div className="rounded-3xl border border-slate-200/90 bg-white p-6 sm:p-8 shadow-sm">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
-                  <div className="space-y-1 md:col-span-2">
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#E02424]">Turnkey Enterprise Technology</span>
-                    <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900">Discover Our Specialized Solutions &amp; Capabilities</h2>
-                    <p className="text-xs sm:text-sm text-slate-600">Explore comprehensive fire safety, CCTV surveillance, data center architecture, networking and smart automation.</p>
-                  </div>
-                  <div className="flex flex-wrap md:justify-end gap-3">
-                    <button
-                      type="button"
-                      onClick={() => navigateTo("services")}
-                      className="inline-flex items-center gap-2 rounded-full bg-[#E02424] hover:bg-red-700 text-white px-5 py-2.5 text-xs sm:text-sm font-bold shadow-md shadow-red-500/25 transition-all hover:scale-105 cursor-pointer"
-                    >
-                      <span>Explore Services</span>
-                      <ArrowRight className="size-4" />
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => navigateTo("about")}
-                      className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white hover:bg-slate-50 text-slate-800 px-4.5 py-2.5 text-xs sm:text-sm font-semibold transition-all cursor-pointer"
-                    >
-                      <span>About Company</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
+          {/* All Home Page Sections in sequence */}
+          {renderAboutSection()}
+          {renderServicesSection()}
+          {renderClientsSection()}
+          {renderPartnersSection()}
+          {renderWhyUsSection()}
+          {renderContactSection()}
         </>
       )}
 
       {/* 2. ABOUT VIEW */}
       {activeSection === "about" && (
         <>
-          <section id="about" className="relative isolate scroll-mt-20 overflow-hidden bg-white py-8 sm:py-12 min-h-[40vh]">
-            <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
-              <div className="grid items-center gap-6 lg:grid-cols-[1fr_1.15fr] xl:gap-10" data-reveal>
-                {/* Left Column: Building Photo */}
-                <div className="relative group overflow-hidden rounded-2xl border border-slate-200/80 shadow-xs max-w-[520px] mx-auto lg:mx-0 w-full">
-                  <img
-                    src={aboutBuilding}
-                    alt="HANVI GLOBAL TECH PVT LTD Building & Headquarters"
-                    loading="lazy"
-                    className="w-full h-auto max-h-[330px] object-cover transition-transform duration-500 ease-out group-hover:scale-102"
-                  />
-                </div>
-
-                {/* Right Column: About Content & 4 Cards */}
-                <div className="flex flex-col justify-center">
-                  <h2 className="font-display text-2xl font-bold tracking-tight text-foreground sm:text-3xl lg:text-[2rem] leading-tight">
-                    About <span className="text-[#E02424] font-black">Hanvi Global Tech</span>
-                  </h2>
-
-                  <p className="mt-2.5 text-xs sm:text-sm lg:text-[14px] leading-relaxed text-muted-foreground text-justify">
-                    Hanvi Global Tech Pvt Ltd is a technology solutions company delivering reliable, scalable, and integrated systems for safety, security, communication, and smart automation. We help businesses, institutions, and homeowners build safer, smarter, and more connected environments.
-                  </p>
-
-                  {/* 4 Feature Cards matching reference design */}
-                  <div className="mt-5 grid grid-cols-2 gap-2.5 sm:grid-cols-4 sm:gap-3">
-                    {/* Card 1: Customized Solutions */}
-                    <div className="group relative flex flex-col items-center justify-center rounded-xl border border-slate-200/90 bg-slate-50/70 p-2.5 sm:p-3 text-center transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:border-[#E02424]/70 hover:shadow-[0_10px_28px_-4px_rgba(224,36,36,0.3),0_0_16px_rgba(255,106,0,0.2)] cursor-pointer">
-                      <div className="flex size-9 items-center justify-center rounded-lg bg-red-50 text-[#E02424] mb-2 transition-all duration-300 group-hover:bg-[#E02424] group-hover:text-white group-hover:scale-110 group-hover:shadow-[0_4px_12px_rgba(224,36,36,0.35)]">
-                        <Target className="size-5 transition-colors duration-300 text-[#E02424] group-hover:text-white" />
-                      </div>
-                      <span className="text-[11px] sm:text-xs font-bold text-foreground leading-tight transition-colors duration-300 group-hover:text-[#E02424]">
-                        Customized<br />Solutions
-                      </span>
-                    </div>
-
-                    {/* Card 2: Industry-Grade Products */}
-                    <div className="group relative flex flex-col items-center justify-center rounded-xl border border-slate-200/90 bg-slate-50/70 p-2.5 sm:p-3 text-center transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:border-[#E02424]/70 hover:shadow-[0_10px_28px_-4px_rgba(224,36,36,0.3),0_0_16px_rgba(255,106,0,0.2)] cursor-pointer">
-                      <div className="flex size-9 items-center justify-center rounded-lg bg-red-50 text-[#E02424] mb-2 transition-all duration-300 group-hover:bg-[#E02424] group-hover:text-white group-hover:scale-110 group-hover:shadow-[0_4px_12px_rgba(224,36,36,0.35)]">
-                        <Layers className="size-5 transition-colors duration-300 text-[#E02424] group-hover:text-white" />
-                      </div>
-                      <span className="text-[11px] sm:text-xs font-bold text-foreground leading-tight transition-colors duration-300 group-hover:text-[#E02424]">
-                        Industry-Grade<br />Products
-                      </span>
-                    </div>
-
-                    {/* Card 3: Professional Installation */}
-                    <div className="group relative flex flex-col items-center justify-center rounded-xl border border-slate-200/90 bg-slate-50/70 p-2.5 sm:p-3 text-center transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:border-[#E02424]/70 hover:shadow-[0_10px_28px_-4px_rgba(224,36,36,0.3),0_0_16px_rgba(255,106,0,0.2)] cursor-pointer">
-                      <div className="flex size-9 items-center justify-center rounded-lg bg-red-50 text-[#E02424] mb-2 transition-all duration-300 group-hover:bg-[#E02424] group-hover:text-white group-hover:scale-110 group-hover:shadow-[0_4px_12px_rgba(224,36,36,0.35)]">
-                        <Wrench className="size-5 transition-colors duration-300 text-[#E02424] group-hover:text-white" />
-                      </div>
-                      <span className="text-[11px] sm:text-xs font-bold text-foreground leading-tight transition-colors duration-300 group-hover:text-[#E02424]">
-                        Professional<br />Installation
-                      </span>
-                    </div>
-
-                    {/* Card 4: Ongoing Support */}
-                    <div className="group relative flex flex-col items-center justify-center rounded-xl border border-slate-200/90 bg-slate-50/70 p-2.5 sm:p-3 text-center transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:border-[#E02424]/70 hover:shadow-[0_10px_28px_-4px_rgba(224,36,36,0.3),0_0_16px_rgba(255,106,0,0.2)] cursor-pointer">
-                      <div className="flex size-9 items-center justify-center rounded-lg bg-red-50 text-[#E02424] mb-2 transition-all duration-300 group-hover:bg-[#E02424] group-hover:text-white group-hover:scale-110 group-hover:shadow-[0_4px_12px_rgba(224,36,36,0.35)]">
-                        <Headphones className="size-5 transition-colors duration-300 text-[#E02424] group-hover:text-white" />
-                      </div>
-                      <span className="text-[11px] sm:text-xs font-bold text-foreground leading-tight transition-colors duration-300 group-hover:text-[#E02424]">
-                        Ongoing<br />Support
-                      </span>
-                    </div>
-                  </div>
-                </div>
+          <div className="bg-brand-cream-alt border-b border-brand-orange/15 py-3 px-4 sm:px-8">
+            <div className="mx-auto flex items-center justify-between max-w-7xl">
+              <div className="flex items-center gap-2 text-xs font-semibold text-slate-700">
+                <button onClick={() => navigateTo("home")} className="hover:text-[#E02424] transition-colors cursor-pointer">Home</button>
+                <span>/</span>
+                <span className="text-[#E02424]">About Us</span>
               </div>
-            </div>
-          </section>
-
-          <section id="why-us" className="scroll-mt-20 bg-brand-cream-alt pt-8 pb-10 sm:pt-10 sm:pb-12 text-foreground border-t border-brand-orange/10">
-            <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
-              {/* Header */}
-              <div className="flex flex-col gap-1.5" data-reveal>
-                <div className="flex flex-col justify-between gap-2.5 sm:flex-row sm:items-end">
-                  <div>
-                    <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-orange font-bold">
-                      <span className="brand-gradient h-0.5 w-5" aria-hidden="true" />
-                      <span>Why Choose Us</span>
-                    </div>
-                    <h2 className="font-display text-xl font-semibold tracking-tight text-foreground sm:text-2xl lg:text-[1.75rem]">
-                      Engineered for excellence. Trusted for reliability.
-                    </h2>
-                  </div>
-                  <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-brand-orange px-3 py-1 rounded-full bg-brand-orange/10 border border-brand-orange/25 w-fit">
-                    <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" aria-hidden="true" />
-                    The HANVI Advantage
-                  </span>
-                </div>
-                <p className="text-xs sm:text-sm text-muted-foreground max-w-3xl">
-                  Empowering commercial and industrial enterprises with turnkey engineering, certified life-safety compliance, authorized OEM technology, and 24/7 mission-critical support.
-                </p>
-              </div>
-
-              {/* 6 Feature Pillars Grid */}
-              <div className="mt-5 sm:mt-6 grid grid-cols-1 gap-3.5 sm:grid-cols-2 lg:grid-cols-3 sm:gap-4.5">
-                {whyChooseUsPillars.map((pillar, index) => {
-                  const Icon = pillar.icon;
-                  return (
-                    <div
-                      key={pillar.title}
-                      data-reveal
-                      style={{ '--reveal-delay': `${index * 50}ms` } as React.CSSProperties}
-                      className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-brand-orange/20 bg-white/95 p-4.5 sm:p-5 shadow-sm backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_14px_32px_-6px_rgba(255,106,0,0.22)] hover:scale-[1.02] transition-all duration-300"
-                    >
-                      <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-brand-orange via-brand-gold to-brand-rose opacity-80 group-hover:opacity-100 transition-opacity" />
-                      <div>
-                        <div className="flex items-center justify-between gap-3 mb-3">
-                          <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-brand-orange to-brand-rose text-white shadow-sm transition-transform duration-300 group-hover:scale-110">
-                            <Icon className="size-5" aria-hidden="true" />
-                          </div>
-                          <span className="text-[10px] font-bold uppercase tracking-wider text-brand-orange px-2.5 py-0.5 rounded-full bg-brand-orange/10 border border-brand-orange/25">
-                            {pillar.badge}
-                          </span>
-                        </div>
-                        <h3 className="font-display text-xs sm:text-sm font-bold text-foreground group-hover:text-brand-orange transition-colors">
-                          {pillar.title}
-                        </h3>
-                        <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">
-                          {pillar.description}
-                        </p>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-
-              {/* Stats Bar */}
-              <div
-                data-reveal
-                className="mt-5 sm:mt-6 overflow-hidden rounded-2xl border border-brand-orange/20 bg-white/95 p-4 sm:p-5 shadow-sm backdrop-blur-md"
+              <button
+                onClick={() => navigateTo("home")}
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-[#E02424] hover:text-red-700 cursor-pointer"
               >
-                <div className="grid grid-cols-2 gap-4 divide-y divide-brand-orange/15 sm:grid-cols-4 sm:gap-6 sm:divide-y-0 sm:divide-x sm:divide-brand-orange/20">
-                  {whyChooseUsStats.map((stat, i) => (
-                    <div key={stat.label} className={`flex flex-col items-center text-center ${i >= 2 ? "pt-3 sm:pt-0" : ""}`}>
-                      <span className="font-display text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight text-brand-orange">
-                        <AnimatedCounter
-                          target={stat.target}
-                          decimals={stat.decimals}
-                          suffix={stat.suffix}
-                        />
-                      </span>
-                      <span className="mt-1 text-[11px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                        {stat.label}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+                <span>← Back to Full Home Page</span>
+              </button>
             </div>
-          </section>
+          </div>
+          {renderAboutSection()}
+          {renderWhyUsSection()}
         </>
       )}
 
       {/* 3. SERVICES VIEW */}
       {activeSection === "services" && (
-        <section id="services" className="relative isolate scroll-mt-20 overflow-hidden bg-brand-cream border-t border-brand-orange/10 py-12 sm:py-16 text-foreground min-h-[60vh]">
-            <div className="relative mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
-              {/* Section Header */}
-              <div className="flex flex-col items-start text-left mb-6 sm:mb-8" data-reveal>
-                <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-50 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-[#E02424]">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#E02424] animate-pulse" />
-                  <span>Specialized Services</span>
-                </div>
-                <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900">
-                  Engineering reliable, intelligent, and secure environments.
-                </h2>
-                <p className="mt-1.5 text-xs sm:text-sm text-slate-600 max-w-none whitespace-normal md:whitespace-nowrap">
-                  Comprehensive life safety, high-pressure fire systems, tier-standard cyber data centers, structured communications, and smart automation.
-                </p>
+        <>
+          <div className="bg-brand-cream-alt border-b border-brand-orange/15 py-3 px-4 sm:px-8">
+            <div className="mx-auto flex items-center justify-between max-w-7xl">
+              <div className="flex items-center gap-2 text-xs font-semibold text-slate-700">
+                <button onClick={() => navigateTo("home")} className="hover:text-[#E02424] transition-colors cursor-pointer">Home</button>
+                <span>/</span>
+                <span className="text-[#E02424]">Specialized Services</span>
               </div>
-
-              {/* 6 Cards Grid matching Image 2 */}
-              <div className="grid gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
-                {services.map((service, index) => {
-                  const Icon = service.icon;
-                  return (
-                    <article
-                      key={service.title}
-                      id={`service-card-${index}`}
-                      onClick={() => openService(service.id)}
-                      className="group relative flex flex-col overflow-hidden rounded-2xl bg-white border border-slate-200/90 shadow-md transition-all duration-300 hover:-translate-y-2 hover:border-[#E02424]/80 hover:shadow-[0_16px_40px_-8px_rgba(224,36,36,0.35),0_0_24px_rgba(255,106,0,0.2)] cursor-pointer scroll-mt-24"
-                      data-reveal
-                      style={{ '--reveal-delay': `${index * 80}ms` } as React.CSSProperties}
-                    >
-                      {/* Top Gradient Glow Accent on Hover */}
-                      <div className="pointer-events-none absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-[#E02424] via-brand-orange to-brand-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
-
-                      {/* Top Image */}
-                      <div className="relative h-44 sm:h-48 w-full overflow-hidden bg-slate-900">
-                        <img
-                          src={service.image}
-                          alt={service.title}
-                          className="h-full w-full object-cover transition-all duration-500 ease-out group-hover:scale-108 group-hover:brightness-105"
-                          loading="lazy"
-                        />
-                      </div>
-
-                      {/* Bottom White Container */}
-                      <div className="flex items-center gap-3 p-3.5 sm:p-4 bg-white transition-colors duration-300">
-                        {/* Red Square Icon Badge */}
-                        <div className="flex size-11 sm:size-12 shrink-0 items-center justify-center rounded-xl bg-[#E02424] text-white shadow-sm transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_16px_rgba(224,36,36,0.6)]">
-                          <Icon aria-hidden="true" className="size-6 text-white" />
-                        </div>
-
-                        {/* Title & Description */}
-                        <div className="min-w-0 flex-1 text-left">
-                          <h3 className="font-display text-xs sm:text-[13px] md:text-sm font-bold text-slate-900 leading-snug transition-colors duration-200 group-hover:text-[#E02424]">
-                            {service.title}
-                          </h3>
-                          <p className="mt-0.5 text-[10.5px] sm:text-[11.5px] text-slate-500 leading-snug line-clamp-2">
-                            {service.description}
-                          </p>
-                        </div>
-
-                        {/* Small Circular Arrow Button */}
-                        <button
-                          type="button"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            openService(service.id);
-                          }}
-                          aria-label={`View details of ${service.title}`}
-                          className="flex size-7 sm:size-8 shrink-0 items-center justify-center rounded-full border border-[#E02424] text-[#E02424] transition-all duration-200 group-hover:bg-[#E02424] group-hover:text-white group-hover:shadow-[0_0_12px_rgba(224,36,36,0.5)] group-hover:translate-x-0.5 cursor-pointer"
-                        >
-                          <ArrowRight className="size-3.5 sm:size-4" />
-                        </button>
-                      </div>
-                    </article>
-                  );
-                })}
-              </div>
-
-              {/* View All Solutions Red Pill Button */}
-              <div className="mt-8 sm:mt-10 flex justify-center relative z-10" data-reveal>
-                <button
-                  type="button"
-                  onClick={() => navigateTo("contact")}
-                  className="inline-flex items-center gap-2 rounded-full bg-[#E02424] hover:bg-red-700 text-white px-8 py-3 text-xs sm:text-sm font-bold shadow-lg shadow-red-950/40 transition-transform duration-200 hover:scale-105 cursor-pointer"
-                >
-                  <span>View All Solutions</span>
-                  <ArrowRight className="size-4" />
-                </button>
-              </div>
+              <button
+                onClick={() => navigateTo("home")}
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-[#E02424] hover:text-red-700 cursor-pointer"
+              >
+                <span>← Back to Full Home Page</span>
+              </button>
             </div>
+          </div>
+          {renderServicesSection()}
+        </>
+      )}
 
-            {/* Bottom Red Mesh Wave SVG Accent */}
-            <div className="absolute inset-x-0 bottom-0 h-24 pointer-events-none opacity-40 overflow-hidden flex items-end">
-              <svg viewBox="0 0 1440 120" fill="none" className="w-full h-full text-[#E02424]/40" preserveAspectRatio="none">
-                <path d="M0,64L60,69.3C120,75,240,85,360,80C480,75,600,53,720,53.3C840,53,960,75,1080,80C1200,85,1320,75,1380,69.3L1440,64L1440,120L1380,120C1320,120,1200,120,1080,120C960,120,840,120,720,120C600,120,480,120,360,120C240,120,120,120,60,120L0,120Z" fill="url(#redWaveGrad)" />
-                <defs>
-                  <linearGradient id="redWaveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="#E02424" stopOpacity="0.4" />
-                    <stop offset="50%" stopColor="#E02424" stopOpacity="0.05" />
-                    <stop offset="100%" stopColor="#E02424" stopOpacity="0.4" />
-                  </linearGradient>
-                </defs>
-              </svg>
+      {/* 4. CLIENTS VIEW */}
+      {activeSection === "clients" && (
+        <>
+          <div className="bg-brand-cream-alt border-b border-brand-orange/15 py-3 px-4 sm:px-8">
+            <div className="mx-auto flex items-center justify-between max-w-7xl">
+              <div className="flex items-center gap-2 text-xs font-semibold text-slate-700">
+                <button onClick={() => navigateTo("home")} className="hover:text-[#E02424] transition-colors cursor-pointer">Home</button>
+                <span>/</span>
+                <span className="text-[#E02424]">Clients</span>
+              </div>
+              <button
+                onClick={() => navigateTo("home")}
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-[#E02424] hover:text-red-700 cursor-pointer"
+              >
+                <span>← Back to Full Home Page</span>
+              </button>
             </div>
-          </section>
-        )}
+          </div>
+          {renderClientsSection()}
+        </>
+      )}
 
-        {/* 4. CLIENTS VIEW */}
-        {activeSection === "clients" && (
-          <section id="clients" className="scroll-mt-20 bg-brand-cream-alt py-12 sm:py-16 text-foreground border-t border-brand-orange/10 min-h-[60vh]">
-            <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
-              <div className="flex flex-col gap-1.5" data-reveal>
-                <div className="flex flex-col justify-between gap-2.5 sm:flex-row sm:items-end">
-                  <div>
-                    <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-orange font-bold">
-                      <span className="brand-gradient h-0.5 w-5" aria-hidden="true" />
-                      <span>Clients</span>
-                    </div>
-                    <h2 className="font-display text-xl font-semibold tracking-tight text-foreground sm:text-2xl lg:text-[1.75rem]">
-                      Built on meaningful connections.
-                    </h2>
-                  </div>
-                  <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-brand-orange px-3 py-1 rounded-full bg-brand-orange/10 border border-brand-orange/25 w-fit">
-                    <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" aria-hidden="true" />
-                    Enterprise Network
-                  </span>
-                </div>
-                <p className="text-xs sm:text-sm text-muted-foreground lg:whitespace-nowrap">
-                  Trusted enterprise partners, institutions, and infrastructure clients across diverse commercial &amp; industrial domains.
-                </p>
+      {/* 5. PARTNERS VIEW */}
+      {activeSection === "partners" && (
+        <>
+          <div className="bg-brand-cream-alt border-b border-brand-orange/15 py-3 px-4 sm:px-8">
+            <div className="mx-auto flex items-center justify-between max-w-7xl">
+              <div className="flex items-center gap-2 text-xs font-semibold text-slate-700">
+                <button onClick={() => navigateTo("home")} className="hover:text-[#E02424] transition-colors cursor-pointer">Home</button>
+                <span>/</span>
+                <span className="text-[#E02424]">Alliance Partners</span>
               </div>
-
-              {/* Infinite Horizontal Scroll Animated Tracks */}
-              <div className="relative mt-5 sm:mt-6 overflow-hidden pause-hover select-none">
-                {/* Left Edge Subtle Fade Mask */}
-                <div className="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-24 bg-gradient-to-r from-brand-cream-alt via-brand-cream-alt/80 to-transparent z-10" />
-
-                {/* Right Edge Subtle Fade Mask */}
-                <div className="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-24 bg-gradient-to-l from-brand-cream-alt via-brand-cream-alt/80 to-transparent z-10" />
-
-                {/* Row 1: Scrolling Left */}
-                <div className="animate-marquee-left flex gap-4 sm:gap-5 pb-3.5">
-                  {[...clientPlaceholders.slice(0, 4), ...clientPlaceholders.slice(0, 4), ...clientPlaceholders.slice(0, 4), ...clientPlaceholders.slice(0, 4)].map((client, index) => (
-                    <div
-                      key={`r1-${client.name}-${index}`}
-                      className="group relative flex w-[225px] sm:w-[255px] md:w-[275px] h-[100px] sm:h-[115px] shrink-0 items-center justify-center overflow-hidden rounded-2xl sm:rounded-3xl border border-brand-orange/20 bg-white px-4 py-2 shadow-sm backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_14px_30px_-6px_rgba(255,106,0,0.22)] hover:scale-105 transition-all duration-300"
-                      title={client.name}
-                    >
-                      <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-brand-orange via-brand-gold to-brand-rose opacity-80 group-hover:opacity-100 transition-opacity" />
-                      <div className="flex h-full w-full items-center justify-center">
-                        {client.logo}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Row 2: Scrolling Right */}
-                <div className="animate-marquee-right flex gap-4 sm:gap-5 pt-1">
-                  {[...clientPlaceholders.slice(4, 8), ...clientPlaceholders.slice(4, 8), ...clientPlaceholders.slice(4, 8), ...clientPlaceholders.slice(4, 8)].map((client, index) => (
-                    <div
-                      key={`r2-${client.name}-${index}`}
-                      className="group relative flex w-[225px] sm:w-[255px] md:w-[275px] h-[100px] sm:h-[115px] shrink-0 items-center justify-center overflow-hidden rounded-2xl sm:rounded-3xl border border-brand-orange/20 bg-white px-4 py-2 shadow-sm backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_14px_30px_-6px_rgba(255,106,0,0.22)] hover:scale-105 transition-all duration-300"
-                      title={client.name}
-                    >
-                      <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-brand-orange via-brand-gold to-brand-rose opacity-80 group-hover:opacity-100 transition-opacity" />
-                      <div className="flex h-full w-full items-center justify-center">
-                        {client.logo}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <button
+                onClick={() => navigateTo("home")}
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-[#E02424] hover:text-red-700 cursor-pointer"
+              >
+                <span>← Back to Full Home Page</span>
+              </button>
             </div>
-          </section>
-        )}
+          </div>
+          {renderPartnersSection()}
+        </>
+      )}
 
-        {/* 5. PARTNERS VIEW */}
-        {activeSection === "partners" && (
-          <section id="partners" className="scroll-mt-20 bg-brand-cream py-12 sm:py-16 text-foreground border-t border-brand-orange/10 min-h-[60vh]">
-            <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
-              <div className="flex flex-col gap-1.5" data-reveal>
-                <div className="flex flex-col justify-between gap-2.5 sm:flex-row sm:items-end">
-                  <div>
-                    <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-orange font-bold">
-                      <span className="brand-gradient h-0.5 w-5" aria-hidden="true" />
-                      <span>Partners</span>
-                    </div>
-                    <h2 className="font-display text-xl font-semibold tracking-tight text-foreground sm:text-2xl lg:text-[1.75rem]">
-                      Stronger, side by side.
-                    </h2>
-                  </div>
-                  <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-brand-gold px-3 py-1 rounded-full bg-brand-gold/15 border border-brand-gold/30 text-amber-700 w-fit">
-                    <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" aria-hidden="true" />
-                    Global Alliances
-                  </span>
-                </div>
-                <p className="text-xs sm:text-sm text-muted-foreground lg:whitespace-nowrap">
-                  Collaborating with world-class OEM hardware manufacturers, cybersecurity alliances, and IoT smart ecosystem providers.
-                </p>
+      {/* 6. CONTACT VIEW */}
+      {activeSection === "contact" && (
+        <>
+          <div className="bg-brand-cream-alt border-b border-brand-orange/15 py-3 px-4 sm:px-8">
+            <div className="mx-auto flex items-center justify-between max-w-7xl">
+              <div className="flex items-center gap-2 text-xs font-semibold text-slate-700">
+                <button onClick={() => navigateTo("home")} className="hover:text-[#E02424] transition-colors cursor-pointer">Home</button>
+                <span>/</span>
+                <span className="text-[#E02424]">Contact Us</span>
               </div>
-              {/* Infinite Horizontal Scroll Animated Tracks for Partners */}
-              <div className="relative mt-5 sm:mt-6 overflow-hidden pause-hover select-none">
-                {/* Left Edge Subtle Fade Mask */}
-                <div className="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-24 bg-gradient-to-r from-brand-cream via-brand-cream/80 to-transparent z-10" />
-
-                {/* Right Edge Subtle Fade Mask */}
-                <div className="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-24 bg-gradient-to-l from-brand-cream via-brand-cream/80 to-transparent z-10" />
-
-                {/* Row 1: Scrolling Left */}
-                <div className="animate-marquee-left flex gap-4 sm:gap-5 pb-3.5">
-                  {[...partnerPlaceholders.slice(0, 4), ...partnerPlaceholders.slice(0, 4), ...partnerPlaceholders.slice(0, 4), ...partnerPlaceholders.slice(0, 4)].map((partner, index) => (
-                    <div
-                      key={`pr1-${partner.name}-${index}`}
-                      className="group relative flex w-[225px] sm:w-[255px] md:w-[275px] h-[100px] sm:h-[115px] shrink-0 items-center justify-center overflow-hidden rounded-2xl sm:rounded-3xl border border-brand-orange/20 bg-white px-4 py-2 shadow-sm backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_14px_30px_-6px_rgba(255,106,0,0.22)] hover:scale-105 transition-all duration-300"
-                      title={partner.name}
-                    >
-                      <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-brand-orange via-brand-gold to-brand-rose opacity-80 group-hover:opacity-100 transition-opacity" />
-                      <div className="flex h-full w-full items-center justify-center">
-                        {partner.logo}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Row 2: Scrolling Right */}
-                <div className="animate-marquee-right flex gap-4 sm:gap-5 pt-1">
-                  {[...partnerPlaceholders.slice(4, 8), ...partnerPlaceholders.slice(4, 8), ...partnerPlaceholders.slice(4, 8), ...partnerPlaceholders.slice(4, 8)].map((partner, index) => (
-                    <div
-                      key={`pr2-${partner.name}-${index}`}
-                      className="group relative flex w-[225px] sm:w-[255px] md:w-[275px] h-[100px] sm:h-[115px] shrink-0 items-center justify-center overflow-hidden rounded-2xl sm:rounded-3xl border border-brand-orange/20 bg-white px-4 py-2 shadow-sm backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_14px_30px_-6px_rgba(255,106,0,0.22)] hover:scale-105 transition-all duration-300"
-                      title={partner.name}
-                    >
-                      <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-brand-orange via-brand-gold to-brand-rose opacity-80 group-hover:opacity-100 transition-opacity" />
-                      <div className="flex h-full w-full items-center justify-center">
-                        {partner.logo}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <button
+                onClick={() => navigateTo("home")}
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-[#E02424] hover:text-red-700 cursor-pointer"
+              >
+                <span>← Back to Full Home Page</span>
+              </button>
             </div>
-          </section>
-        )}
+          </div>
+          {renderContactSection()}
+        </>
+      )}
+    </>
+  )}
 
-        {/* 6. CONTACT VIEW */}
-        {activeSection === "contact" && (
-          <section id="contact" className="scroll-mt-20 bg-brand-cream py-12 sm:py-16 text-foreground border-t border-brand-orange/10 min-h-[60vh]">
-            <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
-              <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-10 items-center">
-                <div data-reveal>
-                  <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-orange font-bold">
-                    <span className="brand-gradient h-0.5 w-5" aria-hidden="true" />
-                    <span>Contact us</span>
-                  </div>
-                  <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-semibold leading-tight text-foreground">
-                    Let’s start a conversation.
-                  </h2>
-                  <p className="mt-2 max-w-md text-xs sm:text-sm leading-relaxed text-muted-foreground">
-                    Get in touch with our team for enterprise project inquiries, site inspections, and customized safety &amp; automation solutions.
-                  </p>
-
-                  <dl className="mt-4 space-y-2.5 sm:space-y-3">
-                    {/* Contact Person Card */}
-                    <div
-                      data-reveal
-                      style={{ '--reveal-delay': '0ms' } as React.CSSProperties}
-                      className="group relative flex items-center gap-3.5 overflow-hidden rounded-xl border border-brand-orange/20 bg-white/95 p-3 sm:p-3.5 shadow-sm backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_12px_28px_-6px_rgba(255,106,0,0.25),0_0_18px_rgba(255,106,0,0.15)]"
-                    >
-                      <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-brand-orange via-brand-gold to-brand-rose opacity-80" />
-                      <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-brand-orange to-brand-rose text-white shadow-sm">
-                        <User aria-hidden="true" className="size-4" />
-                      </div>
-                      <div>
-                        <dt className="text-[10px] font-bold uppercase tracking-wider text-brand-orange">Contact Person</dt>
-                        <dd className="mt-0.5 text-xs sm:text-sm font-bold text-foreground">SOURVI SAIE KUMAR</dd>
-                      </div>
-                    </div>
-
-                    {/* Phone Number Card */}
-                    <div
-                      data-reveal
-                      style={{ '--reveal-delay': '90ms' } as React.CSSProperties}
-                      className="group relative flex items-center gap-3.5 overflow-hidden rounded-xl border border-brand-orange/20 bg-white/95 p-3 sm:p-3.5 shadow-sm backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_12px_28px_-6px_rgba(255,106,0,0.25),0_0_18px_rgba(255,106,0,0.15)]"
-                    >
-                      <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-brand-orange via-brand-gold to-brand-rose opacity-80" />
-                      <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-brand-orange to-brand-coral text-white shadow-sm">
-                        <Phone aria-hidden="true" className="size-4" />
-                      </div>
-                      <div>
-                        <dt className="text-[10px] font-bold uppercase tracking-wider text-brand-orange">Phone Number</dt>
-                        <dd className="mt-0.5 text-xs sm:text-sm font-bold text-foreground">
-                          <a href="tel:+919392673103" className="transition-colors hover:text-brand-orange">
-                            +91 9392673103
-                          </a>
-                        </dd>
-                      </div>
-                    </div>
-
-                    {/* Email Card */}
-                    <div
-                      data-reveal
-                      style={{ '--reveal-delay': '180ms' } as React.CSSProperties}
-                      className="group relative flex items-center gap-3.5 overflow-hidden rounded-xl border border-brand-orange/20 bg-white/95 p-3 sm:p-3.5 shadow-sm backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_12px_28px_-6px_rgba(255,106,0,0.25),0_0_18px_rgba(255,106,0,0.15)]"
-                    >
-                      <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-brand-orange via-brand-gold to-brand-rose opacity-80" />
-                      <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-brand-coral to-brand-gold text-white shadow-sm">
-                        <Mail aria-hidden="true" className="size-4" />
-                      </div>
-                      <div>
-                        <dt className="text-[10px] font-bold uppercase tracking-wider text-brand-orange">Email Address</dt>
-                        <dd className="mt-0.5 text-xs sm:text-sm font-bold text-foreground">
-                          <a href="mailto:saie@hanviglobaltech.com" className="transition-colors hover:text-brand-orange">
-                            saie@hanviglobaltech.com
-                          </a>
-                        </dd>
-                      </div>
-                    </div>
-                  </dl>
-                </div>
-
-                {/* Contact Form Card */}
-                <div
-                  className="group relative overflow-hidden rounded-2xl border border-brand-orange/25 bg-white p-4.5 sm:p-5 lg:p-6 shadow-md backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_16px_36px_-6px_rgba(255,106,0,0.25),0_0_24px_rgba(255,106,0,0.15)]"
-                  data-reveal
-                >
-                  <div className="pointer-events-none absolute inset-x-0 top-0 h-[2.5px] bg-gradient-to-r from-brand-orange via-brand-gold to-brand-rose" />
-                  <div className="pointer-events-none absolute -right-12 -top-12 size-40 rounded-full bg-brand-orange/10 blur-2xl opacity-75" />
-
-                  <h3 className="relative z-10 font-display text-base sm:text-lg font-bold text-foreground">Send us a message</h3>
-                  <p className="relative z-10 mt-0.5 text-[11px] sm:text-xs text-muted-foreground">Fill out the form below and our team will get back to you shortly.</p>
-
-                  {formSubmitted ? (
-                    <div className="relative z-10 my-3 rounded-xl border border-emerald-500/40 bg-emerald-500/10 p-4 sm:p-5 text-emerald-950 backdrop-blur-md animate-in fade-in zoom-in-95 duration-300">
-                      <div className="flex items-start gap-3">
-                        <div className="flex size-9 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-white shadow-sm">
-                          <CheckCircle2 className="size-5" />
-                        </div>
-                        <div className="space-y-1">
-                          <h4 className="font-display text-sm sm:text-base font-bold text-emerald-900">Inquiry Sent via WhatsApp!</h4>
-                          <p className="text-xs text-emerald-800 leading-relaxed">
-                            {formMessage}
-                          </p>
-                          <p className="text-[11px] text-emerald-700/90 pt-0.5">
-                            WhatsApp will open with your complete inquiry text ready to send to <strong>+91 9392673103</strong>. If it did not open automatically, click below:
-                          </p>
-                          <div className="mt-3 flex flex-wrap items-center gap-2.5">
-                            <a
-                              href={`https://wa.me/919392673103?text=${encodeURIComponent(
-                                [
-                                  `*New Project Inquiry - HANVI Global Tech*`,
-                                  ``,
-                                  `*Full Name:* ${formData.name.trim()}`,
-                                  `*Email:* ${formData.email.trim()}`,
-                                  `*Phone:* +91 ${formData.phone.trim()}`,
-                                  `*Subject:* ${formData.subject.trim()}`,
-                                  `*Message:* ${formData.message.trim()}`,
-                                ].join("\n")
-                              )}`}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center gap-1.5 rounded-full bg-[#25D366] px-3.5 py-1.5 text-xs font-semibold text-white shadow-md hover:bg-[#20ba59] transition-all hover:scale-105"
-                            >
-                              <svg className="size-3.5 fill-white" viewBox="0 0 24 24" aria-hidden="true">
-                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.456 5.712 1.457h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                              </svg>
-                              Open WhatsApp Chat
-                            </a>
-                            <button
-                              type="button"
-                              onClick={() => {
-                                setFormSubmitted(false);
-                                setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
-                                setFormErrors({});
-                                setFormMessage("");
-                              }}
-                              className="inline-flex items-center gap-1 text-xs font-semibold text-emerald-900 underline hover:text-emerald-700 cursor-pointer"
-                            >
-                              Send another inquiry →
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  ) : (
-                    <form noValidate className="relative z-10 mt-3 space-y-2 sm:space-y-2.5" onSubmit={handleFormSubmit}>
-                      <div className="grid gap-2 sm:grid-cols-2">
-                        <div className="space-y-1">
-                          <label htmlFor="contact-name" className="text-[11px] font-medium text-foreground">
-                            Full name <span className="text-brand-orange">*</span>
-                          </label>
-                          <Input
-                            id="contact-name"
-                            name="name"
-                            autoComplete="name"
-                            value={formData.name || ""}
-                            onChange={handleNameChange}
-                            onBlur={handleBlur}
-                            placeholder="Your full name (letters only)"
-                            className={`h-8.5 sm:h-9 rounded-lg bg-brand-cream text-xs text-foreground placeholder:text-muted-foreground transition-all duration-300 ${formErrors.name
-                              ? "border-red-500 bg-red-50/20 focus:border-red-500 focus:ring-red-500/20 shadow-[0_0_8px_rgba(239,68,68,0.2)]"
-                              : "border-border focus:border-brand-orange focus:ring-brand-orange/20 focus:shadow-[0_0_12px_rgba(255,106,0,0.18)]"
-                              }`}
-                          />
-                          {formErrors.name && (
-                            <p className="flex items-center gap-1 text-[10.5px] font-medium text-red-500 mt-1">
-                              <AlertCircle className="size-3 shrink-0" /> {formErrors.name}
-                            </p>
-                          )}
-                        </div>
-                        <div className="space-y-1">
-                          <label htmlFor="contact-email" className="text-[11px] font-medium text-foreground">
-                            Email address <span className="text-brand-orange">*</span>
-                          </label>
-                          <Input
-                            id="contact-email"
-                            name="email"
-                            type="email"
-                            autoComplete="email"
-                            value={formData.email || ""}
-                            onChange={handleInputChange}
-                            onBlur={handleBlur}
-                            placeholder="you@example.com"
-                            className={`h-8.5 sm:h-9 rounded-lg bg-brand-cream text-xs text-foreground placeholder:text-muted-foreground transition-all duration-300 ${formErrors.email
-                              ? "border-red-500 bg-red-50/20 focus:border-red-500 focus:ring-red-500/20 shadow-[0_0_8px_rgba(239,68,68,0.2)]"
-                              : "border-border focus:border-brand-orange focus:ring-brand-orange/20 focus:shadow-[0_0_12px_rgba(255,106,0,0.18)]"
-                              }`}
-                          />
-                          {formErrors.email && (
-                            <p className="flex items-center gap-1 text-[10.5px] font-medium text-red-500 mt-1">
-                              <AlertCircle className="size-3 shrink-0" /> {formErrors.email}
-                            </p>
-                          )}
-                        </div>
-                      </div>
-                      <div className="grid gap-2 sm:grid-cols-2">
-                        <div className="space-y-1">
-                          <div className="flex items-center justify-between">
-                            <label htmlFor="contact-phone" className="text-[11px] font-medium text-foreground">
-                              Phone number <span className="text-brand-orange">*</span>
-                            </label>
-                            <span className={`text-[10px] font-mono ${formData.phone.length === 10 ? "text-emerald-600 font-semibold" : "text-muted-foreground"}`}>
-                              {formData.phone.length}/10 digits
-                            </span>
-                          </div>
-                          <Input
-                            id="contact-phone"
-                            name="phone"
-                            type="tel"
-                            inputMode="numeric"
-                            maxLength={10}
-                            autoComplete="tel"
-                            value={formData.phone || ""}
-                            onChange={handlePhoneChange}
-                            onBlur={handleBlur}
-                            placeholder="10-digit mobile number"
-                            className={`h-8.5 sm:h-9 rounded-lg bg-brand-cream text-xs text-foreground placeholder:text-muted-foreground transition-all duration-300 ${formErrors.phone
-                              ? "border-red-500 bg-red-50/20 focus:border-red-500 focus:ring-red-500/20 shadow-[0_0_8px_rgba(239,68,68,0.2)]"
-                              : "border-border focus:border-brand-orange focus:ring-brand-orange/20 focus:shadow-[0_0_12px_rgba(255,106,0,0.18)]"
-                              }`}
-                          />
-                          {formErrors.phone && (
-                            <p className="flex items-center gap-1 text-[10.5px] font-medium text-red-500 mt-1">
-                              <AlertCircle className="size-3 shrink-0" /> {formErrors.phone}
-                            </p>
-                          )}
-                        </div>
-                        <div className="space-y-1">
-                          <label htmlFor="contact-subject" className="text-[11px] font-medium text-foreground">
-                            Subject <span className="text-brand-orange">*</span>
-                          </label>
-                          <Input
-                            id="contact-subject"
-                            name="subject"
-                            value={formData.subject || ""}
-                            onChange={handleInputChange}
-                            onBlur={handleBlur}
-                            placeholder="How can we help?"
-                            className={`h-8.5 sm:h-9 rounded-lg bg-brand-cream text-xs text-foreground placeholder:text-muted-foreground transition-all duration-300 ${formErrors.subject
-                              ? "border-red-500 bg-red-50/20 focus:border-red-500 focus:ring-red-500/20 shadow-[0_0_8px_rgba(239,68,68,0.2)]"
-                              : "border-border focus:border-brand-orange focus:ring-brand-orange/20 focus:shadow-[0_0_12px_rgba(255,106,0,0.18)]"
-                              }`}
-                          />
-                          {formErrors.subject && (
-                            <p className="flex items-center gap-1 text-[10.5px] font-medium text-red-500 mt-1">
-                              <AlertCircle className="size-3 shrink-0" /> {formErrors.subject}
-                            </p>
-                          )}
-                        </div>
-                      </div>
-                      <div className="space-y-1">
-                        <label htmlFor="contact-message" className="text-[11px] font-medium text-foreground">
-                          Message <span className="text-brand-orange">*</span>
-                        </label>
-                        <Textarea
-                          id="contact-message"
-                          name="message"
-                          value={formData.message || ""}
-                          onChange={handleInputChange}
-                          onBlur={handleBlur}
-                          placeholder="Tell us a little about your project or enquiry (min 10 characters)"
-                          className={`min-h-18 sm:min-h-20 resize-y rounded-lg bg-brand-cream text-xs text-foreground placeholder:text-muted-foreground transition-all duration-300 ${formErrors.message
-                            ? "border-red-500 bg-red-50/20 focus:border-red-500 focus:ring-red-500/20 shadow-[0_0_8px_rgba(239,68,68,0.2)]"
-                            : "border-border focus:border-brand-orange focus:ring-brand-orange/20 focus:shadow-[0_0_12px_rgba(255,106,0,0.18)]"
-                            }`}
-                        />
-                        {formErrors.message && (
-                          <p className="flex items-center gap-1 text-[10.5px] font-medium text-red-500 mt-1">
-                            <AlertCircle className="size-3 shrink-0" /> {formErrors.message}
-                          </p>
-                        )}
-                      </div>
-                      <div className="flex flex-col items-start gap-2 pt-0.5 sm:flex-row sm:items-center sm:justify-between">
-                        <Button type="submit" className="brand-gradient glow-btn-hover h-8.5 sm:h-9 rounded-full px-5 text-xs font-semibold text-primary-foreground shadow-[0_4px_14px_rgba(255,80,30,0.3)] cursor-pointer">
-                          Send inquiry <ArrowUpRight aria-hidden="true" className="ml-1 size-3" />
-                        </Button>
-                        <p className="text-[10px] text-muted-foreground">Enterprise response guaranteed.</p>
-                      </div>
-                    </form>
-                  )}
-                </div>
-              </div>
-            </div>
-          </section>
-        )}
-      </>
-    )}
       </main>
 
       <footer className="bg-brand-charcoal text-background border-t border-white/5">
