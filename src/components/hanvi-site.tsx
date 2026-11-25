@@ -727,37 +727,52 @@ export function HanviSite() {
   const [formMessage, setFormMessage] = useState("");
   const [legalPage, setLegalPage] = useState<string | null>(null);
   const [selectedService, setSelectedService] = useState<ServiceDetailItem | null>(null);
+  const isNavigatingRef = useRef(false);
 
   function performScroll(sectionId: string) {
     setActiveSection(sectionId);
     setMenuOpen(false);
-    if (sectionId === "home") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    } else {
-      const el = document.getElementById(sectionId);
-      if (el) {
-        const navHeight = 76;
-        const rect = el.getBoundingClientRect();
-        const targetY = rect.top + window.pageYOffset - navHeight;
-        window.scrollTo({ top: targetY, behavior: "smooth" });
+    isNavigatingRef.current = true;
+
+    // Small delay for mobile menu DOM collapse so scroll measurement is pixel-accurate
+    setTimeout(() => {
+      if (sectionId === "home") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        const el = document.getElementById(sectionId);
+        if (el) {
+          const navHeight = 72;
+          const rect = el.getBoundingClientRect();
+          const targetY = rect.top + window.pageYOffset - navHeight;
+          window.scrollTo({ top: targetY, behavior: "smooth" });
+        }
       }
-    }
+
+      // Re-enable scroll spy after smooth scroll finishes
+      setTimeout(() => {
+        isNavigatingRef.current = false;
+      }, 750);
+    }, 60);
   }
 
   function navigateTo(sectionId: string) {
+    if (typeof window !== "undefined") {
+      window.history.pushState(null, "", `#${sectionId}`);
+    }
+
     if (currentView === "service-detail") {
       setCurrentView("home");
       setSelectedService(null);
-      if (typeof window !== "undefined") {
-        window.history.pushState(null, "", `#${sectionId}`);
-      }
-      setTimeout(() => {
-        performScroll(sectionId);
-      }, 80);
+      let tries = 0;
+      const interval = setInterval(() => {
+        tries++;
+        const el = document.getElementById(sectionId);
+        if (el || sectionId === "home" || tries > 25) {
+          clearInterval(interval);
+          performScroll(sectionId);
+        }
+      }, 25);
     } else {
-      if (typeof window !== "undefined") {
-        window.history.pushState(null, "", `#${sectionId}`);
-      }
       performScroll(sectionId);
     }
   }
@@ -824,27 +839,28 @@ export function HanviSite() {
     const navSections = ["home", "about", "services", "clients", "partners"];
 
     const handleScroll = () => {
+      // If a programmatic scroll is active, do not override user-selected active section
+      if (isNavigatingRef.current) return;
+
       // Near top of page, Home is active
-      if (window.scrollY < 140) {
+      if (window.scrollY < 120) {
         setActiveSection("home");
         return;
       }
 
-      // Check if scrolled near the bottom of the page
-      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 100) {
-        setActiveSection("contact");
+      // If at or near the very bottom of the document
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 70) {
         return;
       }
 
-      // Check each section position relative to viewport top (offset for sticky navbar)
-      const threshold = 220;
+      // Check which section intersects with the active reading line (just below sticky header)
+      const activeLine = 120;
 
-      for (let i = navSections.length - 1; i >= 0; i--) {
-        const id = navSections[i];
+      for (const id of navSections) {
         const el = document.getElementById(id);
         if (el) {
           const rect = el.getBoundingClientRect();
-          if (rect.top <= threshold) {
+          if (rect.top <= activeLine && rect.bottom > activeLine) {
             setActiveSection(id);
             break;
           }
