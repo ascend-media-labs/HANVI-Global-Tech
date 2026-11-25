@@ -1256,18 +1256,6 @@ export function HanviSite() {
                   );
                 })}
               </div>
-
-              {/* View All Solutions Red Pill Button */}
-              <div className="mt-8 sm:mt-10 flex justify-center relative z-10" data-reveal>
-                <button
-                  type="button"
-                  onClick={() => navigateTo("contact")}
-                  className="inline-flex items-center gap-2 rounded-full bg-[#E02424] hover:bg-red-700 text-white px-8 py-3 text-xs sm:text-sm font-bold shadow-lg shadow-red-950/40 transition-transform duration-200 hover:scale-105 cursor-pointer"
-                >
-                  <span>View All Solutions</span>
-                  <ArrowRight className="size-4" />
-                </button>
-              </div>
             </div>
 
             {/* Bottom Red Mesh Wave SVG Accent */}
