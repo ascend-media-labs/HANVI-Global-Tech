@@ -2087,7 +2087,7 @@ export function HanviSite() {
       </main>
 
       <footer className="bg-brand-charcoal text-background border-t border-white/5">
-        <div className="mx-auto w-full px-4 py-6 sm:px-6 sm:py-8 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
+        <div className="mx-auto w-full px-4 pt-6 pb-24 sm:px-6 sm:py-8 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
           <div className="grid gap-6 sm:gap-8 border-b border-white/10 pb-6 sm:grid-cols-2 lg:grid-cols-[1.3fr_0.9fr_1fr_1fr] lg:gap-8">
             <div>
               <a
@@ -2242,22 +2242,26 @@ export function HanviSite() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-3 pt-4 text-xs text-background/55 sm:flex-row sm:items-center sm:justify-between">
-            <p>© {new Date().getFullYear()} HANVI GLOBAL TECH PVT LTD. All Rights Reserved.</p>
-            <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
-              <Button variant="link" size="sm" className="h-auto p-0 text-xs text-background/65 hover:text-brand-gold" onClick={() => setLegalPage("Privacy policy")}>
-                Privacy Policy
+          <div className="flex items-center justify-between gap-2 sm:gap-4 pt-4 border-t border-white/10 text-[10.5px] sm:text-xs text-background/55 whitespace-nowrap overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+            <p className="shrink-0 font-medium tracking-tight">
+              © {new Date().getFullYear()} HANVI GLOBAL TECH <span className="hidden sm:inline">PVT LTD. All Rights Reserved.</span>
+            </p>
+            <div className="flex items-center gap-2 sm:gap-4 shrink-0">
+              <Button variant="link" size="sm" className="h-auto p-0 text-[10.5px] sm:text-xs text-background/65 hover:text-brand-gold cursor-pointer" onClick={() => setLegalPage("Privacy policy")}>
+                Privacy<span className="hidden xs:inline"> Policy</span>
               </Button>
-              <Button variant="link" size="sm" className="h-auto p-0 text-xs text-background/65 hover:text-brand-gold" onClick={() => setLegalPage("Terms & conditions")}>
-                Terms &amp; Conditions
+              <span className="text-white/20 select-none">•</span>
+              <Button variant="link" size="sm" className="h-auto p-0 text-[10.5px] sm:text-xs text-background/65 hover:text-brand-gold cursor-pointer" onClick={() => setLegalPage("Terms & conditions")}>
+                Terms<span className="hidden xs:inline"> &amp; Conditions</span>
               </Button>
+              <span className="text-white/20 select-none">•</span>
               <button
                 type="button"
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                className="inline-flex items-center gap-1.5 transition-colors hover:text-brand-gold cursor-pointer"
+                className="inline-flex items-center gap-1 text-[10.5px] sm:text-xs text-background/65 transition-colors hover:text-brand-gold cursor-pointer"
               >
-                <span>Back to Top</span>
-                <ArrowDown aria-hidden="true" className="size-3 rotate-180" />
+                <span><span className="hidden xs:inline">Back to </span>Top</span>
+                <ArrowDown aria-hidden="true" className="size-2.5 sm:size-3 rotate-180" />
               </button>
             </div>
           </div>
