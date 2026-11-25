@@ -48,6 +48,7 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { ServiceDetailPage, type ServiceDetailItem } from "./service-detail-page";
 import aboutBuilding from "@/assets/about-building.jpg";
 import collaborationImage from "@/assets/hero-collaboration.webp";
 import globalImage from "@/assets/hero-global.webp";
@@ -70,14 +71,25 @@ const slides = [
   { image: collaborationImage, alt: "Technology professionals collaborating around a digital display", label: "Collaborative thinking" },
 ] as const;
 
-const services = [
+const services: readonly ServiceDetailItem[] = [
   {
+    id: "fire-alarm",
     title: "Fire Alarm System",
+    category: "Life Safety & Early Warning",
+    tagline: "Pinpoint early detection and rapid automated evacuation systems",
     description: "Early detection and alert systems for complete fire safety.",
     details:
       "Engineered to deliver rapid, pinpoint fire detection and life-saving alerts before smoke spreads. Our intelligent addressable and conventional alarm systems integrate multi-criteria optical sensors, manual call points, hooters with flashers, and central control panels with 24/7 telemetry monitoring.",
     icon: Flame,
     image: "/services/ref-fire-alarm.jpg",
+    architecture:
+      "Our intelligent addressable fire detection infrastructure utilizes micro-processed multi-criteria sensors across zones linked to redundant Fire Alarm Control Panels (FACP). Integrates automated emergency sounders, voice evacuation routing, and BMS interlocks for damper and elevator recall.",
+    specifications: [
+      { label: "Detection Delay", value: "< 3 Seconds" },
+      { label: "Sensor Tech", value: "Dual Optical & Thermal" },
+      { label: "Panel Loops", value: "Up to 8 Loops (2000+ Pts)" },
+      { label: "Battery Backup", value: "48-Hour Standby 24V" },
+    ],
     features: [
       "Intelligent multi-criteria smoke, heat & multi-sensor detectors",
       "Centralized addressable fire alarm control panels (FACP)",
@@ -86,14 +98,31 @@ const services = [
     ],
     standards: "NFPA 72, EN 54, BIS & NBC Compliant",
     suitableFor: "Commercial Towers, SEZs, Hospitals, Tech Parks & Residential Apartments",
+    workflow: [
+      { step: "01", title: "Site Survey & Zone Mapping", desc: "Detailed risk appraisal, acoustic coverage, and detector placement design." },
+      { step: "02", title: "FACP & Loop Installation", desc: "Fire-rated armored cabling, addressable smoke/heat sensors, and panel mount." },
+      { step: "03", title: "Testing & BMS Interlock", desc: "Smoke chamber trigger verification, HVAC trips, and sounder acoustic decibel checks." },
+      { step: "04", title: "Statutory Certification", desc: "Handover with Fire Department & NBC compliance certificates." },
+    ],
   },
   {
+    id: "fire-hydrant",
     title: "Fire Hydrant System",
+    category: "Hydraulic Fire Suppression",
+    tagline: "Industrial-grade water distribution networks engineered for instant thermal suppression",
     description: "Reliable water-based fire protection for buildings and facilities.",
     details:
       "Industrial-grade water-based firefighting networks engineered for high-pressure suppression. Designed with automatic diesel and electrical booster pump assemblies, wet & dry riser pipelines, landing valves, hose reels, and automated sprinkler networks that activate instantly during thermal emergencies.",
     icon: Droplets,
     image: "/services/ref-fire-hydrant.jpg",
+    architecture:
+      "Heavy-duty wet and dry riser pipeline network supplied by multi-stage centrifugal pumps (Electric Main + Standby Diesel + Jockey Pump). Integrated with UL/FM certified landing valves, hose reels, and high-density sprinkler heads across all operational floors.",
+    specifications: [
+      { label: "Operating Pressure", value: "7 to 10 Bar Continuous" },
+      { label: "Pumping System", value: "Electric + Standby Diesel" },
+      { label: "Pipe Standard", value: "Heavy-Gauge MS C-Class" },
+      { label: "Coverage", value: "100% Floor & Shaft Envelope" },
+    ],
     features: [
       "Heavy-duty electric, diesel standby & jockey booster pump skids",
       "Automated wet & dry riser pipeline systems with fire brigade inlets",
@@ -102,14 +131,31 @@ const services = [
     ],
     standards: "NFPA 13 & 14, IS 3844, NBC Fire Safety Norms",
     suitableFor: "Manufacturing Plants, Warehouses, High-Rise Buildings & Infrastructure Hubs",
+    workflow: [
+      { step: "01", title: "Hydraulic Calculation", desc: "Water storage capacity, pump head calculation, and riser pipe sizing." },
+      { step: "02", title: "Pump Skid & Piping", desc: "Precision fabrication, grooved/welded piping, and hydrant post placement." },
+      { step: "03", title: "Hydrostatic Pressure Testing", desc: "1.5x working pressure leak test and flow meter discharge calibration." },
+      { step: "04", title: "Fire Safety Sign-off", desc: "Full statutory compliance inspection and operational training." },
+    ],
   },
   {
+    id: "cctv-surveillance",
     title: "CCTV Surveillance",
+    category: "Enterprise Physical Security",
+    tagline: "AI-driven high-resolution optical surveillance and perimeter defense ecosystems",
     description: "Advanced video monitoring for homes, offices & commercial spaces.",
     details:
       "End-to-end IP video surveillance ecosystems offering crystal-clear visual monitoring, smart threat detection, and centralized evidence recording. Powered by AI-driven analytics including perimeter tripwire, facial detection, motion tracking, and ultra low-light night vision.",
     icon: Camera,
     image: "/services/ref-cctv.jpg",
+    architecture:
+      "Centralized IP surveillance matrix with Starlight low-light optics, high-throughput PoE switches, and Enterprise NVR servers with RAID-6 redundant storage. Features neural-network AI vision for intrusion detection, license plate recognition, and face tracking.",
+    specifications: [
+      { label: "Resolution", value: "4K UHD / 8 Megapixels" },
+      { label: "Night Vision", value: "ColorNight / IR up to 60m" },
+      { label: "Storage Architecture", value: "RAID-6 Redundant NVR" },
+      { label: "AI Analytics", value: "Perimeter, Face & ANPR" },
+    ],
     features: [
       "4K Ultra-HD IP dome, bullet, and 360° PTZ cameras with Starlight night vision",
       "AI video analytics: intrusion detection, crowd density & license plate recognition",
@@ -118,14 +164,31 @@ const services = [
     ],
     standards: "ONVIF Profile S/G/T, NDAA Compliant Hardware, IP67 Weatherproof",
     suitableFor: "Corporate Campuses, Banks, Retail Chains, Gated Communities & Smart Cities",
+    workflow: [
+      { step: "01", title: "Blind Spot Audit", desc: "Field-of-view mapping, optical focal length calculation, and lighting evaluation." },
+      { step: "02", title: "Cabling & Camera Mounting", desc: "Cat6A PoE infrastructure, weather-sealed IP67 junction enclosures." },
+      { step: "03", title: "NVR Configuration & AI Setup", desc: "Perimeter tripwire calibration, motion zones, and RAID storage tuning." },
+      { step: "04", title: "Command Center Handover", desc: "Multi-screen video wall setup, secure mobile access, and security staff training." },
+    ],
   },
   {
+    id: "data-center",
     title: "Cyber Security Data Center Design",
+    category: "Mission-Critical IT Infrastructure",
+    tagline: "Tier-standard server rooms engineered for maximum uptime and cyber-physical defense",
     description: "Secure, high-availability and scalable data center infrastructure.",
     details:
       "Tier-standard mission-critical IT infrastructure engineered for maximum uptime, physical cyber defense, and energy efficiency. We handle turnkey server room architecture, precision cooling, cold/hot aisle containment, redundant UPS backup, and physical security access control.",
     icon: Server,
     image: "/services/ref-data-center.jpg",
+    architecture:
+      "Turnkey modular server room environment designed with N+1 or 2N electrical redundancy, modular high-efficiency UPS systems, precision air conditioning (PAC) with cold/hot aisle containment, FM-200 / Novec clean agent fire suppression, and biometric biometric perimeter control.",
+    specifications: [
+      { label: "Tier Standard", value: "Tier III & Tier IV Ready" },
+      { label: "Power Redundancy", value: "2N UPS + Dual DG Sync" },
+      { label: "Precision Cooling", value: "In-Row PAC Cold Aisle" },
+      { label: "Fire Suppression", value: "Clean Agent Gas (Novec/FM-200)" },
+    ],
     features: [
       "Tier III & IV compliant modular server farm architecture",
       "Precision air conditioning (PAC) with cold/hot aisle containment",
@@ -134,14 +197,31 @@ const services = [
     ],
     standards: "TIA-942, Uptime Institute Standards, ISO 27001 Security",
     suitableFor: "Enterprise IT, FinTech, Cloud Providers, Telecom Hubs & Government SEZs",
+    workflow: [
+      { step: "01", title: "Civil & Thermal Design", desc: "Raised flooring, containment layouts, heat load BTU calculations." },
+      { step: "02", title: "Electrical & UPS Skids", desc: "Modular busbar trunking, 2N UPS, battery racks, and isolated earthing." },
+      { step: "03", title: "PAC & Fire Suppression", desc: "In-row cooling setup, gas discharge nozzles, and aspiration smoke detectors." },
+      { step: "04", title: "Commissioning & Audit", desc: "Integrated System Test (IST), thermal imaging, and Tier certification audit." },
+    ],
   },
   {
+    id: "networking-intercom",
     title: "Network Communications & Intercom Solutions",
+    category: "Structured Cabling & Communications",
+    tagline: "High-throughput campus backbones, managed switching, and IP SIP intercom matrices",
     description: "Seamless connectivity, intercom and communication systems.",
     details:
       "Enterprise-grade connectivity networks ensuring high-throughput data transmission, crystal-clear SIP intercom communications, and campus-wide broadcasting. Engineered with high-speed Cat6A/Fiber optic backbones, managed core switches, and commercial video door phones.",
     icon: Network,
     image: "/services/ref-networking.jpg",
+    architecture:
+      "High-speed unified network architecture consisting of single-mode/multi-mode fiber optic risers, Cat6A horizontal cabling, Layer-2/Layer-3 managed switches, campus WiFi 6/7 arrays, and SIP-enabled IP multi-tenant video intercom systems.",
+    specifications: [
+      { label: "Backbone Bandwidth", value: "10G / 40G Fiber Optic" },
+      { label: "Intercom Protocol", value: "SIP 2.0 / IP Video" },
+      { label: "Switching Fabric", value: "L2/L3 PoE+ Enterprise" },
+      { label: "Structured Cable", value: "Cat6A 500MHz Shielded" },
+    ],
     features: [
       "Structured Cat6A and multi-core fiber optic campus backbones",
       "Enterprise managed switches, routers & high-density WiFi 6/7 access points",
@@ -150,14 +230,31 @@ const services = [
     ],
     standards: "TIA/EIA-568-C, IEEE 802.3 Ethernet, SIP 2.0 Protocols",
     suitableFor: "Corporate Offices, Educational Campuses, Gated Communities & Tech Centers",
+    workflow: [
+      { step: "01", title: "Network Topology Blueprint", desc: "Bandwidth forecasting, rack layout design, and RF WiFi heatmapping." },
+      { step: "02", title: "Fiber & Copper Pulling", desc: "Structured cable routing, patch panel punch-down, and OTDR fiber splicing." },
+      { step: "03", title: "Switch & SIP Intercom Setup", desc: "VLAN segmentation, QoS prioritization, and door-station IP mapping." },
+      { step: "04", title: "Fluke Certification", desc: "100% channel link testing, Fluke cert reports, and operational sign-off." },
+    ],
   },
   {
+    id: "smart-home",
     title: "Smart Node Home Automation & Touch Switch Boards",
+    category: "Luxury IoT & Building Automation",
+    tagline: "Capacitive glass touch switchboards and intelligent wireless automation ecosystems",
     description: "Intelligent automation and premium touch switch panels for modern living.",
     details:
       "Luxury smart home ecosystems combining capacitive feather-touch glass switchboards with invisible IoT automation nodes. Control lights, air conditioning, motorized curtains, and custom ambiance scenes effortlessly through intuitive touch, voice commands, or mobile apps from anywhere.",
     icon: Cpu,
     image: "/services/ref-smart-home.jpg",
+    architecture:
+      "State-of-the-art building automation integrating capacitive feather-touch tempered glass panels, retrofit micro smart nodes, and mesh IoT communication. Offers seamless scene scheduling, multi-zone lighting, HVAC control, motorized curtain drives, and voice AI integration.",
+    specifications: [
+      { label: "Panel Finish", value: "Toughened Glass Touch" },
+      { label: "Wireless Protocol", value: "Dual WiFi & Zigbee 3.0" },
+      { label: "App & Voice", value: "Alexa, Google & iOS/Android" },
+      { label: "Installation Type", value: "Retrofit (No Rewiring)" },
+    ],
     features: [
       "Ultra-responsive capacitive glass touch switch panels with ambient backlighting",
       "Retrofit micro smart nodes that fit behind existing modular gang boxes",
@@ -166,8 +263,14 @@ const services = [
     ],
     standards: "BIS Certified, CE, RoHS Compliant, Secure 128-bit IoT Encryption",
     suitableFor: "Luxury Villas, Premium Apartments, Executive Suites & Boutique Hotels",
+    workflow: [
+      { step: "01", title: "Lifestyle Ambience Planning", desc: "Gang box assessment, lighting load mapping, and scene preference workshop." },
+      { step: "02", title: "Glass Panel & Node Fitting", desc: "Seamless replacement of manual switches with capacitive glass touchboards." },
+      { step: "03", title: "Gateway & App Scene Sync", desc: "WiFi/Zigbee bridge pairing, smartphone automation routines, and voice skills setup." },
+      { step: "04", title: "Personalized Walkthrough", desc: "Master scene demo, multi-user household setup, and concierge support activation." },
+    ],
   },
-] as const;
+];
 
 const clientPlaceholders = [
   {
@@ -616,15 +719,16 @@ function SectionHeading({
 }
 
 export function HanviSite() {
+  const [currentView, setCurrentView] = useState<"home" | "service-detail">("home");
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [formMessage, setFormMessage] = useState("");
   const [legalPage, setLegalPage] = useState<string | null>(null);
-  const [selectedService, setSelectedService] = useState<(typeof services)[number] | null>(null);
+  const [selectedService, setSelectedService] = useState<ServiceDetailItem | null>(null);
 
-  function navigateTo(sectionId: string) {
+  function performScroll(sectionId: string) {
     setActiveSection(sectionId);
     setMenuOpen(false);
     if (sectionId === "home") {
@@ -640,35 +744,78 @@ export function HanviSite() {
     }
   }
 
-  function openService(serviceIndexOrTitle: number | string) {
+  function navigateTo(sectionId: string) {
+    if (currentView === "service-detail") {
+      setCurrentView("home");
+      setSelectedService(null);
+      if (typeof window !== "undefined") {
+        window.history.pushState(null, "", `#${sectionId}`);
+      }
+      setTimeout(() => {
+        performScroll(sectionId);
+      }, 80);
+    } else {
+      if (typeof window !== "undefined") {
+        window.history.pushState(null, "", `#${sectionId}`);
+      }
+      performScroll(sectionId);
+    }
+  }
+
+  function openService(serviceIndexOrIdOrTitle: number | string) {
     const targetService =
-      typeof serviceIndexOrTitle === "number"
-        ? services[serviceIndexOrTitle]
-        : services.find((s) =>
-            s.title.toLowerCase().includes(serviceIndexOrTitle.toLowerCase())
+      typeof serviceIndexOrIdOrTitle === "number"
+        ? services[serviceIndexOrIdOrTitle]
+        : services.find(
+            (s) =>
+              s.id.toLowerCase() === String(serviceIndexOrIdOrTitle).toLowerCase() ||
+              s.title.toLowerCase().includes(String(serviceIndexOrIdOrTitle).toLowerCase())
           ) || services[0];
 
     if (targetService) {
-      const serviceIdx = services.indexOf(targetService);
       setSelectedService(targetService);
+      setCurrentView("service-detail");
       setMenuOpen(false);
-      setActiveSection("services");
-
-      const cardEl = document.getElementById(`service-card-${serviceIdx}`);
-      if (cardEl) {
-        const navHeight = 85;
-        const rect = cardEl.getBoundingClientRect();
-        const targetY = rect.top + window.pageYOffset - navHeight;
-        window.scrollTo({ top: targetY, behavior: "smooth" });
-        cardEl.classList.add("ring-2", "ring-[#E02424]", "ring-offset-2", "ring-offset-slate-900");
-        setTimeout(() => {
-          cardEl.classList.remove("ring-2", "ring-[#E02424]", "ring-offset-2", "ring-offset-slate-900");
-        }, 2500);
-      } else {
-        navigateTo("services");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      if (typeof window !== "undefined") {
+        window.history.pushState(null, "", `#service-${targetService.id}`);
       }
     }
   }
+
+  // Handle URL hash changes & direct page load deep linking
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    function parseHash() {
+      const hash = window.location.hash.replace(/^#/, "");
+      if (hash.startsWith("service-")) {
+        const sId = hash.replace("service-", "");
+        const matched = services.find(
+          (s) => s.id === sId || s.title.toLowerCase().includes(sId.toLowerCase())
+        );
+        if (matched) {
+          setSelectedService(matched);
+          setCurrentView("service-detail");
+          window.scrollTo({ top: 0, behavior: "smooth" });
+          return;
+        }
+      }
+      if (hash && hash !== "service-detail" && !hash.startsWith("service-")) {
+        setCurrentView("home");
+        setSelectedService(null);
+      }
+    }
+
+    parseHash();
+    window.addEventListener("hashchange", parseHash);
+    window.addEventListener("popstate", parseHash);
+
+    return () => {
+      window.removeEventListener("hashchange", parseHash);
+      window.removeEventListener("popstate", parseHash);
+    };
+  }, []);
 
   // Scroll Spy: dynamically update active navbar button as user scrolls through sections
   useEffect(() => {
@@ -1080,7 +1227,21 @@ export function HanviSite() {
       </header>
 
       <main>
-        <section id="home" className="relative isolate h-[calc(100svh-148px)] min-h-[300px] max-h-[400px] sm:max-h-[415px] lg:max-h-[425px] scroll-mt-20 overflow-hidden bg-brand-charcoal text-background">
+        {currentView === "service-detail" && selectedService ? (
+          <ServiceDetailPage
+            service={selectedService}
+            allServices={services}
+            onBack={() => {
+              setCurrentView("home");
+              setSelectedService(null);
+              navigateTo("services");
+            }}
+            onSelectService={(next) => openService(next.id)}
+            onNavigateHome={(secId) => navigateTo(secId || "home")}
+          />
+        ) : (
+          <>
+            <section id="home" className="relative isolate h-[calc(100svh-148px)] min-h-[300px] max-h-[400px] sm:max-h-[415px] lg:max-h-[425px] scroll-mt-20 overflow-hidden bg-brand-charcoal text-background">
             <div className="absolute inset-0" aria-hidden="true">
               {slides.map((slide, index) => (
                 <img
@@ -1350,7 +1511,7 @@ export function HanviSite() {
                     <article
                       key={service.title}
                       id={`service-card-${index}`}
-                      onClick={() => setSelectedService(service)}
+                      onClick={() => openService(service.id)}
                       className="group relative flex flex-col overflow-hidden rounded-2xl bg-white border border-transparent shadow-xl transition-all duration-300 hover:-translate-y-2 hover:border-[#E02424]/80 hover:shadow-[0_16px_40px_-8px_rgba(224,36,36,0.55),0_0_28px_rgba(255,106,0,0.35)] cursor-pointer scroll-mt-24"
                       data-reveal
                       style={{ '--reveal-delay': `${index * 80}ms` } as React.CSSProperties}
@@ -1390,7 +1551,7 @@ export function HanviSite() {
                           type="button"
                           onClick={(e) => {
                             e.stopPropagation();
-                            setSelectedService(service);
+                            openService(service.id);
                           }}
                           aria-label={`View details of ${service.title}`}
                           className="flex size-7 sm:size-8 shrink-0 items-center justify-center rounded-full border border-[#E02424] text-[#E02424] transition-all duration-200 group-hover:bg-[#E02424] group-hover:text-white group-hover:shadow-[0_0_12px_rgba(224,36,36,0.5)] group-hover:translate-x-0.5 cursor-pointer"
@@ -1921,6 +2082,8 @@ export function HanviSite() {
               </div>
             </div>
           </section>
+          </>
+        )}
       </main>
 
       <footer className="bg-brand-charcoal text-background border-t border-white/5">
@@ -2034,13 +2197,13 @@ export function HanviSite() {
                 <h3 className="text-xs font-bold uppercase tracking-widest text-white/95">Services</h3>
               </div>
               <ul className="space-y-2">
-                {services.map((service, index) => (
+                {services.map((service) => (
                   <li key={service.title}>
                     <a
-                      href={`#service-card-${index}`}
+                      href={`#service-${service.id}`}
                       onClick={(e) => {
                         e.preventDefault();
-                        openService(index);
+                        openService(service.id);
                       }}
                       className="text-xs sm:text-[13px] text-background/75 transition-all duration-200 hover:text-brand-gold hover:translate-x-1 inline-block cursor-pointer line-clamp-1"
                       title={service.title}
@@ -2145,128 +2308,6 @@ export function HanviSite() {
               Approved {legalPage?.toLowerCase()} content was not supplied. Add the company’s reviewed text before publishing.
             </DialogDescription>
           </DialogHeader>
-        </DialogContent>
-      </Dialog>
-
-      {/* Individual Service Detail Modal (Mobile Responsive with Safe Padding) */}
-      <Dialog open={selectedService !== null} onOpenChange={(open) => { if (!open) setSelectedService(null); }}>
-        <DialogContent className="!max-w-4xl lg:!max-w-5xl w-[94vw] max-h-[90svh] p-0 rounded-2xl bg-slate-950 border border-slate-800 text-white shadow-2xl overflow-y-auto md:overflow-hidden [scrollbar-width:thin] [scrollbar-color:#334155_transparent]">
-          {selectedService && (
-            <div className="grid grid-cols-1 md:grid-cols-[1fr_1.35fr] min-h-0 md:min-h-[460px]">
-              {/* Left Column: Visual Image & Branding Banner */}
-              <div className="relative overflow-hidden flex flex-col justify-between p-4 pt-4.5 sm:p-6 md:p-7 bg-slate-900 min-h-[160px] sm:min-h-[190px] md:min-h-[460px]">
-                <img
-                  src={selectedService.image}
-                  alt={selectedService.title}
-                  className="absolute inset-0 h-full w-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/75 to-slate-950/40" />
-
-                {/* Top Tag - with pr-12 to ensure safe distance from top-right close button */}
-                <div className="relative z-10 pr-12">
-                  <span className="text-[9.5px] sm:text-[10px] font-bold uppercase tracking-wider text-white bg-[#E02424] px-2.5 sm:px-3 py-1 rounded-full inline-block shadow-md">
-                    HANVI Specialized Solution
-                  </span>
-                </div>
-
-                {/* Bottom Title & Icon */}
-                <div className="relative z-10 mt-auto pt-6 sm:pt-10 md:pt-16">
-                  <div className="flex size-10 sm:size-12 md:size-13 items-center justify-center rounded-xl sm:rounded-2xl bg-[#E02424] text-white shadow-xl mb-2 sm:mb-3">
-                    <selectedService.icon className="size-5 sm:size-6 md:size-7 text-white" />
-                  </div>
-                  <h2 className="text-lg sm:text-2xl lg:text-3xl font-extrabold text-white leading-tight">
-                    {selectedService.title}
-                  </h2>
-                  <p className="mt-1.5 text-xs text-slate-300 leading-snug line-clamp-2">
-                    {selectedService.description}
-                  </p>
-                </div>
-              </div>
-
-              {/* Right Column: Technical Details, Capabilities & Actions */}
-              <div className="p-4 sm:p-6 md:p-7 flex flex-col justify-between bg-slate-950 space-y-3.5 sm:space-y-4">
-                <div className="space-y-3 sm:space-y-3.5">
-                  {/* Overview */}
-                  <div>
-                    <h4 className="text-[10.5px] sm:text-[11px] font-bold uppercase tracking-wider text-[#E02424] mb-1">
-                      Engineering Overview
-                    </h4>
-                    <p className="text-xs sm:text-[13px] text-slate-200 leading-relaxed text-justify">
-                      {selectedService.details}
-                    </p>
-                  </div>
-
-                  {/* Key Capabilities */}
-                  <div>
-                    <h4 className="text-[10.5px] sm:text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5 sm:mb-2">
-                      Key Technical Capabilities
-                    </h4>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 sm:gap-2">
-                      {selectedService.features.map((feature, i) => (
-                        <div key={i} className="flex items-start gap-2 rounded-xl border border-slate-800 bg-slate-900/60 p-2 sm:p-2.5">
-                          <CheckCircle2 className="size-3.5 text-[#E02424] shrink-0 mt-0.5" />
-                          <span className="text-[11px] sm:text-xs text-slate-300 font-medium leading-snug">{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Standards & Suitability */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5 pt-0.5">
-                    <div className="rounded-xl bg-slate-900/80 border border-slate-800/80 p-2 sm:p-2.5">
-                      <span className="text-[9px] sm:text-[9.5px] font-bold uppercase tracking-wider text-[#E02424] block mb-0.5">
-                        Standards &amp; Compliance
-                      </span>
-                      <p className="text-[11px] sm:text-[11.5px] font-semibold text-slate-300 leading-tight">
-                        {selectedService.standards}
-                      </p>
-                    </div>
-                    <div className="rounded-xl bg-slate-900/80 border border-slate-800/80 p-2 sm:p-2.5">
-                      <span className="text-[9px] sm:text-[9.5px] font-bold uppercase tracking-wider text-[#E02424] block mb-0.5">
-                        Suitable Applications
-                      </span>
-                      <p className="text-[11px] sm:text-[11.5px] font-semibold text-slate-300 leading-tight line-clamp-2">
-                        {selectedService.suitableFor}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Action Footer with Safe Bottom Padding */}
-                <div className="pt-3 pb-1 sm:pb-0 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-3">
-                  <span className="text-xs text-slate-400 hidden sm:inline">
-                    Need technical consultation or site inspection?
-                  </span>
-                  <div className="flex items-center gap-2.5 sm:gap-3 w-full sm:w-auto justify-end">
-                    <button
-                      type="button"
-                      onClick={() => setSelectedService(null)}
-                      className="group inline-flex items-center gap-1.5 rounded-full border border-slate-700/80 bg-slate-900/90 px-3.5 sm:px-4 py-2 text-xs font-semibold text-slate-300 shadow-sm transition-all duration-200 hover:border-slate-500 hover:bg-slate-800 hover:text-white hover:shadow-[0_0_15px_rgba(255,255,255,0.08)] cursor-pointer"
-                    >
-                      <X className="size-3.5 text-slate-400 transition-transform duration-200 group-hover:rotate-90 group-hover:text-white" />
-                      <span>Close</span>
-                    </button>
-                    <button
-                      type="button"
-                      className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-red-600 to-[#E02424] hover:from-red-500 hover:to-red-600 px-4 sm:px-5 py-2 text-xs font-semibold text-white shadow-[0_4px_16px_rgba(224,36,36,0.35)] transition-all duration-200 hover:scale-[1.02] hover:shadow-[0_6px_20px_rgba(224,36,36,0.5)] cursor-pointer"
-                      onClick={() => {
-                        const sTitle = selectedService.title;
-                        setSelectedService(null);
-                        setFormData((prev) => ({
-                          ...prev,
-                          subject: `Inquiry: ${sTitle}`,
-                        }));
-                        navigateTo("contact");
-                      }}
-                    >
-                      <span>Enquire for this Service</span>
-                      <span aria-hidden="true">→</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
         </DialogContent>
       </Dialog>
     </div>
