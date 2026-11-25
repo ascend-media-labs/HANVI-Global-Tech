@@ -716,7 +716,7 @@ export function HanviSite() {
 
     const timer = window.setInterval(() => {
       setCurrentSlide((current) => (current + 1) % slides.length);
-    }, 7000);
+    }, 10000);
 
     return () => {
       window.clearInterval(timer);
@@ -987,7 +987,7 @@ export function HanviSite() {
 
       {/* Main Navbar - Only this is sticky */}
       <header className="sticky top-0 z-50 border-b border-border/50 bg-background/85 backdrop-blur-xl transition-all duration-300 shadow-[0_4px_24px_rgba(0,0,0,0.03)]">
-        <div className="mx-auto flex h-[76px] w-full items-center justify-between px-4 sm:px-6 md:px-8 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:px-10 xl:px-12 2xl:px-16">
+        <div className="mx-auto flex h-[68px] sm:h-[72px] w-full items-center justify-between px-4 sm:px-6 md:px-8 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:px-10 xl:px-12 2xl:px-16">
           <div className="flex items-center justify-start">
             <button
               type="button"
@@ -1080,7 +1080,7 @@ export function HanviSite() {
       </header>
 
       <main>
-        <section id="home" className="relative isolate h-[calc(100svh-135px)] min-h-[320px] max-h-[465px] scroll-mt-20 overflow-hidden bg-brand-charcoal text-background">
+        <section id="home" className="relative isolate h-[calc(100svh-148px)] min-h-[300px] max-h-[400px] sm:max-h-[415px] lg:max-h-[425px] scroll-mt-20 overflow-hidden bg-brand-charcoal text-background">
             <div className="absolute inset-0" aria-hidden="true">
               {slides.map((slide, index) => (
                 <img
@@ -1097,7 +1097,7 @@ export function HanviSite() {
               <div className="hero-grid absolute inset-0 pointer-events-none opacity-50" />
             </div>
 
-            <div className="relative mx-auto flex h-full w-full flex-col justify-center px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 pb-10 pt-2 sm:pb-11 sm:pt-2.5">
+            <div className="relative mx-auto flex h-full w-full flex-col justify-center px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 pb-8 pt-1 sm:pb-9 sm:pt-2">
               <div className="max-w-3xl" data-reveal>
                 <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 py-0.5 px-3 text-xs font-medium text-background/90 backdrop-blur-md shadow-inner shadow-white/5 sm:mb-2.5 sm:px-3">
                   <span className="relative flex h-2 w-2">
@@ -1125,10 +1125,10 @@ export function HanviSite() {
                   Discover the story, services, and possibilities behind HANVI GLOBAL TECH PVT LTD. Powering resilient digital infrastructure and enterprise innovation.
                 </p>
 
-                <div className="mt-3.5 flex flex-wrap items-center gap-2.5 sm:mt-4">
+                <div className="mt-3 flex flex-wrap items-center gap-2.5 sm:mt-3.5">
                   <Button
                     size="default"
-                    className="brand-gradient glow-btn-hover group h-9 sm:h-9.5 rounded-full px-4.5 sm:px-5 text-xs sm:text-sm font-semibold text-primary-foreground shadow-[0_4px_18px_rgba(255,80,30,0.35)] cursor-pointer"
+                    className="brand-gradient glow-btn-hover group h-8.5 sm:h-9 rounded-full px-4 sm:px-4.5 text-xs sm:text-sm font-semibold text-primary-foreground shadow-[0_4px_18px_rgba(255,80,30,0.35)] cursor-pointer"
                     onClick={() => navigateTo("services")}
                   >
                     <span className="flex items-center gap-1.5">
@@ -1139,14 +1139,14 @@ export function HanviSite() {
                   <Button
                     variant="outline"
                     size="default"
-                    className="h-9 sm:h-9.5 rounded-full border-white/20 bg-white/5 px-4.5 sm:px-5 text-xs sm:text-sm font-medium text-background backdrop-blur-md transition-all duration-300 ease-out hover:scale-105 hover:bg-white/15 hover:border-white/50 hover:shadow-[0_0_22px_rgba(255,255,255,0.3)] cursor-pointer"
+                    className="h-8.5 sm:h-9 rounded-full border-white/20 bg-white/5 px-4 sm:px-4.5 text-xs sm:text-sm font-medium text-background backdrop-blur-md transition-all duration-300 ease-out hover:scale-105 hover:bg-white/15 hover:border-white/50 hover:shadow-[0_0_22px_rgba(255,255,255,0.3)] cursor-pointer"
                     onClick={() => navigateTo("contact")}
                   >
                     Contact us
                   </Button>
                 </div>
 
-                <div className="mt-3.5 flex flex-wrap items-center gap-4 sm:gap-6 border-t border-white/10 pt-2.5 sm:pt-3">
+                <div className="mt-3 flex flex-wrap items-center gap-4 sm:gap-6 border-t border-white/10 pt-2 sm:pt-2.5">
                   <div className="flex items-center gap-2">
                     <div className="flex size-6 sm:size-6.5 items-center justify-center rounded-lg bg-brand-orange/20 text-brand-orange">
                       <Server className="size-3 sm:size-3.5" />
@@ -1177,8 +1177,8 @@ export function HanviSite() {
                 </div>
               </div>
 
-              <div className="absolute bottom-2.5 left-4 right-4 sm:bottom-3 sm:left-6 sm:right-6 md:left-8 md:right-8 lg:left-10 lg:right-10 xl:left-12 xl:right-12 2xl:left-16 2xl:right-16 flex items-center justify-between gap-4">
-                <div className="flex min-w-0 items-center gap-2.5 rounded-full border border-white/10 bg-black/40 px-3 py-1 backdrop-blur-md text-[11px] sm:text-xs font-medium text-background/85">
+              <div className="absolute bottom-2 left-4 right-4 sm:bottom-2.5 sm:left-6 sm:right-6 md:left-8 md:right-8 lg:left-10 lg:right-10 xl:left-12 xl:right-12 2xl:left-16 2xl:right-16 flex items-center justify-between gap-4">
+                <div className="flex min-w-0 items-center gap-2.5 rounded-full border border-white/10 bg-black/40 px-3 py-0.5 sm:py-1 backdrop-blur-md text-[11px] sm:text-xs font-medium text-background/85">
                   <span className="brand-gradient h-0.5 w-6 shrink-0" aria-hidden="true" />
                   <span className="truncate">{slides[currentSlide]?.label ?? "Global technology"}</span>
                 </div>
@@ -1188,7 +1188,7 @@ export function HanviSite() {
                       key={slide.label}
                       variant="ghost"
                       size="icon"
-                      className="h-7 w-7 rounded-full p-0 text-background hover:bg-white/10 hover:text-background"
+                      className="h-6 w-6 sm:h-7 sm:w-7 rounded-full p-0 text-background hover:bg-white/10 hover:text-background"
                       aria-label={`Show slide ${index + 1}: ${slide.label}`}
                       aria-pressed={currentSlide === index}
                       onClick={() => setCurrentSlide(index)}
@@ -1202,7 +1202,7 @@ export function HanviSite() {
           </section>
 
           {/* 4-Item Feature Strip Below Hero */}
-          <div className="w-full border-b border-border/60 bg-white py-2 sm:py-2.5 shadow-xs">
+          <div className="w-full border-b border-border/60 bg-white py-1.5 sm:py-2 shadow-xs">
             <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
               <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-border/60">
                 {/* Item 1 */}
