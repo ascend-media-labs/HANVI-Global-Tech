@@ -737,51 +737,19 @@ export function HanviSite() {
   const [selectedService, setSelectedService] = useState<ServiceDetailItem | null>(null);
   const isNavigatingRef = useRef(false);
 
-  function performScroll(sectionId: string) {
-    setActiveSection(sectionId);
-    setMenuOpen(false);
-    isNavigatingRef.current = true;
-
-    // Small delay for mobile menu DOM collapse so scroll measurement is pixel-accurate
-    setTimeout(() => {
-      if (sectionId === "home") {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      } else {
-        const el = document.getElementById(sectionId);
-        if (el) {
-          const navHeight = 72;
-          const rect = el.getBoundingClientRect();
-          const targetY = rect.top + window.pageYOffset - navHeight;
-          window.scrollTo({ top: targetY, behavior: "smooth" });
-        }
-      }
-
-      // Re-enable scroll spy after smooth scroll finishes
-      setTimeout(() => {
-        isNavigatingRef.current = false;
-      }, 750);
-    }, 60);
-  }
-
   function navigateTo(sectionId: string) {
-    if (typeof window !== "undefined") {
-      window.history.pushState(null, "", `#${sectionId}`);
-    }
+    const targetSection = sectionId === "why-us" ? "about" : sectionId;
+    setActiveSection(targetSection);
+    setMenuOpen(false);
 
     if (currentView === "service-detail") {
       setCurrentView("home");
       setSelectedService(null);
-      let tries = 0;
-      const interval = setInterval(() => {
-        tries++;
-        const el = document.getElementById(sectionId);
-        if (el || sectionId === "home" || tries > 25) {
-          clearInterval(interval);
-          performScroll(sectionId);
-        }
-      }, 25);
-    } else {
-      performScroll(sectionId);
+    }
+
+    if (typeof window !== "undefined") {
+      window.history.pushState(null, "", `#${targetSection}`);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   }
 
@@ -798,6 +766,7 @@ export function HanviSite() {
     if (targetService) {
       setSelectedService(targetService);
       setCurrentView("service-detail");
+      setActiveSection("services");
       setMenuOpen(false);
       window.scrollTo({ top: 0, behavior: "smooth" });
       if (typeof window !== "undefined") {
@@ -820,13 +789,20 @@ export function HanviSite() {
         if (matched) {
           setSelectedService(matched);
           setCurrentView("service-detail");
+          setActiveSection("services");
           window.scrollTo({ top: 0, behavior: "smooth" });
           return;
         }
       }
-      if (hash && hash !== "service-detail" && !hash.startsWith("service-")) {
-        setCurrentView("home");
-        setSelectedService(null);
+      if (hash) {
+        const validSections = ["home", "about", "services", "clients", "partners", "contact", "why-us"];
+        if (validSections.includes(hash)) {
+          setCurrentView("home");
+          setSelectedService(null);
+          setActiveSection(hash === "why-us" ? "about" : hash);
+          window.scrollTo({ top: 0, behavior: "smooth" });
+          return;
+        }
       }
     }
 
@@ -839,60 +815,6 @@ export function HanviSite() {
       window.removeEventListener("popstate", parseHash);
     };
   }, []);
-
-  // Scroll Spy: dynamically update active navbar button as user scrolls through sections
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-
-    const navSections = ["home", "about", "services", "clients", "partners"];
-
-    const handleScroll = () => {
-      // If a programmatic scroll is active, do not override user-selected active section
-      if (isNavigatingRef.current) return;
-
-      // Near top of page, Home is active
-      if (window.scrollY < 120) {
-        setActiveSection("home");
-        return;
-      }
-
-      // If at or near the very bottom of the document
-      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 70) {
-        return;
-      }
-
-      // Check which section intersects with the active reading line (just below sticky header)
-      const activeLine = 120;
-
-      for (const id of navSections) {
-        const el = document.getElementById(id);
-        if (el) {
-          const rect = el.getBoundingClientRect();
-          if (rect.top <= activeLine && rect.bottom > activeLine) {
-            setActiveSection(id);
-            break;
-          }
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    if (isPaused) return;
-
-    const timer = window.setInterval(() => {
-      setCurrentSlide((current) => (current + 1) % slides.length);
-    }, 10000);
-
-    return () => {
-      window.clearInterval(timer);
-    };
-  }, [isPaused]);
 
   useEffect(() => {
     if (!("IntersectionObserver" in window)) return;
@@ -907,7 +829,7 @@ export function HanviSite() {
           }
         });
       },
-      { threshold: 0.1 },
+      { threshold: 0.05 },
     );
     const revealTargets = document.querySelectorAll<HTMLElement>("[data-reveal]");
     revealTargets.forEach((target) => {
@@ -917,7 +839,21 @@ export function HanviSite() {
     return () => {
       revealObserver.disconnect();
     };
-  }, []);
+  }, [activeSection, currentView]);
+
+  useEffect(() => {
+    if (isPaused) return;
+
+    const timer = window.setInterval(() => {
+      setCurrentSlide((current) => (current + 1) % slides.length);
+    }, 10000);
+
+    return () => {
+      window.clearInterval(timer);
+    };
+  }, [isPaused]);
+
+
 
   function moveSlide(direction: -1 | 1) {
     setCurrentSlide((current) => (current + direction + slides.length) % slides.length);
@@ -1287,7 +1223,10 @@ export function HanviSite() {
           />
         ) : (
           <>
-            <section id="home" className="relative isolate h-[calc(100svh-148px)] min-h-[300px] max-h-[400px] sm:max-h-[415px] lg:max-h-[425px] scroll-mt-20 overflow-hidden bg-brand-charcoal text-background">
+            {/* 1. HOME VIEW */}
+            {activeSection === "home" && (
+              <>
+                <section id="home" className="relative isolate h-[calc(100svh-148px)] min-h-[300px] max-h-[400px] sm:max-h-[415px] lg:max-h-[425px] scroll-mt-20 overflow-hidden bg-brand-charcoal text-background">
             <div className="absolute inset-0" aria-hidden="true">
               {slides.map((slide, index) => (
                 <img
@@ -1459,7 +1398,44 @@ export function HanviSite() {
             </div>
           </div>
 
-          <section id="about" className="relative isolate scroll-mt-20 overflow-hidden bg-white py-5 sm:py-7 lg:py-8">
+          {/* Quick Navigation Cards on Home */}
+          <section className="bg-brand-cream py-8 sm:py-12 border-b border-brand-orange/10">
+            <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
+              <div className="rounded-3xl border border-slate-200/90 bg-white p-6 sm:p-8 shadow-sm">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+                  <div className="space-y-1 md:col-span-2">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#E02424]">Turnkey Enterprise Technology</span>
+                    <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900">Discover Our Specialized Solutions &amp; Capabilities</h2>
+                    <p className="text-xs sm:text-sm text-slate-600">Explore comprehensive fire safety, CCTV surveillance, data center architecture, networking and smart automation.</p>
+                  </div>
+                  <div className="flex flex-wrap md:justify-end gap-3">
+                    <button
+                      type="button"
+                      onClick={() => navigateTo("services")}
+                      className="inline-flex items-center gap-2 rounded-full bg-[#E02424] hover:bg-red-700 text-white px-5 py-2.5 text-xs sm:text-sm font-bold shadow-md shadow-red-500/25 transition-all hover:scale-105 cursor-pointer"
+                    >
+                      <span>Explore Services</span>
+                      <ArrowRight className="size-4" />
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => navigateTo("about")}
+                      className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white hover:bg-slate-50 text-slate-800 px-4.5 py-2.5 text-xs sm:text-sm font-semibold transition-all cursor-pointer"
+                    >
+                      <span>About Company</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </>
+      )}
+
+      {/* 2. ABOUT VIEW */}
+      {activeSection === "about" && (
+        <>
+          <section id="about" className="relative isolate scroll-mt-20 overflow-hidden bg-white py-8 sm:py-12 min-h-[40vh]">
             <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
               <div className="grid items-center gap-6 lg:grid-cols-[1fr_1.15fr] xl:gap-10" data-reveal>
                 {/* Left Column: Building Photo */}
@@ -1529,7 +1505,93 @@ export function HanviSite() {
             </div>
           </section>
 
-          <section id="services" className="relative isolate scroll-mt-20 overflow-hidden bg-brand-cream border-t border-brand-orange/10 py-12 sm:py-16 text-foreground">
+          <section id="why-us" className="scroll-mt-20 bg-brand-cream-alt pt-8 pb-10 sm:pt-10 sm:pb-12 text-foreground border-t border-brand-orange/10">
+            <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
+              {/* Header */}
+              <div className="flex flex-col gap-1.5" data-reveal>
+                <div className="flex flex-col justify-between gap-2.5 sm:flex-row sm:items-end">
+                  <div>
+                    <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-orange font-bold">
+                      <span className="brand-gradient h-0.5 w-5" aria-hidden="true" />
+                      <span>Why Choose Us</span>
+                    </div>
+                    <h2 className="font-display text-xl font-semibold tracking-tight text-foreground sm:text-2xl lg:text-[1.75rem]">
+                      Engineered for excellence. Trusted for reliability.
+                    </h2>
+                  </div>
+                  <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-brand-orange px-3 py-1 rounded-full bg-brand-orange/10 border border-brand-orange/25 w-fit">
+                    <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" aria-hidden="true" />
+                    The HANVI Advantage
+                  </span>
+                </div>
+                <p className="text-xs sm:text-sm text-muted-foreground max-w-3xl">
+                  Empowering commercial and industrial enterprises with turnkey engineering, certified life-safety compliance, authorized OEM technology, and 24/7 mission-critical support.
+                </p>
+              </div>
+
+              {/* 6 Feature Pillars Grid */}
+              <div className="mt-5 sm:mt-6 grid grid-cols-1 gap-3.5 sm:grid-cols-2 lg:grid-cols-3 sm:gap-4.5">
+                {whyChooseUsPillars.map((pillar, index) => {
+                  const Icon = pillar.icon;
+                  return (
+                    <div
+                      key={pillar.title}
+                      data-reveal
+                      style={{ '--reveal-delay': `${index * 50}ms` } as React.CSSProperties}
+                      className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-brand-orange/20 bg-white/95 p-4.5 sm:p-5 shadow-sm backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_14px_32px_-6px_rgba(255,106,0,0.22)] hover:scale-[1.02] transition-all duration-300"
+                    >
+                      <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-brand-orange via-brand-gold to-brand-rose opacity-80 group-hover:opacity-100 transition-opacity" />
+                      <div>
+                        <div className="flex items-center justify-between gap-3 mb-3">
+                          <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-brand-orange to-brand-rose text-white shadow-sm transition-transform duration-300 group-hover:scale-110">
+                            <Icon className="size-5" aria-hidden="true" />
+                          </div>
+                          <span className="text-[10px] font-bold uppercase tracking-wider text-brand-orange px-2.5 py-0.5 rounded-full bg-brand-orange/10 border border-brand-orange/25">
+                            {pillar.badge}
+                          </span>
+                        </div>
+                        <h3 className="font-display text-xs sm:text-sm font-bold text-foreground group-hover:text-brand-orange transition-colors">
+                          {pillar.title}
+                        </h3>
+                        <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">
+                          {pillar.description}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Stats Bar */}
+              <div
+                data-reveal
+                className="mt-5 sm:mt-6 overflow-hidden rounded-2xl border border-brand-orange/20 bg-white/95 p-4 sm:p-5 shadow-sm backdrop-blur-md"
+              >
+                <div className="grid grid-cols-2 gap-4 divide-y divide-brand-orange/15 sm:grid-cols-4 sm:gap-6 sm:divide-y-0 sm:divide-x sm:divide-brand-orange/20">
+                  {whyChooseUsStats.map((stat, i) => (
+                    <div key={stat.label} className={`flex flex-col items-center text-center ${i >= 2 ? "pt-3 sm:pt-0" : ""}`}>
+                      <span className="font-display text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight text-brand-orange">
+                        <AnimatedCounter
+                          target={stat.target}
+                          decimals={stat.decimals}
+                          suffix={stat.suffix}
+                        />
+                      </span>
+                      <span className="mt-1 text-[11px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                        {stat.label}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+        </>
+      )}
+
+      {/* 3. SERVICES VIEW */}
+      {activeSection === "services" && (
+        <section id="services" className="relative isolate scroll-mt-20 overflow-hidden bg-brand-cream border-t border-brand-orange/10 py-12 sm:py-16 text-foreground min-h-[60vh]">
             <div className="relative mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
               {/* Section Header */}
               <div className="flex flex-col items-start text-left mb-6 sm:mb-8" data-reveal>
@@ -1633,8 +1695,11 @@ export function HanviSite() {
               </svg>
             </div>
           </section>
+        )}
 
-          <section id="clients" className="scroll-mt-20 bg-brand-cream-alt pt-4 pb-4 sm:pt-5 sm:pb-5 text-foreground border-t border-brand-orange/10">
+        {/* 4. CLIENTS VIEW */}
+        {activeSection === "clients" && (
+          <section id="clients" className="scroll-mt-20 bg-brand-cream-alt py-12 sm:py-16 text-foreground border-t border-brand-orange/10 min-h-[60vh]">
             <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
               <div className="flex flex-col gap-1.5" data-reveal>
                 <div className="flex flex-col justify-between gap-2.5 sm:flex-row sm:items-end">
@@ -1699,8 +1764,11 @@ export function HanviSite() {
               </div>
             </div>
           </section>
+        )}
 
-          <section id="partners" className="scroll-mt-20 bg-brand-cream pt-4 pb-4 sm:pt-5 sm:pb-5 text-foreground border-t border-brand-orange/10">
+        {/* 5. PARTNERS VIEW */}
+        {activeSection === "partners" && (
+          <section id="partners" className="scroll-mt-20 bg-brand-cream py-12 sm:py-16 text-foreground border-t border-brand-orange/10 min-h-[60vh]">
             <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
               <div className="flex flex-col gap-1.5" data-reveal>
                 <div className="flex flex-col justify-between gap-2.5 sm:flex-row sm:items-end">
@@ -1764,90 +1832,11 @@ export function HanviSite() {
               </div>
             </div>
           </section>
+        )}
 
-          <section id="why-us" className="scroll-mt-20 bg-brand-cream-alt pt-5 pb-5 sm:pt-7 sm:pb-7 text-foreground border-t border-brand-orange/10">
-            <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
-              {/* Header */}
-              <div className="flex flex-col gap-1.5" data-reveal>
-                <div className="flex flex-col justify-between gap-2.5 sm:flex-row sm:items-end">
-                  <div>
-                    <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-orange font-bold">
-                      <span className="brand-gradient h-0.5 w-5" aria-hidden="true" />
-                      <span>Why Choose Us</span>
-                    </div>
-                    <h2 className="font-display text-xl font-semibold tracking-tight text-foreground sm:text-2xl lg:text-[1.75rem]">
-                      Engineered for excellence. Trusted for reliability.
-                    </h2>
-                  </div>
-                  <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-brand-orange px-3 py-1 rounded-full bg-brand-orange/10 border border-brand-orange/25 w-fit">
-                    <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" aria-hidden="true" />
-                    The HANVI Advantage
-                  </span>
-                </div>
-                <p className="text-xs sm:text-sm text-muted-foreground max-w-3xl">
-                  Empowering commercial and industrial enterprises with turnkey engineering, certified life-safety compliance, authorized OEM technology, and 24/7 mission-critical support.
-                </p>
-              </div>
-
-              {/* 6 Feature Pillars Grid */}
-              <div className="mt-5 sm:mt-6 grid grid-cols-1 gap-3.5 sm:grid-cols-2 lg:grid-cols-3 sm:gap-4.5">
-                {whyChooseUsPillars.map((pillar, index) => {
-                  const Icon = pillar.icon;
-                  return (
-                    <div
-                      key={pillar.title}
-                      data-reveal
-                      style={{ '--reveal-delay': `${index * 50}ms` } as React.CSSProperties}
-                      className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-brand-orange/20 bg-white/95 p-4.5 sm:p-5 shadow-sm backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_14px_32px_-6px_rgba(255,106,0,0.22)] hover:scale-[1.02] transition-all duration-300"
-                    >
-                      <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-brand-orange via-brand-gold to-brand-rose opacity-80 group-hover:opacity-100 transition-opacity" />
-                      <div>
-                        <div className="flex items-center justify-between gap-3 mb-3">
-                          <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-brand-orange to-brand-rose text-white shadow-sm transition-transform duration-300 group-hover:scale-110">
-                            <Icon className="size-5" aria-hidden="true" />
-                          </div>
-                          <span className="text-[10px] font-bold uppercase tracking-wider text-brand-orange px-2.5 py-0.5 rounded-full bg-brand-orange/10 border border-brand-orange/25">
-                            {pillar.badge}
-                          </span>
-                        </div>
-                        <h3 className="font-display text-xs sm:text-sm font-bold text-foreground group-hover:text-brand-orange transition-colors">
-                          {pillar.title}
-                        </h3>
-                        <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">
-                          {pillar.description}
-                        </p>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-
-              {/* Stats Bar */}
-              <div
-                data-reveal
-                className="mt-5 sm:mt-6 overflow-hidden rounded-2xl border border-brand-orange/20 bg-white/95 p-4 sm:p-5 shadow-sm backdrop-blur-md"
-              >
-                <div className="grid grid-cols-2 gap-4 divide-y divide-brand-orange/15 sm:grid-cols-4 sm:gap-6 sm:divide-y-0 sm:divide-x sm:divide-brand-orange/20">
-                  {whyChooseUsStats.map((stat, i) => (
-                    <div key={stat.label} className={`flex flex-col items-center text-center ${i >= 2 ? "pt-3 sm:pt-0" : ""}`}>
-                      <span className="font-display text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight text-brand-orange">
-                        <AnimatedCounter
-                          target={stat.target}
-                          decimals={stat.decimals}
-                          suffix={stat.suffix}
-                        />
-                      </span>
-                      <span className="mt-1 text-[11px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                        {stat.label}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section id="contact" className="scroll-mt-20 bg-brand-cream pt-4 pb-5 sm:pt-5 sm:pb-6 text-foreground border-t border-brand-orange/10">
+        {/* 6. CONTACT VIEW */}
+        {activeSection === "contact" && (
+          <section id="contact" className="scroll-mt-20 bg-brand-cream py-12 sm:py-16 text-foreground border-t border-brand-orange/10 min-h-[60vh]">
             <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
               <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-10 items-center">
                 <div data-reveal>
@@ -2124,8 +2113,9 @@ export function HanviSite() {
               </div>
             </div>
           </section>
-          </>
         )}
+      </>
+    )}
       </main>
 
       <footer className="bg-brand-charcoal text-background border-t border-white/5">
