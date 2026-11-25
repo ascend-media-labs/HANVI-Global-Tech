@@ -2,7 +2,6 @@ import {
   ArrowLeft,
   ArrowRight,
   CheckCircle2,
-  Phone,
   ShieldCheck,
   Award,
   type LucideIcon,
@@ -152,31 +151,16 @@ export function ServiceDetailPage({
                 </div>
               </div>
 
-              {/* Quick Action Buttons: Enquiry Button + Phone + WhatsApp */}
-              <div className="flex flex-wrap items-center gap-2.5 pt-0.5">
+              {/* Quick Action Button: Enquiry Button */}
+              <div className="pt-0.5">
                 <button
                   type="button"
                   onClick={() => onNavigateHome("contact")}
-                  className="inline-flex items-center gap-1.5 rounded-full bg-[#E02424] hover:bg-red-700 text-white px-4 py-2 text-xs sm:text-[13px] font-bold shadow-md shadow-red-500/20 transition-all duration-200 hover:scale-105 cursor-pointer"
+                  className="inline-flex items-center gap-1.5 rounded-full bg-[#E02424] hover:bg-red-700 text-white px-4.5 py-2 text-xs sm:text-[13px] font-bold shadow-md shadow-red-500/20 transition-all duration-200 hover:scale-105 cursor-pointer"
                 >
                   <span>Enquire Now</span>
                   <ArrowRight className="size-3.5" />
                 </button>
-                <a
-                  href="tel:+919392673103"
-                  className="inline-flex items-center gap-1.5 rounded-full border border-slate-300 bg-white hover:bg-slate-50 text-slate-800 px-3.5 py-2 text-xs sm:text-[13px] font-semibold shadow-xs transition-all duration-200 cursor-pointer"
-                >
-                  <Phone className="size-3.5 text-brand-orange" />
-                  <span>Call: +91 9392673103</span>
-                </a>
-                <a
-                  href={`https://wa.me/919392673103?text=Hello%20HANVI%20Global%20Tech%2C%20I%20am%20interested%20in%20your%20${encodeURIComponent(service.title)}%20solution.`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 rounded-full bg-[#25D366] hover:bg-emerald-600 text-white px-3.5 py-2 text-xs sm:text-[13px] font-semibold transition-all duration-200 shadow-xs cursor-pointer"
-                >
-                  <span>WhatsApp</span>
-                </a>
               </div>
             </div>
 
