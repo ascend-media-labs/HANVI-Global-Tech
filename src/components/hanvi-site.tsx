@@ -55,6 +55,7 @@ import globalImage from "@/assets/hero-global.webp";
 import infrastructureImage from "@/assets/hero-infrastructure.webp";
 import heroFireAlarmImage from "@/assets/hero-fire-alarm.jpg";
 import heroCctvImage from "@/assets/hero-cctv.jpg";
+import heroNetworkingImage from "@/assets/hero-networking.jpg";
 import logoHorizontal from "@/assets/hanvi-logo-horizontal.png";
 import logoFull from "@/assets/hanvi-logo.png";
 import logoIcon from "@/assets/hanvi-icon.png";
@@ -70,7 +71,7 @@ const navigation = [
 const slides = [
   { image: heroFireAlarmImage, alt: "Intelligent fire alarm and life safety systems in a modern enterprise building", label: "Fire alarm systems" },
   { image: heroCctvImage, alt: "Advanced CCTV surveillance dome camera monitoring modern enterprise offices", label: "CCTV surveillance & security" },
-  { image: collaborationImage, alt: "Technology professionals collaborating around a digital display", label: "Collaborative thinking" },
+  { image: heroNetworkingImage, alt: "Enterprise network rack with Cat6A structured cabling and managed switches", label: "Network infrastructure & switching" },
 ] as const;
 
 const services: readonly ServiceDetailItem[] = [
