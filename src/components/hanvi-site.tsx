@@ -1299,7 +1299,7 @@ export function HanviSite() {
 
             <div className="relative mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
               {/* Section Header */}
-              <div className="flex flex-col items-center text-center mb-8 sm:mb-10" data-reveal>
+              <div className="flex flex-col items-start text-left mb-6 sm:mb-8" data-reveal>
                 <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-500/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-[#E02424]">
                   <span className="h-1.5 w-1.5 rounded-full bg-[#E02424] animate-pulse" />
                   <span>Specialized Services</span>
@@ -1307,7 +1307,7 @@ export function HanviSite() {
                 <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white">
                   Engineering reliable, intelligent, and secure environments.
                 </h2>
-                <p className="mt-2 text-xs sm:text-sm text-slate-400 max-w-2xl">
+                <p className="mt-1.5 text-xs sm:text-sm text-slate-400 max-w-none whitespace-normal md:whitespace-nowrap">
                   Comprehensive life safety, high-pressure fire systems, tier-standard cyber data centers, structured communications, and smart automation.
                 </p>
               </div>
