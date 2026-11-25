@@ -1248,41 +1248,41 @@ export function HanviSite() {
                   {/* 4 Feature Cards matching reference design */}
                   <div className="mt-5 grid grid-cols-2 gap-2.5 sm:grid-cols-4 sm:gap-3">
                     {/* Card 1: Customized Solutions */}
-                    <div className="flex flex-col items-center justify-center rounded-xl border border-slate-200/90 bg-slate-50/70 p-2.5 sm:p-3 text-center transition-all duration-300 hover:bg-white hover:border-[#E02424]/40 hover:shadow-xs">
-                      <div className="flex size-9 items-center justify-center rounded-lg bg-red-50 text-[#E02424] mb-2">
-                        <Target className="size-5 text-[#E02424]" />
+                    <div className="group relative flex flex-col items-center justify-center rounded-xl border border-slate-200/90 bg-slate-50/70 p-2.5 sm:p-3 text-center transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:border-[#E02424]/70 hover:shadow-[0_10px_28px_-4px_rgba(224,36,36,0.3),0_0_16px_rgba(255,106,0,0.2)] cursor-pointer">
+                      <div className="flex size-9 items-center justify-center rounded-lg bg-red-50 text-[#E02424] mb-2 transition-all duration-300 group-hover:bg-[#E02424] group-hover:text-white group-hover:scale-110 group-hover:shadow-[0_4px_12px_rgba(224,36,36,0.35)]">
+                        <Target className="size-5 transition-colors duration-300 text-[#E02424] group-hover:text-white" />
                       </div>
-                      <span className="text-[11px] sm:text-xs font-bold text-foreground leading-tight">
+                      <span className="text-[11px] sm:text-xs font-bold text-foreground leading-tight transition-colors duration-300 group-hover:text-[#E02424]">
                         Customized<br />Solutions
                       </span>
                     </div>
 
                     {/* Card 2: Industry-Grade Products */}
-                    <div className="flex flex-col items-center justify-center rounded-xl border border-slate-200/90 bg-slate-50/70 p-2.5 sm:p-3 text-center transition-all duration-300 hover:bg-white hover:border-[#E02424]/40 hover:shadow-xs">
-                      <div className="flex size-9 items-center justify-center rounded-lg bg-red-50 text-[#E02424] mb-2">
-                        <Layers className="size-5 text-[#E02424]" />
+                    <div className="group relative flex flex-col items-center justify-center rounded-xl border border-slate-200/90 bg-slate-50/70 p-2.5 sm:p-3 text-center transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:border-[#E02424]/70 hover:shadow-[0_10px_28px_-4px_rgba(224,36,36,0.3),0_0_16px_rgba(255,106,0,0.2)] cursor-pointer">
+                      <div className="flex size-9 items-center justify-center rounded-lg bg-red-50 text-[#E02424] mb-2 transition-all duration-300 group-hover:bg-[#E02424] group-hover:text-white group-hover:scale-110 group-hover:shadow-[0_4px_12px_rgba(224,36,36,0.35)]">
+                        <Layers className="size-5 transition-colors duration-300 text-[#E02424] group-hover:text-white" />
                       </div>
-                      <span className="text-[11px] sm:text-xs font-bold text-foreground leading-tight">
+                      <span className="text-[11px] sm:text-xs font-bold text-foreground leading-tight transition-colors duration-300 group-hover:text-[#E02424]">
                         Industry-Grade<br />Products
                       </span>
                     </div>
 
                     {/* Card 3: Professional Installation */}
-                    <div className="flex flex-col items-center justify-center rounded-xl border border-slate-200/90 bg-slate-50/70 p-2.5 sm:p-3 text-center transition-all duration-300 hover:bg-white hover:border-[#E02424]/40 hover:shadow-xs">
-                      <div className="flex size-9 items-center justify-center rounded-lg bg-red-50 text-[#E02424] mb-2">
-                        <Wrench className="size-5 text-[#E02424]" />
+                    <div className="group relative flex flex-col items-center justify-center rounded-xl border border-slate-200/90 bg-slate-50/70 p-2.5 sm:p-3 text-center transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:border-[#E02424]/70 hover:shadow-[0_10px_28px_-4px_rgba(224,36,36,0.3),0_0_16px_rgba(255,106,0,0.2)] cursor-pointer">
+                      <div className="flex size-9 items-center justify-center rounded-lg bg-red-50 text-[#E02424] mb-2 transition-all duration-300 group-hover:bg-[#E02424] group-hover:text-white group-hover:scale-110 group-hover:shadow-[0_4px_12px_rgba(224,36,36,0.35)]">
+                        <Wrench className="size-5 transition-colors duration-300 text-[#E02424] group-hover:text-white" />
                       </div>
-                      <span className="text-[11px] sm:text-xs font-bold text-foreground leading-tight">
+                      <span className="text-[11px] sm:text-xs font-bold text-foreground leading-tight transition-colors duration-300 group-hover:text-[#E02424]">
                         Professional<br />Installation
                       </span>
                     </div>
 
                     {/* Card 4: Ongoing Support */}
-                    <div className="flex flex-col items-center justify-center rounded-xl border border-slate-200/90 bg-slate-50/70 p-2.5 sm:p-3 text-center transition-all duration-300 hover:bg-white hover:border-[#E02424]/40 hover:shadow-xs">
-                      <div className="flex size-9 items-center justify-center rounded-lg bg-red-50 text-[#E02424] mb-2">
-                        <Headphones className="size-5 text-[#E02424]" />
+                    <div className="group relative flex flex-col items-center justify-center rounded-xl border border-slate-200/90 bg-slate-50/70 p-2.5 sm:p-3 text-center transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:border-[#E02424]/70 hover:shadow-[0_10px_28px_-4px_rgba(224,36,36,0.3),0_0_16px_rgba(255,106,0,0.2)] cursor-pointer">
+                      <div className="flex size-9 items-center justify-center rounded-lg bg-red-50 text-[#E02424] mb-2 transition-all duration-300 group-hover:bg-[#E02424] group-hover:text-white group-hover:scale-110 group-hover:shadow-[0_4px_12px_rgba(224,36,36,0.35)]">
+                        <Headphones className="size-5 transition-colors duration-300 text-[#E02424] group-hover:text-white" />
                       </div>
-                      <span className="text-[11px] sm:text-xs font-bold text-foreground leading-tight">
+                      <span className="text-[11px] sm:text-xs font-bold text-foreground leading-tight transition-colors duration-300 group-hover:text-[#E02424]">
                         Ongoing<br />Support
                       </span>
                     </div>
