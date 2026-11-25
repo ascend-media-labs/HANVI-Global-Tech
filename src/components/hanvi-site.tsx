@@ -1320,30 +1320,33 @@ export function HanviSite() {
                     <article
                       key={service.title}
                       onClick={() => setSelectedService(service)}
-                      className="group relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-red-950/20 cursor-pointer"
+                      className="group relative flex flex-col overflow-hidden rounded-2xl bg-white border border-transparent shadow-xl transition-all duration-300 hover:-translate-y-2 hover:border-[#E02424]/80 hover:shadow-[0_16px_40px_-8px_rgba(224,36,36,0.55),0_0_28px_rgba(255,106,0,0.35)] cursor-pointer"
                       data-reveal
                       style={{ '--reveal-delay': `${index * 80}ms` } as React.CSSProperties}
                     >
+                      {/* Top Gradient Glow Accent on Hover */}
+                      <div className="pointer-events-none absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-[#E02424] via-brand-orange to-brand-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
+
                       {/* Top Image */}
                       <div className="relative h-44 sm:h-48 w-full overflow-hidden bg-slate-900">
                         <img
                           src={service.image}
                           alt={service.title}
-                          className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                          className="h-full w-full object-cover transition-all duration-500 ease-out group-hover:scale-108 group-hover:brightness-105"
                           loading="lazy"
                         />
                       </div>
 
                       {/* Bottom White Container */}
-                      <div className="flex items-center gap-3 p-3.5 sm:p-4 bg-white">
+                      <div className="flex items-center gap-3 p-3.5 sm:p-4 bg-white transition-colors duration-300">
                         {/* Red Square Icon Badge */}
-                        <div className="flex size-11 sm:size-12 shrink-0 items-center justify-center rounded-xl bg-[#E02424] text-white shadow-sm">
+                        <div className="flex size-11 sm:size-12 shrink-0 items-center justify-center rounded-xl bg-[#E02424] text-white shadow-sm transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_16px_rgba(224,36,36,0.6)]">
                           <Icon aria-hidden="true" className="size-6 text-white" />
                         </div>
 
                         {/* Title & Description */}
                         <div className="min-w-0 flex-1 text-left">
-                          <h3 className="font-display text-xs sm:text-[13px] md:text-sm font-bold text-slate-900 leading-snug">
+                          <h3 className="font-display text-xs sm:text-[13px] md:text-sm font-bold text-slate-900 leading-snug transition-colors duration-200 group-hover:text-[#E02424]">
                             {service.title}
                           </h3>
                           <p className="mt-0.5 text-[10.5px] sm:text-[11.5px] text-slate-500 leading-snug line-clamp-2">
@@ -1359,7 +1362,7 @@ export function HanviSite() {
                             setSelectedService(service);
                           }}
                           aria-label={`View details of ${service.title}`}
-                          className="flex size-7 sm:size-8 shrink-0 items-center justify-center rounded-full border border-[#E02424] text-[#E02424] transition-colors duration-200 hover:bg-[#E02424] hover:text-white cursor-pointer"
+                          className="flex size-7 sm:size-8 shrink-0 items-center justify-center rounded-full border border-[#E02424] text-[#E02424] transition-all duration-200 group-hover:bg-[#E02424] group-hover:text-white group-hover:shadow-[0_0_12px_rgba(224,36,36,0.5)] group-hover:translate-x-0.5 cursor-pointer"
                         >
                           <ArrowRight className="size-3.5 sm:size-4" />
                         </button>
