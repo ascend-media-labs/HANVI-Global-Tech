@@ -1025,7 +1025,7 @@ export function HanviSite() {
 
   const renderAboutSection = () => (
 <section id="about" className="relative isolate scroll-mt-20 overflow-hidden bg-white py-8 sm:py-12 min-h-[40vh]">
-            <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
+            <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
               <div className="grid items-center gap-6 lg:grid-cols-[1fr_1.15fr] xl:gap-10" data-reveal>
                 {/* Left Column: Building Photo */}
                 <div className="relative group overflow-hidden rounded-2xl border border-slate-200/80 shadow-xs max-w-[520px] mx-auto lg:mx-0 w-full">
@@ -1097,7 +1097,7 @@ export function HanviSite() {
 
   const renderWhyUsSection = () => (
 <section id="why-us" className="scroll-mt-20 bg-brand-cream-alt pt-8 pb-10 sm:pt-10 sm:pb-12 text-foreground border-t border-brand-orange/10">
-            <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
+            <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
               {/* Header */}
               <div className="flex flex-col gap-1.5" data-reveal>
                 <div className="flex flex-col justify-between gap-2.5 sm:flex-row sm:items-end">
@@ -1181,7 +1181,7 @@ export function HanviSite() {
 
   const renderServicesSection = () => (
 <section id="services" className="relative isolate scroll-mt-20 overflow-hidden bg-brand-cream border-t border-brand-orange/10 py-12 sm:py-16 text-foreground min-h-[60vh]">
-            <div className="relative mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
+            <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
               {/* Section Header */}
               <div className="flex flex-col items-start text-left mb-6 sm:mb-8" data-reveal>
                 <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-50 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-[#E02424]">
@@ -1276,7 +1276,7 @@ export function HanviSite() {
 
   const renderClientsSection = () => (
 <section id="clients" className="scroll-mt-20 bg-brand-cream-alt py-12 sm:py-16 text-foreground border-t border-brand-orange/10 min-h-[60vh]">
-            <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
+            <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
               <div className="flex flex-col gap-1.5" data-reveal>
                 <div className="flex flex-col justify-between gap-2.5 sm:flex-row sm:items-end">
                   <div>
@@ -1344,7 +1344,7 @@ export function HanviSite() {
 
   const renderPartnersSection = () => (
 <section id="partners" className="scroll-mt-20 bg-brand-cream py-12 sm:py-16 text-foreground border-t border-brand-orange/10 min-h-[60vh]">
-            <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
+            <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
               <div className="flex flex-col gap-1.5" data-reveal>
                 <div className="flex flex-col justify-between gap-2.5 sm:flex-row sm:items-end">
                   <div>
@@ -1411,7 +1411,7 @@ export function HanviSite() {
 
   const renderContactSection = () => (
 <section id="contact" className="scroll-mt-20 bg-brand-cream py-12 sm:py-16 text-foreground border-t border-brand-orange/10 min-h-[60vh]">
-            <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
+            <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
               <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-10 items-center">
                 <div data-reveal>
                   <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-orange font-bold">
@@ -1696,7 +1696,7 @@ export function HanviSite() {
         aria-label="Contact and Social Info"
         className="relative z-40 border-b border-white/10 bg-brand-charcoal text-background shadow-xs py-1.5"
       >
-        <div className="mx-auto flex min-h-7.5 w-full items-center justify-between px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 text-xs font-medium">
+        <div className="mx-auto flex min-h-7.5 w-full max-w-7xl items-center justify-between px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 text-xs font-medium">
           {/* Left: Official Brand Social Media Icons (matching footer) */}
           <div className="flex items-center gap-2.5 sm:gap-3">
             {/* Official Facebook */}
@@ -1762,7 +1762,7 @@ export function HanviSite() {
 
       {/* Main Navbar - Only this is sticky */}
       <header className="sticky top-0 z-50 border-b border-border/50 bg-background/85 backdrop-blur-xl transition-all duration-300 shadow-[0_4px_24px_rgba(0,0,0,0.03)]">
-        <div className="mx-auto flex h-[68px] sm:h-[72px] w-full items-center justify-between px-4 sm:px-6 md:px-8 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:px-10 xl:px-12 2xl:px-16">
+        <div className="mx-auto flex h-[68px] sm:h-[72px] w-full max-w-7xl items-center justify-between px-4 sm:px-6 md:px-8 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:px-10 xl:px-12">
           <div className="flex items-center justify-start">
             <button
               type="button"
@@ -1894,7 +1894,7 @@ export function HanviSite() {
             {/* 1. HOME VIEW */}
             {activeSection === "home" && (
               <>
-                <section id="home" className="relative isolate h-[calc(100svh-148px)] min-h-[300px] max-h-[400px] sm:max-h-[415px] lg:max-h-[425px] scroll-mt-20 overflow-hidden bg-brand-charcoal text-background">
+                <section id="home" className="relative isolate min-h-[560px] sm:min-h-[600px] lg:h-[calc(100svh-76px)] lg:min-h-[620px] lg:max-h-[820px] scroll-mt-20 overflow-hidden bg-brand-charcoal text-background flex items-center">
             <div className="absolute inset-0" aria-hidden="true">
               {slides.map((slide, index) => (
                 <img
@@ -1911,23 +1911,23 @@ export function HanviSite() {
               <div className="hero-grid absolute inset-0 pointer-events-none opacity-50" />
             </div>
 
-            <div className="relative mx-auto flex h-full w-full flex-col justify-center px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 pb-8 pt-1 sm:pb-9 sm:pt-2">
+            <div className="relative mx-auto flex h-full w-full max-w-7xl flex-col justify-center px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 pb-16 pt-4 sm:pb-20 sm:pt-6">
               <div className="max-w-3xl" data-reveal>
-                <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 py-0.5 px-3 text-xs font-medium text-background/90 backdrop-blur-md shadow-inner shadow-white/5 sm:mb-2.5 sm:px-3">
+                <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 py-1 px-3.5 text-xs font-medium text-background/90 backdrop-blur-md shadow-inner shadow-white/5 sm:mb-4">
                   <span className="relative flex h-2 w-2">
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-orange opacity-75" />
                     <span className="relative inline-flex h-2 w-2 rounded-full bg-brand-orange" />
                   </span>
-                  <span className="font-semibold tracking-wider uppercase text-[9.5px] sm:text-[11px] text-background/90">
+                  <span className="font-semibold tracking-wider uppercase text-[10px] sm:text-xs text-background/90">
                     Next-Gen Enterprise Tech
                   </span>
                   <span className="text-white/25">|</span>
-                  <span className="font-medium text-brand-gold text-[9.5px] sm:text-[11px]">
+                  <span className="font-medium text-brand-gold text-[10px] sm:text-xs">
                     HANVI GLOBAL TECH
                   </span>
                 </div>
 
-                <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[2.65rem] font-semibold leading-[1.12] text-background tracking-tight">
+                <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-semibold leading-[1.12] text-background tracking-tight">
                   Technology for a{" "}
                   <span className="brand-text-gradient drop-shadow-[0_0_30px_rgba(255,106,0,0.35)]">
                     more connected
@@ -1935,14 +1935,14 @@ export function HanviSite() {
                   world.
                 </h1>
 
-                <p className="mt-2 max-w-xl text-xs sm:text-[13px] leading-relaxed text-background/80 sm:mt-2.5">
+                <p className="mt-3 max-w-xl text-xs sm:text-sm md:text-base leading-relaxed text-background/80 sm:mt-4">
                   Discover the story, services, and possibilities behind HANVI GLOBAL TECH PVT LTD. Powering resilient digital infrastructure and enterprise innovation.
                 </p>
 
-                <div className="mt-3 flex flex-wrap items-center gap-2.5 sm:mt-3.5">
+                <div className="mt-4 flex flex-wrap items-center gap-3 sm:mt-5">
                   <Button
                     size="default"
-                    className="brand-gradient glow-btn-hover group h-8.5 sm:h-9 rounded-full px-4 sm:px-4.5 text-xs sm:text-sm font-semibold text-primary-foreground shadow-[0_4px_18px_rgba(255,80,30,0.35)] cursor-pointer"
+                    className="brand-gradient glow-btn-hover group h-9.5 sm:h-10 rounded-full px-5 sm:px-6 text-xs sm:text-sm font-semibold text-primary-foreground shadow-[0_4px_18px_rgba(255,80,30,0.35)] cursor-pointer"
                     onClick={() => navigateTo("services")}
                   >
                     <span className="flex items-center gap-1.5">
@@ -1953,50 +1953,50 @@ export function HanviSite() {
                   <Button
                     variant="outline"
                     size="default"
-                    className="h-8.5 sm:h-9 rounded-full border-white/20 bg-white/5 px-4 sm:px-4.5 text-xs sm:text-sm font-medium text-background backdrop-blur-md transition-all duration-300 ease-out hover:scale-105 hover:bg-white/15 hover:border-white/50 hover:shadow-[0_0_22px_rgba(255,255,255,0.3)] cursor-pointer"
+                    className="h-9.5 sm:h-10 rounded-full border-white/20 bg-white/5 px-5 sm:px-6 text-xs sm:text-sm font-medium text-background backdrop-blur-md transition-all duration-300 ease-out hover:scale-105 hover:bg-white/15 hover:border-white/50 hover:shadow-[0_0_22px_rgba(255,255,255,0.3)] cursor-pointer"
                     onClick={() => navigateTo("contact")}
                   >
                     Contact us
                   </Button>
                 </div>
 
-                <div className="mt-3 flex flex-wrap items-center gap-4 sm:gap-6 border-t border-white/10 pt-2 sm:pt-2.5">
-                  <div className="flex items-center gap-2">
-                    <div className="flex size-6 sm:size-6.5 items-center justify-center rounded-lg bg-brand-orange/20 text-brand-orange">
-                      <Server className="size-3 sm:size-3.5" />
+                <div className="mt-5 flex flex-wrap items-center gap-4 sm:gap-7 border-t border-white/10 pt-3 sm:pt-4">
+                  <div className="flex items-center gap-2.5">
+                    <div className="flex size-7 sm:size-8 items-center justify-center rounded-lg bg-brand-orange/20 text-brand-orange">
+                      <Server className="size-3.5 sm:size-4" />
                     </div>
                     <div>
-                      <div className="text-[11px] sm:text-xs font-bold text-background leading-tight">99.9% Uptime</div>
-                      <div className="text-[9px] sm:text-[10px] text-background/60 leading-tight">Enterprise SLA</div>
+                      <div className="text-xs sm:text-sm font-bold text-background leading-tight">99.9% Uptime</div>
+                      <div className="text-[10px] sm:text-xs text-background/60 leading-tight">Enterprise SLA</div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <div className="flex size-6 sm:size-6.5 items-center justify-center rounded-lg bg-brand-coral/20 text-brand-coral">
-                      <ShieldCheck className="size-3 sm:size-3.5" />
+                  <div className="flex items-center gap-2.5">
+                    <div className="flex size-7 sm:size-8 items-center justify-center rounded-lg bg-brand-coral/20 text-brand-coral">
+                      <ShieldCheck className="size-3.5 sm:size-4" />
                     </div>
                     <div>
-                      <div className="text-[11px] sm:text-xs font-bold text-background leading-tight">Zero-Trust</div>
-                      <div className="text-[9px] sm:text-[10px] text-background/60 leading-tight">Secure Architecture</div>
+                      <div className="text-xs sm:text-sm font-bold text-background leading-tight">Zero-Trust</div>
+                      <div className="text-[10px] sm:text-xs text-background/60 leading-tight">Secure Architecture</div>
                     </div>
                   </div>
-                  <div className="hidden sm:flex items-center gap-2">
-                    <div className="flex size-6 sm:size-6.5 items-center justify-center rounded-lg bg-brand-gold/20 text-brand-gold">
-                      <Network className="size-3 sm:size-3.5" />
+                  <div className="hidden sm:flex items-center gap-2.5">
+                    <div className="flex size-7 sm:size-8 items-center justify-center rounded-lg bg-brand-gold/20 text-brand-gold">
+                      <Network className="size-3.5 sm:size-4" />
                     </div>
                     <div>
-                      <div className="text-[11px] sm:text-xs font-bold text-background leading-tight">Global Scale</div>
-                      <div className="text-[9px] sm:text-[10px] text-background/60 leading-tight">Connected Mesh</div>
+                      <div className="text-xs sm:text-sm font-bold text-background leading-tight">Global Scale</div>
+                      <div className="text-[10px] sm:text-xs text-background/60 leading-tight">Connected Mesh</div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="absolute bottom-2 left-4 right-4 sm:bottom-2.5 sm:left-6 sm:right-6 md:left-8 md:right-8 lg:left-10 lg:right-10 xl:left-12 xl:right-12 2xl:left-16 2xl:right-16 flex items-center justify-between gap-4">
-                <div className="flex min-w-0 items-center gap-2.5 rounded-full border border-white/10 bg-black/40 px-3 py-0.5 sm:py-1 backdrop-blur-md text-[11px] sm:text-xs font-medium text-background/85">
+              <div className="absolute bottom-3 left-4 right-4 sm:bottom-4 sm:left-6 sm:right-6 md:left-8 md:right-8 lg:left-10 lg:right-10 xl:left-12 xl:right-12 max-w-7xl mx-auto flex items-center justify-between gap-4 pointer-events-none">
+                <div className="flex min-w-0 items-center gap-2.5 rounded-full border border-white/10 bg-black/40 px-3.5 py-1 backdrop-blur-md text-xs font-medium text-background/85 pointer-events-auto">
                   <span className="brand-gradient h-0.5 w-6 shrink-0" aria-hidden="true" />
                   <span className="truncate">{slides[currentSlide]?.label ?? "Global technology"}</span>
                 </div>
-                <div className="flex shrink-0 items-center gap-1.5 rounded-full border border-white/10 bg-black/40 p-1 backdrop-blur-md">
+                <div className="flex shrink-0 items-center gap-1.5 rounded-full border border-white/10 bg-black/40 p-1 backdrop-blur-md pointer-events-auto">
                   {slides.map((slide, index) => (
                     <Button
                       key={slide.label}
@@ -2016,48 +2016,48 @@ export function HanviSite() {
           </section>
 
           {/* 4-Item Feature Strip Below Hero */}
-          <div className="w-full border-b border-border/60 bg-white py-1.5 sm:py-2 shadow-xs">
-            <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
-              <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-border/60">
+          <div className="w-full border-b border-border/60 bg-white py-3 sm:py-3.5 shadow-xs">
+            <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-border/60">
                 {/* Item 1 */}
-                <div className="flex items-center gap-3 sm:justify-center px-2 py-0.5">
-                  <div className="flex size-8.5 shrink-0 items-center justify-center rounded-lg bg-red-50 text-[#E02424]">
-                    <Award className="size-4.5 text-[#E02424]" />
+                <div className="flex items-center gap-3 sm:justify-center px-3 py-1">
+                  <div className="flex size-9 sm:size-10 shrink-0 items-center justify-center rounded-lg bg-red-50 text-[#E02424]">
+                    <Award className="size-5 text-[#E02424]" />
                   </div>
-                  <div className="text-left text-xs font-bold leading-tight text-foreground">
+                  <div className="text-left text-xs sm:text-[13px] font-bold leading-snug text-foreground">
                     <div>End-to-End</div>
                     <div>Technology Solutions</div>
                   </div>
                 </div>
 
                 {/* Item 2 */}
-                <div className="flex items-center gap-3 sm:justify-center px-2 py-0.5">
-                  <div className="flex size-8.5 shrink-0 items-center justify-center rounded-lg bg-red-50 text-[#E02424]">
-                    <Settings className="size-4.5 text-[#E02424]" />
+                <div className="flex items-center gap-3 sm:justify-center px-3 py-1">
+                  <div className="flex size-9 sm:size-10 shrink-0 items-center justify-center rounded-lg bg-red-50 text-[#E02424]">
+                    <Settings className="size-5 text-[#E02424]" />
                   </div>
-                  <div className="text-left text-xs font-bold leading-tight text-foreground">
+                  <div className="text-left text-xs sm:text-[13px] font-bold leading-snug text-foreground">
                     <div>Expert Installation</div>
                     <div>&amp; Integration</div>
                   </div>
                 </div>
 
                 {/* Item 3 */}
-                <div className="flex items-center gap-3 sm:justify-center px-2 py-0.5">
-                  <div className="flex size-8.5 shrink-0 items-center justify-center rounded-lg bg-red-50 text-[#E02424]">
-                    <Users className="size-4.5 text-[#E02424]" />
+                <div className="flex items-center gap-3 sm:justify-center px-3 py-1">
+                  <div className="flex size-9 sm:size-10 shrink-0 items-center justify-center rounded-lg bg-red-50 text-[#E02424]">
+                    <Users className="size-5 text-[#E02424]" />
                   </div>
-                  <div className="text-left text-xs font-bold leading-tight text-foreground">
+                  <div className="text-left text-xs sm:text-[13px] font-bold leading-snug text-foreground">
                     <div>Reliable</div>
                     <div>After-Sales Support</div>
                   </div>
                 </div>
 
                 {/* Item 4 */}
-                <div className="flex items-center gap-3 sm:justify-center px-2 py-0.5">
-                  <div className="flex size-8.5 shrink-0 items-center justify-center rounded-lg bg-red-50 text-[#E02424]">
-                    <ShieldCheck className="size-4.5 text-[#E02424]" />
+                <div className="flex items-center gap-3 sm:justify-center px-3 py-1">
+                  <div className="flex size-9 sm:size-10 shrink-0 items-center justify-center rounded-lg bg-red-50 text-[#E02424]">
+                    <ShieldCheck className="size-5 text-[#E02424]" />
                   </div>
-                  <div className="text-left text-xs font-bold leading-tight text-foreground">
+                  <div className="text-left text-xs sm:text-[13px] font-bold leading-snug text-foreground">
                     <div>Safe, Secure &amp;</div>
                     <div>Future-Ready Systems</div>
                   </div>
@@ -2192,7 +2192,7 @@ export function HanviSite() {
       </main>
 
       <footer className="bg-brand-charcoal text-background border-t border-white/5">
-        <div className="mx-auto w-full px-4 pt-6 pb-24 sm:px-6 sm:py-8 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
+        <div className="mx-auto w-full max-w-7xl px-4 pt-8 pb-24 sm:px-6 sm:py-10 md:px-8 lg:px-10 xl:px-12">
           <div className="grid gap-6 sm:gap-8 border-b border-white/10 pb-6 sm:grid-cols-2 lg:grid-cols-[1.3fr_0.9fr_1fr_1fr] lg:gap-8">
             <div>
               <a
