@@ -46,7 +46,7 @@ export function ServiceDetailPage({
     <div className="min-h-screen bg-brand-cream text-foreground selection:bg-[#E02424] selection:text-white">
       {/* Top Breadcrumb & Action Bar */}
       <div className="border-b border-border/70 bg-white/95 backdrop-blur-md sticky top-[68px] sm:top-[72px] z-40 shadow-xs">
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 py-2.5 flex flex-wrap items-center justify-between gap-3">
+        <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 py-2.5 flex flex-wrap items-center justify-between gap-3">
           {/* Breadcrumbs */}
           <nav className="flex items-center gap-2 text-xs sm:text-[13px] text-slate-500" aria-label="Breadcrumb">
             <button
@@ -82,7 +82,7 @@ export function ServiceDetailPage({
 
       {/* Main Service Overview: Left Details + 5 Key Features, Right Image */}
       <section className="bg-brand-cream py-4 sm:py-5 lg:py-6 border-b border-brand-orange/10">
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
+        <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-7 items-start">
             
             {/* LEFT SIDE: Category, Title, 4-Line Details, 5 Key Features, Action Buttons */}
@@ -234,7 +234,7 @@ export function ServiceDetailPage({
 
       {/* 4-Step Turnkey Execution Workflow */}
       <section className="bg-brand-cream py-6 sm:py-8 border-b border-brand-orange/10">
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
+        <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
           <div className="mb-4">
             <span className="text-[10px] font-bold uppercase tracking-widest text-[#E02424] block mb-0.5">
               Execution Roadmap
@@ -263,7 +263,7 @@ export function ServiceDetailPage({
 
       {/* Explore Other Specialized Solutions Section */}
       <section className="bg-brand-cream-alt py-6 sm:py-7">
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
+        <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
           <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-3 mb-5">
             <div>
               <span className="text-[10px] font-bold uppercase tracking-widest text-[#E02424] block mb-0.5">
