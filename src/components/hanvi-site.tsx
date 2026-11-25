@@ -69,8 +69,8 @@ const navigation = [
 ] as const;
 
 const slides = [
+  { image: heroCctvImage, alt: "Advanced high-definition outdoor CCTV surveillance security camera on enterprise facility", label: "CCTV surveillance & security" },
   { image: heroFireAlarmImage, alt: "Intelligent fire alarm and life safety systems in a modern enterprise building", label: "Fire alarm systems" },
-  { image: heroCctvImage, alt: "Advanced CCTV surveillance dome camera monitoring modern enterprise offices", label: "CCTV surveillance & security" },
   { image: heroNetworkingImage, alt: "Enterprise network rack with Cat6A structured cabling and managed switches", label: "Network infrastructure & switching" },
 ] as const;
 
