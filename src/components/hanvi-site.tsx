@@ -640,6 +640,36 @@ export function HanviSite() {
     }
   }
 
+  function openService(serviceIndexOrTitle: number | string) {
+    const targetService =
+      typeof serviceIndexOrTitle === "number"
+        ? services[serviceIndexOrTitle]
+        : services.find((s) =>
+            s.title.toLowerCase().includes(serviceIndexOrTitle.toLowerCase())
+          ) || services[0];
+
+    if (targetService) {
+      const serviceIdx = services.indexOf(targetService);
+      setSelectedService(targetService);
+      setMenuOpen(false);
+      setActiveSection("services");
+
+      const cardEl = document.getElementById(`service-card-${serviceIdx}`);
+      if (cardEl) {
+        const navHeight = 85;
+        const rect = cardEl.getBoundingClientRect();
+        const targetY = rect.top + window.pageYOffset - navHeight;
+        window.scrollTo({ top: targetY, behavior: "smooth" });
+        cardEl.classList.add("ring-2", "ring-[#E02424]", "ring-offset-2", "ring-offset-slate-900");
+        setTimeout(() => {
+          cardEl.classList.remove("ring-2", "ring-[#E02424]", "ring-offset-2", "ring-offset-slate-900");
+        }, 2500);
+      } else {
+        navigateTo("services");
+      }
+    }
+  }
+
   // Scroll Spy: dynamically update active navbar button as user scrolls through sections
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -1319,8 +1349,9 @@ export function HanviSite() {
                   return (
                     <article
                       key={service.title}
+                      id={`service-card-${index}`}
                       onClick={() => setSelectedService(service)}
-                      className="group relative flex flex-col overflow-hidden rounded-2xl bg-white border border-transparent shadow-xl transition-all duration-300 hover:-translate-y-2 hover:border-[#E02424]/80 hover:shadow-[0_16px_40px_-8px_rgba(224,36,36,0.55),0_0_28px_rgba(255,106,0,0.35)] cursor-pointer"
+                      className="group relative flex flex-col overflow-hidden rounded-2xl bg-white border border-transparent shadow-xl transition-all duration-300 hover:-translate-y-2 hover:border-[#E02424]/80 hover:shadow-[0_16px_40px_-8px_rgba(224,36,36,0.55),0_0_28px_rgba(255,106,0,0.35)] cursor-pointer scroll-mt-24"
                       data-reveal
                       style={{ '--reveal-delay': `${index * 80}ms` } as React.CSSProperties}
                     >
@@ -2003,24 +2034,18 @@ export function HanviSite() {
                 <h3 className="text-xs font-bold uppercase tracking-widest text-white/95">Services</h3>
               </div>
               <ul className="space-y-2">
-                {[
-                  "Fire Alarm Systems",
-                  "Fire Hydrant Systems",
-                  "Cyber Security Data Center Design",
-                  "Network Communications & Intercom",
-                  "Smart Home Automation Panels",
-                  "Custom Turnkey Engineering",
-                ].map((serviceName) => (
-                  <li key={serviceName}>
+                {services.map((service, index) => (
+                  <li key={service.title}>
                     <a
-                      href="#services"
+                      href={`#service-card-${index}`}
                       onClick={(e) => {
                         e.preventDefault();
-                        navigateTo("services");
+                        openService(index);
                       }}
                       className="text-xs sm:text-[13px] text-background/75 transition-all duration-200 hover:text-brand-gold hover:translate-x-1 inline-block cursor-pointer line-clamp-1"
+                      title={service.title}
                     >
-                      {serviceName}
+                      {service.title}
                     </a>
                   </li>
                 ))}
