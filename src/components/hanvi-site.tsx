@@ -597,7 +597,7 @@ function AnimatedCounter({
     const observer = new IntersectionObserver(
       (entries) => {
         const [entry] = entries;
-        if (entry.isIntersecting) {
+        if (entry?.isIntersecting) {
           setHasStarted(true);
         }
       },
