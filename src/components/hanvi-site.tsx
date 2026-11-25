@@ -1867,7 +1867,7 @@ export function HanviSite() {
             {/* 1. HOME VIEW */}
             {activeSection === "home" && (
               <>
-                <section id="home" className="relative isolate h-[calc(100svh-148px)] min-h-[300px] max-h-[400px] sm:max-h-[415px] lg:max-h-[425px] scroll-mt-20 overflow-hidden bg-brand-charcoal text-background">
+                <section id="home" className="relative isolate h-[calc(100svh-172px)] min-h-[480px] scroll-mt-20 overflow-hidden bg-brand-charcoal text-background">
                   <div className="absolute inset-0" aria-hidden="true">
                     {slides.map((slide, index) => (
                       <img
