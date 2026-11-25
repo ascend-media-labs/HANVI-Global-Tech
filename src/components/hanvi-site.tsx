@@ -1523,22 +1523,18 @@ export function HanviSite() {
             </div>
           </section>
 
-          <section id="services" className="relative isolate scroll-mt-20 overflow-hidden bg-[#0c0d12] py-12 sm:py-16 text-foreground">
-            {/* Ambient Background glow & particles */}
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900/40 via-[#0c0d12] to-[#0c0d12] pointer-events-none" />
-            <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 w-[900px] h-[260px] bg-red-600/10 blur-[120px] pointer-events-none" />
-
+          <section id="services" className="relative isolate scroll-mt-20 overflow-hidden bg-brand-cream border-t border-brand-orange/10 py-12 sm:py-16 text-foreground">
             <div className="relative mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
               {/* Section Header */}
               <div className="flex flex-col items-start text-left mb-6 sm:mb-8" data-reveal>
-                <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-500/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-[#E02424]">
+                <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-50 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-[#E02424]">
                   <span className="h-1.5 w-1.5 rounded-full bg-[#E02424] animate-pulse" />
                   <span>Specialized Services</span>
                 </div>
-                <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white">
+                <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900">
                   Engineering reliable, intelligent, and secure environments.
                 </h2>
-                <p className="mt-1.5 text-xs sm:text-sm text-slate-400 max-w-none whitespace-normal md:whitespace-nowrap">
+                <p className="mt-1.5 text-xs sm:text-sm text-slate-600 max-w-none whitespace-normal md:whitespace-nowrap">
                   Comprehensive life safety, high-pressure fire systems, tier-standard cyber data centers, structured communications, and smart automation.
                 </p>
               </div>
@@ -1552,7 +1548,7 @@ export function HanviSite() {
                       key={service.title}
                       id={`service-card-${index}`}
                       onClick={() => openService(service.id)}
-                      className="group relative flex flex-col overflow-hidden rounded-2xl bg-white border border-transparent shadow-xl transition-all duration-300 hover:-translate-y-2 hover:border-[#E02424]/80 hover:shadow-[0_16px_40px_-8px_rgba(224,36,36,0.55),0_0_28px_rgba(255,106,0,0.35)] cursor-pointer scroll-mt-24"
+                      className="group relative flex flex-col overflow-hidden rounded-2xl bg-white border border-slate-200/90 shadow-md transition-all duration-300 hover:-translate-y-2 hover:border-[#E02424]/80 hover:shadow-[0_16px_40px_-8px_rgba(224,36,36,0.35),0_0_24px_rgba(255,106,0,0.2)] cursor-pointer scroll-mt-24"
                       data-reveal
                       style={{ '--reveal-delay': `${index * 80}ms` } as React.CSSProperties}
                     >
