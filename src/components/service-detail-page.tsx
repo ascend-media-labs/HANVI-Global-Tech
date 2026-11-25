@@ -1,4 +1,3 @@
-import { useState, type FormEvent } from "react";
 import {
   ArrowLeft,
   ArrowRight,
@@ -6,12 +5,8 @@ import {
   Phone,
   ShieldCheck,
   Award,
-  Clock,
-  Mail,
   type LucideIcon,
 } from "lucide-react";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 
 export interface ServiceDetailItem {
   id: string;
@@ -45,25 +40,8 @@ export function ServiceDetailPage({
   onSelectService,
   onNavigateHome,
 }: ServiceDetailPageProps) {
-  const [formSubmitted, setFormSubmitted] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    projectType: "Commercial Facility",
-    message: `Hello HANVI Global Tech, I would like to request technical consultation and an engineering site inspection for your ${service.title} solution.`,
-  });
-
   const Icon = service.icon;
   const otherServices = allServices.filter((s) => s.id !== service.id);
-
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    setFormSubmitted(true);
-    setTimeout(() => {
-      setFormSubmitted(false);
-    }, 6000);
-  };
 
   return (
     <div className="min-h-screen bg-brand-cream text-foreground selection:bg-[#E02424] selection:text-white">
@@ -174,15 +152,16 @@ export function ServiceDetailPage({
                 </div>
               </div>
 
-              {/* Quick Action Buttons */}
+              {/* Quick Action Buttons: Enquiry Button + Phone + WhatsApp */}
               <div className="flex flex-wrap items-center gap-3 pt-1">
-                <a
-                  href="#service-contact-form"
+                <button
+                  type="button"
+                  onClick={() => onNavigateHome("contact")}
                   className="inline-flex items-center gap-2 rounded-full bg-[#E02424] hover:bg-red-700 text-white px-5 py-2.5 text-xs sm:text-sm font-bold shadow-md shadow-red-500/25 transition-all duration-200 hover:scale-105 cursor-pointer"
                 >
-                  <span>Enquire for this Service</span>
+                  <span>Enquire Now</span>
                   <ArrowRight className="size-4" />
-                </a>
+                </button>
                 <a
                   href="tel:+919392673103"
                   className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white hover:bg-slate-50 text-slate-800 px-4.5 py-2.5 text-xs sm:text-sm font-semibold shadow-xs transition-all duration-200 cursor-pointer"
@@ -263,176 +242,6 @@ export function ServiceDetailPage({
                 </div>
               </div>
 
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* Related Service Contact Form Section */}
-      <section id="service-contact-form" className="bg-brand-cream-alt py-12 sm:py-16 border-b border-brand-orange/10 scroll-mt-20">
-        <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            
-            {/* Left Column: Context & Contact Details */}
-            <div className="lg:col-span-5 space-y-5">
-              <div>
-                <span className="text-[10px] font-bold uppercase tracking-widest text-[#E02424] block mb-1">
-                  Tailored Engineering Consultation
-                </span>
-                <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-slate-900 leading-tight">
-                  Enquire for {service.title}
-                </h2>
-                <p className="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
-                  Request a complete technical proposal, site audit, and bill of quantities (BOQ) prepared specifically for your project by our senior engineers.
-                </p>
-              </div>
-
-              <div className="space-y-3">
-                <div className="flex items-center gap-3 rounded-xl border border-slate-200/90 bg-white p-3.5 shadow-xs">
-                  <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-red-50 text-[#E02424]">
-                    <Clock className="size-4" />
-                  </div>
-                  <div>
-                    <h4 className="text-xs font-bold text-slate-900">2-Hour Rapid Response</h4>
-                    <p className="text-[11px] text-slate-500">Dedicated engineer assigned to your inquiry</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 rounded-xl border border-slate-200/90 bg-white p-3.5 shadow-xs">
-                  <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-red-50 text-[#E02424]">
-                    <ShieldCheck className="size-4" />
-                  </div>
-                  <div>
-                    <h4 className="text-xs font-bold text-slate-900">Certified Compliance</h4>
-                    <p className="text-[11px] text-slate-500">NBC, NFPA, BIS and ISO 9001 standard engineering</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 rounded-xl border border-slate-200/90 bg-white p-3.5 shadow-xs">
-                  <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-red-50 text-[#E02424]">
-                    <Phone className="size-4" />
-                  </div>
-                  <div>
-                    <h4 className="text-xs font-bold text-slate-900">Direct Hotline</h4>
-                    <a href="tel:+919392673103" className="text-[11px] font-bold text-[#E02424] hover:underline">
-                      +91 9392673103 (Sourvi Saie Kumar)
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 rounded-xl border border-slate-200/90 bg-white p-3.5 shadow-xs">
-                  <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-red-50 text-[#E02424]">
-                    <Mail className="size-4" />
-                  </div>
-                  <div>
-                    <h4 className="text-xs font-bold text-slate-900">Technical Inquiries Email</h4>
-                    <a href="mailto:saie@hanviglobaltech.com" className="text-[11px] font-bold text-[#E02424] hover:underline">
-                      saie@hanviglobaltech.com
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Column: Contact Form */}
-            <div className="lg:col-span-7">
-              <div className="rounded-3xl border border-brand-orange/30 bg-white p-6 sm:p-8 shadow-xl relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-36 h-36 bg-red-600/5 rounded-full blur-2xl pointer-events-none" />
-
-                <div className="relative z-10 mb-5">
-                  <div className="inline-flex items-center gap-2 rounded-full bg-red-50 border border-red-200 px-3 py-0.5 text-[11px] font-bold text-[#E02424] mb-2">
-                    <span>Direct Solution Inquiry</span>
-                  </div>
-                  <h3 className="text-lg sm:text-xl font-bold text-slate-900">
-                    Request Technical Proposal &amp; Site Inspection
-                  </h3>
-                  <p className="text-xs text-slate-500 mt-1">
-                    Fill the details below to receive a formal quotation for <strong className="text-slate-800">{service.title}</strong>.
-                  </p>
-                </div>
-
-                {formSubmitted ? (
-                  <div className="rounded-2xl border border-emerald-500/40 bg-emerald-50 p-6 text-center">
-                    <CheckCircle2 className="size-10 text-emerald-600 mx-auto mb-2" />
-                    <h4 className="text-base font-bold text-slate-900">Thank You! Request Received</h4>
-                    <p className="text-xs sm:text-sm text-slate-600 mt-1.5 max-w-md mx-auto">
-                      Our engineering specialist for <strong className="text-slate-900">{service.title}</strong> has received your inquiry and will reach out within 2 hours.
-                    </p>
-                  </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="space-y-4 relative z-10">
-                    <div>
-                      <label className="text-xs font-semibold text-slate-700 block mb-1">Your Name / Organization *</label>
-                      <Input
-                        required
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        placeholder="e.g. Rahul Sharma (ABC Enterprises)"
-                        className="h-10 bg-brand-cream border-slate-300 text-slate-900 text-xs sm:text-sm placeholder:text-slate-400 focus:border-[#E02424] focus:ring-1 focus:ring-[#E02424]"
-                      />
-                    </div>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                      <div>
-                        <label className="text-xs font-semibold text-slate-700 block mb-1">Phone Number *</label>
-                        <Input
-                          required
-                          type="tel"
-                          value={formData.phone}
-                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                          placeholder="+91 9876543210"
-                          className="h-10 bg-brand-cream border-slate-300 text-slate-900 text-xs sm:text-sm placeholder:text-slate-400 focus:border-[#E02424] focus:ring-1 focus:ring-[#E02424]"
-                        />
-                      </div>
-                      <div>
-                        <label className="text-xs font-semibold text-slate-700 block mb-1">Email Address *</label>
-                        <Input
-                          required
-                          type="email"
-                          value={formData.email}
-                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                          placeholder="name@company.com"
-                          className="h-10 bg-brand-cream border-slate-300 text-slate-900 text-xs sm:text-sm placeholder:text-slate-400 focus:border-[#E02424] focus:ring-1 focus:ring-[#E02424]"
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label className="text-xs font-semibold text-slate-700 block mb-1">Facility / Project Type</label>
-                      <select
-                        value={formData.projectType}
-                        onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                        className="w-full h-10 rounded-md bg-brand-cream border border-slate-300 text-slate-900 text-xs sm:text-sm px-3 focus:outline-none focus:border-[#E02424] focus:ring-1 focus:ring-[#E02424]"
-                      >
-                        <option value="Commercial Facility">Commercial Facility / Tech Park</option>
-                        <option value="Industrial Plant / Warehouse">Industrial Plant / Warehouse</option>
-                        <option value="Residential Gated Community">Residential Gated Community / High-rise</option>
-                        <option value="Hospital / Healthcare Facility">Hospital / Healthcare Facility</option>
-                        <option value="Educational Campus">Educational Campus</option>
-                        <option value="Government / Infrastructure Hub">Government / Infrastructure Hub</option>
-                      </select>
-                    </div>
-
-                    <div>
-                      <label className="text-xs font-semibold text-slate-700 block mb-1">Project Details &amp; Requirements</label>
-                      <Textarea
-                        rows={3}
-                        value={formData.message}
-                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        className="bg-brand-cream border-slate-300 text-slate-900 text-xs sm:text-sm placeholder:text-slate-400 focus:border-[#E02424] focus:ring-1 focus:ring-[#E02424] resize-none"
-                      />
-                    </div>
-
-                    <button
-                      type="submit"
-                      className="w-full rounded-full bg-[#E02424] hover:bg-red-700 text-white font-bold text-xs sm:text-sm py-3 shadow-lg shadow-red-500/25 transition-all duration-200 hover:scale-[1.01] cursor-pointer"
-                    >
-                      Submit Consultation Request for {service.title} →
-                    </button>
-                  </form>
-                )}
-              </div>
             </div>
 
           </div>
