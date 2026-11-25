@@ -1241,7 +1241,7 @@ export function HanviSite() {
                     About <span className="text-[#E02424] font-black">Hanvi Global Tech</span>
                   </h2>
 
-                  <p className="mt-2.5 text-xs sm:text-sm lg:text-[14px] leading-relaxed text-muted-foreground">
+                  <p className="mt-2.5 text-xs sm:text-sm lg:text-[14px] leading-relaxed text-muted-foreground text-justify">
                     Hanvi Global Tech Pvt Ltd is a technology solutions company delivering reliable, scalable, and integrated systems for safety, security, communication, and smart automation. We help businesses, institutions, and homeowners build safer, smarter, and more connected environments.
                   </p>
 
@@ -2163,7 +2163,7 @@ export function HanviSite() {
                     <h4 className="text-[11px] font-bold uppercase tracking-wider text-[#E02424] mb-1">
                       Engineering Overview
                     </h4>
-                    <p className="text-xs sm:text-[13px] text-slate-200 leading-relaxed">
+                    <p className="text-xs sm:text-[13px] text-slate-200 leading-relaxed text-justify">
                       {selectedService.details}
                     </p>
                   </div>

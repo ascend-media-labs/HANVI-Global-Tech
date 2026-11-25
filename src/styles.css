@@ -218,6 +218,12 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Global Content Justification */
+p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
 /* Premium Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
