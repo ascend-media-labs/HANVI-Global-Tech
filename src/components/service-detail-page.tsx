@@ -262,7 +262,7 @@ export function ServiceDetailPage({
       </section>
 
       {/* Explore Other Specialized Solutions Section */}
-      <section className="bg-brand-cream-alt py-8 sm:py-10">
+      <section className="bg-brand-cream-alt py-6 sm:py-7">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
           <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-3 mb-5">
             <div>

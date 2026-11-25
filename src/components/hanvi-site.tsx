@@ -1024,7 +1024,7 @@ export function HanviSite() {
 
 
   const renderAboutSection = () => (
-<section id="about" className="relative isolate scroll-mt-20 overflow-hidden bg-white py-8 sm:py-12 min-h-[40vh]">
+<section id="about" className="relative isolate scroll-mt-20 overflow-hidden bg-white py-6 sm:py-8">
             <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
               <div className="grid items-center gap-6 lg:grid-cols-[1fr_1.15fr] xl:gap-10" data-reveal>
                 {/* Left Column: Building Photo */}
@@ -1096,7 +1096,7 @@ export function HanviSite() {
   );
 
   const renderWhyUsSection = () => (
-<section id="why-us" className="scroll-mt-20 bg-brand-cream-alt pt-8 pb-10 sm:pt-10 sm:pb-12 text-foreground border-t border-brand-orange/10">
+<section id="why-us" className="scroll-mt-20 bg-brand-cream-alt py-6 sm:py-8 text-foreground border-t border-brand-orange/10">
             <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
               {/* Header */}
               <div className="flex flex-col gap-1.5" data-reveal>
@@ -1180,10 +1180,10 @@ export function HanviSite() {
   );
 
   const renderServicesSection = () => (
-<section id="services" className="relative isolate scroll-mt-20 overflow-hidden bg-brand-cream border-t border-brand-orange/10 py-12 sm:py-16 text-foreground min-h-[60vh]">
+<section id="services" className="relative isolate scroll-mt-20 overflow-hidden bg-brand-cream border-t border-brand-orange/10 py-6 sm:py-8 text-foreground">
             <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
               {/* Section Header */}
-              <div className="flex flex-col items-start text-left mb-6 sm:mb-8" data-reveal>
+              <div className="flex flex-col items-start text-left mb-4 sm:mb-5" data-reveal>
                 <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-50 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-[#E02424]">
                   <span className="h-1.5 w-1.5 rounded-full bg-[#E02424] animate-pulse" />
                   <span>Specialized Services</span>
@@ -1275,7 +1275,7 @@ export function HanviSite() {
   );
 
   const renderClientsSection = () => (
-<section id="clients" className="scroll-mt-20 bg-brand-cream-alt py-12 sm:py-16 text-foreground border-t border-brand-orange/10 min-h-[60vh]">
+<section id="clients" className="scroll-mt-20 bg-brand-cream-alt py-6 sm:py-8 text-foreground border-t border-brand-orange/10">
             <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
               <div className="flex flex-col gap-1.5" data-reveal>
                 <div className="flex flex-col justify-between gap-2.5 sm:flex-row sm:items-end">
@@ -1343,7 +1343,7 @@ export function HanviSite() {
   );
 
   const renderPartnersSection = () => (
-<section id="partners" className="scroll-mt-20 bg-brand-cream py-12 sm:py-16 text-foreground border-t border-brand-orange/10 min-h-[60vh]">
+<section id="partners" className="scroll-mt-20 bg-brand-cream py-6 sm:py-8 text-foreground border-t border-brand-orange/10">
             <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
               <div className="flex flex-col gap-1.5" data-reveal>
                 <div className="flex flex-col justify-between gap-2.5 sm:flex-row sm:items-end">
@@ -1365,52 +1365,28 @@ export function HanviSite() {
                   Collaborating with world-class OEM hardware manufacturers, cybersecurity alliances, and IoT smart ecosystem providers.
                 </p>
               </div>
-              {/* Infinite Horizontal Scroll Animated Tracks for Partners */}
-              <div className="relative mt-5 sm:mt-6 overflow-hidden pause-hover select-none">
-                {/* Left Edge Subtle Fade Mask */}
-                <div className="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-24 bg-gradient-to-r from-brand-cream via-brand-cream/80 to-transparent z-10" />
 
-                {/* Right Edge Subtle Fade Mask */}
-                <div className="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-24 bg-gradient-to-l from-brand-cream via-brand-cream/80 to-transparent z-10" />
-
-                {/* Row 1: Scrolling Left */}
-                <div className="animate-marquee-left flex gap-4 sm:gap-5 pb-3.5">
-                  {[...partnerPlaceholders.slice(0, 4), ...partnerPlaceholders.slice(0, 4), ...partnerPlaceholders.slice(0, 4), ...partnerPlaceholders.slice(0, 4)].map((partner, index) => (
-                    <div
-                      key={`pr1-${partner.name}-${index}`}
-                      className="group relative flex w-[225px] sm:w-[255px] md:w-[275px] h-[100px] sm:h-[115px] shrink-0 items-center justify-center overflow-hidden rounded-2xl sm:rounded-3xl border border-brand-orange/20 bg-white px-4 py-2 shadow-sm backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_14px_30px_-6px_rgba(255,106,0,0.22)] hover:scale-105 transition-all duration-300"
-                      title={partner.name}
-                    >
-                      <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-brand-orange via-brand-gold to-brand-rose opacity-80 group-hover:opacity-100 transition-opacity" />
-                      <div className="flex h-full w-full items-center justify-center">
-                        {partner.logo}
-                      </div>
+              {/* Clean Static Grid of Partner Logos (No Auto Scroll) */}
+              <div className="mt-4 sm:mt-5 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+                {partnerPlaceholders.map((partner, index) => (
+                  <div
+                    key={`partner-${partner.name}-${index}`}
+                    className="group relative flex h-[95px] sm:h-[110px] items-center justify-center overflow-hidden rounded-2xl border border-brand-orange/20 bg-white px-4 py-2 shadow-xs backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_12px_28px_-6px_rgba(255,106,0,0.22)] hover:scale-105 transition-all duration-300"
+                    title={partner.name}
+                  >
+                    <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-brand-orange via-brand-gold to-brand-rose opacity-80 group-hover:opacity-100 transition-opacity" />
+                    <div className="flex h-full w-full items-center justify-center">
+                      {partner.logo}
                     </div>
-                  ))}
-                </div>
-
-                {/* Row 2: Scrolling Right */}
-                <div className="animate-marquee-right flex gap-4 sm:gap-5 pt-1">
-                  {[...partnerPlaceholders.slice(4, 8), ...partnerPlaceholders.slice(4, 8), ...partnerPlaceholders.slice(4, 8), ...partnerPlaceholders.slice(4, 8)].map((partner, index) => (
-                    <div
-                      key={`pr2-${partner.name}-${index}`}
-                      className="group relative flex w-[225px] sm:w-[255px] md:w-[275px] h-[100px] sm:h-[115px] shrink-0 items-center justify-center overflow-hidden rounded-2xl sm:rounded-3xl border border-brand-orange/20 bg-white px-4 py-2 shadow-sm backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_14px_30px_-6px_rgba(255,106,0,0.22)] hover:scale-105 transition-all duration-300"
-                      title={partner.name}
-                    >
-                      <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-brand-orange via-brand-gold to-brand-rose opacity-80 group-hover:opacity-100 transition-opacity" />
-                      <div className="flex h-full w-full items-center justify-center">
-                        {partner.logo}
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                  </div>
+                ))}
               </div>
             </div>
           </section>
   );
 
   const renderContactSection = () => (
-<section id="contact" className="scroll-mt-20 bg-brand-cream py-12 sm:py-16 text-foreground border-t border-brand-orange/10 min-h-[60vh]">
+<section id="contact" className="scroll-mt-20 bg-brand-cream py-6 sm:py-8 text-foreground border-t border-brand-orange/10">
             <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
               <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-10 items-center">
                 <div data-reveal>
@@ -2079,7 +2055,7 @@ export function HanviSite() {
       {/* 2. ABOUT VIEW */}
       {activeSection === "about" && (
         <>
-          <div className="bg-brand-cream-alt border-b border-brand-orange/15 py-3 px-4 sm:px-8">
+          <div className="bg-brand-cream-alt border-b border-brand-orange/15 py-2 sm:py-2.5 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
             <div className="mx-auto flex items-center justify-between max-w-7xl">
               <div className="flex items-center gap-2 text-xs font-semibold text-slate-700">
                 <button onClick={() => navigateTo("home")} className="hover:text-[#E02424] transition-colors cursor-pointer">Home</button>
@@ -2102,7 +2078,7 @@ export function HanviSite() {
       {/* 3. SERVICES VIEW */}
       {activeSection === "services" && (
         <>
-          <div className="bg-brand-cream-alt border-b border-brand-orange/15 py-3 px-4 sm:px-8">
+          <div className="bg-brand-cream-alt border-b border-brand-orange/15 py-2 sm:py-2.5 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
             <div className="mx-auto flex items-center justify-between max-w-7xl">
               <div className="flex items-center gap-2 text-xs font-semibold text-slate-700">
                 <button onClick={() => navigateTo("home")} className="hover:text-[#E02424] transition-colors cursor-pointer">Home</button>
@@ -2124,7 +2100,7 @@ export function HanviSite() {
       {/* 4. CLIENTS VIEW */}
       {activeSection === "clients" && (
         <>
-          <div className="bg-brand-cream-alt border-b border-brand-orange/15 py-3 px-4 sm:px-8">
+          <div className="bg-brand-cream-alt border-b border-brand-orange/15 py-2 sm:py-2.5 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
             <div className="mx-auto flex items-center justify-between max-w-7xl">
               <div className="flex items-center gap-2 text-xs font-semibold text-slate-700">
                 <button onClick={() => navigateTo("home")} className="hover:text-[#E02424] transition-colors cursor-pointer">Home</button>
@@ -2146,7 +2122,7 @@ export function HanviSite() {
       {/* 5. PARTNERS VIEW */}
       {activeSection === "partners" && (
         <>
-          <div className="bg-brand-cream-alt border-b border-brand-orange/15 py-3 px-4 sm:px-8">
+          <div className="bg-brand-cream-alt border-b border-brand-orange/15 py-2 sm:py-2.5 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
             <div className="mx-auto flex items-center justify-between max-w-7xl">
               <div className="flex items-center gap-2 text-xs font-semibold text-slate-700">
                 <button onClick={() => navigateTo("home")} className="hover:text-[#E02424] transition-colors cursor-pointer">Home</button>
@@ -2168,7 +2144,7 @@ export function HanviSite() {
       {/* 6. CONTACT VIEW */}
       {activeSection === "contact" && (
         <>
-          <div className="bg-brand-cream-alt border-b border-brand-orange/15 py-3 px-4 sm:px-8">
+          <div className="bg-brand-cream-alt border-b border-brand-orange/15 py-2 sm:py-2.5 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
             <div className="mx-auto flex items-center justify-between max-w-7xl">
               <div className="flex items-center gap-2 text-xs font-semibold text-slate-700">
                 <button onClick={() => navigateTo("home")} className="hover:text-[#E02424] transition-colors cursor-pointer">Home</button>
