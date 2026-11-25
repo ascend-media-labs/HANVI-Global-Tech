@@ -407,11 +407,10 @@ const partnerPlaceholders = [
     sector: "Life Safety & Intelligent Fire Detection",
     tag: "Life Safety OEM",
     logo: (
-      <svg viewBox="0 0 200 48" className="h-12 sm:h-14 md:h-[3.65rem] w-auto max-w-[92%] object-contain" fill="none">
-        <rect x="4" y="4" width="40" height="40" rx="8" fill="#EE3124" />
-        <path d="M15 14H20V20H28V14H33V30H28V24H20V30H15V14Z" fill="#FFFFFF" />
-        <text x="52" y="24" fill="#EE3124" fontFamily="sans-serif" fontWeight="900" fontSize="16.5" letterSpacing="0.4">Honeywell</text>
-        <text x="52" y="36" fill="#64748B" fontFamily="sans-serif" fontWeight="700" fontSize="8" letterSpacing="0.8">BUILDING TECHNOLOGIES</text>
+      <svg viewBox="0 0 170 36" className="h-7 sm:h-8 md:h-9 w-auto max-w-[85%] object-contain" fill="none">
+        <rect x="2" y="2" width="32" height="32" rx="6" fill="#EE3124" />
+        <path d="M11 10H15V16H21V10H25V26H21V20H15V26H11V10Z" fill="#FFFFFF" />
+        <text x="42" y="26" fill="#EE3124" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="900" fontSize="23" letterSpacing="-0.3">Honeywell</text>
       </svg>
     ),
   },
@@ -420,12 +419,13 @@ const partnerPlaceholders = [
     sector: "Cyber Data Centers & Power Resilience",
     tag: "Power & DC",
     logo: (
-      <svg viewBox="0 0 200 48" className="h-12 sm:h-14 md:h-[3.65rem] w-auto max-w-[92%] object-contain" fill="none">
-        <rect x="4" y="4" width="40" height="40" rx="8" fill="#0D2C1E" />
-        <path d="M14 26C14 18 20 14 27 14M30 18C30 26 24 30 17 30" stroke="#009E4D" strokeWidth="3" strokeLinecap="round" />
-        <circle cx="22" cy="22" r="3.5" fill="#3DCD58" />
-        <text x="52" y="23" fill="#009E4D" fontFamily="sans-serif" fontWeight="800" fontSize="13.5" letterSpacing="0.2">Schneider <tspan fill="#3DCD58" fontWeight="600">Electric</tspan></text>
-        <text x="52" y="36" fill="#0D2C1E" fontFamily="sans-serif" fontWeight="800" fontSize="8.5" letterSpacing="0.8">BY APC ENTERPRISE</text>
+      <svg viewBox="0 0 195 36" className="h-6 sm:h-7.5 md:h-8.5 w-auto max-w-[90%] object-contain" fill="none">
+        <g transform="translate(2, 2)">
+          <circle cx="16" cy="16" r="15" fill="#009E4D" />
+          <path d="M8 20C8 13 14 9 21 9M24 12C24 19 18 23 11 23" stroke="#FFFFFF" strokeWidth="2.5" strokeLinecap="round" />
+          <circle cx="16" cy="16" r="2.8" fill="#3DCD58" />
+        </g>
+        <text x="42" y="25" fill="#009E4D" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="800" fontSize="18.5" letterSpacing="-0.2">Schneider <tspan fill="#3DCD58" fontWeight="600">Electric</tspan></text>
       </svg>
     ),
   },
@@ -434,12 +434,9 @@ const partnerPlaceholders = [
     sector: "Enterprise Networking & Fiber Backbone",
     tag: "Enterprise Net",
     logo: (
-      <svg viewBox="0 0 200 48" className="h-12 sm:h-14 md:h-[3.65rem] w-auto max-w-[92%] object-contain" fill="none">
-        <rect x="4" y="4" width="40" height="40" rx="8" fill="#0A1D33" />
-        <path d="M13 25V27M17 21V27M21 17V27M25 17V27M29 21V27M33 25V27" stroke="#00BCEB" strokeWidth="2.5" strokeLinecap="round" />
-        <text x="23" y="36" textAnchor="middle" fill="#00BCEB" fontFamily="sans-serif" fontWeight="800" fontSize="6.5" letterSpacing="0.5">CISCO</text>
-        <text x="52" y="24" fill="#00BCEB" fontFamily="sans-serif" fontWeight="900" fontSize="16" letterSpacing="1.2">CISCO</text>
-        <text x="52" y="36" fill="#64748B" fontFamily="sans-serif" fontWeight="700" fontSize="8" letterSpacing="0.8">NETWORKING SYSTEMS</text>
+      <svg viewBox="0 0 110 48" className="h-8 sm:h-9 md:h-10 w-auto max-w-[80%] object-contain" fill="none">
+        <path d="M15 20V24M25 15V24M35 10V24M45 6V24M55 2V24M65 6V24M75 10V24M85 15V24M95 20V24" stroke="#00BCEB" strokeWidth="3.5" strokeLinecap="round" />
+        <text x="55" y="42" textAnchor="middle" fill="#00BCEB" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="900" fontSize="18" letterSpacing="2">CISCO</text>
       </svg>
     ),
   },
@@ -448,12 +445,10 @@ const partnerPlaceholders = [
     sector: "Building Automation & IoT Ecosystems",
     tag: "Automation",
     logo: (
-      <svg viewBox="0 0 200 48" className="h-12 sm:h-14 md:h-[3.65rem] w-auto max-w-[92%] object-contain" fill="none">
-        <rect x="4" y="4" width="40" height="40" rx="8" fill="#072B30" />
-        <path d="M28 17C26 15 23 15 20 16C16 17 15 20 16 22C17 24 21 25 24 26C27 27 28 29 27 31C26 33 22 34 18 32" stroke="#00E5D8" strokeWidth="2.5" strokeLinecap="round" />
-        <circle cx="30" cy="16" r="2" fill="#EB780A" />
-        <text x="52" y="24" fill="#00646E" fontFamily="sans-serif" fontWeight="900" fontSize="15.5" letterSpacing="1">SIEMENS</text>
-        <text x="52" y="36" fill="#EB780A" fontFamily="sans-serif" fontWeight="700" fontSize="8" letterSpacing="0.8">SMART INFRASTRUCTURE</text>
+      <svg viewBox="0 0 165 36" className="h-6 sm:h-7.5 md:h-8.5 w-auto max-w-[85%] object-contain" fill="none">
+        <circle cx="12" cy="18" r="4.5" fill="#EB780A" />
+        <circle cx="25" cy="18" r="4.5" fill="#00646E" />
+        <text x="38" y="26" fill="#00646E" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="900" fontSize="22" letterSpacing="1.8">SIEMENS</text>
       </svg>
     ),
   },
@@ -462,12 +457,12 @@ const partnerPlaceholders = [
     sector: "IP Surveillance, Access & Public Address",
     tag: "Security OEM",
     logo: (
-      <svg viewBox="0 0 200 48" className="h-12 sm:h-14 md:h-[3.65rem] w-auto max-w-[92%] object-contain" fill="none">
-        <rect x="4" y="4" width="40" height="40" rx="8" fill="#1C1819" />
-        <circle cx="24" cy="24" r="11" stroke="#E21D24" strokeWidth="2.5" />
-        <rect x="20" y="17" width="8" height="14" rx="2" fill="#E21D24" />
-        <text x="52" y="24" fill="#E21D24" fontFamily="sans-serif" fontWeight="900" fontSize="16" letterSpacing="1">BOSCH</text>
-        <text x="52" y="36" fill="#64748B" fontFamily="sans-serif" fontWeight="700" fontSize="8.5" letterSpacing="0.8">SECURITY &amp; SAFETY</text>
+      <svg viewBox="0 0 145 36" className="h-6 sm:h-7.5 md:h-8.5 w-auto max-w-[85%] object-contain" fill="none">
+        <g transform="translate(4, 2)">
+          <circle cx="16" cy="16" r="14" stroke="#E21D24" strokeWidth="3.5" fill="none" />
+          <rect x="11" y="9" width="10" height="14" rx="2" fill="#E21D24" />
+        </g>
+        <text x="44" y="26" fill="#E21D24" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="900" fontSize="23" letterSpacing="1">BOSCH</text>
       </svg>
     ),
   },
@@ -476,13 +471,13 @@ const partnerPlaceholders = [
     sector: "Commercial Fire Suppression & Life Safety",
     tag: "Fire Systems",
     logo: (
-      <svg viewBox="0 0 200 48" className="h-12 sm:h-14 md:h-[3.65rem] w-auto max-w-[92%] object-contain" fill="none">
-        <rect x="4" y="4" width="40" height="40" rx="8" fill="#0A1D36" />
-        <path d="M14 26C14 18 19 14 28 14" stroke="#00529B" strokeWidth="3" strokeLinecap="round" />
-        <path d="M19 30C19 24 23 20 30 20" stroke="#78BE20" strokeWidth="3" strokeLinecap="round" />
-        <circle cx="16" cy="16" r="2.5" fill="#FDB913" />
-        <text x="52" y="23" fill="#00529B" fontFamily="sans-serif" fontWeight="800" fontSize="13" letterSpacing="0.3">Johnson <tspan fill="#78BE20">Controls</tspan></text>
-        <text x="52" y="36" fill="#64748B" fontFamily="sans-serif" fontWeight="700" fontSize="8.5" letterSpacing="0.8">&amp; SIMPLEX SYSTEMS</text>
+      <svg viewBox="0 0 180 36" className="h-6 sm:h-7.5 md:h-8.5 w-auto max-w-[88%] object-contain" fill="none">
+        <g transform="translate(4, 2)">
+          <path d="M4 22C4 13 10 8 20 8" stroke="#00529B" strokeWidth="3.5" strokeLinecap="round" />
+          <path d="M10 26C10 19 15 15 24 15" stroke="#78BE20" strokeWidth="3.5" strokeLinecap="round" />
+          <circle cx="6" cy="6" r="3.5" fill="#FDB913" />
+        </g>
+        <text x="40" y="25" fill="#00529B" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="800" fontSize="17.5" letterSpacing="-0.2">Johnson <tspan fill="#78BE20">Controls</tspan></text>
       </svg>
     ),
   },
@@ -491,15 +486,16 @@ const partnerPlaceholders = [
     sector: "Data Center Firewalls & Secure SD-WAN",
     tag: "Zero Trust",
     logo: (
-      <svg viewBox="0 0 200 48" className="h-12 sm:h-14 md:h-[3.65rem] w-auto max-w-[92%] object-contain" fill="none">
-        <rect x="4" y="4" width="40" height="40" rx="8" fill="#1F0D0D" />
-        <rect x="14" y="15" width="8" height="6" rx="1" fill="#EE3124" />
-        <rect x="24" y="15" width="8" height="6" rx="1" fill="#EE3124" />
-        <rect x="14" y="23" width="8" height="6" rx="1" fill="#EE3124" />
-        <rect x="24" y="23" width="8" height="6" rx="1" fill="#EE3124" />
-        <path d="M14 18H32M18 15V29M28 15V29" stroke="#FFFFFF" strokeWidth="1.2" strokeOpacity="0.8" />
-        <text x="52" y="24" fill="#EE3124" fontFamily="sans-serif" fontWeight="900" fontSize="15" letterSpacing="0.8">FORTINET</text>
-        <text x="52" y="36" fill="#64748B" fontFamily="sans-serif" fontWeight="700" fontSize="8" letterSpacing="0.8">ENTERPRISE SECURITY</text>
+      <svg viewBox="0 0 160 36" className="h-6 sm:h-7.5 md:h-8.5 w-auto max-w-[85%] object-contain" fill="none">
+        <g transform="translate(4, 6)">
+          <rect x="0" y="0" width="10" height="7" rx="1.5" fill="#EE3124" />
+          <rect x="13" y="0" width="10" height="7" rx="1.5" fill="#EE3124" />
+          <rect x="0" y="10" width="10" height="7" rx="1.5" fill="#EE3124" />
+          <rect x="13" y="10" width="10" height="7" rx="1.5" fill="#EE3124" />
+          <line x1="0" y1="8.5" x2="23" y2="8.5" stroke="#FFFFFF" strokeWidth="1.5" />
+          <line x1="11.5" y1="0" x2="11.5" y2="17" stroke="#FFFFFF" strokeWidth="1.5" />
+        </g>
+        <text x="36" y="25" fill="#EE3124" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="900" fontSize="20" letterSpacing="0.8">FORTINET</text>
       </svg>
     ),
   },
@@ -508,12 +504,12 @@ const partnerPlaceholders = [
     sector: "Smart PDU, High-Density Server Racks & Fiber",
     tag: "DC Enclosure",
     logo: (
-      <svg viewBox="0 0 200 48" className="h-12 sm:h-14 md:h-[3.65rem] w-auto max-w-[92%] object-contain" fill="none">
-        <rect x="4" y="4" width="40" height="40" rx="8" fill="#1C181A" />
-        <rect x="14" y="14" width="18" height="16" rx="2" stroke="#E31837" strokeWidth="2.5" />
-        <path d="M20 19V25H26" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        <text x="52" y="24" fill="#E31837" fontFamily="sans-serif" fontWeight="900" fontSize="15.5" letterSpacing="0.5">legrand<tspan fill="#1C181A">®</tspan></text>
-        <text x="52" y="36" fill="#64748B" fontFamily="sans-serif" fontWeight="700" fontSize="8" letterSpacing="0.8">&amp; RARITAN DATA CENTER</text>
+      <svg viewBox="0 0 150 36" className="h-6 sm:h-7.5 md:h-8.5 w-auto max-w-[85%] object-contain" fill="none">
+        <g transform="translate(4, 4)">
+          <rect x="0" y="0" width="26" height="26" rx="4" stroke="#E31837" strokeWidth="3" fill="none" />
+          <path d="M7 7V19H17" stroke="#E31837" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+        </g>
+        <text x="40" y="25" fill="#E31837" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="900" fontSize="21" letterSpacing="-0.3">legrand<tspan fill="#1C181A" fontSize="13">®</tspan></text>
       </svg>
     ),
   },
@@ -1366,15 +1362,14 @@ export function HanviSite() {
           </p>
         </div>
 
-        {/* Clean Static Grid of Partner Logos (No Auto Scroll) */}
-        <div className="mt-4 sm:mt-5 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+        {/* Clean Static Grid of Partner Logos - Pill / Stadium Outline Style */}
+        <div className="mt-4 sm:mt-5 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-4.5">
           {partnerPlaceholders.map((partner, index) => (
             <div
               key={`partner-${partner.name}-${index}`}
-              className="group relative flex h-[95px] sm:h-[110px] items-center justify-center overflow-hidden rounded-2xl border border-brand-orange/20 bg-white px-4 py-2 shadow-xs backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_12px_28px_-6px_rgba(255,106,0,0.22)] hover:scale-105 transition-all duration-300"
+              className="group relative flex h-16 sm:h-[4.5rem] lg:h-[5rem] items-center justify-center rounded-full border-2 border-[#16446C]/35 bg-white px-4 sm:px-6 py-2 shadow-xs transition-all duration-300 hover:border-brand-orange hover:shadow-[0_8px_24px_-4px_rgba(255,106,0,0.22)] hover:scale-[1.03]"
               title={partner.name}
             >
-              <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-brand-orange via-brand-gold to-brand-rose opacity-80 group-hover:opacity-100 transition-opacity" />
               <div className="flex h-full w-full items-center justify-center">
                 {partner.logo}
               </div>
