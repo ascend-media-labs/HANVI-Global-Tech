@@ -1043,7 +1043,7 @@ export function HanviSite() {
                     About <span className="text-[#E02424] font-black">Hanvi Global Tech</span>
                   </h2>
 
-                  <p className="mt-2.5 text-xs sm:text-sm lg:text-[14px] leading-relaxed text-muted-foreground text-justify">
+                  <p className="mt-2.5 text-xs sm:text-sm lg:text-[14px] leading-relaxed text-muted-foreground text-left">
                     Hanvi Global Tech Pvt Ltd is a technology solutions company delivering reliable, scalable, and integrated systems for safety, security, communication, and smart automation. We help businesses, institutions, and homeowners build safer, smarter, and more connected environments.
                   </p>
 
