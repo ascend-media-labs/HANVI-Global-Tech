@@ -1191,22 +1191,44 @@ export function HanviSite() {
         </div>
 
         {menuOpen ? (
-          <nav id="mobile-navigation" className="border-t border-border/60 bg-background/95 px-4 sm:px-6 pb-6 pt-4 shadow-lg backdrop-blur-xl lg:hidden" aria-label="Mobile navigation">
-            <div className="mx-auto flex w-full flex-col gap-3">
-              <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
-                {navigation.map((item) => (
-                  <ScrollLink
-                    key={item.id}
-                    id={item.id}
-                    active={activeSection === item.id}
-                    onNavigate={() => navigateTo(item.id)}
-                  >
-                    {item.label}
-                  </ScrollLink>
-                ))}
+          <nav id="mobile-navigation" className="border-t border-border/60 bg-background/98 px-4 sm:px-6 pb-6 pt-3.5 shadow-2xl backdrop-blur-xl lg:hidden animate-in fade-in slide-in-from-top-2 duration-200" aria-label="Mobile navigation">
+            <div className="mx-auto flex w-full flex-col gap-2.5">
+              {/* Single Column Vertical Navigation */}
+              <div className="flex flex-col gap-1.5">
+                {navigation.map((item) => {
+                  const isActive = activeSection === item.id;
+                  return (
+                    <button
+                      key={item.id}
+                      type="button"
+                      onClick={() => navigateTo(item.id)}
+                      className={`group flex w-full items-center justify-between rounded-xl px-4 py-2.5 text-sm font-semibold transition-all duration-200 cursor-pointer ${
+                        isActive
+                          ? "brand-gradient text-white shadow-md shadow-orange-500/25"
+                          : "text-foreground/85 hover:bg-muted/70 hover:text-foreground hover:translate-x-1"
+                      }`}
+                    >
+                      <span className="flex items-center gap-2.5">
+                        <span
+                          className={`size-1.5 rounded-full transition-all duration-200 ${
+                            isActive ? "bg-white scale-125" : "bg-brand-orange/40 group-hover:bg-brand-orange"
+                          }`}
+                        />
+                        <span>{item.label}</span>
+                      </span>
+                      <ChevronRight
+                        className={`size-4 transition-transform duration-200 ${
+                          isActive
+                            ? "text-white translate-x-0.5"
+                            : "text-muted-foreground/40 group-hover:translate-x-0.5 group-hover:text-foreground"
+                        }`}
+                      />
+                    </button>
+                  );
+                })}
               </div>
-              <div className="mt-2 flex flex-col gap-2.5 sm:flex-row border-t border-border/60 pt-3">
-                <Button asChild variant="outline" className="h-11 w-full rounded-full border-border/80 text-xs font-semibold">
+              <div className="mt-1.5 flex flex-col gap-2.5 border-t border-border/60 pt-3">
+                <Button asChild variant="outline" className="h-11 w-full rounded-full border-border/80 text-xs font-semibold justify-center hover:border-brand-orange/50 hover:text-brand-orange">
                   <a href="tel:+919392673103" onClick={closeMobileMenu}>
                     <Phone className="mr-1.5 size-3.5 text-brand-orange" /> +91 9392673103
                   </a>
