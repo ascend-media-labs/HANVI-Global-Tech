@@ -1894,7 +1894,7 @@ export function HanviSite() {
             {/* 1. HOME VIEW */}
             {activeSection === "home" && (
               <>
-                <section id="home" className="relative isolate h-[calc(100svh-148px)] min-h-[340px] max-h-[420px] sm:max-h-[440px] lg:min-h-[440px] lg:max-h-[480px] xl:max-h-[500px] scroll-mt-20 overflow-hidden bg-brand-charcoal text-background">
+                <section id="home" className="relative isolate h-[calc(100svh-148px)] min-h-[300px] max-h-[400px] sm:max-h-[415px] lg:max-h-[425px] scroll-mt-20 overflow-hidden bg-brand-charcoal text-background">
             <div className="absolute inset-0" aria-hidden="true">
               {slides.map((slide, index) => (
                 <img
@@ -1911,8 +1911,8 @@ export function HanviSite() {
               <div className="hero-grid absolute inset-0 pointer-events-none opacity-50" />
             </div>
 
-            <div className="relative mx-auto flex h-full w-full items-center justify-between px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 pb-9 pt-1 sm:pb-10 sm:pt-2">
-              <div className="w-full lg:max-w-xl xl:max-w-2xl z-10" data-reveal>
+            <div className="relative mx-auto flex h-full w-full flex-col justify-center px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 pb-8 pt-1 sm:pb-9 sm:pt-2">
+              <div className="max-w-3xl" data-reveal>
                 <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 py-0.5 px-3 text-xs font-medium text-background/90 backdrop-blur-md shadow-inner shadow-white/5 sm:mb-2.5 sm:px-3">
                   <span className="relative flex h-2 w-2">
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-orange opacity-75" />
@@ -1988,71 +1988,6 @@ export function HanviSite() {
                       <div className="text-[9px] sm:text-[10px] text-background/60 leading-tight">Connected Mesh</div>
                     </div>
                   </div>
-                </div>
-              </div>
-
-              {/* Right Column: 6 Services Image Cards Rotating in Circle */}
-              <div className="hidden lg:flex relative items-center justify-center shrink-0 w-[330px] xl:w-[370px] h-[330px] xl:h-[370px] z-10 select-none pause-hover mr-0 xl:mr-4">
-                {/* Ambient Glow & Dashed Orbit Path Rings */}
-                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                  <div className="size-[240px] xl:size-[280px] rounded-full border border-dashed border-[#E02424]/35 animate-pulse" />
-                  <div className="absolute size-[280px] xl:size-[320px] rounded-full border border-white/10" />
-                  <div className="absolute size-[160px] rounded-full bg-[#E02424]/10 blur-2xl pointer-events-none" />
-                </div>
-
-                {/* Central Hub Disc */}
-                <div className="relative z-10 flex flex-col items-center justify-center size-20 xl:size-24 rounded-full border-2 border-[#E02424] bg-black/85 shadow-[0_0_25px_rgba(224,36,36,0.5)] backdrop-blur-md text-center pointer-events-none transition-transform duration-300">
-                  <span className="size-2 rounded-full bg-[#E02424] animate-ping mb-1" />
-                  <span className="font-extrabold text-[10px] xl:text-[11px] uppercase tracking-wider text-white">HANVI</span>
-                  <span className="text-[8px] xl:text-[9px] font-bold text-brand-orange uppercase tracking-tight">6 Solutions</span>
-                </div>
-
-                {/* Rotating Circle of 6 Services Cards */}
-                <div className="absolute inset-0 flex items-center justify-center animate-hero-orbit">
-                  {services.slice(0, 6).map((service, index) => {
-                    const angle = index * 60; // 0, 60, 120, 180, 240, 300 deg
-                    const Icon = service.icon;
-                    return (
-                      <div
-                        key={service.id}
-                        className="absolute top-1/2 left-1/2"
-                        style={{
-                          transform: `rotate(${angle}deg) translate(var(--hero-orbit-r, 125px)) rotate(-${angle}deg)`,
-                        }}
-                      >
-                        {/* Counter-rotating card container to keep the card always upright */}
-                        <div className="animate-hero-orbit-reverse -translate-x-1/2 -translate-y-1/2">
-                          <div
-                            onClick={() => openService(service.id)}
-                            title={`${service.title} - Click for details`}
-                            className="group/card relative w-[96px] xl:w-[108px] rounded-xl overflow-hidden border border-white/25 bg-black/80 shadow-[0_6px_20px_rgba(0,0,0,0.6)] backdrop-blur-md transition-all duration-300 hover:scale-120 hover:border-[#E02424] hover:shadow-[0_0_25px_rgba(224,36,36,0.8)] cursor-pointer"
-                          >
-                            {/* Service Photo */}
-                            <div className="relative h-11 xl:h-13 w-full overflow-hidden bg-slate-900">
-                              <img
-                                src={service.image}
-                                alt={service.title}
-                                loading="lazy"
-                                className="h-full w-full object-cover transition-transform duration-300 group-hover/card:scale-110"
-                              />
-                              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                              {/* Small Red Icon Badge */}
-                              <div className="absolute top-1 left-1 flex size-4.5 xl:size-5 items-center justify-center rounded-md bg-[#E02424] text-white shadow-xs">
-                                <Icon className="size-2.5 xl:size-3 text-white" />
-                              </div>
-                            </div>
-
-                            {/* Title Bar */}
-                            <div className="p-1 xl:p-1.5 bg-black/90 text-center">
-                              <span className="block text-[8.5px] xl:text-[9.5px] font-bold text-white leading-tight truncate group-hover/card:text-[#E02424] transition-colors">
-                                {service.title}
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    );
-                  })}
                 </div>
               </div>
 

@@ -303,48 +303,6 @@ p {
   }
 }
 
-:root {
-  --hero-orbit-r: 125px;
-}
-
-@media (min-width: 1280px) {
-  :root {
-    --hero-orbit-r: 145px;
-  }
-}
-
-/* Hero 6 Services Orbit Rotation Animation */
-@keyframes hero-orbit-rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes hero-orbit-counter-rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(-360deg);
-  }
-}
-
-.animate-hero-orbit {
-  animation: hero-orbit-rotate 36s linear infinite;
-}
-
-.animate-hero-orbit-reverse {
-  animation: hero-orbit-counter-rotate 36s linear infinite;
-}
-
-.pause-hover:hover .animate-hero-orbit,
-.pause-hover:hover .animate-hero-orbit-reverse {
-  animation-play-state: paused !important;
-}
-
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
