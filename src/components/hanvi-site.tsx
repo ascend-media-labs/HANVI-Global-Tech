@@ -513,6 +513,53 @@ const partnerPlaceholders = [
       </svg>
     ),
   },
+  {
+    name: "Sophos Cybersecurity",
+    sector: "Next-Gen Firewall & Cloud Security",
+    tag: "Security OEM",
+    logo: (
+      <svg viewBox="0 0 150 40" className="h-6 sm:h-7.5 md:h-8.5 w-auto max-w-[85%] object-contain" fill="none">
+        <g transform="translate(6, 4)">
+          <path d="M16 2L4 6V18C4 25.5 9.1 32.5 16 34C22.9 32.5 28 25.5 28 18V6L16 2Z" fill="#005B94" />
+          <path d="M19.5 13C19.5 11.5 18 10.5 16 10.5C13.5 10.5 12 11.8 12 13.5C12 17.5 20 16 20 20C20 22.2 18.2 23.5 16 23.5C13 23.5 11.5 22 11.5 20" stroke="#FFFFFF" strokeWidth="2.5" strokeLinecap="round" />
+        </g>
+        <text x="44" y="27" fill="#005B94" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="900" fontSize="21" letterSpacing="1.2">SOPHOS</text>
+      </svg>
+    ),
+  },
+  {
+    name: "HPE Juniper Networking",
+    sector: "Enterprise Campus & Core Switching",
+    tag: "Networking OEM",
+    logo: (
+      <svg viewBox="0 0 170 38" className="h-6 sm:h-7.5 md:h-8.5 w-auto max-w-[88%] object-contain" fill="none">
+        <text x="8" y="27" fill="#000000" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="900" fontSize="26" letterSpacing="-0.5">HPE</text>
+        <rect x="68" y="7" width="2" height="24" fill="#01A982" />
+        <text x="76" y="21" fill="#000000" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="800" fontSize="15" letterSpacing="-0.2">Juniper</text>
+        <text x="76" y="31" fill="#4B5563" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="600" fontSize="8.5" letterSpacing="0.4">networking</text>
+      </svg>
+    ),
+  },
+  {
+    name: "NETGEAR Business",
+    sector: "Managed Switch Infrastructure & Pro WiFi",
+    tag: "Networking OEM",
+    logo: (
+      <svg viewBox="0 0 160 36" className="h-6 sm:h-7.5 md:h-8.5 w-auto max-w-[85%] object-contain" fill="none">
+        <text x="80" y="26" textAnchor="middle" fill="#3B1C54" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="900" fontSize="23" letterSpacing="1.8">NETGEAR</text>
+      </svg>
+    ),
+  },
+  {
+    name: "D-Link Systems",
+    sector: "Industrial Switching & Structured Cabling",
+    tag: "Connectivity OEM",
+    logo: (
+      <svg viewBox="0 0 150 36" className="h-6 sm:h-7.5 md:h-8.5 w-auto max-w-[85%] object-contain" fill="none">
+        <text x="75" y="27" textAnchor="middle" fill="#008299" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="900" fontSize="25" letterSpacing="0.5">D-Link</text>
+      </svg>
+    ),
+  },
 ];
 
 const whyChooseUsPillars = [
