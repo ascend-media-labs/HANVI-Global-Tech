@@ -1357,37 +1357,22 @@ export function HanviSite() {
           </p>
         </div>
 
-        {/* Infinite Horizontal Scroll Animated Tracks */}
-        <div className="relative mt-5 sm:mt-6 overflow-hidden pause-hover select-none">
+        {/* Infinite Horizontal Scroll Animated Track - Single Row */}
+        <div className="relative mt-6 sm:mt-8 overflow-hidden pause-hover select-none">
           {/* Left Edge Subtle Fade Mask */}
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-24 bg-gradient-to-r from-brand-cream-alt via-brand-cream-alt/80 to-transparent z-10" />
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-28 bg-gradient-to-r from-brand-cream-alt via-brand-cream-alt/80 to-transparent z-10" />
 
           {/* Right Edge Subtle Fade Mask */}
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-24 bg-gradient-to-l from-brand-cream-alt via-brand-cream-alt/80 to-transparent z-10" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-28 bg-gradient-to-l from-brand-cream-alt via-brand-cream-alt/80 to-transparent z-10" />
 
-          {/* Row 1: Scrolling Left */}
-          <div className="animate-marquee-left flex gap-4 sm:gap-5 pb-3.5">
-            {[...clientPlaceholders.slice(0, 5), ...clientPlaceholders.slice(0, 5), ...clientPlaceholders.slice(0, 5), ...clientPlaceholders.slice(0, 5)].map((client, index) => (
+          {/* Single Row: Infinite Scrolling Track */}
+          <div className="animate-marquee-left flex gap-5 sm:gap-6 py-2.5">
+            {[...clientPlaceholders, ...clientPlaceholders].map((client, index) => (
               <div
-                key={`r1-${client.name}-${index}`}
-                className={`group relative flex w-[165px] sm:w-[190px] md:w-[210px] h-[125px] sm:h-[142px] md:h-[155px] shrink-0 items-center justify-center overflow-hidden rounded-[32px] sm:rounded-[38px] border-2 border-[#16446C]/35 bg-white ${'isFullImage' in client && client.isFullImage ? 'p-0' : 'px-4 py-3'
-                  } shadow-xs transition-all duration-300 hover:border-brand-orange hover:shadow-[0_10px_28px_-4px_rgba(255,106,0,0.22)] hover:scale-[1.04]`}
-                title={client.name}
-              >
-                <div className="flex h-full w-full items-center justify-center">
-                  {client.logo}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Row 2: Scrolling Right */}
-          <div className="animate-marquee-right flex gap-4 sm:gap-5 pt-1">
-            {[...clientPlaceholders.slice(5), ...clientPlaceholders.slice(5), ...clientPlaceholders.slice(5), ...clientPlaceholders.slice(5), ...clientPlaceholders.slice(5)].map((client, index) => (
-              <div
-                key={`r2-${client.name}-${index}`}
-                className={`group relative flex w-[165px] sm:w-[190px] md:w-[210px] h-[125px] sm:h-[142px] md:h-[155px] shrink-0 items-center justify-center overflow-hidden rounded-[32px] sm:rounded-[38px] border-2 border-[#16446C]/35 bg-white ${'isFullImage' in client && client.isFullImage ? 'p-0' : 'px-4 py-3'
-                  } shadow-xs transition-all duration-300 hover:border-brand-orange hover:shadow-[0_10px_28px_-4px_rgba(255,106,0,0.22)] hover:scale-[1.04]`}
+                key={`single-${client.name}-${index}`}
+                className={`group relative flex w-[215px] sm:w-[245px] md:w-[275px] lg:w-[295px] h-[160px] sm:h-[180px] md:h-[200px] lg:h-[215px] shrink-0 items-center justify-center overflow-hidden rounded-[38px] sm:rounded-[44px] md:rounded-[48px] border-2 border-[#16446C]/35 bg-white ${
+                  'isFullImage' in client && client.isFullImage ? 'p-0' : 'px-5 py-4'
+                } shadow-xs transition-all duration-300 hover:border-brand-orange hover:shadow-[0_12px_32px_-4px_rgba(255,106,0,0.24)] hover:scale-[1.04]`}
                 title={client.name}
               >
                 <div className="flex h-full w-full items-center justify-center">
