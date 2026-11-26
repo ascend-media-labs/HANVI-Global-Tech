@@ -63,6 +63,7 @@ import apolloHospitalsImage from "@/assets/apollo-hospitals.jpg";
 import siddipetPoliceImage from "@/assets/siddipet-police.jpg";
 import ramagundamPoliceImage from "@/assets/ramagundam-police.jpg";
 import sircillaPoliceImage from "@/assets/sircilla-police.jpg";
+import telanganaPoliceLogo from "@/assets/telangana-police-logo.png";
 
 const navigation = [
   { label: "Home", id: "home" },
@@ -287,16 +288,16 @@ const services: readonly ServiceDetailItem[] = [
 
 const clientPlaceholders = [
   {
-    name: "L&T Construction & Infra",
-    sector: "Industrial & Metro Transit",
-    tag: "Metro & Infra",
+    name: "Telangana State Police",
+    sector: "State Law Enforcement & Public Safety",
+    tag: "State Police",
     logo: (
-      <svg viewBox="0 0 100 80" className="h-[72%] w-auto max-w-[85%] object-contain" fill="none">
-        <circle cx="50" cy="28" r="22" fill="#0C2340" />
-        <text x="50" y="36" textAnchor="middle" fill="#FDB913" fontFamily="sans-serif" fontWeight="900" fontSize="16" letterSpacing="-0.5">L&amp;T</text>
-        <path d="M38 41h24" stroke="#FDB913" strokeWidth="2.2" strokeLinecap="round" />
-        <text x="50" y="66" textAnchor="middle" fill="#0C2340" fontFamily="sans-serif" fontWeight="900" fontSize="11" letterSpacing="0.2">L&amp;T Construction</text>
-      </svg>
+      <img
+        src={telanganaPoliceLogo}
+        alt="Telangana State Police"
+        className="h-[88%] w-auto max-w-[88%] object-contain drop-shadow-xs transition-transform duration-500 group-hover:scale-105"
+        loading="lazy"
+      />
     ),
   },
   {
@@ -1369,9 +1370,8 @@ export function HanviSite() {
             {[...clientPlaceholders.slice(0, 5), ...clientPlaceholders.slice(0, 5), ...clientPlaceholders.slice(0, 5), ...clientPlaceholders.slice(0, 5)].map((client, index) => (
               <div
                 key={`r1-${client.name}-${index}`}
-                className={`group relative flex w-[165px] sm:w-[190px] md:w-[210px] h-[125px] sm:h-[142px] md:h-[155px] shrink-0 items-center justify-center overflow-hidden rounded-[32px] sm:rounded-[38px] border-2 border-[#16446C]/35 bg-white ${
-                  'isFullImage' in client && client.isFullImage ? 'p-0' : 'px-4 py-3'
-                } shadow-xs transition-all duration-300 hover:border-brand-orange hover:shadow-[0_10px_28px_-4px_rgba(255,106,0,0.22)] hover:scale-[1.04]`}
+                className={`group relative flex w-[165px] sm:w-[190px] md:w-[210px] h-[125px] sm:h-[142px] md:h-[155px] shrink-0 items-center justify-center overflow-hidden rounded-[32px] sm:rounded-[38px] border-2 border-[#16446C]/35 bg-white ${'isFullImage' in client && client.isFullImage ? 'p-0' : 'px-4 py-3'
+                  } shadow-xs transition-all duration-300 hover:border-brand-orange hover:shadow-[0_10px_28px_-4px_rgba(255,106,0,0.22)] hover:scale-[1.04]`}
                 title={client.name}
               >
                 <div className="flex h-full w-full items-center justify-center">
@@ -1386,9 +1386,8 @@ export function HanviSite() {
             {[...clientPlaceholders.slice(5), ...clientPlaceholders.slice(5), ...clientPlaceholders.slice(5), ...clientPlaceholders.slice(5), ...clientPlaceholders.slice(5)].map((client, index) => (
               <div
                 key={`r2-${client.name}-${index}`}
-                className={`group relative flex w-[165px] sm:w-[190px] md:w-[210px] h-[125px] sm:h-[142px] md:h-[155px] shrink-0 items-center justify-center overflow-hidden rounded-[32px] sm:rounded-[38px] border-2 border-[#16446C]/35 bg-white ${
-                  'isFullImage' in client && client.isFullImage ? 'p-0' : 'px-4 py-3'
-                } shadow-xs transition-all duration-300 hover:border-brand-orange hover:shadow-[0_10px_28px_-4px_rgba(255,106,0,0.22)] hover:scale-[1.04]`}
+                className={`group relative flex w-[165px] sm:w-[190px] md:w-[210px] h-[125px] sm:h-[142px] md:h-[155px] shrink-0 items-center justify-center overflow-hidden rounded-[32px] sm:rounded-[38px] border-2 border-[#16446C]/35 bg-white ${'isFullImage' in client && client.isFullImage ? 'p-0' : 'px-4 py-3'
+                  } shadow-xs transition-all duration-300 hover:border-brand-orange hover:shadow-[0_10px_28px_-4px_rgba(255,106,0,0.22)] hover:scale-[1.04]`}
                 title={client.name}
               >
                 <div className="flex h-full w-full items-center justify-center">
