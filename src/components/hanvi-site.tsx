@@ -288,12 +288,11 @@ const clientPlaceholders = [
     sector: "Industrial & Metro Transit",
     tag: "Metro & Infra",
     logo: (
-      <svg viewBox="0 0 200 48" className="h-12 sm:h-14 md:h-[3.65rem] w-auto max-w-[92%] object-contain" fill="none">
-        <rect x="4" y="4" width="40" height="40" rx="8" fill="#0C2340" />
-        <text x="24" y="28" textAnchor="middle" fill="#FDB913" fontFamily="sans-serif" fontWeight="900" fontSize="16" letterSpacing="-0.5">L&amp;T</text>
-        <path d="M12 33h24" stroke="#FDB913" strokeWidth="2" strokeLinecap="round" />
-        <text x="52" y="23" fill="#0C2340" fontFamily="sans-serif" fontWeight="800" fontSize="13.5" letterSpacing="0.2">L&amp;T Construction</text>
-        <text x="52" y="36" fill="#64748B" fontFamily="sans-serif" fontWeight="700" fontSize="8.5" letterSpacing="0.8">INFRASTRUCTURE</text>
+      <svg viewBox="0 0 170 36" className="h-6 sm:h-7.5 md:h-8.5 w-auto max-w-[85%] object-contain" fill="none">
+        <circle cx="18" cy="18" r="16" fill="#0C2340" />
+        <text x="18" y="23" textAnchor="middle" fill="#FDB913" fontFamily="sans-serif" fontWeight="900" fontSize="12" letterSpacing="-0.5">L&amp;T</text>
+        <path d="M9 27h18" stroke="#FDB913" strokeWidth="1.5" strokeLinecap="round" />
+        <text x="42" y="25" fill="#0C2340" fontFamily="sans-serif" fontWeight="900" fontSize="17" letterSpacing="0.3">L&amp;T <tspan fill="#334155" fontWeight="600" fontSize="14">Construction</tspan></text>
       </svg>
     ),
   },
@@ -302,12 +301,12 @@ const clientPlaceholders = [
     sector: "Mission-Critical Facilities",
     tag: "Aviation Hub",
     logo: (
-      <svg viewBox="0 0 200 48" className="h-12 sm:h-14 md:h-[3.65rem] w-auto max-w-[92%] object-contain" fill="none">
-        <rect x="4" y="4" width="40" height="40" rx="8" fill="#0A1E3F" />
-        <path d="M14 22C14 16 18 12 24 12C30 12 34 16 34 22C34 26 31 29 25 29H20" stroke="#FF6A00" strokeWidth="2.5" strokeLinecap="round" />
-        <path d="M24 22H32" stroke="#FDB913" strokeWidth="2.5" strokeLinecap="round" />
-        <text x="52" y="24" fill="#0A1E3F" fontFamily="sans-serif" fontWeight="900" fontSize="17" letterSpacing="1.2">GMR</text>
-        <text x="52" y="36" fill="#EA580C" fontFamily="sans-serif" fontWeight="700" fontSize="8.5" letterSpacing="0.8">AEROSPACE &amp; TECH</text>
+      <svg viewBox="0 0 140 36" className="h-6 sm:h-7.5 md:h-8.5 w-auto max-w-[85%] object-contain" fill="none">
+        <g transform="translate(6, 4)">
+          <path d="M4 14C4 6.5 10 2 18 2C26 2 31 6.5 31 14C31 20 27 24 19 24H12" stroke="#FF6A00" strokeWidth="3.5" strokeLinecap="round" fill="none" />
+          <path d="M18 14H28" stroke="#FDB913" strokeWidth="3.5" strokeLinecap="round" />
+        </g>
+        <text x="48" y="26" fill="#0A1E3F" fontFamily="sans-serif" fontWeight="900" fontSize="23" letterSpacing="1.2">GMR</text>
       </svg>
     ),
   },
@@ -316,12 +315,12 @@ const clientPlaceholders = [
     sector: "Cyber Data Centers & SEZ",
     tag: "Cyber SEZ",
     logo: (
-      <svg viewBox="0 0 200 48" className="h-12 sm:h-14 md:h-[3.65rem] w-auto max-w-[92%] object-contain" fill="none">
-        <rect x="4" y="4" width="40" height="40" rx="8" fill="#1C0F0A" />
-        <path d="M24 9C26 15 31 17 33 23C35 28 32 33 24 34C16 33 13 28 15 23C17 17 22 15 24 9Z" fill="#FF501E" />
-        <path d="M24 16C25 19 28 21 29 25C30 28 28 30 24 31C20 30 18 28 19 25C20 21 23 19 24 16Z" fill="#FDB913" />
-        <text x="52" y="23" fill="#1C0F0A" fontFamily="sans-serif" fontWeight="800" fontSize="15" letterSpacing="0.8">PHOENIX</text>
-        <text x="52" y="36" fill="#64748B" fontFamily="sans-serif" fontWeight="700" fontSize="8.5" letterSpacing="1">CYBER TOWERS</text>
+      <svg viewBox="0 0 160 36" className="h-6 sm:h-7.5 md:h-8.5 w-auto max-w-[85%] object-contain" fill="none">
+        <g transform="translate(8, 2)">
+          <path d="M14 2C16 8 21 10 23 16C25 21 22 26 14 27C6 26 3 21 5 16C7 10 12 8 14 2Z" fill="#FF501E" />
+          <path d="M14 9C15 12 18 14 19 18C20 21 18 23 14 24C10 23 8 21 9 18C10 14 13 12 14 9Z" fill="#FDB913" />
+        </g>
+        <text x="42" y="26" fill="#1C0F0A" fontFamily="sans-serif" fontWeight="900" fontSize="20" letterSpacing="1">PHOENIX</text>
       </svg>
     ),
   },
@@ -330,13 +329,13 @@ const clientPlaceholders = [
     sector: "Smart Living & High-Rise",
     tag: "Smart Living",
     logo: (
-      <svg viewBox="0 0 200 48" className="h-12 sm:h-14 md:h-[3.65rem] w-auto max-w-[92%] object-contain" fill="none">
-        <rect x="4" y="4" width="40" height="40" rx="8" fill="#14241C" />
-        <path d="M16 32V20L24 13L32 20V32H27V24H21V32H16Z" fill="#2EAA68" />
-        <path d="M24 17L29 21V32H27V23H21V32H19V21L24 17Z" fill="#75D99F" />
-        <circle cx="24" cy="9.5" r="1.5" fill="#FDB913" />
-        <text x="52" y="23" fill="#14241C" fontFamily="sans-serif" fontWeight="800" fontSize="14.5" letterSpacing="0.6">MY HOME</text>
-        <text x="52" y="36" fill="#16A34A" fontFamily="sans-serif" fontWeight="700" fontSize="8.5" letterSpacing="1">GROUP HABITATS</text>
+      <svg viewBox="0 0 165 36" className="h-6 sm:h-7.5 md:h-8.5 w-auto max-w-[85%] object-contain" fill="none">
+        <g transform="translate(6, 2)">
+          <path d="M4 26V14L14 6L24 14V26H18V18H10V26H4Z" fill="#2EAA68" />
+          <path d="M14 10L20 15V26H18V17H10V26H8V15L14 10Z" fill="#75D99F" />
+          <circle cx="14" cy="2.5" r="2" fill="#FDB913" />
+        </g>
+        <text x="38" y="25" fill="#14241C" fontFamily="sans-serif" fontWeight="900" fontSize="19" letterSpacing="0.8">MY HOME</text>
       </svg>
     ),
   },
@@ -345,12 +344,17 @@ const clientPlaceholders = [
     sector: "Healthcare & Critical Life Safety Infra",
     tag: "Healthcare",
     logo: (
-      <img
-        src={apolloHospitalsImage}
-        alt="Apollo Hospitals Enterprise Healthcare"
-        className="h-full w-full object-cover object-top rounded-xl sm:rounded-2xl"
-        loading="lazy"
-      />
+      <svg viewBox="0 0 175 38" className="h-6 sm:h-7.5 md:h-8.5 w-auto max-w-[90%] object-contain" fill="none">
+        <g transform="translate(4, 2)">
+          <path d="M16 2C17 5 20 6 20 8.5C20 10.5 18.2 12 16 12C13.8 12 12 10.5 12 8.5C12 6.5 15 5 16 2Z" fill="#F9A01B" />
+          <rect x="0" y="6" width="12" height="12" rx="2" fill="#007DA5" />
+          <path d="M3 12H9M6 9V15" stroke="#FFFFFF" strokeWidth="1.8" strokeLinecap="round" />
+          <circle cx="16" cy="16" r="2" fill="#007DA5" />
+          <path d="M12 30V22C12 19.5 13.8 17.5 16 17.5C18.2 17.5 20 19.5 20 22V30" stroke="#007DA5" strokeWidth="2.5" strokeLinecap="round" />
+        </g>
+        <text x="36" y="22" fill="#007DA5" fontFamily="sans-serif" fontWeight="900" fontSize="19" letterSpacing="-0.2">Apollo</text>
+        <text x="96" y="22" fill="#F9A01B" fontFamily="sans-serif" fontWeight="800" fontSize="11" letterSpacing="0.8">HOSPITALS</text>
+      </svg>
     ),
   },
   {
@@ -358,12 +362,12 @@ const clientPlaceholders = [
     sector: "Industrial Mega EPC & Transit",
     tag: "Mega EPC",
     logo: (
-      <svg viewBox="0 0 200 48" className="h-12 sm:h-14 md:h-[3.65rem] w-auto max-w-[92%] object-contain" fill="none">
-        <rect x="4" y="4" width="40" height="40" rx="8" fill="#002D62" />
-        <path d="M14 15H34M24 15V29" stroke="#FFFFFF" strokeWidth="3" strokeLinecap="round" />
-        <path d="M16 21H32" stroke="#38B6FF" strokeWidth="1.5" strokeLinecap="round" strokeDasharray="2 2" />
-        <text x="52" y="23" fill="#002D62" fontFamily="sans-serif" fontWeight="900" fontSize="14" letterSpacing="0.8">TATA PROJECTS</text>
-        <text x="52" y="36" fill="#0284C7" fontFamily="sans-serif" fontWeight="700" fontSize="8.5" letterSpacing="0.8">INFRASTRUCTURE</text>
+      <svg viewBox="0 0 170 36" className="h-6 sm:h-7.5 md:h-8.5 w-auto max-w-[85%] object-contain" fill="none">
+        <g transform="translate(4, 3)">
+          <circle cx="15" cy="15" r="14" fill="#002D62" />
+          <path d="M8 10H22M15 10V22" stroke="#FFFFFF" strokeWidth="2.8" strokeLinecap="round" />
+        </g>
+        <text x="42" y="25" fill="#002D62" fontFamily="sans-serif" fontWeight="900" fontSize="17" letterSpacing="0.6">TATA PROJECTS</text>
       </svg>
     ),
   },
@@ -372,14 +376,14 @@ const clientPlaceholders = [
     sector: "Grade-A IT & Tech SEZ",
     tag: "Tech Parks",
     logo: (
-      <svg viewBox="0 0 200 48" className="h-12 sm:h-14 md:h-[3.65rem] w-auto max-w-[92%] object-contain" fill="none">
-        <rect x="4" y="4" width="40" height="40" rx="8" fill="#0C2538" />
-        <circle cx="24" cy="14" r="3.5" fill="#00D2D3" />
-        <circle cx="16" cy="27" r="3" fill="#FF9F43" />
-        <circle cx="32" cy="27" r="3" fill="#54A0FF" />
-        <path d="M24 14L16 27M24 14L32 27M16 27H32" stroke="#FFFFFF" strokeWidth="1.5" strokeOpacity="0.75" />
-        <text x="52" y="23" fill="#0C2538" fontFamily="sans-serif" fontWeight="800" fontSize="14" letterSpacing="0.8">MINDSPACE</text>
-        <text x="52" y="36" fill="#0891B2" fontFamily="sans-serif" fontWeight="700" fontSize="8.5" letterSpacing="0.8">BUSINESS PARKS</text>
+      <svg viewBox="0 0 160 36" className="h-6 sm:h-7.5 md:h-8.5 w-auto max-w-[85%] object-contain" fill="none">
+        <g transform="translate(6, 4)">
+          <circle cx="14" cy="4" r="3.5" fill="#00D2D3" />
+          <circle cx="4" cy="22" r="3.5" fill="#FF9F43" />
+          <circle cx="24" cy="22" r="3.5" fill="#54A0FF" />
+          <path d="M14 4L4 22M14 4L24 22M4 22H24" stroke="#0C2538" strokeWidth="2" strokeOpacity="0.7" />
+        </g>
+        <text x="44" y="26" fill="#0C2538" fontFamily="sans-serif" fontWeight="900" fontSize="18" letterSpacing="0.8">MINDSPACE</text>
       </svg>
     ),
   },
@@ -388,15 +392,14 @@ const clientPlaceholders = [
     sector: "Hyperscale Cloud Infrastructure",
     tag: "Hyperscale",
     logo: (
-      <svg viewBox="0 0 200 48" className="h-12 sm:h-14 md:h-[3.65rem] w-auto max-w-[92%] object-contain" fill="none">
-        <rect x="4" y="4" width="40" height="40" rx="8" fill="#18132B" />
-        <rect x="14" y="12" width="8" height="8" rx="1.5" fill="#A855F7" />
-        <rect x="26" y="12" width="8" height="8" rx="1.5" fill="#6366F1" />
-        <rect x="14" y="24" width="8" height="8" rx="1.5" fill="#EC4899" />
-        <rect x="26" y="24" width="8" height="8" rx="1.5" fill="#3B82F6" />
-        <path d="M22 16H26M18 20V24M30 20V24M22 28H26" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round" />
-        <text x="52" y="23" fill="#18132B" fontFamily="sans-serif" fontWeight="800" fontSize="14" letterSpacing="0.5">adani <tspan fill="#7C3AED">conneX</tspan></text>
-        <text x="52" y="36" fill="#64748B" fontFamily="sans-serif" fontWeight="700" fontSize="8.5" letterSpacing="0.8">DATA CENTERS</text>
+      <svg viewBox="0 0 160 36" className="h-6 sm:h-7.5 md:h-8.5 w-auto max-w-[85%] object-contain" fill="none">
+        <g transform="translate(6, 4)">
+          <rect x="0" y="0" width="9" height="9" rx="2" fill="#7C3AED" />
+          <rect x="13" y="0" width="9" height="9" rx="2" fill="#2563EB" />
+          <rect x="0" y="13" width="9" height="9" rx="2" fill="#EC4899" />
+          <rect x="13" y="13" width="9" height="9" rx="2" fill="#06B6D4" />
+        </g>
+        <text x="38" y="25" fill="#18132B" fontFamily="sans-serif" fontWeight="900" fontSize="19" letterSpacing="0.2">adani <tspan fill="#7C3AED">conneX</tspan></text>
       </svg>
     ),
   },
@@ -405,12 +408,12 @@ const clientPlaceholders = [
     sector: "Enterprise Facilities & Digital Smart Hubs",
     tag: "Global Hub",
     logo: (
-      <svg viewBox="0 0 200 48" className="h-12 sm:h-14 md:h-[3.65rem] w-auto max-w-[92%] object-contain" fill="none">
-        <rect x="4" y="4" width="40" height="40" rx="8" fill="#071B36" />
-        <path d="M15 22C15 17 20 15 24 22C28 29 33 27 33 22C33 17 28 15 24 22C20 29 15 27 15 22Z" stroke="#007CC3" strokeWidth="2.5" strokeLinecap="round" />
-        <circle cx="24" cy="22" r="2.2" fill="#FDB913" />
-        <text x="52" y="25" fill="#007CC3" fontFamily="sans-serif" fontWeight="900" fontSize="17" letterSpacing="0.5">Infosys</text>
-        <text x="52" y="37" fill="#F59E0B" fontFamily="sans-serif" fontWeight="700" fontSize="8" letterSpacing="0.8">NAVIGATE YOUR NEXT</text>
+      <svg viewBox="0 0 145 36" className="h-6 sm:h-7.5 md:h-8.5 w-auto max-w-[85%] object-contain" fill="none">
+        <g transform="translate(6, 5)">
+          <path d="M3 13C3 7 8 5 13 13C18 21 23 19 23 13C23 7 18 5 13 13C8 21 3 19 3 13Z" stroke="#007CC3" strokeWidth="3" strokeLinecap="round" fill="none" />
+          <circle cx="13" cy="13" r="2.5" fill="#FDB913" />
+        </g>
+        <text x="40" y="26" fill="#007CC3" fontFamily="sans-serif" fontWeight="900" fontSize="23" letterSpacing="0.3">Infosys</text>
       </svg>
     ),
   },
@@ -1368,10 +1371,9 @@ export function HanviSite() {
             {[...clientPlaceholders.slice(0, 5), ...clientPlaceholders.slice(0, 5), ...clientPlaceholders.slice(0, 5), ...clientPlaceholders.slice(0, 5)].map((client, index) => (
               <div
                 key={`r1-${client.name}-${index}`}
-                className="group relative flex w-[225px] sm:w-[255px] md:w-[275px] h-[100px] sm:h-[115px] shrink-0 items-center justify-center overflow-hidden rounded-2xl sm:rounded-3xl border border-brand-orange/20 bg-white px-4 py-2 shadow-sm backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_14px_30px_-6px_rgba(255,106,0,0.22)] hover:scale-105 transition-all duration-300"
+                className="group relative flex w-[210px] sm:w-[240px] md:w-[260px] h-16 sm:h-[4.5rem] lg:h-[4.75rem] shrink-0 items-center justify-center rounded-full border-2 border-[#16446C]/35 bg-white px-5 sm:px-6 py-2 shadow-xs transition-all duration-300 hover:border-brand-orange hover:shadow-[0_8px_24px_-4px_rgba(255,106,0,0.22)] hover:scale-[1.03]"
                 title={client.name}
               >
-                <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-brand-orange via-brand-gold to-brand-rose opacity-80 group-hover:opacity-100 transition-opacity" />
                 <div className="flex h-full w-full items-center justify-center">
                   {client.logo}
                 </div>
@@ -1384,10 +1386,9 @@ export function HanviSite() {
             {[...clientPlaceholders.slice(5), ...clientPlaceholders.slice(5), ...clientPlaceholders.slice(5), ...clientPlaceholders.slice(5), ...clientPlaceholders.slice(5)].map((client, index) => (
               <div
                 key={`r2-${client.name}-${index}`}
-                className="group relative flex w-[225px] sm:w-[255px] md:w-[275px] h-[100px] sm:h-[115px] shrink-0 items-center justify-center overflow-hidden rounded-2xl sm:rounded-3xl border border-brand-orange/20 bg-white px-4 py-2 shadow-sm backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_14px_30px_-6px_rgba(255,106,0,0.22)] hover:scale-105 transition-all duration-300"
+                className="group relative flex w-[210px] sm:w-[240px] md:w-[260px] h-16 sm:h-[4.5rem] lg:h-[4.75rem] shrink-0 items-center justify-center rounded-full border-2 border-[#16446C]/35 bg-white px-5 sm:px-6 py-2 shadow-xs transition-all duration-300 hover:border-brand-orange hover:shadow-[0_8px_24px_-4px_rgba(255,106,0,0.22)] hover:scale-[1.03]"
                 title={client.name}
               >
-                <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-brand-orange via-brand-gold to-brand-rose opacity-80 group-hover:opacity-100 transition-opacity" />
                 <div className="flex h-full w-full items-center justify-center">
                   {client.logo}
                 </div>
