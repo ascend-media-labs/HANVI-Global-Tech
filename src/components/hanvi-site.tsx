@@ -65,6 +65,7 @@ import ramagundamPoliceImage from "@/assets/ramagundam-police.jpg";
 import sircillaPoliceImage from "@/assets/sircilla-police.jpg";
 import telanganaPoliceLogo from "@/assets/telangana-police-logo.png";
 import cwcImage from "@/assets/central-warehousing-corporation.jpg";
+import sriSathyaSaiImage from "@/assets/sri-sathya-sai-sanjeevani.jpg";
 
 const navigation = [
   { label: "Home", id: "home" },
@@ -406,17 +407,17 @@ const clientPlaceholders = [
     ),
   },
   {
-    name: "Infosys SEZ Campuses",
-    sector: "Enterprise Facilities & Digital Smart Hubs",
-    tag: "Global Hub",
+    name: "Sri Sathya Sai Sanjeevani Hospital",
+    sector: "Pediatric Cardiac Care & Super-Specialty Medical Infra",
+    tag: "Super-Specialty Hospital",
+    isFullImage: true,
     logo: (
-      <svg viewBox="0 0 100 80" className="h-[72%] w-auto max-w-[85%] object-contain" fill="none">
-        <g transform="translate(34, 6)">
-          <path d="M4 16C4 9 10 7 16 16C22 25 28 23 28 16C28 9 22 7 16 16C10 25 4 23 4 16Z" stroke="#007CC3" strokeWidth="3.5" strokeLinecap="round" fill="none" />
-          <circle cx="16" cy="16" r="3" fill="#FDB913" />
-        </g>
-        <text x="50" y="62" textAnchor="middle" fill="#007CC3" fontFamily="sans-serif" fontWeight="900" fontSize="18" letterSpacing="0.5">Infosys</text>
-      </svg>
+      <img
+        src={sriSathyaSaiImage}
+        alt="Sri Sathya Sai Sanjeevani Hospital"
+        className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+        loading="lazy"
+      />
     ),
   },
 ];
