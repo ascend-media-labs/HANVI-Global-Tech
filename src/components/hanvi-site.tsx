@@ -61,6 +61,7 @@ import logoFull from "@/assets/hanvi-logo.png";
 import logoIcon from "@/assets/hanvi-icon.png";
 import apolloHospitalsImage from "@/assets/apollo-hospitals.jpg";
 import siddipetPoliceImage from "@/assets/siddipet-police.jpg";
+import ramagundamPoliceImage from "@/assets/ramagundam-police.jpg";
 
 const navigation = [
   { label: "Home", id: "home" },
@@ -312,18 +313,17 @@ const clientPlaceholders = [
     ),
   },
   {
-    name: "Phoenix Cyber Towers",
-    sector: "Cyber Data Centers & SEZ",
-    tag: "Cyber SEZ",
+    name: "Ramagundam Police Commissionerate",
+    sector: "Public Safety & Integrated Command Control",
+    tag: "Law Enforcement",
+    isFullImage: true,
     logo: (
-      <svg viewBox="0 0 100 80" className="h-[72%] w-auto max-w-[85%] object-contain" fill="none">
-        <g transform="translate(34, 4)">
-          <path d="M16 2C19 9 25 12 28 19C30 25 26 31 16 32C6 31 2 25 4 19C7 12 13 9 16 2Z" fill="#FF501E" />
-          <path d="M16 10C17 14 21 16 22 21C23 25 21 27 16 28C11 27 9 25 10 21C11 16 15 14 16 10Z" fill="#FDB913" />
-        </g>
-        <text x="50" y="58" textAnchor="middle" fill="#1C0F0A" fontFamily="sans-serif" fontWeight="900" fontSize="15" letterSpacing="1.2">PHOENIX</text>
-        <text x="50" y="71" textAnchor="middle" fill="#64748B" fontFamily="sans-serif" fontWeight="700" fontSize="9" letterSpacing="1.5">GROUP</text>
-      </svg>
+      <img
+        src={ramagundamPoliceImage}
+        alt="Ramagundam Police Commissionerate"
+        className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+        loading="lazy"
+      />
     ),
   },
   {
