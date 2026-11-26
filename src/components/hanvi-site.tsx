@@ -64,6 +64,7 @@ import siddipetPoliceImage from "@/assets/siddipet-police.jpg";
 import ramagundamPoliceImage from "@/assets/ramagundam-police.jpg";
 import sircillaPoliceImage from "@/assets/sircilla-police.jpg";
 import telanganaPoliceLogo from "@/assets/telangana-police-logo.png";
+import cwcImage from "@/assets/central-warehousing-corporation.jpg";
 
 const navigation = [
   { label: "Home", id: "home" },
@@ -357,15 +358,17 @@ const clientPlaceholders = [
     ),
   },
   {
-    name: "Tata Projects Limited",
-    sector: "Industrial Mega EPC & Transit",
-    tag: "Mega EPC",
+    name: "Central Warehousing Corporation",
+    sector: "Logistics & Critical Supply Chain Warehousing Infra",
+    tag: "Logistics Infra",
+    isFullImage: true,
     logo: (
-      <svg viewBox="0 0 100 80" className="h-[72%] w-auto max-w-[85%] object-contain" fill="none">
-        <circle cx="50" cy="28" r="20" fill="#002D62" />
-        <path d="M40 20H60M50 20V36" stroke="#FFFFFF" strokeWidth="3.2" strokeLinecap="round" />
-        <text x="50" y="66" textAnchor="middle" fill="#002D62" fontFamily="sans-serif" fontWeight="900" fontSize="13" letterSpacing="0.8">TATA PROJECTS</text>
-      </svg>
+      <img
+        src={cwcImage}
+        alt="Central Warehousing Corporation"
+        className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+        loading="lazy"
+      />
     ),
   },
   {
