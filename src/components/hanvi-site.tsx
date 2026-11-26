@@ -1349,10 +1349,18 @@ export function HanviSite() {
                     {client.logo}
                   </div>
                 </div>
-                <div className="mt-2.5 sm:mt-3 w-full text-center px-1">
-                  <p className="text-xs sm:text-sm md:text-[14px] font-bold text-foreground leading-snug line-clamp-2 transition-colors duration-300 group-hover:text-brand-orange">
-                    {client.name}
-                  </p>
+                <div className="mt-2.5 sm:mt-3 w-full flex flex-col items-center">
+                  <div className="w-full flex flex-col items-center justify-center py-2 px-3.5 bg-white border border-[#16446C]/25 shadow-xs transition-all duration-300 group-hover:border-brand-orange group-hover:shadow-[0_8px_22px_-4px_rgba(255,106,0,0.22)]">
+                    <div className="flex items-center gap-1.5 mb-0.5">
+                      <span className="size-1 rounded-full bg-brand-orange animate-pulse" aria-hidden="true" />
+                      <span className="text-[10px] sm:text-[10.5px] font-bold uppercase tracking-widest text-brand-orange font-mono">
+                        {client.tag}
+                      </span>
+                    </div>
+                    <h4 className="font-display font-bold text-xs sm:text-sm md:text-[14.5px] text-[#0A1E3F] tracking-tight text-center truncate w-full transition-colors duration-300 group-hover:text-brand-orange">
+                      {client.name}
+                    </h4>
+                  </div>
                 </div>
               </div>
             ))}
