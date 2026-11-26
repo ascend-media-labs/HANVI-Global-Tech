@@ -373,40 +373,6 @@ const clientPlaceholders = [
     ),
   },
   {
-    name: "Mindspace Business Parks",
-    sector: "Grade-A IT & Tech SEZ",
-    tag: "Tech Parks",
-    logo: (
-      <svg viewBox="0 0 100 80" className="h-[72%] w-auto max-w-[85%] object-contain" fill="none">
-        <g transform="translate(36, 4)">
-          <circle cx="14" cy="4" r="4.5" fill="#00D2D3" />
-          <circle cx="3" cy="24" r="4.5" fill="#FF9F43" />
-          <circle cx="25" cy="24" r="4.5" fill="#54A0FF" />
-          <path d="M14 4L3 24M14 4L25 24M3 24H25" stroke="#0C2538" strokeWidth="2.2" strokeOpacity="0.75" />
-        </g>
-        <text x="50" y="56" textAnchor="middle" fill="#0C2538" fontFamily="sans-serif" fontWeight="900" fontSize="14" letterSpacing="0.8">MINDSPACE</text>
-        <text x="50" y="69" textAnchor="middle" fill="#0891B2" fontFamily="sans-serif" fontWeight="700" fontSize="8.5" letterSpacing="1">TECH PARKS</text>
-      </svg>
-    ),
-  },
-  {
-    name: "Adani ConneX Data Centers",
-    sector: "Hyperscale Cloud Infrastructure",
-    tag: "Hyperscale",
-    logo: (
-      <svg viewBox="0 0 100 80" className="h-[72%] w-auto max-w-[85%] object-contain" fill="none">
-        <g transform="translate(37, 6)">
-          <rect x="0" y="0" width="11" height="11" rx="2.5" fill="#7C3AED" />
-          <rect x="15" y="0" width="11" height="11" rx="2.5" fill="#2563EB" />
-          <rect x="0" y="15" width="11" height="11" rx="2.5" fill="#EC4899" />
-          <rect x="15" y="15" width="11" height="11" rx="2.5" fill="#06B6D4" />
-        </g>
-        <text x="50" y="56" textAnchor="middle" fill="#18132B" fontFamily="sans-serif" fontWeight="900" fontSize="15" letterSpacing="0.2">adani</text>
-        <text x="50" y="70" textAnchor="middle" fill="#7C3AED" fontFamily="sans-serif" fontWeight="800" fontSize="11" letterSpacing="0.8">conneX</text>
-      </svg>
-    ),
-  },
-  {
     name: "Sri Sathya Sai Sanjeevani Hospital",
     sector: "Pediatric Cardiac Care & Super-Specialty Medical Infra",
     tag: "Super-Specialty Hospital",
@@ -1371,7 +1337,7 @@ export function HanviSite() {
 
           {/* Single Row: Infinite Scrolling Track */}
           <div className="animate-marquee-left flex gap-5 sm:gap-6 py-2.5">
-            {[...clientPlaceholders, ...clientPlaceholders].map((client, index) => (
+            {[...clientPlaceholders, ...clientPlaceholders, ...clientPlaceholders, ...clientPlaceholders].map((client, index) => (
               <div
                 key={`single-${client.name}-${index}`}
                 className={`group relative flex w-[215px] sm:w-[245px] md:w-[275px] lg:w-[295px] h-[160px] sm:h-[180px] md:h-[200px] lg:h-[215px] shrink-0 items-center justify-center overflow-hidden rounded-[38px] sm:rounded-[44px] md:rounded-[48px] border-2 border-[#16446C]/35 bg-white ${
