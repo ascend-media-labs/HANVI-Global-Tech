@@ -1330,19 +1330,19 @@ export function HanviSite() {
         {/* Infinite Horizontal Scroll Animated Track - Single Row */}
         <div className="relative mt-6 sm:mt-8 overflow-hidden pause-hover select-none">
           {/* Left Edge Subtle Fade Mask */}
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-28 bg-gradient-to-r from-brand-cream-alt via-brand-cream-alt/80 to-transparent z-10" />
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-20 sm:w-36 bg-gradient-to-r from-brand-cream-alt via-brand-cream-alt/80 to-transparent z-10" />
 
           {/* Right Edge Subtle Fade Mask */}
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-28 bg-gradient-to-l from-brand-cream-alt via-brand-cream-alt/80 to-transparent z-10" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-20 sm:w-36 bg-gradient-to-l from-brand-cream-alt via-brand-cream-alt/80 to-transparent z-10" />
 
           {/* Single Row: Infinite Scrolling Track */}
-          <div className="animate-marquee-left flex gap-5 sm:gap-6 py-2.5">
+          <div className="animate-marquee-left flex gap-6 sm:gap-7 md:gap-8 py-3 sm:py-4">
             {[...clientPlaceholders, ...clientPlaceholders, ...clientPlaceholders, ...clientPlaceholders].map((client, index) => (
               <div
                 key={`single-${client.name}-${index}`}
-                className={`group relative flex w-[215px] sm:w-[245px] md:w-[275px] lg:w-[295px] h-[160px] sm:h-[180px] md:h-[200px] lg:h-[215px] shrink-0 items-center justify-center overflow-hidden rounded-[38px] sm:rounded-[44px] md:rounded-[48px] border-2 border-[#16446C]/35 bg-white ${
-                  'isFullImage' in client && client.isFullImage ? 'p-0' : 'px-5 py-4'
-                } shadow-xs transition-all duration-300 hover:border-brand-orange hover:shadow-[0_12px_32px_-4px_rgba(255,106,0,0.24)] hover:scale-[1.04]`}
+                className={`group relative flex w-[270px] sm:w-[310px] md:w-[350px] lg:w-[390px] h-[195px] sm:h-[220px] md:h-[250px] lg:h-[275px] shrink-0 items-center justify-center overflow-hidden rounded-[42px] sm:rounded-[48px] md:rounded-[54px] lg:rounded-[60px] border-2 border-[#16446C]/35 bg-white ${
+                  'isFullImage' in client && client.isFullImage ? 'p-0' : 'px-6 py-5'
+                } shadow-xs transition-all duration-300 hover:border-brand-orange hover:shadow-[0_16px_36px_-4px_rgba(255,106,0,0.26)] hover:scale-[1.04]`}
                 title={client.name}
               >
                 <div className="flex h-full w-full items-center justify-center">
