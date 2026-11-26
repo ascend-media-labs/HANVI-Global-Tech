@@ -340,6 +340,28 @@ const clientPlaceholders = [
     ),
   },
   {
+    name: "Apollo Hospitals Enterprise",
+    sector: "Healthcare & Critical Life Safety Infra",
+    tag: "Healthcare",
+    logo: (
+      <svg viewBox="0 0 200 48" className="h-12 sm:h-14 md:h-[3.65rem] w-auto max-w-[92%] object-contain" fill="none">
+        <rect x="4" y="4" width="40" height="40" rx="8" fill="#005E82" />
+        {/* Golden yellow flame torch */}
+        <path d="M24 7C25 10 28 11 28 13.5C28 15.5 26.2 17 24 17C21.8 17 20 15.5 20 13.5C20 11.5 23 10 24 7Z" fill="#F9A01B" />
+        {/* White medical cross */}
+        <path d="M11 14H15M13 12V16" stroke="#FFFFFF" strokeWidth="1.8" strokeLinecap="round" />
+        {/* White abstract reaching figure */}
+        <circle cx="24" cy="21" r="2.2" fill="#FFFFFF" />
+        <path d="M20 37V29C20 26.5 21.8 24.5 24 24.5C26.2 24.5 28 26.5 28 29V37" stroke="#FFFFFF" strokeWidth="2.5" strokeLinecap="round" />
+        <path d="M16 28C18 26 21 24.5 24 24.5C27 24.5 30 26 32 28" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" />
+        {/* Typography */}
+        <text x="52" y="23" fill="#005E82" fontFamily="sans-serif" fontWeight="900" fontSize="16" letterSpacing="0.2">Apollo</text>
+        <text x="106" y="23" fill="#005E82" fontFamily="sans-serif" fontWeight="700" fontSize="9.5" letterSpacing="1.2">HOSPITALS</text>
+        <text x="52" y="36" fill="#F9A01B" fontFamily="sans-serif" fontWeight="800" fontSize="8" letterSpacing="1.2">TOUCHING LIVES</text>
+      </svg>
+    ),
+  },
+  {
     name: "Tata Projects Limited",
     sector: "Industrial Mega EPC & Transit",
     tag: "Mega EPC",
@@ -1351,7 +1373,7 @@ export function HanviSite() {
 
           {/* Row 1: Scrolling Left */}
           <div className="animate-marquee-left flex gap-4 sm:gap-5 pb-3.5">
-            {[...clientPlaceholders.slice(0, 4), ...clientPlaceholders.slice(0, 4), ...clientPlaceholders.slice(0, 4), ...clientPlaceholders.slice(0, 4)].map((client, index) => (
+            {[...clientPlaceholders.slice(0, 5), ...clientPlaceholders.slice(0, 5), ...clientPlaceholders.slice(0, 5), ...clientPlaceholders.slice(0, 5)].map((client, index) => (
               <div
                 key={`r1-${client.name}-${index}`}
                 className="group relative flex w-[225px] sm:w-[255px] md:w-[275px] h-[100px] sm:h-[115px] shrink-0 items-center justify-center overflow-hidden rounded-2xl sm:rounded-3xl border border-brand-orange/20 bg-white px-4 py-2 shadow-sm backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_14px_30px_-6px_rgba(255,106,0,0.22)] hover:scale-105 transition-all duration-300"
@@ -1367,7 +1389,7 @@ export function HanviSite() {
 
           {/* Row 2: Scrolling Right */}
           <div className="animate-marquee-right flex gap-4 sm:gap-5 pt-1">
-            {[...clientPlaceholders.slice(4, 8), ...clientPlaceholders.slice(4, 8), ...clientPlaceholders.slice(4, 8), ...clientPlaceholders.slice(4, 8)].map((client, index) => (
+            {[...clientPlaceholders.slice(5), ...clientPlaceholders.slice(5), ...clientPlaceholders.slice(5), ...clientPlaceholders.slice(5), ...clientPlaceholders.slice(5)].map((client, index) => (
               <div
                 key={`r2-${client.name}-${index}`}
                 className="group relative flex w-[225px] sm:w-[255px] md:w-[275px] h-[100px] sm:h-[115px] shrink-0 items-center justify-center overflow-hidden rounded-2xl sm:rounded-3xl border border-brand-orange/20 bg-white px-4 py-2 shadow-sm backdrop-blur-md glow-card-hover hover:border-brand-orange/60 hover:shadow-[0_14px_30px_-6px_rgba(255,106,0,0.22)] hover:scale-105 transition-all duration-300"
