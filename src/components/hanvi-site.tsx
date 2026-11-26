@@ -60,6 +60,7 @@ import logoHorizontal from "@/assets/hanvi-logo-horizontal.png";
 import logoFull from "@/assets/hanvi-logo.png";
 import logoIcon from "@/assets/hanvi-icon.png";
 import apolloHospitalsImage from "@/assets/apollo-hospitals.jpg";
+import siddipetPoliceImage from "@/assets/siddipet-police.jpg";
 
 const navigation = [
   { label: "Home", id: "home" },
@@ -326,19 +327,17 @@ const clientPlaceholders = [
     ),
   },
   {
-    name: "My Home Group Habitats",
-    sector: "Smart Living & High-Rise",
-    tag: "Smart Living",
+    name: "Siddipet Police Commissionerate",
+    sector: "Public Safety & Command Control Center",
+    tag: "Law Enforcement",
+    isFullImage: true,
     logo: (
-      <svg viewBox="0 0 100 80" className="h-[72%] w-auto max-w-[85%] object-contain" fill="none">
-        <g transform="translate(34, 6)">
-          <path d="M4 32V16L16 6L28 16V32H21V22H11V32H4Z" fill="#2EAA68" />
-          <path d="M16 11L23 17V32H21V21H11V32H9V17L16 11Z" fill="#75D99F" />
-          <circle cx="16" cy="2" r="2.5" fill="#FDB913" />
-        </g>
-        <text x="50" y="58" textAnchor="middle" fill="#14241C" fontFamily="sans-serif" fontWeight="900" fontSize="15" letterSpacing="0.8">MY HOME</text>
-        <text x="50" y="71" textAnchor="middle" fill="#16A34A" fontFamily="sans-serif" fontWeight="700" fontSize="9" letterSpacing="1">GROUP</text>
-      </svg>
+      <img
+        src={siddipetPoliceImage}
+        alt="Siddipet Police Commissionerate"
+        className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+        loading="lazy"
+      />
     ),
   },
   {
