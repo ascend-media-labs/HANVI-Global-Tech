@@ -288,11 +288,11 @@ const clientPlaceholders = [
     sector: "Industrial & Metro Transit",
     tag: "Metro & Infra",
     logo: (
-      <svg viewBox="0 0 170 36" className="h-6 sm:h-7.5 md:h-8.5 w-auto max-w-[85%] object-contain" fill="none">
-        <circle cx="18" cy="18" r="16" fill="#0C2340" />
-        <text x="18" y="23" textAnchor="middle" fill="#FDB913" fontFamily="sans-serif" fontWeight="900" fontSize="12" letterSpacing="-0.5">L&amp;T</text>
-        <path d="M9 27h18" stroke="#FDB913" strokeWidth="1.5" strokeLinecap="round" />
-        <text x="42" y="25" fill="#0C2340" fontFamily="sans-serif" fontWeight="900" fontSize="17" letterSpacing="0.3">L&amp;T <tspan fill="#334155" fontWeight="600" fontSize="14">Construction</tspan></text>
+      <svg viewBox="0 0 100 80" className="h-[72%] w-auto max-w-[85%] object-contain" fill="none">
+        <circle cx="50" cy="28" r="22" fill="#0C2340" />
+        <text x="50" y="36" textAnchor="middle" fill="#FDB913" fontFamily="sans-serif" fontWeight="900" fontSize="16" letterSpacing="-0.5">L&amp;T</text>
+        <path d="M38 41h24" stroke="#FDB913" strokeWidth="2.2" strokeLinecap="round" />
+        <text x="50" y="66" textAnchor="middle" fill="#0C2340" fontFamily="sans-serif" fontWeight="900" fontSize="11" letterSpacing="0.2">L&amp;T Construction</text>
       </svg>
     ),
   },
@@ -301,12 +301,12 @@ const clientPlaceholders = [
     sector: "Mission-Critical Facilities",
     tag: "Aviation Hub",
     logo: (
-      <svg viewBox="0 0 140 36" className="h-6 sm:h-7.5 md:h-8.5 w-auto max-w-[85%] object-contain" fill="none">
-        <g transform="translate(6, 4)">
-          <path d="M4 14C4 6.5 10 2 18 2C26 2 31 6.5 31 14C31 20 27 24 19 24H12" stroke="#FF6A00" strokeWidth="3.5" strokeLinecap="round" fill="none" />
-          <path d="M18 14H28" stroke="#FDB913" strokeWidth="3.5" strokeLinecap="round" />
+      <svg viewBox="0 0 100 80" className="h-[72%] w-auto max-w-[85%] object-contain" fill="none">
+        <g transform="translate(30, 8)">
+          <path d="M6 22C6 11 16 4 28 4C40 4 48 11 48 22C48 31 42 37 30 37H18" stroke="#FF6A00" strokeWidth="4.5" strokeLinecap="round" fill="none" />
+          <path d="M28 22H44" stroke="#FDB913" strokeWidth="4.5" strokeLinecap="round" />
         </g>
-        <text x="48" y="26" fill="#0A1E3F" fontFamily="sans-serif" fontWeight="900" fontSize="23" letterSpacing="1.2">GMR</text>
+        <text x="50" y="70" textAnchor="middle" fill="#0A1E3F" fontFamily="sans-serif" fontWeight="900" fontSize="21" letterSpacing="1.5">GMR</text>
       </svg>
     ),
   },
@@ -315,12 +315,13 @@ const clientPlaceholders = [
     sector: "Cyber Data Centers & SEZ",
     tag: "Cyber SEZ",
     logo: (
-      <svg viewBox="0 0 160 36" className="h-6 sm:h-7.5 md:h-8.5 w-auto max-w-[85%] object-contain" fill="none">
-        <g transform="translate(8, 2)">
-          <path d="M14 2C16 8 21 10 23 16C25 21 22 26 14 27C6 26 3 21 5 16C7 10 12 8 14 2Z" fill="#FF501E" />
-          <path d="M14 9C15 12 18 14 19 18C20 21 18 23 14 24C10 23 8 21 9 18C10 14 13 12 14 9Z" fill="#FDB913" />
+      <svg viewBox="0 0 100 80" className="h-[72%] w-auto max-w-[85%] object-contain" fill="none">
+        <g transform="translate(34, 4)">
+          <path d="M16 2C19 9 25 12 28 19C30 25 26 31 16 32C6 31 2 25 4 19C7 12 13 9 16 2Z" fill="#FF501E" />
+          <path d="M16 10C17 14 21 16 22 21C23 25 21 27 16 28C11 27 9 25 10 21C11 16 15 14 16 10Z" fill="#FDB913" />
         </g>
-        <text x="42" y="26" fill="#1C0F0A" fontFamily="sans-serif" fontWeight="900" fontSize="20" letterSpacing="1">PHOENIX</text>
+        <text x="50" y="58" textAnchor="middle" fill="#1C0F0A" fontFamily="sans-serif" fontWeight="900" fontSize="15" letterSpacing="1.2">PHOENIX</text>
+        <text x="50" y="71" textAnchor="middle" fill="#64748B" fontFamily="sans-serif" fontWeight="700" fontSize="9" letterSpacing="1.5">GROUP</text>
       </svg>
     ),
   },
@@ -329,13 +330,14 @@ const clientPlaceholders = [
     sector: "Smart Living & High-Rise",
     tag: "Smart Living",
     logo: (
-      <svg viewBox="0 0 165 36" className="h-6 sm:h-7.5 md:h-8.5 w-auto max-w-[85%] object-contain" fill="none">
-        <g transform="translate(6, 2)">
-          <path d="M4 26V14L14 6L24 14V26H18V18H10V26H4Z" fill="#2EAA68" />
-          <path d="M14 10L20 15V26H18V17H10V26H8V15L14 10Z" fill="#75D99F" />
-          <circle cx="14" cy="2.5" r="2" fill="#FDB913" />
+      <svg viewBox="0 0 100 80" className="h-[72%] w-auto max-w-[85%] object-contain" fill="none">
+        <g transform="translate(34, 6)">
+          <path d="M4 32V16L16 6L28 16V32H21V22H11V32H4Z" fill="#2EAA68" />
+          <path d="M16 11L23 17V32H21V21H11V32H9V17L16 11Z" fill="#75D99F" />
+          <circle cx="16" cy="2" r="2.5" fill="#FDB913" />
         </g>
-        <text x="38" y="25" fill="#14241C" fontFamily="sans-serif" fontWeight="900" fontSize="19" letterSpacing="0.8">MY HOME</text>
+        <text x="50" y="58" textAnchor="middle" fill="#14241C" fontFamily="sans-serif" fontWeight="900" fontSize="15" letterSpacing="0.8">MY HOME</text>
+        <text x="50" y="71" textAnchor="middle" fill="#16A34A" fontFamily="sans-serif" fontWeight="700" fontSize="9" letterSpacing="1">GROUP</text>
       </svg>
     ),
   },
@@ -344,16 +346,16 @@ const clientPlaceholders = [
     sector: "Healthcare & Critical Life Safety Infra",
     tag: "Healthcare",
     logo: (
-      <svg viewBox="0 0 175 38" className="h-6 sm:h-7.5 md:h-8.5 w-auto max-w-[90%] object-contain" fill="none">
-        <g transform="translate(4, 2)">
-          <path d="M16 2C17 5 20 6 20 8.5C20 10.5 18.2 12 16 12C13.8 12 12 10.5 12 8.5C12 6.5 15 5 16 2Z" fill="#F9A01B" />
-          <rect x="0" y="6" width="12" height="12" rx="2" fill="#007DA5" />
-          <path d="M3 12H9M6 9V15" stroke="#FFFFFF" strokeWidth="1.8" strokeLinecap="round" />
-          <circle cx="16" cy="16" r="2" fill="#007DA5" />
-          <path d="M12 30V22C12 19.5 13.8 17.5 16 17.5C18.2 17.5 20 19.5 20 22V30" stroke="#007DA5" strokeWidth="2.5" strokeLinecap="round" />
+      <svg viewBox="0 0 100 80" className="h-[75%] w-auto max-w-[88%] object-contain" fill="none">
+        <g transform="translate(36, 4)">
+          <path d="M14 2C15 5 18 6 18 8.5C18 10.5 16.2 12 14 12C11.8 12 10 10.5 10 8.5C10 6.5 13 5 14 2Z" fill="#F9A01B" />
+          <rect x="0" y="7" width="12" height="12" rx="2" fill="#007DA5" />
+          <path d="M3 13H9M6 10V16" stroke="#FFFFFF" strokeWidth="1.8" strokeLinecap="round" />
+          <circle cx="14" cy="17" r="2.2" fill="#007DA5" />
+          <path d="M10 32V23C10 20.5 11.8 18.5 14 18.5C16.2 18.5 18 20.5 18 23V32" stroke="#007DA5" strokeWidth="2.8" strokeLinecap="round" />
         </g>
-        <text x="36" y="22" fill="#007DA5" fontFamily="sans-serif" fontWeight="900" fontSize="19" letterSpacing="-0.2">Apollo</text>
-        <text x="96" y="22" fill="#F9A01B" fontFamily="sans-serif" fontWeight="800" fontSize="11" letterSpacing="0.8">HOSPITALS</text>
+        <text x="50" y="56" textAnchor="middle" fill="#007DA5" fontFamily="sans-serif" fontWeight="900" fontSize="17" letterSpacing="-0.3">Apollo</text>
+        <text x="50" y="70" textAnchor="middle" fill="#F9A01B" fontFamily="sans-serif" fontWeight="800" fontSize="10" letterSpacing="1.2">HOSPITALS</text>
       </svg>
     ),
   },
@@ -362,12 +364,10 @@ const clientPlaceholders = [
     sector: "Industrial Mega EPC & Transit",
     tag: "Mega EPC",
     logo: (
-      <svg viewBox="0 0 170 36" className="h-6 sm:h-7.5 md:h-8.5 w-auto max-w-[85%] object-contain" fill="none">
-        <g transform="translate(4, 3)">
-          <circle cx="15" cy="15" r="14" fill="#002D62" />
-          <path d="M8 10H22M15 10V22" stroke="#FFFFFF" strokeWidth="2.8" strokeLinecap="round" />
-        </g>
-        <text x="42" y="25" fill="#002D62" fontFamily="sans-serif" fontWeight="900" fontSize="17" letterSpacing="0.6">TATA PROJECTS</text>
+      <svg viewBox="0 0 100 80" className="h-[72%] w-auto max-w-[85%] object-contain" fill="none">
+        <circle cx="50" cy="28" r="20" fill="#002D62" />
+        <path d="M40 20H60M50 20V36" stroke="#FFFFFF" strokeWidth="3.2" strokeLinecap="round" />
+        <text x="50" y="66" textAnchor="middle" fill="#002D62" fontFamily="sans-serif" fontWeight="900" fontSize="13" letterSpacing="0.8">TATA PROJECTS</text>
       </svg>
     ),
   },
@@ -376,14 +376,15 @@ const clientPlaceholders = [
     sector: "Grade-A IT & Tech SEZ",
     tag: "Tech Parks",
     logo: (
-      <svg viewBox="0 0 160 36" className="h-6 sm:h-7.5 md:h-8.5 w-auto max-w-[85%] object-contain" fill="none">
-        <g transform="translate(6, 4)">
-          <circle cx="14" cy="4" r="3.5" fill="#00D2D3" />
-          <circle cx="4" cy="22" r="3.5" fill="#FF9F43" />
-          <circle cx="24" cy="22" r="3.5" fill="#54A0FF" />
-          <path d="M14 4L4 22M14 4L24 22M4 22H24" stroke="#0C2538" strokeWidth="2" strokeOpacity="0.7" />
+      <svg viewBox="0 0 100 80" className="h-[72%] w-auto max-w-[85%] object-contain" fill="none">
+        <g transform="translate(36, 4)">
+          <circle cx="14" cy="4" r="4.5" fill="#00D2D3" />
+          <circle cx="3" cy="24" r="4.5" fill="#FF9F43" />
+          <circle cx="25" cy="24" r="4.5" fill="#54A0FF" />
+          <path d="M14 4L3 24M14 4L25 24M3 24H25" stroke="#0C2538" strokeWidth="2.2" strokeOpacity="0.75" />
         </g>
-        <text x="44" y="26" fill="#0C2538" fontFamily="sans-serif" fontWeight="900" fontSize="18" letterSpacing="0.8">MINDSPACE</text>
+        <text x="50" y="56" textAnchor="middle" fill="#0C2538" fontFamily="sans-serif" fontWeight="900" fontSize="14" letterSpacing="0.8">MINDSPACE</text>
+        <text x="50" y="69" textAnchor="middle" fill="#0891B2" fontFamily="sans-serif" fontWeight="700" fontSize="8.5" letterSpacing="1">TECH PARKS</text>
       </svg>
     ),
   },
@@ -392,14 +393,15 @@ const clientPlaceholders = [
     sector: "Hyperscale Cloud Infrastructure",
     tag: "Hyperscale",
     logo: (
-      <svg viewBox="0 0 160 36" className="h-6 sm:h-7.5 md:h-8.5 w-auto max-w-[85%] object-contain" fill="none">
-        <g transform="translate(6, 4)">
-          <rect x="0" y="0" width="9" height="9" rx="2" fill="#7C3AED" />
-          <rect x="13" y="0" width="9" height="9" rx="2" fill="#2563EB" />
-          <rect x="0" y="13" width="9" height="9" rx="2" fill="#EC4899" />
-          <rect x="13" y="13" width="9" height="9" rx="2" fill="#06B6D4" />
+      <svg viewBox="0 0 100 80" className="h-[72%] w-auto max-w-[85%] object-contain" fill="none">
+        <g transform="translate(37, 6)">
+          <rect x="0" y="0" width="11" height="11" rx="2.5" fill="#7C3AED" />
+          <rect x="15" y="0" width="11" height="11" rx="2.5" fill="#2563EB" />
+          <rect x="0" y="15" width="11" height="11" rx="2.5" fill="#EC4899" />
+          <rect x="15" y="15" width="11" height="11" rx="2.5" fill="#06B6D4" />
         </g>
-        <text x="38" y="25" fill="#18132B" fontFamily="sans-serif" fontWeight="900" fontSize="19" letterSpacing="0.2">adani <tspan fill="#7C3AED">conneX</tspan></text>
+        <text x="50" y="56" textAnchor="middle" fill="#18132B" fontFamily="sans-serif" fontWeight="900" fontSize="15" letterSpacing="0.2">adani</text>
+        <text x="50" y="70" textAnchor="middle" fill="#7C3AED" fontFamily="sans-serif" fontWeight="800" fontSize="11" letterSpacing="0.8">conneX</text>
       </svg>
     ),
   },
@@ -408,12 +410,12 @@ const clientPlaceholders = [
     sector: "Enterprise Facilities & Digital Smart Hubs",
     tag: "Global Hub",
     logo: (
-      <svg viewBox="0 0 145 36" className="h-6 sm:h-7.5 md:h-8.5 w-auto max-w-[85%] object-contain" fill="none">
-        <g transform="translate(6, 5)">
-          <path d="M3 13C3 7 8 5 13 13C18 21 23 19 23 13C23 7 18 5 13 13C8 21 3 19 3 13Z" stroke="#007CC3" strokeWidth="3" strokeLinecap="round" fill="none" />
-          <circle cx="13" cy="13" r="2.5" fill="#FDB913" />
+      <svg viewBox="0 0 100 80" className="h-[72%] w-auto max-w-[85%] object-contain" fill="none">
+        <g transform="translate(34, 6)">
+          <path d="M4 16C4 9 10 7 16 16C22 25 28 23 28 16C28 9 22 7 16 16C10 25 4 23 4 16Z" stroke="#007CC3" strokeWidth="3.5" strokeLinecap="round" fill="none" />
+          <circle cx="16" cy="16" r="3" fill="#FDB913" />
         </g>
-        <text x="40" y="26" fill="#007CC3" fontFamily="sans-serif" fontWeight="900" fontSize="23" letterSpacing="0.3">Infosys</text>
+        <text x="50" y="62" textAnchor="middle" fill="#007CC3" fontFamily="sans-serif" fontWeight="900" fontSize="18" letterSpacing="0.5">Infosys</text>
       </svg>
     ),
   },
@@ -1371,7 +1373,7 @@ export function HanviSite() {
             {[...clientPlaceholders.slice(0, 5), ...clientPlaceholders.slice(0, 5), ...clientPlaceholders.slice(0, 5), ...clientPlaceholders.slice(0, 5)].map((client, index) => (
               <div
                 key={`r1-${client.name}-${index}`}
-                className="group relative flex w-[210px] sm:w-[240px] md:w-[260px] h-16 sm:h-[4.5rem] lg:h-[4.75rem] shrink-0 items-center justify-center rounded-full border-2 border-[#16446C]/35 bg-white px-5 sm:px-6 py-2 shadow-xs transition-all duration-300 hover:border-brand-orange hover:shadow-[0_8px_24px_-4px_rgba(255,106,0,0.22)] hover:scale-[1.03]"
+                className="group relative flex w-[165px] sm:w-[190px] md:w-[210px] h-[125px] sm:h-[142px] md:h-[155px] shrink-0 items-center justify-center rounded-[32px] sm:rounded-[38px] border-2 border-[#16446C]/35 bg-white px-4 py-3 shadow-xs transition-all duration-300 hover:border-brand-orange hover:shadow-[0_10px_28px_-4px_rgba(255,106,0,0.22)] hover:scale-[1.04]"
                 title={client.name}
               >
                 <div className="flex h-full w-full items-center justify-center">
@@ -1386,7 +1388,7 @@ export function HanviSite() {
             {[...clientPlaceholders.slice(5), ...clientPlaceholders.slice(5), ...clientPlaceholders.slice(5), ...clientPlaceholders.slice(5), ...clientPlaceholders.slice(5)].map((client, index) => (
               <div
                 key={`r2-${client.name}-${index}`}
-                className="group relative flex w-[210px] sm:w-[240px] md:w-[260px] h-16 sm:h-[4.5rem] lg:h-[4.75rem] shrink-0 items-center justify-center rounded-full border-2 border-[#16446C]/35 bg-white px-5 sm:px-6 py-2 shadow-xs transition-all duration-300 hover:border-brand-orange hover:shadow-[0_8px_24px_-4px_rgba(255,106,0,0.22)] hover:scale-[1.03]"
+                className="group relative flex w-[165px] sm:w-[190px] md:w-[210px] h-[125px] sm:h-[142px] md:h-[155px] shrink-0 items-center justify-center rounded-[32px] sm:rounded-[38px] border-2 border-[#16446C]/35 bg-white px-4 py-3 shadow-xs transition-all duration-300 hover:border-brand-orange hover:shadow-[0_10px_28px_-4px_rgba(255,106,0,0.22)] hover:scale-[1.04]"
                 title={client.name}
               >
                 <div className="flex h-full w-full items-center justify-center">
