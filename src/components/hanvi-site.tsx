@@ -345,18 +345,14 @@ const clientPlaceholders = [
     name: "Apollo Hospitals Enterprise",
     sector: "Healthcare & Critical Life Safety Infra",
     tag: "Healthcare",
+    isFullImage: true,
     logo: (
-      <svg viewBox="0 0 100 80" className="h-[75%] w-auto max-w-[88%] object-contain" fill="none">
-        <g transform="translate(36, 4)">
-          <path d="M14 2C15 5 18 6 18 8.5C18 10.5 16.2 12 14 12C11.8 12 10 10.5 10 8.5C10 6.5 13 5 14 2Z" fill="#F9A01B" />
-          <rect x="0" y="7" width="12" height="12" rx="2" fill="#007DA5" />
-          <path d="M3 13H9M6 10V16" stroke="#FFFFFF" strokeWidth="1.8" strokeLinecap="round" />
-          <circle cx="14" cy="17" r="2.2" fill="#007DA5" />
-          <path d="M10 32V23C10 20.5 11.8 18.5 14 18.5C16.2 18.5 18 20.5 18 23V32" stroke="#007DA5" strokeWidth="2.8" strokeLinecap="round" />
-        </g>
-        <text x="50" y="56" textAnchor="middle" fill="#007DA5" fontFamily="sans-serif" fontWeight="900" fontSize="17" letterSpacing="-0.3">Apollo</text>
-        <text x="50" y="70" textAnchor="middle" fill="#F9A01B" fontFamily="sans-serif" fontWeight="800" fontSize="10" letterSpacing="1.2">HOSPITALS</text>
-      </svg>
+      <img
+        src={apolloHospitalsImage}
+        alt="Apollo Hospitals Enterprise Healthcare"
+        className="h-full w-full object-cover object-left transition-transform duration-500 group-hover:scale-105"
+        loading="lazy"
+      />
     ),
   },
   {
@@ -1373,7 +1369,9 @@ export function HanviSite() {
             {[...clientPlaceholders.slice(0, 5), ...clientPlaceholders.slice(0, 5), ...clientPlaceholders.slice(0, 5), ...clientPlaceholders.slice(0, 5)].map((client, index) => (
               <div
                 key={`r1-${client.name}-${index}`}
-                className="group relative flex w-[165px] sm:w-[190px] md:w-[210px] h-[125px] sm:h-[142px] md:h-[155px] shrink-0 items-center justify-center rounded-[32px] sm:rounded-[38px] border-2 border-[#16446C]/35 bg-white px-4 py-3 shadow-xs transition-all duration-300 hover:border-brand-orange hover:shadow-[0_10px_28px_-4px_rgba(255,106,0,0.22)] hover:scale-[1.04]"
+                className={`group relative flex w-[165px] sm:w-[190px] md:w-[210px] h-[125px] sm:h-[142px] md:h-[155px] shrink-0 items-center justify-center overflow-hidden rounded-[32px] sm:rounded-[38px] border-2 border-[#16446C]/35 bg-white ${
+                  'isFullImage' in client && client.isFullImage ? 'p-0' : 'px-4 py-3'
+                } shadow-xs transition-all duration-300 hover:border-brand-orange hover:shadow-[0_10px_28px_-4px_rgba(255,106,0,0.22)] hover:scale-[1.04]`}
                 title={client.name}
               >
                 <div className="flex h-full w-full items-center justify-center">
@@ -1388,7 +1386,9 @@ export function HanviSite() {
             {[...clientPlaceholders.slice(5), ...clientPlaceholders.slice(5), ...clientPlaceholders.slice(5), ...clientPlaceholders.slice(5), ...clientPlaceholders.slice(5)].map((client, index) => (
               <div
                 key={`r2-${client.name}-${index}`}
-                className="group relative flex w-[165px] sm:w-[190px] md:w-[210px] h-[125px] sm:h-[142px] md:h-[155px] shrink-0 items-center justify-center rounded-[32px] sm:rounded-[38px] border-2 border-[#16446C]/35 bg-white px-4 py-3 shadow-xs transition-all duration-300 hover:border-brand-orange hover:shadow-[0_10px_28px_-4px_rgba(255,106,0,0.22)] hover:scale-[1.04]"
+                className={`group relative flex w-[165px] sm:w-[190px] md:w-[210px] h-[125px] sm:h-[142px] md:h-[155px] shrink-0 items-center justify-center overflow-hidden rounded-[32px] sm:rounded-[38px] border-2 border-[#16446C]/35 bg-white ${
+                  'isFullImage' in client && client.isFullImage ? 'p-0' : 'px-4 py-3'
+                } shadow-xs transition-all duration-300 hover:border-brand-orange hover:shadow-[0_10px_28px_-4px_rgba(255,106,0,0.22)] hover:scale-[1.04]`}
                 title={client.name}
               >
                 <div className="flex h-full w-full items-center justify-center">
