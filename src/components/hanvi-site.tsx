@@ -1333,17 +1333,26 @@ export function HanviSite() {
         {/* Infinite Horizontal Scroll Animated Track - Single Row */}
         <div className="relative mt-5 sm:mt-6 overflow-hidden pause-hover select-none">
           {/* Single Row: Infinite Scrolling Track */}
-          <div className="animate-marquee-left flex gap-5 sm:gap-6 py-2.5 sm:py-3">
+          <div className="animate-marquee-left flex gap-6 sm:gap-7 md:gap-8 py-2.5 sm:py-3">
             {[...clientPlaceholders, ...clientPlaceholders, ...clientPlaceholders, ...clientPlaceholders].map((client, index) => (
               <div
                 key={`single-${client.name}-${index}`}
-                className={`group relative flex w-[235px] sm:w-[270px] md:w-[305px] lg:w-[330px] xl:w-[345px] h-[165px] sm:h-[185px] md:h-[205px] lg:h-[220px] xl:h-[230px] shrink-0 items-center justify-center overflow-hidden border-2 border-[#16446C]/35 bg-white ${
-                  'isFullImage' in client && client.isFullImage ? 'p-0' : 'px-5 py-4'
-                } shadow-xs transition-all duration-300 hover:border-brand-orange hover:shadow-[0_12px_28px_-4px_rgba(255,106,0,0.24)] hover:scale-[1.03]`}
-                title={client.name}
+                className="group flex flex-col items-center shrink-0 w-[235px] sm:w-[270px] md:w-[305px] lg:w-[330px] xl:w-[345px]"
               >
-                <div className="flex h-full w-full items-center justify-center">
-                  {client.logo}
+                <div
+                  className={`relative flex w-full h-[165px] sm:h-[185px] md:h-[205px] lg:h-[220px] xl:h-[230px] items-center justify-center overflow-hidden border-2 border-[#16446C]/35 bg-white ${
+                    'isFullImage' in client && client.isFullImage ? 'p-0' : 'px-5 py-4'
+                  } shadow-xs transition-all duration-300 group-hover:border-brand-orange group-hover:shadow-[0_12px_28px_-4px_rgba(255,106,0,0.24)] group-hover:scale-[1.03]`}
+                  title={client.name}
+                >
+                  <div className="flex h-full w-full items-center justify-center">
+                    {client.logo}
+                  </div>
+                </div>
+                <div className="mt-2.5 sm:mt-3 w-full text-center px-1">
+                  <p className="text-xs sm:text-sm md:text-[14px] font-bold text-foreground leading-snug line-clamp-2 transition-colors duration-300 group-hover:text-brand-orange">
+                    {client.name}
+                  </p>
                 </div>
               </div>
             ))}
