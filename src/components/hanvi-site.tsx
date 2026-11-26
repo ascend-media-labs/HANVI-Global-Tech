@@ -59,6 +59,7 @@ import heroNetworkingImage from "@/assets/hero-networking.jpg";
 import logoHorizontal from "@/assets/hanvi-logo-horizontal.png";
 import logoFull from "@/assets/hanvi-logo.png";
 import logoIcon from "@/assets/hanvi-icon.png";
+import apolloHospitalsImage from "@/assets/apollo-hospitals.jpg";
 
 const navigation = [
   { label: "Home", id: "home" },
@@ -344,21 +345,12 @@ const clientPlaceholders = [
     sector: "Healthcare & Critical Life Safety Infra",
     tag: "Healthcare",
     logo: (
-      <svg viewBox="0 0 200 48" className="h-12 sm:h-14 md:h-[3.65rem] w-auto max-w-[92%] object-contain" fill="none">
-        <rect x="4" y="4" width="40" height="40" rx="8" fill="#005E82" />
-        {/* Golden yellow flame torch */}
-        <path d="M24 7C25 10 28 11 28 13.5C28 15.5 26.2 17 24 17C21.8 17 20 15.5 20 13.5C20 11.5 23 10 24 7Z" fill="#F9A01B" />
-        {/* White medical cross */}
-        <path d="M11 14H15M13 12V16" stroke="#FFFFFF" strokeWidth="1.8" strokeLinecap="round" />
-        {/* White abstract reaching figure */}
-        <circle cx="24" cy="21" r="2.2" fill="#FFFFFF" />
-        <path d="M20 37V29C20 26.5 21.8 24.5 24 24.5C26.2 24.5 28 26.5 28 29V37" stroke="#FFFFFF" strokeWidth="2.5" strokeLinecap="round" />
-        <path d="M16 28C18 26 21 24.5 24 24.5C27 24.5 30 26 32 28" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" />
-        {/* Typography */}
-        <text x="52" y="23" fill="#005E82" fontFamily="sans-serif" fontWeight="900" fontSize="16" letterSpacing="0.2">Apollo</text>
-        <text x="106" y="23" fill="#005E82" fontFamily="sans-serif" fontWeight="700" fontSize="9.5" letterSpacing="1.2">HOSPITALS</text>
-        <text x="52" y="36" fill="#F9A01B" fontFamily="sans-serif" fontWeight="800" fontSize="8" letterSpacing="1.2">TOUCHING LIVES</text>
-      </svg>
+      <img
+        src={apolloHospitalsImage}
+        alt="Apollo Hospitals Enterprise Healthcare"
+        className="h-full w-full object-cover object-top rounded-xl sm:rounded-2xl"
+        loading="lazy"
+      />
     ),
   },
   {
