@@ -1306,13 +1306,17 @@ export function HanviSite() {
   const renderClientsSection = () => (
     <section
       id="clients"
-      className="scroll-mt-20 bg-brand-cream-alt text-foreground border-t border-brand-orange/10 min-h-[calc(100vh-145px)] flex flex-col justify-center py-6 sm:py-8 md:py-10"
+      className={`scroll-mt-20 bg-brand-cream-alt text-foreground border-t border-brand-orange/10 ${
+        activeSection === "clients"
+          ? "h-[calc(100vh-135px)] flex flex-col justify-center overflow-hidden py-3 sm:py-4"
+          : "py-6 sm:py-8 md:py-10"
+      }`}
     >
       <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 my-auto">
-        <div className="flex flex-col gap-1.5" data-reveal>
+        <div className="flex flex-col gap-1" data-reveal>
           <div className="flex flex-col justify-between gap-2 sm:flex-row sm:items-end">
             <div>
-              <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-orange font-bold">
+              <div className="mb-0.5 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-orange font-bold">
                 <span className="brand-gradient h-0.5 w-5" aria-hidden="true" />
                 <span>Clients</span>
               </div>
@@ -1331,17 +1335,17 @@ export function HanviSite() {
         </div>
 
         {/* Infinite Horizontal Scroll Animated Track - Single Row */}
-        <div className="relative mt-5 sm:mt-6 overflow-hidden pause-hover select-none">
+        <div className="relative mt-3 sm:mt-4 overflow-hidden pause-hover select-none">
           {/* Single Row: Infinite Scrolling Track */}
-          <div className="animate-marquee-left flex gap-6 sm:gap-7 md:gap-8 py-2.5 sm:py-3">
+          <div className="animate-marquee-left flex gap-5 sm:gap-6 py-2 sm:py-2.5">
             {[...clientPlaceholders, ...clientPlaceholders, ...clientPlaceholders, ...clientPlaceholders].map((client, index) => (
               <div
                 key={`single-${client.name}-${index}`}
-                className="group flex flex-col items-center shrink-0 w-[235px] sm:w-[270px] md:w-[305px] lg:w-[330px] xl:w-[345px]"
+                className="group flex flex-col items-center shrink-0 w-[220px] sm:w-[250px] md:w-[280px] lg:w-[305px] xl:w-[325px]"
               >
                 <div
-                  className={`relative flex w-full h-[165px] sm:h-[185px] md:h-[205px] lg:h-[220px] xl:h-[230px] items-center justify-center overflow-hidden border-2 border-[#16446C]/35 bg-white ${
-                    'isFullImage' in client && client.isFullImage ? 'p-0' : 'px-5 py-4'
+                  className={`relative flex w-full h-[145px] sm:h-[160px] md:h-[175px] lg:h-[190px] xl:h-[200px] items-center justify-center overflow-hidden border-2 border-[#16446C]/35 bg-white ${
+                    'isFullImage' in client && client.isFullImage ? 'p-0' : 'px-4 py-3'
                   } shadow-xs transition-all duration-300 group-hover:border-brand-orange group-hover:shadow-[0_12px_28px_-4px_rgba(255,106,0,0.24)] group-hover:scale-[1.03]`}
                   title={client.name}
                 >
@@ -1349,15 +1353,15 @@ export function HanviSite() {
                     {client.logo}
                   </div>
                 </div>
-                <div className="mt-2.5 sm:mt-3 w-full flex flex-col items-center">
-                  <div className="w-full flex flex-col items-center justify-center py-2 px-3.5 bg-white border border-[#16446C]/25 shadow-xs transition-all duration-300 group-hover:border-brand-orange group-hover:shadow-[0_8px_22px_-4px_rgba(255,106,0,0.22)]">
+                <div className="mt-2 sm:mt-2.5 w-full flex flex-col items-center">
+                  <div className="w-full flex flex-col items-center justify-center py-1.5 sm:py-2 px-3 bg-white border border-[#16446C]/25 shadow-xs transition-all duration-300 group-hover:border-brand-orange group-hover:shadow-[0_8px_20px_-3px_rgba(255,106,0,0.22)]">
                     <div className="flex items-center gap-1.5 mb-0.5">
                       <span className="size-1 rounded-full bg-brand-orange animate-pulse" aria-hidden="true" />
-                      <span className="text-[10px] sm:text-[10.5px] font-bold uppercase tracking-widest text-brand-orange font-mono">
+                      <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-brand-orange font-mono">
                         {client.tag}
                       </span>
                     </div>
-                    <h4 className="font-display font-bold text-xs sm:text-sm md:text-[14.5px] text-[#0A1E3F] tracking-tight text-center truncate w-full transition-colors duration-300 group-hover:text-brand-orange">
+                    <h4 className="font-display font-bold text-xs sm:text-[13px] md:text-[14px] text-[#0A1E3F] tracking-tight text-center truncate w-full transition-colors duration-300 group-hover:text-brand-orange">
                       {client.name}
                     </h4>
                   </div>
