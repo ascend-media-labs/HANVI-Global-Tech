@@ -62,6 +62,7 @@ import logoIcon from "@/assets/hanvi-icon.png";
 import apolloHospitalsImage from "@/assets/apollo-hospitals.jpg";
 import siddipetPoliceImage from "@/assets/siddipet-police.jpg";
 import ramagundamPoliceImage from "@/assets/ramagundam-police.jpg";
+import sircillaPoliceImage from "@/assets/sircilla-police.jpg";
 
 const navigation = [
   { label: "Home", id: "home" },
@@ -299,17 +300,17 @@ const clientPlaceholders = [
     ),
   },
   {
-    name: "GMR Aerospace & Tech Park",
-    sector: "Mission-Critical Facilities",
-    tag: "Aviation Hub",
+    name: "Rajanna Sircilla District Police Office",
+    sector: "Law Enforcement & Integrated Surveillance Infra",
+    tag: "Law Enforcement",
+    isFullImage: true,
     logo: (
-      <svg viewBox="0 0 100 80" className="h-[72%] w-auto max-w-[85%] object-contain" fill="none">
-        <g transform="translate(30, 8)">
-          <path d="M6 22C6 11 16 4 28 4C40 4 48 11 48 22C48 31 42 37 30 37H18" stroke="#FF6A00" strokeWidth="4.5" strokeLinecap="round" fill="none" />
-          <path d="M28 22H44" stroke="#FDB913" strokeWidth="4.5" strokeLinecap="round" />
-        </g>
-        <text x="50" y="70" textAnchor="middle" fill="#0A1E3F" fontFamily="sans-serif" fontWeight="900" fontSize="21" letterSpacing="1.5">GMR</text>
-      </svg>
+      <img
+        src={sircillaPoliceImage}
+        alt="Rajanna Sircilla District Police Office"
+        className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+        loading="lazy"
+      />
     ),
   },
   {
