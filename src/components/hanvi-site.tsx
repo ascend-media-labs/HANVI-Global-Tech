@@ -1304,12 +1304,15 @@ export function HanviSite() {
   );
 
   const renderClientsSection = () => (
-    <section id="clients" className="scroll-mt-20 bg-brand-cream-alt py-3.5 sm:py-4.5 text-foreground border-t border-brand-orange/10">
-      <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
-        <div className="flex flex-col gap-1" data-reveal>
+    <section
+      id="clients"
+      className="scroll-mt-20 bg-brand-cream-alt text-foreground border-t border-brand-orange/10 min-h-[calc(100vh-145px)] flex flex-col justify-center py-6 sm:py-8 md:py-10"
+    >
+      <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 my-auto">
+        <div className="flex flex-col gap-1.5" data-reveal>
           <div className="flex flex-col justify-between gap-2 sm:flex-row sm:items-end">
             <div>
-              <div className="mb-0.5 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-orange font-bold">
+              <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-orange font-bold">
                 <span className="brand-gradient h-0.5 w-5" aria-hidden="true" />
                 <span>Clients</span>
               </div>
@@ -1328,9 +1331,9 @@ export function HanviSite() {
         </div>
 
         {/* Infinite Horizontal Scroll Animated Track - Single Row */}
-        <div className="relative mt-3.5 sm:mt-4 overflow-hidden pause-hover select-none">
+        <div className="relative mt-5 sm:mt-6 overflow-hidden pause-hover select-none">
           {/* Single Row: Infinite Scrolling Track */}
-          <div className="animate-marquee-left flex gap-5 sm:gap-6 py-2 sm:py-2.5">
+          <div className="animate-marquee-left flex gap-5 sm:gap-6 py-2.5 sm:py-3">
             {[...clientPlaceholders, ...clientPlaceholders, ...clientPlaceholders, ...clientPlaceholders].map((client, index) => (
               <div
                 key={`single-${client.name}-${index}`}
