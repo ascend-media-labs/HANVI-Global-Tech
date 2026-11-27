@@ -1599,7 +1599,7 @@ export function HanviSite() {
       </div>
     );
 
-    const showFullClients = activeSection === "clients" || isClientsExpanded;
+    const showFullClients = activeSection === "clients";
 
     return (
       <section
@@ -1658,18 +1658,15 @@ export function HanviSite() {
               </div>
 
               {/* Show More Button */}
-              <div className="flex flex-col items-center justify-center pt-3 sm:pt-4">
+              <div className="flex justify-center pt-3 sm:pt-4">
                 <button
                   type="button"
-                  onClick={() => setIsClientsExpanded(true)}
-                  className="inline-flex items-center gap-2.5 px-7 py-3 bg-[#0A1E3F] hover:bg-brand-orange text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-md shadow-md hover:shadow-lg transition-all duration-300 group cursor-pointer"
+                  onClick={() => navigateTo("clients")}
+                  className="inline-flex items-center gap-2 px-8 py-3 bg-[#0A1E3F] hover:bg-brand-orange text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-md shadow-md hover:shadow-lg transition-all duration-300 group cursor-pointer"
                 >
-                  <span>Show More Clients</span>
-                  <ChevronDown className="size-4 transition-transform duration-300 group-hover:translate-y-0.5" />
+                  <span>SHOW MORE</span>
+                  <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </button>
-                <p className="text-[11px] sm:text-xs text-muted-foreground mt-2 font-medium text-center">
-                  Explore our complete government, healthcare &amp; enterprise portfolio
-                </p>
               </div>
             </div>
           )}
@@ -1788,23 +1785,16 @@ export function HanviSite() {
                 </div>
               </div>
 
-              {/* Show Less Button (when viewed on Home page) */}
-              {activeSection === "home" && (
-                <div className="flex justify-center pt-8">
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setIsClientsExpanded(false);
-                      const el = document.getElementById("clients");
-                      if (el) el.scrollIntoView({ behavior: "smooth" });
-                    }}
-                    className="inline-flex items-center gap-2 px-6 sm:px-7 py-2.5 bg-white border-2 border-[#0A1E3F] text-[#0A1E3F] hover:bg-[#0A1E3F] hover:text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-md shadow-xs transition-all duration-300 group cursor-pointer"
-                  >
-                    <span>Show Less</span>
-                    <ChevronUp className="size-4 transition-transform duration-300 group-hover:-translate-y-0.5" />
-                  </button>
-                </div>
-              )}
+              {/* Back to Home Button on Clients Page */}
+              <div className="flex justify-center pt-8">
+                <button
+                  type="button"
+                  onClick={() => navigateTo("home")}
+                  className="inline-flex items-center gap-2 px-6 sm:px-7 py-2.5 bg-white border-2 border-[#0A1E3F] text-[#0A1E3F] hover:bg-[#0A1E3F] hover:text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-md shadow-xs transition-all duration-300 group cursor-pointer"
+                >
+                  <span>← Back to Full Home Page</span>
+                </button>
+              </div>
             </>
           )}
         </div>
