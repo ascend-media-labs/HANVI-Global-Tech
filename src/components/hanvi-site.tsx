@@ -77,6 +77,12 @@ import kudaImage from "@/assets/kuda-warangal.jpg";
 import maruthiRudraImage from "@/assets/maruthi-rudra-constructions.jpg";
 import saiTejaImage from "@/assets/sai-teja-constructions.jpg";
 import hellaImage from "@/assets/hella-automobiles.jpg";
+import sonicwallLogo from "@/assets/sonicwall-logo.jpg";
+import cpplusLogo from "@/assets/cpplus-logo.png";
+import hpLogo from "@/assets/hp-logo.jpg";
+import commscopeLogo from "@/assets/commscope-logo.jpg";
+import netgearLogo from "@/assets/netgear-logo.jpg";
+import extremeNetworksLogo from "@/assets/extreme-networks-logo.jpg";
 
 const navigation = [
   { label: "Home", id: "home" },
@@ -669,8 +675,8 @@ const partnerPlaceholders = [
     ),
   },
   {
-    name: "Cisco Systems & CommScope",
-    sector: "Enterprise Networking & Fiber Backbone",
+    name: "Cisco Systems",
+    sector: "Enterprise Networking & Core Infrastructure",
     tag: "Enterprise Net",
     logo: (
       <svg viewBox="0 0 110 48" className="h-8 sm:h-9 md:h-10 w-auto max-w-[80%] object-contain" fill="none">
@@ -739,6 +745,84 @@ const partnerPlaceholders = [
     ),
   },
   {
+    name: "CP PLUS Intelligent Security",
+    sector: "Advanced Video Surveillance & Perimeter Security",
+    tag: "Surveillance OEM",
+    logo: (
+      <img
+        src={cpplusLogo}
+        alt="CP PLUS Security"
+        className="h-7 sm:h-8 md:h-9 w-auto max-w-[85%] object-contain transition-transform duration-300 group-hover:scale-105"
+        loading="lazy"
+      />
+    ),
+  },
+  {
+    name: "SonicWall Cybersecurity",
+    sector: "Enterprise Next-Gen Firewalls & Cloud Security",
+    tag: "Cybersecurity OEM",
+    logo: (
+      <img
+        src={sonicwallLogo}
+        alt="SonicWall Cybersecurity"
+        className="h-6 sm:h-7 md:h-8 w-auto max-w-[85%] object-contain transition-transform duration-300 group-hover:scale-105"
+        loading="lazy"
+      />
+    ),
+  },
+  {
+    name: "HP Enterprise Solutions",
+    sector: "Enterprise Computing, Workstations & Data Systems",
+    tag: "Enterprise Computing",
+    logo: (
+      <img
+        src={hpLogo}
+        alt="HP Enterprise"
+        className="h-7 sm:h-8 md:h-9 w-auto max-w-[85%] object-contain transition-transform duration-300 group-hover:scale-105"
+        loading="lazy"
+      />
+    ),
+  },
+  {
+    name: "CommScope Infrastructure",
+    sector: "Structured Cabling, SYSTIMAX & Fiber Solutions",
+    tag: "Connectivity OEM",
+    logo: (
+      <img
+        src={commscopeLogo}
+        alt="CommScope - an Amphenol company"
+        className="h-6 sm:h-7.5 md:h-8.5 w-auto max-w-[88%] object-contain transition-transform duration-300 group-hover:scale-105"
+        loading="lazy"
+      />
+    ),
+  },
+  {
+    name: "NETGEAR Business",
+    sector: "Managed ProAV Switching & Enterprise Wireless",
+    tag: "Networking OEM",
+    logo: (
+      <img
+        src={netgearLogo}
+        alt="NETGEAR Business"
+        className="h-6 sm:h-7 md:h-8 w-auto max-w-[85%] object-contain transition-transform duration-300 group-hover:scale-105"
+        loading="lazy"
+      />
+    ),
+  },
+  {
+    name: "Extreme Networks",
+    sector: "Cloud-Managed Enterprise Switching & SD-WAN",
+    tag: "Cloud Networking",
+    logo: (
+      <img
+        src={extremeNetworksLogo}
+        alt="Extreme Networks"
+        className="h-6 sm:h-7 md:h-8 w-auto max-w-[85%] object-contain transition-transform duration-300 group-hover:scale-105"
+        loading="lazy"
+      />
+    ),
+  },
+  {
     name: "Legrand & Raritan Enterprise",
     sector: "Smart PDU, High-Density Server Racks & Fiber",
     tag: "DC Enclosure",
@@ -776,26 +860,6 @@ const partnerPlaceholders = [
         <rect x="68" y="7" width="2" height="24" fill="#01A982" />
         <text x="76" y="21" fill="#000000" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="800" fontSize="15" letterSpacing="-0.2">Juniper</text>
         <text x="76" y="31" fill="#4B5563" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="600" fontSize="8.5" letterSpacing="0.4">networking</text>
-      </svg>
-    ),
-  },
-  {
-    name: "NETGEAR Business",
-    sector: "Managed Switch Infrastructure & Pro WiFi",
-    tag: "Networking OEM",
-    logo: (
-      <svg viewBox="0 0 160 36" className="h-6 sm:h-7.5 md:h-8.5 w-auto max-w-[85%] object-contain" fill="none">
-        <text x="80" y="26" textAnchor="middle" fill="#3B1C54" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="900" fontSize="23" letterSpacing="1.8">NETGEAR</text>
-      </svg>
-    ),
-  },
-  {
-    name: "D-Link Systems",
-    sector: "Industrial Switching & Structured Cabling",
-    tag: "Connectivity OEM",
-    logo: (
-      <svg viewBox="0 0 150 36" className="h-6 sm:h-7.5 md:h-8.5 w-auto max-w-[85%] object-contain" fill="none">
-        <text x="75" y="27" textAnchor="middle" fill="#008299" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="900" fontSize="25" letterSpacing="0.5">D-Link</text>
       </svg>
     ),
   },
