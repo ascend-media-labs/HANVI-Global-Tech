@@ -70,6 +70,8 @@ import sriSathyaSaiImage from "@/assets/sri-sathya-sai-sanjeevani.jpg";
 import medakPoliceImage from "@/assets/medak-police.jpg";
 import greyhoundsImage from "@/assets/greyhounds-telangana.jpg";
 import kudaImage from "@/assets/kuda-warangal.jpg";
+import maruthiRudraImage from "@/assets/maruthi-rudra-constructions.png";
+import saiTejaImage from "@/assets/sai-teja-constructions.jpg";
 
 const navigation = [
   { label: "Home", id: "home" },
@@ -539,6 +541,44 @@ const clientCategories: ClientCategory[] = [
                 src={sriSathyaSaiImage}
                 alt="Sri Sathya Sai Sanjeevani Hospitals - Kondapaka, Siddipet, Telangana"
                 className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+            ),
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "construction-infrastructure",
+    categoryNumber: "5",
+    categoryTitle: "CONSTRUCTION & INFRASTRUCTURE DEVELOPMENT",
+    groups: [
+      {
+        subTitle: "Construction & Infrastructure Developers",
+        clients: [
+          {
+            name: "Maruthi Rudra Constructions",
+            tag: "Construction & Infra Development",
+            isFullImage: true,
+            logo: (
+              <img
+                src={maruthiRudraImage}
+                alt="Maruthi Rudra Constructions"
+                className="h-full w-full object-contain bg-[#002236] p-4 transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+            ),
+          },
+          {
+            name: "Sai Teja Constructions",
+            tag: "Construction & Infra Development",
+            isFullImage: true,
+            logo: (
+              <img
+                src={saiTejaImage}
+                alt="Sai Teja Constructions"
+                className="h-full w-full object-contain bg-[#041B51] p-3 transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
               />
             ),
