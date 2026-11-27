@@ -1694,9 +1694,9 @@ export function HanviSite() {
                     {/* Row 1: State Police Department (2 cols) + District Police Offices - Sircilla (1 col in slot 3) */}
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6 items-start">
                       <div className="lg:col-span-2 space-y-2.5 sm:space-y-3">
-                        <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5">
-                          <span className="w-1.5 h-3.5 bg-brand-orange" />
-                          <h4 className="font-display font-bold text-xs sm:text-sm md:text-base text-[#0A1E3F] tracking-tight uppercase">
+                        <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5 h-8 sm:h-9">
+                          <span className="w-1.5 h-3.5 bg-brand-orange shrink-0" />
+                          <h4 className="font-display font-bold text-xs sm:text-sm md:text-base text-[#0A1E3F] tracking-tight uppercase whitespace-nowrap truncate">
                             State Police Department
                           </h4>
                         </div>
@@ -1708,9 +1708,9 @@ export function HanviSite() {
                       </div>
 
                       <div className="lg:col-span-1 space-y-2.5 sm:space-y-3">
-                        <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5">
-                          <span className="w-1.5 h-3.5 bg-brand-orange" />
-                          <h4 className="font-display font-bold text-xs sm:text-sm md:text-base text-[#0A1E3F] tracking-tight uppercase">
+                        <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5 h-8 sm:h-9">
+                          <span className="w-1.5 h-3.5 bg-brand-orange shrink-0" />
+                          <h4 className="font-display font-bold text-xs sm:text-sm md:text-base text-[#0A1E3F] tracking-tight uppercase whitespace-nowrap truncate">
                             District Police Offices
                           </h4>
                         </div>
@@ -1727,9 +1727,9 @@ export function HanviSite() {
                     {/* Row 2: Remaining District Police Offices (Medak, Nagarkurnool) + Police Commissionerates (Ramagundam, Siddipet) */}
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-6 items-start">
                       <div className="space-y-2.5 sm:space-y-3">
-                        <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5">
-                          <span className="w-1.5 h-3.5 bg-brand-orange" />
-                          <h4 className="font-display font-bold text-xs sm:text-sm md:text-base text-[#0A1E3F] tracking-tight uppercase">
+                        <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5 h-8 sm:h-9">
+                          <span className="w-1.5 h-3.5 bg-brand-orange shrink-0" />
+                          <h4 className="font-display font-bold text-xs sm:text-sm md:text-base text-[#0A1E3F] tracking-tight uppercase whitespace-nowrap truncate">
                             District Police Offices
                           </h4>
                         </div>
@@ -1741,9 +1741,9 @@ export function HanviSite() {
                       </div>
 
                       <div className="space-y-2.5 sm:space-y-3">
-                        <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5">
-                          <span className="w-1.5 h-3.5 bg-brand-orange" />
-                          <h4 className="font-display font-bold text-xs sm:text-sm md:text-base text-[#0A1E3F] tracking-tight uppercase">
+                        <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5 h-8 sm:h-9">
+                          <span className="w-1.5 h-3.5 bg-brand-orange shrink-0" />
+                          <h4 className="font-display font-bold text-xs sm:text-sm md:text-base text-[#0A1E3F] tracking-tight uppercase whitespace-nowrap truncate">
                             Police Commissionerates
                           </h4>
                         </div>
@@ -1775,9 +1775,9 @@ export function HanviSite() {
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6 items-start">
                       {/* Col 1: CWC Main */}
                       <div className="lg:col-span-1 space-y-2.5 sm:space-y-3">
-                        <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5">
-                          <span className="w-1.5 h-3.5 bg-brand-orange" />
-                          <h4 className="font-display font-bold text-xs sm:text-sm md:text-base text-[#0A1E3F] tracking-tight uppercase">
+                        <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5 h-8 sm:h-9">
+                          <span className="w-1.5 h-3.5 bg-brand-orange shrink-0" />
+                          <h4 className="font-display font-bold text-xs sm:text-xs md:text-[13px] lg:text-[11.5px] xl:text-[13px] text-[#0A1E3F] tracking-tight uppercase whitespace-nowrap truncate">
                             {clientCategories[1]?.groups[0]?.subTitle || "Central Warehousing Corporation (CWC)"}
                           </h4>
                         </div>
@@ -1792,9 +1792,9 @@ export function HanviSite() {
 
                       {/* Col 2 & 3: Regional Coverage */}
                       <div className="lg:col-span-2 space-y-2.5 sm:space-y-3">
-                        <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5">
-                          <span className="w-1.5 h-3.5 bg-brand-orange" />
-                          <h4 className="font-display font-bold text-xs sm:text-sm md:text-base text-[#0A1E3F] tracking-tight uppercase">
+                        <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5 h-8 sm:h-9">
+                          <span className="w-1.5 h-3.5 bg-brand-orange shrink-0" />
+                          <h4 className="font-display font-bold text-xs sm:text-xs md:text-[13px] lg:text-[11.5px] xl:text-[13px] text-[#0A1E3F] tracking-tight uppercase whitespace-nowrap truncate">
                             {clientCategories[1]?.groups[1]?.subTitle || "Regional Coverage"}
                           </h4>
                         </div>
@@ -1813,7 +1813,7 @@ export function HanviSite() {
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6 items-start">
                   {/* Category 3: Urban Development (1 col) */}
                   <div className="lg:col-span-1 space-y-4">
-                    <div className="bg-[#0A1E3F] text-white px-3 sm:px-4 py-2.5 sm:py-3 border-l-4 border-brand-orange shadow-xs flex items-center justify-between gap-2">
+                    <div className="bg-[#0A1E3F] text-white px-3 sm:px-4 py-2.5 sm:py-3 border-l-4 border-brand-orange shadow-xs min-h-[44px] sm:min-h-[48px] flex items-center justify-between gap-2">
                       <div className="flex items-center gap-2">
                         <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
                         <h3 className="font-display font-bold text-xs sm:text-sm md:text-base tracking-wide uppercase truncate">
@@ -1822,9 +1822,9 @@ export function HanviSite() {
                       </div>
                     </div>
                     <div className="space-y-2.5 sm:space-y-3">
-                      <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5">
-                        <span className="w-1.5 h-3.5 bg-brand-orange" />
-                        <h4 className="font-display font-bold text-xs sm:text-sm md:text-base text-[#0A1E3F] tracking-tight uppercase">
+                      <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5 h-8 sm:h-9">
+                        <span className="w-1.5 h-3.5 bg-brand-orange shrink-0" />
+                        <h4 className="font-display font-bold text-xs sm:text-sm md:text-base text-[#0A1E3F] tracking-tight uppercase whitespace-nowrap truncate">
                           Urban Development Authority
                         </h4>
                       </div>
@@ -1837,10 +1837,10 @@ export function HanviSite() {
 
                   {/* Category 4: Healthcare & Hospital Infrastructure (2 cols) */}
                   <div className="lg:col-span-2 space-y-4">
-                    <div className="bg-[#0A1E3F] text-white px-4 sm:px-5 py-2.5 sm:py-3 border-l-4 border-brand-orange shadow-xs flex items-center justify-between gap-2.5">
+                    <div className="bg-[#0A1E3F] text-white px-4 sm:px-5 py-2.5 sm:py-3 border-l-4 border-brand-orange shadow-xs min-h-[44px] sm:min-h-[48px] flex items-center justify-between gap-2.5">
                       <div className="flex items-center gap-2.5">
                         <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
-                        <h3 className="font-display font-bold text-xs sm:text-sm md:text-base tracking-wide uppercase">
+                        <h3 className="font-display font-bold text-xs sm:text-sm md:text-base tracking-wide uppercase truncate">
                           4. HEALTHCARE &amp; HOSPITAL INFRASTRUCTURE
                         </h3>
                       </div>
@@ -1849,9 +1849,9 @@ export function HanviSite() {
                       </span>
                     </div>
                     <div className="space-y-2.5 sm:space-y-3">
-                      <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5">
-                        <span className="w-1.5 h-3.5 bg-brand-orange" />
-                        <h4 className="font-display font-bold text-xs sm:text-sm md:text-base text-[#0A1E3F] tracking-tight uppercase">
+                      <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5 h-8 sm:h-9">
+                        <span className="w-1.5 h-3.5 bg-brand-orange shrink-0" />
+                        <h4 className="font-display font-bold text-xs sm:text-sm md:text-base text-[#0A1E3F] tracking-tight uppercase whitespace-nowrap truncate">
                           Hospital &amp; Medical Infrastructure
                         </h4>
                       </div>
@@ -1868,10 +1868,10 @@ export function HanviSite() {
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6 items-start">
                   {/* Category 5: Construction & Infrastructure (2 cols) */}
                   <div className="lg:col-span-2 space-y-4">
-                    <div className="bg-[#0A1E3F] text-white px-4 sm:px-5 py-2.5 sm:py-3 border-l-4 border-brand-orange shadow-xs flex items-center justify-between gap-2.5">
+                    <div className="bg-[#0A1E3F] text-white px-4 sm:px-5 py-2.5 sm:py-3 border-l-4 border-brand-orange shadow-xs min-h-[44px] sm:min-h-[48px] flex items-center justify-between gap-2.5">
                       <div className="flex items-center gap-2.5">
                         <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
-                        <h3 className="font-display font-bold text-xs sm:text-sm md:text-base tracking-wide uppercase">
+                        <h3 className="font-display font-bold text-xs sm:text-sm md:text-base tracking-wide uppercase truncate">
                           5. CONSTRUCTION &amp; INFRASTRUCTURE DEVELOPMENT
                         </h3>
                       </div>
@@ -1880,9 +1880,9 @@ export function HanviSite() {
                       </span>
                     </div>
                     <div className="space-y-2.5 sm:space-y-3">
-                      <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5">
-                        <span className="w-1.5 h-3.5 bg-brand-orange" />
-                        <h4 className="font-display font-bold text-xs sm:text-sm md:text-base text-[#0A1E3F] tracking-tight uppercase">
+                      <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5 h-8 sm:h-9">
+                        <span className="w-1.5 h-3.5 bg-brand-orange shrink-0" />
+                        <h4 className="font-display font-bold text-xs sm:text-sm md:text-base text-[#0A1E3F] tracking-tight uppercase whitespace-nowrap truncate">
                           Construction &amp; Infrastructure Developers
                         </h4>
                       </div>
@@ -1896,7 +1896,7 @@ export function HanviSite() {
 
                   {/* Category 6: Automotive & Industrial (1 col) */}
                   <div className="lg:col-span-1 space-y-4">
-                    <div className="bg-[#0A1E3F] text-white px-3 sm:px-4 py-2.5 sm:py-3 border-l-4 border-brand-orange shadow-xs flex items-center justify-between gap-2">
+                    <div className="bg-[#0A1E3F] text-white px-3 sm:px-4 py-2.5 sm:py-3 border-l-4 border-brand-orange shadow-xs min-h-[44px] sm:min-h-[48px] flex items-center justify-between gap-2">
                       <div className="flex items-center gap-2">
                         <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
                         <h3 className="font-display font-bold text-xs sm:text-sm md:text-base tracking-wide uppercase truncate">
@@ -1905,9 +1905,9 @@ export function HanviSite() {
                       </div>
                     </div>
                     <div className="space-y-2.5 sm:space-y-3">
-                      <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5">
-                        <span className="w-1.5 h-3.5 bg-brand-orange" />
-                        <h4 className="font-display font-bold text-xs sm:text-sm md:text-base text-[#0A1E3F] tracking-tight uppercase">
+                      <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5 h-8 sm:h-9">
+                        <span className="w-1.5 h-3.5 bg-brand-orange shrink-0" />
+                        <h4 className="font-display font-bold text-xs sm:text-sm md:text-base text-[#0A1E3F] tracking-tight uppercase whitespace-nowrap truncate">
                           Automotive &amp; Industrial Manufacturing
                         </h4>
                       </div>
