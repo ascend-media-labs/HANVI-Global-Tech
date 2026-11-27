@@ -1307,11 +1307,11 @@ export function HanviSite() {
     <section
       id="clients"
       className={`scroll-mt-20 bg-brand-cream-alt text-foreground border-t border-brand-orange/10 ${activeSection === "clients"
-        ? "h-[calc(100vh-135px)] min-h-[calc(100vh-135px)] flex flex-col justify-between overflow-hidden py-3 sm:py-4 md:py-5 lg:py-6"
+        ? "h-[calc(100vh-135px)] min-h-[calc(100vh-135px)] flex flex-col justify-center overflow-hidden py-3 sm:py-4 md:py-6"
         : "py-6 sm:py-8 md:py-10"
         }`}
     >
-      <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 flex flex-col justify-between h-full">
+      <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 my-auto flex flex-col justify-center">
         <div className="flex flex-col gap-1.5 sm:gap-2 shrink-0" data-reveal>
           <div className="flex flex-col justify-between gap-2 sm:flex-row sm:items-end">
             <div>
@@ -1351,16 +1351,16 @@ export function HanviSite() {
         </div>
 
         {/* Infinite Horizontal Scroll Animated Track - Single Row */}
-        <div className="relative my-auto overflow-hidden pause-hover select-none py-1">
+        <div className="relative mt-3 sm:mt-4 md:mt-5 lg:mt-6 overflow-hidden pause-hover select-none">
           {/* Single Row: Infinite Scrolling Track */}
           <div className="animate-marquee-left flex gap-5 sm:gap-6 lg:gap-7 py-2 sm:py-2.5">
             {[...clientPlaceholders, ...clientPlaceholders, ...clientPlaceholders, ...clientPlaceholders].map((client, index) => (
               <div
                 key={`single-${client.name}-${index}`}
-                className="group flex flex-col items-center shrink-0 w-[240px] sm:w-[270px] md:w-[clamp(290px,46vh,460px)] lg:w-[clamp(330px,52vh,520px)] xl:w-[clamp(370px,58vh,600px)]"
+                className="group flex flex-col items-center shrink-0 w-[240px] sm:w-[280px] md:w-[clamp(320px,50vh,500px)] lg:w-[clamp(360px,54vh,540px)] xl:w-[clamp(390px,60vh,600px)]"
               >
                 <div
-                  className={`relative flex w-full h-[145px] sm:h-[165px] md:h-[clamp(185px,30vh,300px)] lg:h-[clamp(215px,34vh,340px)] xl:h-[clamp(240px,38vh,400px)] items-center justify-center overflow-hidden border-2 border-[#16446C]/35 bg-white ${'isFullImage' in client && client.isFullImage ? 'p-0' : 'px-4 py-3'
+                  className={`relative flex w-full h-[150px] sm:h-[180px] md:h-[clamp(205px,34vh,340px)] lg:h-[clamp(235px,38vh,380px)] xl:h-[clamp(260px,44vh,440px)] items-center justify-center overflow-hidden border-2 border-[#16446C]/35 bg-white ${'isFullImage' in client && client.isFullImage ? 'p-0' : 'px-4 py-3'
                     } shadow-xs transition-all duration-300 group-hover:border-brand-orange group-hover:shadow-[0_12px_28px_-4px_rgba(255,106,0,0.24)] group-hover:scale-[1.02]`}
                   title={client.name}
                 >
