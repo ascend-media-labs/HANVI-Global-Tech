@@ -331,6 +331,7 @@ const clientCategories: ClientCategory[] = [
           {
             name: "Telangana State Police Department",
             tag: "State Police Department",
+            badge: "Government of Telangana",
             logo: (
               <img
                 src={telanganaPoliceLogo}
@@ -343,6 +344,7 @@ const clientCategories: ClientCategory[] = [
           {
             name: "Greyhounds – Telangana State",
             tag: "Specialized Police Organization",
+            badge: "Elite Police Organization",
             isFullImage: false,
             logo: (
               <img
@@ -361,6 +363,7 @@ const clientCategories: ClientCategory[] = [
           {
             name: "District Police Office – Rajanna Sircilla",
             tag: "District Police Office",
+            badge: "Rajanna Sircilla District",
             isFullImage: true,
             logo: (
               <img
@@ -374,6 +377,7 @@ const clientCategories: ClientCategory[] = [
           {
             name: "District Police Office – Medak",
             tag: "District Police Office",
+            badge: "Medak District",
             isFullImage: true,
             logo: (
               <img
@@ -387,6 +391,7 @@ const clientCategories: ClientCategory[] = [
           {
             name: "District Police Office – Nagarkurnool",
             tag: "District Police Office",
+            badge: "Nagarkurnool District",
             isFullImage: true,
             logo: (
               <img
@@ -405,6 +410,7 @@ const clientCategories: ClientCategory[] = [
           {
             name: "Ramagundam Police Commissionerate",
             tag: "Police Commissionerate",
+            badge: "Ramagundam, Telangana",
             isFullImage: true,
             logo: (
               <img
@@ -418,6 +424,7 @@ const clientCategories: ClientCategory[] = [
           {
             name: "Siddipet Police Commissionerate",
             tag: "Police Commissionerate",
+            badge: "Siddipet, Telangana",
             isFullImage: true,
             logo: (
               <img
@@ -443,7 +450,7 @@ const clientCategories: ClientCategory[] = [
           {
             name: "Central Warehousing Corporation (CWC)",
             tag: "Govt. of India Undertaking",
-            badge: "Regional Coverage: Telangana & Andhra Pradesh",
+            badge: "Telangana & Andhra Pradesh",
             isFullImage: false,
             logo: (
               <img
@@ -462,6 +469,7 @@ const clientCategories: ClientCategory[] = [
           {
             name: "Central Warehousing Corporation – Telangana",
             tag: "Regional Coverage",
+            badge: "Telangana Region",
             isFullImage: true,
             logo: (
               <img
@@ -475,6 +483,7 @@ const clientCategories: ClientCategory[] = [
           {
             name: "Central Warehousing Corporation – Andhra Pradesh",
             tag: "Regional Coverage",
+            badge: "Andhra Pradesh Region",
             isFullImage: true,
             logo: (
               <img
@@ -526,6 +535,7 @@ const clientCategories: ClientCategory[] = [
           {
             name: "Apollo Hospitals – International Data Center",
             tag: "Healthcare & Mission-Critical Infra",
+            badge: "Hyderabad, Telangana",
             isFullImage: true,
             logo: (
               <img
@@ -539,7 +549,7 @@ const clientCategories: ClientCategory[] = [
           {
             name: "Sri Sathya Sai Sanjeevani Hospitals",
             tag: "Super-Specialty Hospital Infra",
-            badge: "Kondapaka, Siddipet, Telangana",
+            badge: "Kondapaka, Siddipet",
             isFullImage: true,
             logo: (
               <img
@@ -565,6 +575,7 @@ const clientCategories: ClientCategory[] = [
           {
             name: "Maruthi Rudra Constructions",
             tag: "Construction & Infra Development",
+            badge: "Infrastructure Developers",
             isFullImage: true,
             logo: (
               <img
@@ -578,6 +589,7 @@ const clientCategories: ClientCategory[] = [
           {
             name: "Sai Teja Constructions",
             tag: "Construction & Infra Development",
+            badge: "Infrastructure Developers",
             isFullImage: true,
             logo: (
               <img
@@ -603,6 +615,7 @@ const clientCategories: ClientCategory[] = [
           {
             name: "HELLA Automobiles",
             tag: "Automotive & Industrial Tech",
+            badge: "Automotive Manufacturing",
             isFullImage: true,
             logo: (
               <img
@@ -1552,10 +1565,10 @@ export function HanviSite() {
     const renderClientCard = (client: ClientItem, key: string) => (
       <div
         key={key}
-        className="group flex flex-col items-center w-full"
+        className="group flex flex-col items-center w-full h-full"
       >
         <div
-          className={`relative flex w-full h-[120px] sm:h-[135px] md:h-[150px] lg:h-[165px] xl:h-[175px] items-center justify-center overflow-hidden border-2 border-[#16446C]/35 bg-white ${client.isFullImage ? 'p-0' : 'px-4 py-3'
+          className={`relative flex w-full h-[120px] sm:h-[135px] md:h-[145px] lg:h-[155px] xl:h-[165px] items-center justify-center shrink-0 overflow-hidden border-2 border-[#16446C]/35 bg-white ${client.isFullImage ? 'p-0' : 'px-4 py-3'
             } shadow-xs transition-all duration-300 group-hover:border-brand-orange group-hover:shadow-[0_12px_28px_-4px_rgba(255,106,0,0.24)] group-hover:scale-[1.02]`}
           title={client.name}
         >
@@ -1563,22 +1576,24 @@ export function HanviSite() {
             {client.logo}
           </div>
         </div>
-        <div className="mt-2 w-full flex flex-col items-center">
-          <div className="w-full flex flex-col items-center justify-center py-1.5 sm:py-2 px-2 sm:px-2.5 bg-white border border-[#16446C]/25 shadow-xs transition-all duration-300 group-hover:border-brand-orange group-hover:shadow-[0_8px_20px_-3px_rgba(255,106,0,0.22)]">
-            <div className="flex items-center gap-1.5 mb-0.5">
-              <span className="size-1 rounded-full bg-brand-orange animate-pulse" aria-hidden="true" />
-              <span className="text-[9px] sm:text-[10px] md:text-[11px] font-bold uppercase tracking-widest text-brand-orange font-mono">
+        <div className="mt-2 w-full flex-1 flex flex-col">
+          <div className="w-full flex-1 h-[90px] sm:h-[96px] md:h-[100px] flex flex-col justify-between py-2 px-2 sm:px-2.5 bg-white border border-[#16446C]/25 shadow-xs transition-all duration-300 group-hover:border-brand-orange group-hover:shadow-[0_8px_20px_-3px_rgba(255,106,0,0.22)]">
+            <div className="flex items-center justify-center gap-1.5 w-full">
+              <span className="size-1 rounded-full bg-brand-orange animate-pulse shrink-0" aria-hidden="true" />
+              <span className="text-[8.5px] sm:text-[9.5px] md:text-[10px] font-bold uppercase tracking-wide text-brand-orange font-mono truncate text-center">
                 {client.tag}
               </span>
             </div>
-            <h4 className="font-display font-bold text-xs sm:text-[12px] md:text-[13px] text-[#0A1E3F] tracking-tight text-center truncate w-full transition-colors duration-300 group-hover:text-brand-orange">
-              {client.name}
-            </h4>
-            {client.badge && (
-              <span className="text-[10px] sm:text-[10.5px] font-semibold text-brand-orange/90 text-center tracking-tight mt-0.5">
-                {client.badge}
+            <div className="my-auto py-0.5 flex items-center justify-center h-[34px] sm:h-[38px]">
+              <h4 className="font-display font-bold text-xs sm:text-[12px] md:text-[12.5px] text-[#0A1E3F] tracking-tight text-center line-clamp-2 leading-snug w-full transition-colors duration-300 group-hover:text-brand-orange">
+                {client.name}
+              </h4>
+            </div>
+            <div className="h-4 flex items-center justify-center w-full">
+              <span className="text-[9.5px] sm:text-[10px] font-semibold text-brand-orange/90 text-center tracking-tight truncate w-full">
+                {client.badge || "Institutional Client"}
               </span>
-            )}
+            </div>
           </div>
         </div>
       </div>
@@ -1636,7 +1651,7 @@ export function HanviSite() {
           {/* If collapsed: Show 4-5 featured client images & Show More Button */}
           {!showFullClients && (
             <div className="mt-5 sm:mt-6 space-y-6">
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 lg:gap-5">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 lg:gap-5 items-stretch">
                 {featuredClients.map((client, idx) =>
                   renderClientCard(client, `featured-${client.name}-${idx}`)
                 )}
@@ -1690,7 +1705,7 @@ export function HanviSite() {
                             </h4>
                           </div>
 
-                          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 lg:gap-5">
+                          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 lg:gap-5 items-stretch">
                             {group.clients.map((client, cIdx) =>
                               renderClientCard(client, `${client.name}-${cIdx}`)
                             )}
