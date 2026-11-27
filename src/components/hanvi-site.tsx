@@ -67,6 +67,7 @@ import telanganaPoliceLogo from "@/assets/telangana-police-logo.png";
 import cwcImage from "@/assets/central-warehousing-corporation.jpg";
 import sriSathyaSaiImage from "@/assets/sri-sathya-sai-sanjeevani.jpg";
 import medakPoliceImage from "@/assets/medak-police.jpg";
+import greyhoundsImage from "@/assets/greyhounds-telangana.jpg";
 
 const navigation = [
   { label: "Home", id: "home" },
@@ -298,6 +299,19 @@ const clientPlaceholders = [
       <img
         src={telanganaPoliceLogo}
         alt="Telangana State Police"
+        className="h-[88%] w-auto max-w-[88%] object-contain drop-shadow-xs transition-transform duration-500 group-hover:scale-105"
+        loading="lazy"
+      />
+    ),
+  },
+  {
+    name: "Greyhounds Telangana",
+    sector: "Elite Counter-Insurgency & Special Operations Force",
+    tag: "Special Police Force",
+    logo: (
+      <img
+        src={greyhoundsImage}
+        alt="Greyhounds Telangana - Anti-Naxal Force"
         className="h-[88%] w-auto max-w-[88%] object-contain drop-shadow-xs transition-transform duration-500 group-hover:scale-105"
         loading="lazy"
       />
@@ -1367,7 +1381,7 @@ export function HanviSite() {
 
         {/* Static Grid Layout - No Auto-Scroll Animation */}
         <div className="mt-4 sm:mt-5 md:mt-6">
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-5">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-5">
             {clientPlaceholders.map((client, index) => (
               <div
                 key={`client-${client.name}-${index}`}
