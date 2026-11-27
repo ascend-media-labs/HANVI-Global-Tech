@@ -304,14 +304,14 @@ const clientPlaceholders = [
     ),
   },
   {
-    name: "Telangana Police Integrated Complex",
-    sector: "Public Safety & Integrated Command Infrastructure",
+    name: "District Police Office – Medak",
+    sector: "Law Enforcement & Integrated Surveillance Infra",
     tag: "Law Enforcement",
     isFullImage: true,
     logo: (
       <img
         src={telanganaPoliceComplexImage}
-        alt="Telangana Police Integrated Complex"
+        alt="District Police Office – Medak"
         className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
         loading="lazy"
       />
