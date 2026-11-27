@@ -68,6 +68,7 @@ import cwcImage from "@/assets/central-warehousing-corporation.jpg";
 import cwcOldImage from "@/assets/central-warehousing-corporation-old.jpg";
 import sriSathyaSaiImage from "@/assets/sri-sathya-sai-sanjeevani.jpg";
 import medakPoliceImage from "@/assets/medak-police.jpg";
+import nagarkurnoolPoliceImage from "@/assets/nagarkurnool-police.jpg";
 import greyhoundsImage from "@/assets/greyhounds-telangana.jpg";
 import kudaImage from "@/assets/kuda-warangal.jpg";
 import maruthiRudraImage from "@/assets/maruthi-rudra-constructions.jpg";
@@ -383,12 +384,12 @@ const clientCategories: ClientCategory[] = [
           {
             name: "District Police Office – Nagarkurnool",
             tag: "District Police Office",
-            isFullImage: false,
+            isFullImage: true,
             logo: (
               <img
-                src={telanganaPoliceLogo}
+                src={nagarkurnoolPoliceImage}
                 alt="District Police Office – Nagarkurnool"
-                className="h-[88%] w-auto max-w-[88%] object-contain drop-shadow-xs transition-transform duration-500 group-hover:scale-105"
+                className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
               />
             ),
