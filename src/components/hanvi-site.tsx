@@ -508,13 +508,45 @@ const clientCategories: ClientCategory[] = [
       },
     ],
   },
-];
-
-// Stored for upcoming categories (Healthcare, Infrastructure, Logistics)
-export const upcomingClientHolders = [
-  { name: "Apollo Hospitals Enterprise", img: apolloHospitalsImage },
-  { name: "Central Warehousing Corporation", img: cwcImage },
-  { name: "Sri Sathya Sai Sanjeevani Hospital", img: sriSathyaSaiImage },
+  {
+    id: "healthcare-infrastructure",
+    categoryNumber: "4",
+    categoryTitle: "HEALTHCARE & HOSPITAL INFRASTRUCTURE",
+    groups: [
+      {
+        subTitle: "Hospital & Medical Infrastructure",
+        clients: [
+          {
+            name: "Apollo Hospitals – International Data Center",
+            tag: "Healthcare & Mission-Critical Infra",
+            isFullImage: true,
+            logo: (
+              <img
+                src={apolloHospitalsImage}
+                alt="Apollo Hospitals – International Data Center"
+                className="h-full w-full object-cover object-left transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+            ),
+          },
+          {
+            name: "Sri Sathya Sai Sanjeevani Hospitals",
+            tag: "Super-Specialty Hospital Infra",
+            badge: "Kondapaka, Siddipet, Telangana",
+            isFullImage: true,
+            logo: (
+              <img
+                src={sriSathyaSaiImage}
+                alt="Sri Sathya Sai Sanjeevani Hospitals - Kondapaka, Siddipet, Telangana"
+                className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+            ),
+          },
+        ],
+      },
+    ],
+  },
 ];
 const partnerPlaceholders = [
   {
