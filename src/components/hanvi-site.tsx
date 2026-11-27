@@ -1762,6 +1762,43 @@ export function HanviSite() {
                           </div>
                         </div>
                       </div>
+                    ) : category.id === "central-gov-psu" ? (
+                      <div className="space-y-5 sm:space-y-6">
+                        {/* 1 Row: CWC Main (1 col) + Regional Coverage (2 cols) = 3 cols full */}
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6 items-start">
+                          {/* Col 1: CWC Main */}
+                          <div className="lg:col-span-1 space-y-2.5 sm:space-y-3">
+                            <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5">
+                              <span className="w-1.5 h-3.5 bg-brand-orange" />
+                              <h4 className="font-display font-bold text-xs sm:text-sm md:text-base text-[#0A1E3F] tracking-tight uppercase">
+                                {category.groups[0]?.subTitle || "Central Warehousing Corporation (CWC)"}
+                              </h4>
+                            </div>
+                            <div className="grid grid-cols-1 items-stretch">
+                              {category.groups[0]?.clients[0] &&
+                                renderClientCard(
+                                  category.groups[0].clients[0],
+                                  `cwc-main`
+                                )}
+                            </div>
+                          </div>
+
+                          {/* Col 2 & 3: Regional Coverage */}
+                          <div className="lg:col-span-2 space-y-2.5 sm:space-y-3">
+                            <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5">
+                              <span className="w-1.5 h-3.5 bg-brand-orange" />
+                              <h4 className="font-display font-bold text-xs sm:text-sm md:text-base text-[#0A1E3F] tracking-tight uppercase">
+                                {category.groups[1]?.subTitle || "Regional Coverage"}
+                              </h4>
+                            </div>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 lg:gap-5 items-stretch">
+                              {category.groups[1]?.clients.map((client, cIdx) =>
+                                renderClientCard(client, `cwc-reg-${client.name}-${cIdx}`)
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     ) : (
                       <div className="space-y-5 sm:space-y-6">
                         {category.groups.map((group, gIdx) => (
@@ -1773,7 +1810,15 @@ export function HanviSite() {
                               </h4>
                             </div>
 
-                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 lg:gap-5 items-stretch">
+                            <div
+                              className={`grid gap-3 sm:gap-4 lg:gap-5 items-stretch ${
+                                group.clients.length === 1
+                                  ? "grid-cols-1 max-w-sm sm:max-w-md"
+                                  : group.clients.length === 2
+                                  ? "grid-cols-1 sm:grid-cols-2 max-w-3xl lg:max-w-4xl"
+                                  : "grid-cols-1 sm:grid-cols-2 md:grid-cols-3"
+                              }`}
+                            >
                               {group.clients.map((client, cIdx) =>
                                 renderClientCard(client, `${client.name}-${cIdx}`)
                               )}
