@@ -72,6 +72,7 @@ import greyhoundsImage from "@/assets/greyhounds-telangana.jpg";
 import kudaImage from "@/assets/kuda-warangal.jpg";
 import maruthiRudraImage from "@/assets/maruthi-rudra-constructions.jpg";
 import saiTejaImage from "@/assets/sai-teja-constructions.jpg";
+import hellaImage from "@/assets/hella-automobiles.jpg";
 
 const navigation = [
   { label: "Home", id: "home" },
@@ -579,6 +580,31 @@ const clientCategories: ClientCategory[] = [
                 src={saiTejaImage}
                 alt="Sai Teja Constructions"
                 className="h-full w-full object-contain bg-[#041B51] p-3 transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+            ),
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "automotive-industrial",
+    categoryNumber: "6",
+    categoryTitle: "AUTOMOTIVE & INDUSTRIAL ENTERPRISES",
+    groups: [
+      {
+        subTitle: "Automotive & Industrial Manufacturing",
+        clients: [
+          {
+            name: "HELLA Automobiles",
+            tag: "Automotive & Industrial Tech",
+            isFullImage: true,
+            logo: (
+              <img
+                src={hellaImage}
+                alt="HELLA Automobiles"
+                className="h-full w-full object-contain bg-[#FDCE02] p-2 sm:p-3 transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
               />
             ),
