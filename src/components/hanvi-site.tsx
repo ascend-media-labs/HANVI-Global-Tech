@@ -290,131 +290,150 @@ const services: readonly ServiceDetailItem[] = [
   },
 ];
 
-const clientPlaceholders = [
+interface ClientItem {
+  name: string;
+  tag: string;
+  isFullImage?: boolean;
+  logo: React.ReactNode;
+}
+
+interface ClientSubGroup {
+  subTitle: string;
+  clients: ClientItem[];
+}
+
+interface ClientCategory {
+  id: string;
+  categoryNumber: string;
+  categoryTitle: string;
+  groups: ClientSubGroup[];
+}
+
+const clientCategories: ClientCategory[] = [
   {
-    name: "Telangana State Police",
-    sector: "State Law Enforcement & Public Safety",
-    tag: "State Police",
-    logo: (
-      <img
-        src={telanganaPoliceLogo}
-        alt="Telangana State Police"
-        className="h-[88%] w-auto max-w-[88%] object-contain drop-shadow-xs transition-transform duration-500 group-hover:scale-105"
-        loading="lazy"
-      />
-    ),
+    id: "law-enforcement",
+    categoryNumber: "1",
+    categoryTitle: "STATE GOVERNMENT & LAW ENFORCEMENT",
+    groups: [
+      {
+        subTitle: "State Police Department",
+        clients: [
+          {
+            name: "Telangana State Police Department",
+            tag: "State Police Department",
+            logo: (
+              <img
+                src={telanganaPoliceLogo}
+                alt="Telangana State Police Department"
+                className="h-[88%] w-auto max-w-[88%] object-contain drop-shadow-xs transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+            ),
+          },
+        ],
+      },
+      {
+        subTitle: "District Police Offices",
+        clients: [
+          {
+            name: "District Police Office – Rajanna Sircilla",
+            tag: "District Police Office",
+            isFullImage: true,
+            logo: (
+              <img
+                src={sircillaPoliceImage}
+                alt="District Police Office – Rajanna Sircilla"
+                className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+            ),
+          },
+          {
+            name: "District Police Office – Medak",
+            tag: "District Police Office",
+            isFullImage: true,
+            logo: (
+              <img
+                src={medakPoliceImage}
+                alt="District Police Office – Medak"
+                className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+            ),
+          },
+          {
+            name: "District Police Office – Nagarkurnool",
+            tag: "District Police Office",
+            isFullImage: false,
+            logo: (
+              <img
+                src={telanganaPoliceLogo}
+                alt="District Police Office – Nagarkurnool"
+                className="h-[88%] w-auto max-w-[88%] object-contain drop-shadow-xs transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+            ),
+          },
+        ],
+      },
+      {
+        subTitle: "Police Commissionerates",
+        clients: [
+          {
+            name: "Ramagundam Police Commissionerate",
+            tag: "Police Commissionerate",
+            isFullImage: true,
+            logo: (
+              <img
+                src={ramagundamPoliceImage}
+                alt="Ramagundam Police Commissionerate"
+                className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+            ),
+          },
+          {
+            name: "Siddipet Police Commissionerate",
+            tag: "Police Commissionerate",
+            isFullImage: true,
+            logo: (
+              <img
+                src={siddipetPoliceImage}
+                alt="Siddipet Police Commissionerate"
+                className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+            ),
+          },
+        ],
+      },
+      {
+        subTitle: "Specialized Police Organization",
+        clients: [
+          {
+            name: "Greyhounds – Telangana State",
+            tag: "Specialized Police Organization",
+            isFullImage: false,
+            logo: (
+              <img
+                src={greyhoundsImage}
+                alt="Greyhounds – Telangana State"
+                className="h-[88%] w-auto max-w-[88%] object-contain drop-shadow-xs transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+            ),
+          },
+        ],
+      },
+    ],
   },
-  {
-    name: "Greyhounds Telangana",
-    sector: "Elite Counter-Insurgency & Special Operations Force",
-    tag: "Special Police Force",
-    logo: (
-      <img
-        src={greyhoundsImage}
-        alt="Greyhounds Telangana - Anti-Naxal Force"
-        className="h-[88%] w-auto max-w-[88%] object-contain drop-shadow-xs transition-transform duration-500 group-hover:scale-105"
-        loading="lazy"
-      />
-    ),
-  },
-  {
-    name: "District Police Office – Medak",
-    sector: "Law Enforcement & Integrated Surveillance Infra",
-    tag: "Law Enforcement",
-    isFullImage: true,
-    logo: (
-      <img
-        src={medakPoliceImage}
-        alt="District Police Office – Medak"
-        className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
-        loading="lazy"
-      />
-    ),
-  },
-  {
-    name: "Rajanna Sircilla District Police Office",
-    sector: "Law Enforcement & Integrated Surveillance Infra",
-    tag: "Law Enforcement",
-    isFullImage: true,
-    logo: (
-      <img
-        src={sircillaPoliceImage}
-        alt="Rajanna Sircilla District Police Office"
-        className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
-        loading="lazy"
-      />
-    ),
-  },
-  {
-    name: "Ramagundam Police Commissionerate",
-    sector: "Public Safety & Integrated Command Control",
-    tag: "Law Enforcement",
-    isFullImage: true,
-    logo: (
-      <img
-        src={ramagundamPoliceImage}
-        alt="Ramagundam Police Commissionerate"
-        className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
-        loading="lazy"
-      />
-    ),
-  },
-  {
-    name: "Siddipet Police Commissionerate",
-    sector: "Public Safety & Command Control Center",
-    tag: "Law Enforcement",
-    isFullImage: true,
-    logo: (
-      <img
-        src={siddipetPoliceImage}
-        alt="Siddipet Police Commissionerate"
-        className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
-        loading="lazy"
-      />
-    ),
-  },
-  {
-    name: "Apollo Hospitals Enterprise",
-    sector: "Healthcare & Critical Life Safety Infra",
-    tag: "Healthcare",
-    isFullImage: true,
-    logo: (
-      <img
-        src={apolloHospitalsImage}
-        alt="Apollo Hospitals Enterprise Healthcare"
-        className="h-full w-full object-cover object-left transition-transform duration-500 group-hover:scale-105"
-        loading="lazy"
-      />
-    ),
-  },
-  {
-    name: "Central Warehousing Corporation",
-    sector: "Logistics & Critical Supply Chain Warehousing Infra",
-    tag: "Logistics Infra",
-    isFullImage: true,
-    logo: (
-      <img
-        src={cwcImage}
-        alt="Central Warehousing Corporation"
-        className="h-full w-full object-cover object-[center_35%] transition-transform duration-500 group-hover:scale-105"
-        loading="lazy"
-      />
-    ),
-  },
-  {
-    name: "Sri Sathya Sai Sanjeevani Hospital",
-    sector: "Pediatric Cardiac Care & Super-Specialty Medical Infra",
-    tag: "Super-Specialty Hospital",
-    isFullImage: true,
-    logo: (
-      <img
-        src={sriSathyaSaiImage}
-        alt="Sri Sathya Sai Sanjeevani Hospital"
-        className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
-        loading="lazy"
-      />
-    ),
-  },
+];
+
+// Stored for upcoming categories (Healthcare, Infrastructure, Logistics)
+export const upcomingClientHolders = [
+  { name: "Apollo Hospitals Enterprise", img: apolloHospitalsImage },
+  { name: "Central Warehousing Corporation", img: cwcImage },
+  { name: "Sri Sathya Sai Sanjeevani Hospital", img: sriSathyaSaiImage },
 ];
 const partnerPlaceholders = [
   {
@@ -1379,39 +1398,70 @@ export function HanviSite() {
           </div>
         </div>
 
-        {/* Static Grid Layout - No Auto-Scroll Animation */}
-        <div className="mt-4 sm:mt-5 md:mt-6">
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-5">
-            {clientPlaceholders.map((client, index) => (
-              <div
-                key={`client-${client.name}-${index}`}
-                className="group flex flex-col items-center w-full"
-              >
-                <div
-                  className={`relative flex w-full h-[120px] sm:h-[135px] md:h-[150px] lg:h-[165px] xl:h-[180px] items-center justify-center overflow-hidden border-2 border-[#16446C]/35 bg-white ${'isFullImage' in client && client.isFullImage ? 'p-0' : 'px-4 py-3'
-                    } shadow-xs transition-all duration-300 group-hover:border-brand-orange group-hover:shadow-[0_12px_28px_-4px_rgba(255,106,0,0.24)] group-hover:scale-[1.02]`}
-                  title={client.name}
-                >
-                  <div className="flex h-full w-full items-center justify-center">
-                    {client.logo}
-                  </div>
+        {/* Categorized Clients Section */}
+        <div className="space-y-6 sm:space-y-8 mt-5 sm:mt-6">
+          {clientCategories.map((category) => (
+            <div key={category.id} className="space-y-5">
+              {/* Category Header Ribbon */}
+              <div className="bg-[#0A1E3F] text-white px-4 sm:px-5 py-2.5 sm:py-3 border-l-4 border-brand-orange shadow-xs flex flex-wrap items-center justify-between gap-2.5">
+                <div className="flex items-center gap-2.5">
+                  <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
+                  <h3 className="font-display font-bold text-sm sm:text-base md:text-lg tracking-wide uppercase">
+                    {category.categoryNumber}. {category.categoryTitle}
+                  </h3>
                 </div>
-                <div className="mt-2 w-full flex flex-col items-center">
-                  <div className="w-full flex flex-col items-center justify-center py-1.5 sm:py-2 px-2 sm:px-2.5 bg-white border border-[#16446C]/25 shadow-xs transition-all duration-300 group-hover:border-brand-orange group-hover:shadow-[0_8px_20px_-3px_rgba(255,106,0,0.22)]">
-                    <div className="flex items-center gap-1.5 mb-0.5">
-                      <span className="size-1 rounded-full bg-brand-orange animate-pulse" aria-hidden="true" />
-                      <span className="text-[9px] sm:text-[10px] md:text-[11px] font-bold uppercase tracking-widest text-brand-orange font-mono">
-                        {client.tag}
-                      </span>
-                    </div>
-                    <h4 className="font-display font-bold text-xs sm:text-[12px] md:text-[13px] text-[#0A1E3F] tracking-tight text-center truncate w-full transition-colors duration-300 group-hover:text-brand-orange">
-                      {client.name}
-                    </h4>
-                  </div>
-                </div>
+                <span className="text-[11px] font-mono font-semibold text-brand-orange tracking-widest uppercase">
+                  Institutional Deployments
+                </span>
               </div>
-            ))}
-          </div>
+
+              {/* Sub-groups */}
+              <div className="space-y-5 sm:space-y-6">
+                {category.groups.map((group, gIdx) => (
+                  <div key={gIdx} className="space-y-2.5 sm:space-y-3">
+                    <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5">
+                      <span className="w-1.5 h-3.5 bg-brand-orange" />
+                      <h4 className="font-display font-bold text-xs sm:text-sm md:text-base text-[#0A1E3F] tracking-tight uppercase">
+                        {group.subTitle}
+                      </h4>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 lg:gap-5">
+                      {group.clients.map((client, cIdx) => (
+                        <div
+                          key={`${client.name}-${cIdx}`}
+                          className="group flex flex-col items-center w-full"
+                        >
+                          <div
+                            className={`relative flex w-full h-[120px] sm:h-[135px] md:h-[150px] lg:h-[165px] xl:h-[175px] items-center justify-center overflow-hidden border-2 border-[#16446C]/35 bg-white ${client.isFullImage ? 'p-0' : 'px-4 py-3'
+                              } shadow-xs transition-all duration-300 group-hover:border-brand-orange group-hover:shadow-[0_12px_28px_-4px_rgba(255,106,0,0.24)] group-hover:scale-[1.02]`}
+                            title={client.name}
+                          >
+                            <div className="flex h-full w-full items-center justify-center">
+                              {client.logo}
+                            </div>
+                          </div>
+                          <div className="mt-2 w-full flex flex-col items-center">
+                            <div className="w-full flex flex-col items-center justify-center py-1.5 sm:py-2 px-2 sm:px-2.5 bg-white border border-[#16446C]/25 shadow-xs transition-all duration-300 group-hover:border-brand-orange group-hover:shadow-[0_8px_20px_-3px_rgba(255,106,0,0.22)]">
+                              <div className="flex items-center gap-1.5 mb-0.5">
+                                <span className="size-1 rounded-full bg-brand-orange animate-pulse" aria-hidden="true" />
+                                <span className="text-[9px] sm:text-[10px] md:text-[11px] font-bold uppercase tracking-widest text-brand-orange font-mono">
+                                  {client.tag}
+                                </span>
+                              </div>
+                              <h4 className="font-display font-bold text-xs sm:text-[12px] md:text-[13px] text-[#0A1E3F] tracking-tight text-center truncate w-full transition-colors duration-300 group-hover:text-brand-orange">
+                                {client.name}
+                              </h4>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
