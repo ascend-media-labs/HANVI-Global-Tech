@@ -1375,16 +1375,23 @@ export function HanviSite() {
   );
 
   const renderPartnersSection = () => (
-    <section id="partners" className="scroll-mt-20 bg-brand-cream py-6 sm:py-8 text-foreground border-t border-brand-orange/10">
-      <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
-        <div className="flex flex-col gap-1.5" data-reveal>
-          <div className="flex flex-col justify-between gap-2.5 sm:flex-row sm:items-end">
+    <section
+      id="partners"
+      className={`scroll-mt-20 bg-brand-cream text-foreground border-t border-brand-orange/10 ${
+        activeSection === "partners"
+          ? "h-[calc(100vh-135px)] min-h-[calc(100vh-135px)] flex flex-col justify-center overflow-hidden py-3 sm:py-4 md:py-6"
+          : "py-6 sm:py-8 md:py-10"
+      }`}
+    >
+      <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 my-auto flex flex-col justify-center">
+        <div className="flex flex-col gap-1 shrink-0" data-reveal>
+          <div className="flex flex-col justify-between gap-2 sm:flex-row sm:items-end">
             <div>
-              <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-orange font-bold">
+              <div className="mb-0.5 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-orange font-bold">
                 <span className="brand-gradient h-0.5 w-5" aria-hidden="true" />
                 <span>Partners</span>
               </div>
-              <h2 className="font-display text-xl font-semibold tracking-tight text-foreground sm:text-2xl lg:text-[1.75rem]">
+              <h2 className="font-display text-lg sm:text-xl lg:text-2xl 2xl:text-3xl font-semibold tracking-tight text-foreground">
                 Stronger, side by side.
               </h2>
             </div>
@@ -1393,17 +1400,17 @@ export function HanviSite() {
               Global Alliances
             </span>
           </div>
-          <p className="text-xs sm:text-sm text-muted-foreground lg:whitespace-nowrap">
+          <p className="text-xs sm:text-sm 2xl:text-base text-muted-foreground lg:whitespace-nowrap">
             Collaborating with world-class OEM hardware manufacturers, cybersecurity alliances, and IoT smart ecosystem providers.
           </p>
         </div>
 
         {/* Clean Static Grid of Partner Logos - Pill / Stadium Outline Style */}
-        <div className="mt-4 sm:mt-5 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-4.5">
+        <div className="mt-3 sm:mt-4 md:mt-5 lg:mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-4.5 lg:gap-5 xl:gap-6">
           {partnerPlaceholders.map((partner, index) => (
             <div
               key={`partner-${partner.name}-${index}`}
-              className="group relative flex h-16 sm:h-[4.5rem] lg:h-[5rem] items-center justify-center rounded-full border-2 border-[#16446C]/35 bg-white px-4 sm:px-6 py-2 shadow-xs transition-all duration-300 hover:border-brand-orange hover:shadow-[0_8px_24px_-4px_rgba(255,106,0,0.22)] hover:scale-[1.03]"
+              className="group relative flex h-14 sm:h-16 md:h-[clamp(4.4rem,9vh,5.6rem)] lg:h-[clamp(5rem,11vh,6.6rem)] xl:h-[clamp(5.6rem,12.5vh,7.6rem)] items-center justify-center rounded-full border-2 border-[#16446C]/35 bg-white px-4 sm:px-6 py-2 shadow-xs transition-all duration-300 hover:border-brand-orange hover:shadow-[0_8px_24px_-4px_rgba(255,106,0,0.22)] hover:scale-[1.03]"
               title={partner.name}
             >
               <div className="flex h-full w-full items-center justify-center">
