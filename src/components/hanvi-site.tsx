@@ -1573,11 +1573,11 @@ export function HanviSite() {
           </div>
 
           {/* Institutional Description */}
-          <div className="max-w-5xl space-y-1 text-xs sm:text-[13px] lg:text-sm leading-relaxed text-muted-foreground text-justify">
-            <p className="text-justify">
+          <div className="w-full space-y-1.5 text-xs sm:text-[13px] lg:text-sm leading-relaxed text-muted-foreground">
+            <p className="w-full text-justify [text-align:justify] [text-justify:inter-word]" style={{ textAlign: "justify", textJustify: "inter-word" }}>
               At Hanvi Global Tech, we take pride in serving a diverse portfolio of government institutions, law enforcement agencies, healthcare organizations, infrastructure developers and corporate enterprises.
             </p>
-            <p className="text-justify">
+            <p className="w-full text-justify [text-align:justify] [text-justify:inter-word]" style={{ textAlign: "justify", textJustify: "inter-word" }}>
               Our client portfolio reflects our commitment to delivering reliable, scalable and integrated technology solutions across demanding operational environments.
             </p>
           </div>
@@ -1707,7 +1707,7 @@ export function HanviSite() {
                     Beyond Technology. Building Trust.
                   </h4>
                 </div>
-                <p className="text-xs sm:text-[13px] text-muted-foreground leading-relaxed">
+                <p className="w-full text-xs sm:text-[13px] text-muted-foreground leading-relaxed text-justify [text-align:justify] [text-justify:inter-word]" style={{ textAlign: "justify", textJustify: "inter-word" }}>
                   We believe that every project is an opportunity to deliver excellence, strengthen operational efficiency and build lasting professional relationships.
                 </p>
               </div>
