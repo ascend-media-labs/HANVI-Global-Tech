@@ -336,7 +336,7 @@ const clientCategories: ClientCategory[] = [
               <img
                 src={telanganaPoliceLogo}
                 alt="Telangana State Police Department"
-                className="h-[88%] w-auto max-w-[88%] object-contain drop-shadow-xs transition-transform duration-500 group-hover:scale-105"
+                className="h-[92%] w-auto max-w-[92%] object-contain drop-shadow-xs transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
               />
             ),
@@ -350,7 +350,7 @@ const clientCategories: ClientCategory[] = [
               <img
                 src={greyhoundsImage}
                 alt="Greyhounds – Telangana State"
-                className="h-[88%] w-auto max-w-[88%] object-contain drop-shadow-xs transition-transform duration-500 group-hover:scale-105"
+                className="h-[92%] w-auto max-w-[92%] object-contain drop-shadow-xs transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
               />
             ),
@@ -456,7 +456,7 @@ const clientCategories: ClientCategory[] = [
               <img
                 src={cwcLogo}
                 alt="Central Warehousing Corporation (CWC) - Logistics Driving Progress"
-                className="h-[75%] w-auto max-w-[85%] object-contain drop-shadow-xs transition-transform duration-500 group-hover:scale-105"
+                className="h-[88%] w-auto max-w-[92%] object-contain drop-shadow-xs transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
               />
             ),
@@ -595,7 +595,7 @@ const clientCategories: ClientCategory[] = [
               <img
                 src={saiTejaImage}
                 alt="Sai Teja Constructions"
-                className="h-full w-full object-contain bg-[#041B51] p-3 transition-transform duration-500 group-hover:scale-105"
+                className="h-full w-full object-contain bg-[#041B51] p-1.5 transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
               />
             ),
@@ -621,7 +621,7 @@ const clientCategories: ClientCategory[] = [
               <img
                 src={hellaImage}
                 alt="HELLA Automobiles"
-                className="h-full w-full object-contain bg-[#FDCE02] p-2 sm:p-3 transition-transform duration-500 group-hover:scale-105"
+                className="h-full w-full object-contain bg-[#FDCE02] p-1.5 transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
               />
             ),
@@ -1568,11 +1568,11 @@ export function HanviSite() {
         className="group flex flex-col items-center w-full h-full"
       >
         <div
-          className={`relative flex w-full h-[120px] sm:h-[135px] md:h-[145px] lg:h-[155px] xl:h-[165px] items-center justify-center shrink-0 overflow-hidden border-2 border-[#16446C]/35 bg-white ${client.isFullImage ? 'p-0' : 'px-4 py-3'
+          className={`relative flex w-full h-[125px] sm:h-[135px] md:h-[145px] lg:h-[155px] items-center justify-center shrink-0 overflow-hidden border-2 border-[#16446C]/35 bg-white ${client.isFullImage ? 'p-0' : 'p-2'
             } shadow-xs transition-all duration-300 group-hover:border-brand-orange group-hover:shadow-[0_12px_28px_-4px_rgba(255,106,0,0.24)] group-hover:scale-[1.02]`}
           title={client.name}
         >
-          <div className="flex h-full w-full items-center justify-center">
+          <div className="flex h-full w-full items-center justify-center overflow-hidden">
             {client.logo}
           </div>
         </div>
