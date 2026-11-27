@@ -66,6 +66,7 @@ import sircillaPoliceImage from "@/assets/sircilla-police.jpg";
 import telanganaPoliceLogo from "@/assets/telangana-police-logo.png";
 import cwcImage from "@/assets/central-warehousing-corporation.jpg";
 import sriSathyaSaiImage from "@/assets/sri-sathya-sai-sanjeevani.jpg";
+import telanganaPoliceComplexImage from "@/assets/telangana-police-integrated-complex.jpg";
 
 const navigation = [
   { label: "Home", id: "home" },
@@ -298,6 +299,20 @@ const clientPlaceholders = [
         src={telanganaPoliceLogo}
         alt="Telangana State Police"
         className="h-[88%] w-auto max-w-[88%] object-contain drop-shadow-xs transition-transform duration-500 group-hover:scale-105"
+        loading="lazy"
+      />
+    ),
+  },
+  {
+    name: "Telangana Police Integrated Complex",
+    sector: "Public Safety & Integrated Command Infrastructure",
+    tag: "Law Enforcement",
+    isFullImage: true,
+    logo: (
+      <img
+        src={telanganaPoliceComplexImage}
+        alt="Telangana Police Integrated Complex"
+        className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
         loading="lazy"
       />
     ),
@@ -1350,17 +1365,16 @@ export function HanviSite() {
           </div>
         </div>
 
-        {/* Infinite Horizontal Scroll Animated Track - Single Row */}
-        <div className="relative mt-4 sm:mt-5 md:mt-6 overflow-hidden pause-hover select-none py-1">
-          {/* Single Row: Infinite Scrolling Track */}
-          <div className="animate-marquee-left flex gap-5 sm:gap-6 lg:gap-7 py-2 sm:py-2.5">
-            {[...clientPlaceholders, ...clientPlaceholders, ...clientPlaceholders, ...clientPlaceholders].map((client, index) => (
+        {/* Static Grid Layout - No Auto-Scroll Animation */}
+        <div className="mt-4 sm:mt-5 md:mt-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-5">
+            {clientPlaceholders.map((client, index) => (
               <div
-                key={`single-${client.name}-${index}`}
-                className="group flex flex-col items-center shrink-0 w-[230px] sm:w-[260px] md:w-[290px] lg:w-[325px] xl:w-[355px]"
+                key={`client-${client.name}-${index}`}
+                className="group flex flex-col items-center w-full"
               >
                 <div
-                  className={`relative flex w-full h-[140px] sm:h-[155px] md:h-[175px] lg:h-[195px] xl:h-[215px] items-center justify-center overflow-hidden border-2 border-[#16446C]/35 bg-white ${'isFullImage' in client && client.isFullImage ? 'p-0' : 'px-4 py-3'
+                  className={`relative flex w-full h-[120px] sm:h-[135px] md:h-[150px] lg:h-[165px] xl:h-[180px] items-center justify-center overflow-hidden border-2 border-[#16446C]/35 bg-white ${'isFullImage' in client && client.isFullImage ? 'p-0' : 'px-4 py-3'
                     } shadow-xs transition-all duration-300 group-hover:border-brand-orange group-hover:shadow-[0_12px_28px_-4px_rgba(255,106,0,0.24)] group-hover:scale-[1.02]`}
                   title={client.name}
                 >
@@ -1368,15 +1382,15 @@ export function HanviSite() {
                     {client.logo}
                   </div>
                 </div>
-                <div className="mt-2 sm:mt-2.5 lg:mt-3 w-full flex flex-col items-center">
-                  <div className="w-full flex flex-col items-center justify-center py-1.5 sm:py-2 px-3 bg-white border border-[#16446C]/25 shadow-xs transition-all duration-300 group-hover:border-brand-orange group-hover:shadow-[0_8px_20px_-3px_rgba(255,106,0,0.22)]">
+                <div className="mt-2 w-full flex flex-col items-center">
+                  <div className="w-full flex flex-col items-center justify-center py-1.5 sm:py-2 px-2 sm:px-2.5 bg-white border border-[#16446C]/25 shadow-xs transition-all duration-300 group-hover:border-brand-orange group-hover:shadow-[0_8px_20px_-3px_rgba(255,106,0,0.22)]">
                     <div className="flex items-center gap-1.5 mb-0.5">
                       <span className="size-1 rounded-full bg-brand-orange animate-pulse" aria-hidden="true" />
                       <span className="text-[9px] sm:text-[10px] md:text-[11px] font-bold uppercase tracking-widest text-brand-orange font-mono">
                         {client.tag}
                       </span>
                     </div>
-                    <h4 className="font-display font-bold text-xs sm:text-[13px] md:text-[14px] text-[#0A1E3F] tracking-tight text-center truncate w-full transition-colors duration-300 group-hover:text-brand-orange">
+                    <h4 className="font-display font-bold text-xs sm:text-[12px] md:text-[13px] text-[#0A1E3F] tracking-tight text-center truncate w-full transition-colors duration-300 group-hover:text-brand-orange">
                       {client.name}
                     </h4>
                   </div>
