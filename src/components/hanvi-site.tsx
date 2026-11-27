@@ -66,7 +66,7 @@ import sircillaPoliceImage from "@/assets/sircilla-police.jpg";
 import telanganaPoliceLogo from "@/assets/telangana-police-logo.png";
 import cwcImage from "@/assets/central-warehousing-corporation.jpg";
 import sriSathyaSaiImage from "@/assets/sri-sathya-sai-sanjeevani.jpg";
-import telanganaPoliceComplexImage from "@/assets/telangana-police-integrated-complex.jpg";
+import medakPoliceImage from "@/assets/medak-police.jpg";
 
 const navigation = [
   { label: "Home", id: "home" },
@@ -310,7 +310,7 @@ const clientPlaceholders = [
     isFullImage: true,
     logo: (
       <img
-        src={telanganaPoliceComplexImage}
+        src={medakPoliceImage}
         alt="District Police Office – Medak"
         className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
         loading="lazy"
