@@ -330,6 +330,19 @@ const clientCategories: ClientCategory[] = [
               />
             ),
           },
+          {
+            name: "Greyhounds – Telangana State",
+            tag: "Specialized Police Organization",
+            isFullImage: false,
+            logo: (
+              <img
+                src={greyhoundsImage}
+                alt="Greyhounds – Telangana State"
+                className="h-[88%] w-auto max-w-[88%] object-contain drop-shadow-xs transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+            ),
+          },
         ],
       },
       {
@@ -401,24 +414,6 @@ const clientCategories: ClientCategory[] = [
                 src={siddipetPoliceImage}
                 alt="Siddipet Police Commissionerate"
                 className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
-                loading="lazy"
-              />
-            ),
-          },
-        ],
-      },
-      {
-        subTitle: "Specialized Police Organization",
-        clients: [
-          {
-            name: "Greyhounds – Telangana State",
-            tag: "Specialized Police Organization",
-            isFullImage: false,
-            logo: (
-              <img
-                src={greyhoundsImage}
-                alt="Greyhounds – Telangana State"
-                className="h-[88%] w-auto max-w-[88%] object-contain drop-shadow-xs transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
               />
             ),
