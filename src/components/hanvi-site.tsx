@@ -1307,7 +1307,7 @@ export function HanviSite() {
 
 
   const renderAboutSection = () => (
-    <section id="about" className="relative isolate scroll-mt-20 overflow-hidden bg-white py-6 sm:py-8">
+    <section id="about" className="relative isolate scroll-mt-20 overflow-hidden bg-white pt-2.5 sm:pt-3 md:pt-4 pb-6 sm:pb-7">
       <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
         <div className="grid items-center gap-6 lg:grid-cols-[1fr_1.15fr] xl:gap-10" data-reveal>
           {/* Left Column: Building Photo */}
@@ -1383,7 +1383,7 @@ export function HanviSite() {
   );
 
   const renderWhyUsSection = () => (
-    <section id="why-us" className="scroll-mt-20 bg-brand-cream-alt py-6 sm:py-8 text-foreground border-t border-brand-orange/10">
+    <section id="why-us" className="scroll-mt-20 bg-brand-cream-alt pt-2.5 sm:pt-3 md:pt-4 pb-6 sm:pb-7 text-foreground border-t border-brand-orange/10">
       <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
         {/* Header */}
         <div className="flex flex-col gap-1.5" data-reveal>
@@ -1467,7 +1467,7 @@ export function HanviSite() {
   );
 
   const renderServicesSection = () => (
-    <section id="services" className="relative isolate scroll-mt-20 overflow-hidden bg-brand-cream border-t border-brand-orange/10 py-6 sm:py-8 text-foreground">
+    <section id="services" className="relative isolate scroll-mt-20 overflow-hidden bg-brand-cream border-t border-brand-orange/10 pt-2.5 sm:pt-3 md:pt-4 pb-6 sm:pb-7 text-foreground">
       <div className="relative mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
         {/* Section Header */}
         <div className="flex flex-col items-start text-left mb-4 sm:mb-5" data-reveal>
@@ -1605,11 +1605,11 @@ export function HanviSite() {
       <section
         id="clients"
         className={`scroll-mt-20 bg-brand-cream-alt text-foreground border-t border-brand-orange/10 ${activeSection === "clients"
-          ? "min-h-[calc(100vh-135px)] flex flex-col justify-center py-6 sm:py-8 md:py-10"
-          : "pt-5 sm:pt-6 md:pt-7 pb-3.5 sm:pb-4 md:pb-5"
+          ? "pt-2.5 sm:pt-3 md:pt-3.5 pb-6 sm:pb-8"
+          : "pt-2.5 sm:pt-3 md:pt-3.5 pb-3 sm:pb-3.5 md:pb-4"
           }`}
       >
-        <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 my-auto flex flex-col justify-center">
+        <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 flex flex-col">
           <div className="flex flex-col gap-1.5 sm:gap-2 shrink-0" data-reveal>
             <div className="flex flex-col justify-between gap-2 sm:flex-row sm:items-end">
               <div>
@@ -2012,11 +2012,11 @@ export function HanviSite() {
     <section
       id="partners"
       className={`scroll-mt-20 bg-brand-cream text-foreground border-t border-brand-orange/10 ${activeSection === "partners"
-        ? "min-h-[calc(100vh-135px)] flex flex-col justify-center py-6 sm:py-8 md:py-10"
-        : "pt-4 sm:pt-5 md:pt-6 pb-6 sm:pb-8 md:pb-10"
+        ? "pt-2.5 sm:pt-3 md:pt-3.5 pb-6 sm:pb-8"
+        : "pt-2.5 sm:pt-3 md:pt-3.5 pb-6 sm:pb-7 md:pb-8"
         }`}
     >
-      <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 my-auto flex flex-col justify-center">
+      <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 flex flex-col">
         <div className="flex flex-col gap-1 shrink-0" data-reveal>
           <div className="flex flex-col justify-between gap-2 sm:flex-row sm:items-end">
             <div>
@@ -2057,7 +2057,7 @@ export function HanviSite() {
   );
 
   const renderContactSection = () => (
-    <section id="contact" className="scroll-mt-20 bg-brand-cream py-6 sm:py-8 text-foreground border-t border-brand-orange/10">
+    <section id="contact" className="scroll-mt-20 bg-brand-cream pt-2.5 sm:pt-3 md:pt-4 pb-6 sm:pb-8 text-foreground border-t border-brand-orange/10">
       <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
         <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-10 items-center">
           <div data-reveal>
