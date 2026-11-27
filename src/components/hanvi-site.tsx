@@ -66,6 +66,7 @@ import sircillaPoliceImage from "@/assets/sircilla-police.jpg";
 import telanganaPoliceLogo from "@/assets/telangana-police-logo.png";
 import cwcImage from "@/assets/central-warehousing-corporation.jpg";
 import cwcOldImage from "@/assets/central-warehousing-corporation-old.jpg";
+import cwcLogo from "@/assets/cwc-logo.png";
 import sriSathyaSaiImage from "@/assets/sri-sathya-sai-sanjeevani.jpg";
 import medakPoliceImage from "@/assets/medak-police.jpg";
 import nagarkurnoolPoliceImage from "@/assets/nagarkurnool-police.jpg";
@@ -441,12 +442,12 @@ const clientCategories: ClientCategory[] = [
             name: "Central Warehousing Corporation (CWC)",
             tag: "Govt. of India Undertaking",
             badge: "Regional Coverage: Telangana & Andhra Pradesh",
-            isFullImage: true,
+            isFullImage: false,
             logo: (
               <img
-                src={cwcImage}
-                alt="Central Warehousing Corporation (CWC)"
-                className="h-full w-full object-cover object-[center_35%] transition-transform duration-500 group-hover:scale-105"
+                src={cwcLogo}
+                alt="Central Warehousing Corporation (CWC) - Logistics Driving Progress"
+                className="h-[75%] w-auto max-w-[85%] object-contain drop-shadow-xs transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
               />
             ),
