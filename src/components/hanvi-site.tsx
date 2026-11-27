@@ -8,8 +8,10 @@ import {
   Award,
   Camera,
   CheckCircle2,
+  ChevronDown,
   ChevronLeft,
   ChevronRight,
+  ChevronUp,
   Clock,
   Cloud,
   Code2,
@@ -616,6 +618,15 @@ const clientCategories: ClientCategory[] = [
     ],
   },
 ];
+
+const featuredClients: ClientItem[] = [
+  clientCategories[0]!.groups[0]!.clients[0]!, // Telangana State Police Department
+  clientCategories[1]!.groups[0]!.clients[0]!, // Central Warehousing Corporation (CWC)
+  clientCategories[2]!.groups[0]!.clients[0]!, // Kakatiya Urban Development Authority (KUDA)
+  clientCategories[3]!.groups[0]!.clients[0]!, // Apollo Hospitals – International Data Center
+  clientCategories[5]!.groups[0]!.clients[0]!, // HELLA Automobiles
+];
+
 const partnerPlaceholders = [
   {
     name: "Honeywell Building Technologies",
@@ -994,6 +1005,7 @@ export function HanviSite() {
   const [formMessage, setFormMessage] = useState("");
   const [legalPage, setLegalPage] = useState<string | null>(null);
   const [selectedService, setSelectedService] = useState<ServiceDetailItem | null>(null);
+  const [isClientsExpanded, setIsClientsExpanded] = useState(false);
   const isNavigatingRef = useRef(false);
 
   function navigateTo(sectionId: string) {
@@ -1536,113 +1548,152 @@ export function HanviSite() {
     </section>
   );
 
-  const renderClientsSection = () => (
-    <section
-      id="clients"
-      className={`scroll-mt-20 bg-brand-cream-alt text-foreground border-t border-brand-orange/10 ${activeSection === "clients"
-        ? "min-h-[calc(100vh-135px)] flex flex-col justify-center py-6 sm:py-8 md:py-10"
-        : "py-6 sm:py-8 md:py-10"
-        }`}
-    >
-      <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 my-auto flex flex-col justify-center">
-        <div className="flex flex-col gap-1.5 sm:gap-2 shrink-0" data-reveal>
-          <div className="flex flex-col justify-between gap-2 sm:flex-row sm:items-end">
-            <div>
-              <div className="mb-0.5 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-orange font-bold">
-                <span className="brand-gradient h-0.5 w-5" aria-hidden="true" />
-                <span>Clients</span>
-              </div>
-              <h2 className="font-display text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-foreground leading-tight uppercase">
-                OUR ESTEEMED CLIENTS
-              </h2>
-            </div>
-            <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-brand-orange px-3 py-1 rounded-full bg-brand-orange/10 border border-brand-orange/25 w-fit">
-              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" aria-hidden="true" />
-              Enterprise Network
-            </span>
-          </div>
-
-          {/* Subhead & Domain Pillars */}
-          <div className="flex flex-col gap-0.5 sm:gap-1 mt-0.5">
-            <h3 className="font-display text-sm sm:text-base lg:text-lg font-bold text-foreground tracking-tight">
-              Trusted by Institutions. Driven by Technology.
-            </h3>
-            <p className="text-xs sm:text-[13px] lg:text-sm font-semibold text-brand-orange tracking-wide">
-              IT Infrastructure | Intelligent CCTV Surveillance | Integrated Security Solutions
-            </p>
-          </div>
-
-          {/* Institutional Description */}
-          <div className="w-full space-y-1.5 text-xs sm:text-[13px] lg:text-sm leading-relaxed text-muted-foreground">
-            <p className="w-full text-justify [text-align:justify] [text-justify:inter-word]" style={{ textAlign: "justify", textJustify: "inter-word" }}>
-              At Hanvi Global Tech, we take pride in serving a diverse portfolio of government institutions, law enforcement agencies, healthcare organizations, infrastructure developers and corporate enterprises.
-            </p>
-            <p className="w-full text-justify [text-align:justify] [text-justify:inter-word]" style={{ textAlign: "justify", textJustify: "inter-word" }}>
-              Our client portfolio reflects our commitment to delivering reliable, scalable and integrated technology solutions across demanding operational environments.
-            </p>
+  const renderClientsSection = () => {
+    const renderClientCard = (client: ClientItem, key: string) => (
+      <div
+        key={key}
+        className="group flex flex-col items-center w-full"
+      >
+        <div
+          className={`relative flex w-full h-[120px] sm:h-[135px] md:h-[150px] lg:h-[165px] xl:h-[175px] items-center justify-center overflow-hidden border-2 border-[#16446C]/35 bg-white ${client.isFullImage ? 'p-0' : 'px-4 py-3'
+            } shadow-xs transition-all duration-300 group-hover:border-brand-orange group-hover:shadow-[0_12px_28px_-4px_rgba(255,106,0,0.24)] group-hover:scale-[1.02]`}
+          title={client.name}
+        >
+          <div className="flex h-full w-full items-center justify-center">
+            {client.logo}
           </div>
         </div>
+        <div className="mt-2 w-full flex flex-col items-center">
+          <div className="w-full flex flex-col items-center justify-center py-1.5 sm:py-2 px-2 sm:px-2.5 bg-white border border-[#16446C]/25 shadow-xs transition-all duration-300 group-hover:border-brand-orange group-hover:shadow-[0_8px_20px_-3px_rgba(255,106,0,0.22)]">
+            <div className="flex items-center gap-1.5 mb-0.5">
+              <span className="size-1 rounded-full bg-brand-orange animate-pulse" aria-hidden="true" />
+              <span className="text-[9px] sm:text-[10px] md:text-[11px] font-bold uppercase tracking-widest text-brand-orange font-mono">
+                {client.tag}
+              </span>
+            </div>
+            <h4 className="font-display font-bold text-xs sm:text-[12px] md:text-[13px] text-[#0A1E3F] tracking-tight text-center truncate w-full transition-colors duration-300 group-hover:text-brand-orange">
+              {client.name}
+            </h4>
+            {client.badge && (
+              <span className="text-[10px] sm:text-[10.5px] font-semibold text-brand-orange/90 text-center tracking-tight mt-0.5">
+                {client.badge}
+              </span>
+            )}
+          </div>
+        </div>
+      </div>
+    );
 
-        {/* Categorized Clients Section */}
-        <div className="space-y-6 sm:space-y-8 mt-5 sm:mt-6">
-          {clientCategories.map((category) => (
-            <div key={category.id} className="space-y-5">
-              {/* Category Header Ribbon */}
-              <div className="bg-[#0A1E3F] text-white px-4 sm:px-5 py-2.5 sm:py-3 border-l-4 border-brand-orange shadow-xs flex flex-wrap items-center justify-between gap-2.5">
-                <div className="flex items-center gap-2.5">
-                  <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
-                  <h3 className="font-display font-bold text-sm sm:text-base md:text-lg tracking-wide uppercase">
-                    {category.categoryNumber}. {category.categoryTitle}
-                  </h3>
+    const showFullClients = activeSection === "clients" || isClientsExpanded;
+
+    return (
+      <section
+        id="clients"
+        className={`scroll-mt-20 bg-brand-cream-alt text-foreground border-t border-brand-orange/10 ${activeSection === "clients"
+          ? "min-h-[calc(100vh-135px)] flex flex-col justify-center py-6 sm:py-8 md:py-10"
+          : "py-6 sm:py-8 md:py-10"
+          }`}
+      >
+        <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 my-auto flex flex-col justify-center">
+          <div className="flex flex-col gap-1.5 sm:gap-2 shrink-0" data-reveal>
+            <div className="flex flex-col justify-between gap-2 sm:flex-row sm:items-end">
+              <div>
+                <div className="mb-0.5 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-orange font-bold">
+                  <span className="brand-gradient h-0.5 w-5" aria-hidden="true" />
+                  <span>Clients</span>
                 </div>
-                <span className="text-[11px] font-mono font-semibold text-brand-orange tracking-widest uppercase">
-                  Institutional Deployments
-                </span>
+                <h2 className="font-display text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-foreground leading-tight uppercase">
+                  OUR ESTEEMED CLIENTS
+                </h2>
+              </div>
+              <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-brand-orange px-3 py-1 rounded-full bg-brand-orange/10 border border-brand-orange/25 w-fit">
+                <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" aria-hidden="true" />
+                Enterprise Network
+              </span>
+            </div>
+
+            {/* Subhead & Domain Pillars */}
+            <div className="flex flex-col gap-0.5 sm:gap-1 mt-0.5">
+              <h3 className="font-display text-sm sm:text-base lg:text-lg font-bold text-foreground tracking-tight">
+                Trusted by Institutions. Driven by Technology.
+              </h3>
+              <p className="text-xs sm:text-[13px] lg:text-sm font-semibold text-brand-orange tracking-wide">
+                IT Infrastructure | Intelligent CCTV Surveillance | Integrated Security Solutions
+              </p>
+            </div>
+
+            {/* Institutional Description */}
+            <div className="w-full space-y-1.5 text-xs sm:text-[13px] lg:text-sm leading-relaxed text-muted-foreground">
+              <p className="w-full text-justify [text-align:justify] [text-justify:inter-word]" style={{ textAlign: "justify", textJustify: "inter-word" }}>
+                At Hanvi Global Tech, we take pride in serving a diverse portfolio of government institutions, law enforcement agencies, healthcare organizations, infrastructure developers and corporate enterprises.
+              </p>
+              <p className="w-full text-justify [text-align:justify] [text-justify:inter-word]" style={{ textAlign: "justify", textJustify: "inter-word" }}>
+                Our client portfolio reflects our commitment to delivering reliable, scalable and integrated technology solutions across demanding operational environments.
+              </p>
+            </div>
+          </div>
+
+          {/* If collapsed: Show 4-5 featured client images & Show More Button */}
+          {!showFullClients && (
+            <div className="mt-5 sm:mt-6 space-y-6">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 lg:gap-5">
+                {featuredClients.map((client, idx) =>
+                  renderClientCard(client, `featured-${client.name}-${idx}`)
+                )}
               </div>
 
-              {/* Sub-groups */}
-              <div className="space-y-5 sm:space-y-6">
-                {category.groups.map((group, gIdx) => (
-                  <div key={gIdx} className="space-y-2.5 sm:space-y-3">
-                    <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5">
-                      <span className="w-1.5 h-3.5 bg-brand-orange" />
-                      <h4 className="font-display font-bold text-xs sm:text-sm md:text-base text-[#0A1E3F] tracking-tight uppercase">
-                        {group.subTitle}
-                      </h4>
+              {/* Show More Button */}
+              <div className="flex flex-col items-center justify-center pt-3 sm:pt-4">
+                <button
+                  type="button"
+                  onClick={() => setIsClientsExpanded(true)}
+                  className="inline-flex items-center gap-2.5 px-7 py-3 bg-[#0A1E3F] hover:bg-brand-orange text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-md shadow-md hover:shadow-lg transition-all duration-300 group cursor-pointer"
+                >
+                  <span>Show More Clients</span>
+                  <ChevronDown className="size-4 transition-transform duration-300 group-hover:translate-y-0.5" />
+                </button>
+                <p className="text-[11px] sm:text-xs text-muted-foreground mt-2 font-medium text-center">
+                  Explore our complete government, healthcare &amp; enterprise portfolio
+                </p>
+              </div>
+            </div>
+          )}
+
+          {/* If expanded: Show complete categorized sections, capabilities & Show Less button */}
+          {showFullClients && (
+            <>
+              {/* Categorized Clients Section */}
+              <div className="space-y-6 sm:space-y-8 mt-5 sm:mt-6">
+                {clientCategories.map((category) => (
+                  <div key={category.id} className="space-y-5">
+                    {/* Category Header Ribbon */}
+                    <div className="bg-[#0A1E3F] text-white px-4 sm:px-5 py-2.5 sm:py-3 border-l-4 border-brand-orange shadow-xs flex flex-wrap items-center justify-between gap-2.5">
+                      <div className="flex items-center gap-2.5">
+                        <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
+                        <h3 className="font-display font-bold text-sm sm:text-base md:text-lg tracking-wide uppercase">
+                          {category.categoryNumber}. {category.categoryTitle}
+                        </h3>
+                      </div>
+                      <span className="text-[11px] font-mono font-semibold text-brand-orange tracking-widest uppercase">
+                        Institutional Deployments
+                      </span>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 lg:gap-5">
-                      {group.clients.map((client, cIdx) => (
-                        <div
-                          key={`${client.name}-${cIdx}`}
-                          className="group flex flex-col items-center w-full"
-                        >
-                          <div
-                            className={`relative flex w-full h-[120px] sm:h-[135px] md:h-[150px] lg:h-[165px] xl:h-[175px] items-center justify-center overflow-hidden border-2 border-[#16446C]/35 bg-white ${client.isFullImage ? 'p-0' : 'px-4 py-3'
-                              } shadow-xs transition-all duration-300 group-hover:border-brand-orange group-hover:shadow-[0_12px_28px_-4px_rgba(255,106,0,0.24)] group-hover:scale-[1.02]`}
-                            title={client.name}
-                          >
-                            <div className="flex h-full w-full items-center justify-center">
-                              {client.logo}
-                            </div>
+                    {/* Sub-groups */}
+                    <div className="space-y-5 sm:space-y-6">
+                      {category.groups.map((group, gIdx) => (
+                        <div key={gIdx} className="space-y-2.5 sm:space-y-3">
+                          <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5">
+                            <span className="w-1.5 h-3.5 bg-brand-orange" />
+                            <h4 className="font-display font-bold text-xs sm:text-sm md:text-base text-[#0A1E3F] tracking-tight uppercase">
+                              {group.subTitle}
+                            </h4>
                           </div>
-                          <div className="mt-2 w-full flex flex-col items-center">
-                            <div className="w-full flex flex-col items-center justify-center py-1.5 sm:py-2 px-2 sm:px-2.5 bg-white border border-[#16446C]/25 shadow-xs transition-all duration-300 group-hover:border-brand-orange group-hover:shadow-[0_8px_20px_-3px_rgba(255,106,0,0.22)]">
-                              <div className="flex items-center gap-1.5 mb-0.5">
-                                <span className="size-1 rounded-full bg-brand-orange animate-pulse" aria-hidden="true" />
-                                <span className="text-[9px] sm:text-[10px] md:text-[11px] font-bold uppercase tracking-widest text-brand-orange font-mono">
-                                  {client.tag}
-                                </span>
-                              </div>
-                              <h4 className="font-display font-bold text-xs sm:text-[12px] md:text-[13px] text-[#0A1E3F] tracking-tight text-center truncate w-full transition-colors duration-300 group-hover:text-brand-orange">
-                                {client.name}
-                              </h4>
-                              {client.badge && (
-                                <span className="text-[10px] sm:text-[10.5px] font-semibold text-brand-orange/90 text-center tracking-tight mt-0.5">
-                                  {client.badge}
-                                </span>
-                              )}
-                            </div>
+
+                          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 lg:gap-5">
+                            {group.clients.map((client, cIdx) =>
+                              renderClientCard(client, `${client.name}-${cIdx}`)
+                            )}
                           </div>
                         </div>
                       ))}
@@ -1650,83 +1701,101 @@ export function HanviSite() {
                   </div>
                 ))}
               </div>
-            </div>
-          ))}
-        </div>
 
-        {/* Technology Capabilities & Trust Showcase Footer Block */}
-        <div className="mt-10 sm:mt-12 pt-8 sm:pt-10 border-t-2 border-[#16446C]/15 space-y-8">
-          {/* Main Side Heading */}
-          <div className="flex flex-col gap-1.5">
-            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-brand-orange">
-              <span className="w-5 h-[2px] bg-brand-orange" />
-              <span>CORE CAPABILITIES &amp; MISSION</span>
-            </div>
-            <h3 className="font-display text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-[#0A1E3F]">
-              Technology That Connects. Security That Protects.
-            </h3>
-          </div>
-
-          {/* Grid Layout: Capabilities on Left/Main, Trust & Mission on Right */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6">
-            {/* Our Technology Capabilities */}
-            <div className="lg:col-span-7 bg-white p-5 sm:p-6 border border-[#16446C]/20 shadow-xs">
-              <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-2.5 mb-4">
-                <span className="w-1.5 h-4 bg-brand-orange" />
-                <h4 className="font-display font-bold text-sm sm:text-base text-[#0A1E3F] uppercase tracking-wide">
-                  Our Technology Capabilities:
-                </h4>
-              </div>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3 text-xs sm:text-[13px] text-muted-foreground font-medium">
-                {[
-                  "Enterprise IT Infrastructure",
-                  "Intelligent CCTV Surveillance",
-                  "AI-Powered Video Analytics",
-                  "Data Center Infrastructure",
-                  "Network Design & Integration",
-                  "Fiber-Optic Connectivity",
-                  "Centralized Command & Control Solutions",
-                  "Integrated Security Systems",
-                  "Video Management Systems",
-                  "Technical Support & Maintenance",
-                ].map((cap, i) => (
-                  <li key={i} className="flex items-start gap-2 group">
-                    <span className="size-1.5 rounded-full bg-brand-orange shrink-0 mt-1.5 group-hover:scale-125 transition-transform" />
-                    <span className="group-hover:text-[#0A1E3F] transition-colors">{cap}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Beyond Technology. Building Trust. & Company Tagline */}
-            <div className="lg:col-span-5 flex flex-col justify-between gap-4">
-              <div className="bg-white p-5 sm:p-6 border border-[#16446C]/20 shadow-xs space-y-3">
-                <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-2.5">
-                  <span className="w-1.5 h-4 bg-brand-orange" />
-                  <h4 className="font-display font-bold text-sm sm:text-base text-[#0A1E3F] uppercase tracking-wide">
-                    Beyond Technology. Building Trust.
-                  </h4>
+              {/* Technology Capabilities & Trust Showcase Footer Block */}
+              <div className="mt-10 sm:mt-12 pt-8 sm:pt-10 border-t-2 border-[#16446C]/15 space-y-8">
+                {/* Main Side Heading */}
+                <div className="flex flex-col gap-1.5">
+                  <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-brand-orange">
+                    <span className="w-5 h-[2px] bg-brand-orange" />
+                    <span>CORE CAPABILITIES &amp; MISSION</span>
+                  </div>
+                  <h3 className="font-display text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-[#0A1E3F]">
+                    Technology That Connects. Security That Protects.
+                  </h3>
                 </div>
-                <p className="w-full text-xs sm:text-[13px] text-muted-foreground leading-relaxed text-justify [text-align:justify] [text-justify:inter-word]" style={{ textAlign: "justify", textJustify: "inter-word" }}>
-                  We believe that every project is an opportunity to deliver excellence, strengthen operational efficiency and build lasting professional relationships.
-                </p>
+
+                {/* Grid Layout: Capabilities on Left/Main, Trust & Mission on Right */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6">
+                  {/* Our Technology Capabilities */}
+                  <div className="lg:col-span-7 bg-white p-5 sm:p-6 border border-[#16446C]/20 shadow-xs">
+                    <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-2.5 mb-4">
+                      <span className="w-1.5 h-4 bg-brand-orange" />
+                      <h4 className="font-display font-bold text-sm sm:text-base text-[#0A1E3F] uppercase tracking-wide">
+                        Our Technology Capabilities:
+                      </h4>
+                    </div>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3 text-xs sm:text-[13px] text-muted-foreground font-medium">
+                      {[
+                        "Enterprise IT Infrastructure",
+                        "Intelligent CCTV Surveillance",
+                        "AI-Powered Video Analytics",
+                        "Data Center Infrastructure",
+                        "Network Design & Integration",
+                        "Fiber-Optic Connectivity",
+                        "Centralized Command & Control Solutions",
+                        "Integrated Security Systems",
+                        "Video Management Systems",
+                        "Technical Support & Maintenance",
+                      ].map((cap, i) => (
+                        <li key={i} className="flex items-start gap-2 group">
+                          <span className="size-1.5 rounded-full bg-brand-orange shrink-0 mt-1.5 group-hover:scale-125 transition-transform" />
+                          <span className="group-hover:text-[#0A1E3F] transition-colors">{cap}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Beyond Technology. Building Trust. & Company Tagline */}
+                  <div className="lg:col-span-5 flex flex-col justify-between gap-4">
+                    <div className="bg-white p-5 sm:p-6 border border-[#16446C]/20 shadow-xs space-y-3">
+                      <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-2.5">
+                        <span className="w-1.5 h-4 bg-brand-orange" />
+                        <h4 className="font-display font-bold text-sm sm:text-base text-[#0A1E3F] uppercase tracking-wide">
+                          Beyond Technology. Building Trust.
+                        </h4>
+                      </div>
+                      <p className="w-full text-xs sm:text-[13px] text-muted-foreground leading-relaxed text-justify [text-align:justify] [text-justify:inter-word]" style={{ textAlign: "justify", textJustify: "inter-word" }}>
+                        We believe that every project is an opportunity to deliver excellence, strengthen operational efficiency and build lasting professional relationships.
+                      </p>
+                    </div>
+
+                    {/* Corporate Sign-off Card */}
+                    <div className="bg-[#0A1E3F] text-white p-5 sm:p-6 border-l-4 border-brand-orange shadow-xs flex flex-col justify-center space-y-1.5">
+                      <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-widest text-brand-orange font-bold">
+                        HANVI GLOBAL TECH
+                      </span>
+                      <p className="font-display font-bold text-sm sm:text-base text-white tracking-tight">
+                        Engineering Intelligence. Integrating Technology. Securing the Future.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              {/* Corporate Sign-off Card */}
-              <div className="bg-[#0A1E3F] text-white p-5 sm:p-6 border-l-4 border-brand-orange shadow-xs flex flex-col justify-center space-y-1.5">
-                <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-widest text-brand-orange font-bold">
-                  HANVI GLOBAL TECH
-                </span>
-                <p className="font-display font-bold text-sm sm:text-base text-white tracking-tight">
-                  Engineering Intelligence. Integrating Technology. Securing the Future.
-                </p>
-              </div>
-            </div>
-          </div>
+              {/* Show Less Button (when viewed on Home page) */}
+              {activeSection === "home" && (
+                <div className="flex justify-center pt-8">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setIsClientsExpanded(false);
+                      const el = document.getElementById("clients");
+                      if (el) el.scrollIntoView({ behavior: "smooth" });
+                    }}
+                    className="inline-flex items-center gap-2 px-6 sm:px-7 py-2.5 bg-white border-2 border-[#0A1E3F] text-[#0A1E3F] hover:bg-[#0A1E3F] hover:text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-md shadow-xs transition-all duration-300 group cursor-pointer"
+                  >
+                    <span>Show Less</span>
+                    <ChevronUp className="size-4 transition-transform duration-300 group-hover:-translate-y-0.5" />
+                  </button>
+                </div>
+              )}
+            </>
+          )}
         </div>
-      </div>
-    </section>
-  );
+      </section>
+    );
+  };
 
   const renderPartnersSection = () => (
     <section
