@@ -1648,6 +1648,77 @@ export function HanviSite() {
             </div>
           ))}
         </div>
+
+        {/* Technology Capabilities & Trust Showcase Footer Block */}
+        <div className="mt-10 sm:mt-12 pt-8 sm:pt-10 border-t-2 border-[#16446C]/15 space-y-8">
+          {/* Main Side Heading */}
+          <div className="flex flex-col gap-1.5">
+            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-brand-orange">
+              <span className="w-5 h-[2px] bg-brand-orange" />
+              <span>CORE CAPABILITIES &amp; MISSION</span>
+            </div>
+            <h3 className="font-display text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-[#0A1E3F]">
+              Technology That Connects. Security That Protects.
+            </h3>
+          </div>
+
+          {/* Grid Layout: Capabilities on Left/Main, Trust & Mission on Right */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6">
+            {/* Our Technology Capabilities */}
+            <div className="lg:col-span-7 bg-white p-5 sm:p-6 border border-[#16446C]/20 shadow-xs">
+              <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-2.5 mb-4">
+                <span className="w-1.5 h-4 bg-brand-orange" />
+                <h4 className="font-display font-bold text-sm sm:text-base text-[#0A1E3F] uppercase tracking-wide">
+                  Our Technology Capabilities:
+                </h4>
+              </div>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3 text-xs sm:text-[13px] text-muted-foreground font-medium">
+                {[
+                  "Enterprise IT Infrastructure",
+                  "Intelligent CCTV Surveillance",
+                  "AI-Powered Video Analytics",
+                  "Data Center Infrastructure",
+                  "Network Design & Integration",
+                  "Fiber-Optic Connectivity",
+                  "Centralized Command & Control Solutions",
+                  "Integrated Security Systems",
+                  "Video Management Systems",
+                  "Technical Support & Maintenance",
+                ].map((cap, i) => (
+                  <li key={i} className="flex items-start gap-2 group">
+                    <span className="size-1.5 rounded-full bg-brand-orange shrink-0 mt-1.5 group-hover:scale-125 transition-transform" />
+                    <span className="group-hover:text-[#0A1E3F] transition-colors">{cap}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Beyond Technology. Building Trust. & Company Tagline */}
+            <div className="lg:col-span-5 flex flex-col justify-between gap-4">
+              <div className="bg-white p-5 sm:p-6 border border-[#16446C]/20 shadow-xs space-y-3">
+                <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-2.5">
+                  <span className="w-1.5 h-4 bg-brand-orange" />
+                  <h4 className="font-display font-bold text-sm sm:text-base text-[#0A1E3F] uppercase tracking-wide">
+                    Beyond Technology. Building Trust.
+                  </h4>
+                </div>
+                <p className="text-xs sm:text-[13px] text-muted-foreground leading-relaxed">
+                  We believe that every project is an opportunity to deliver excellence, strengthen operational efficiency and build lasting professional relationships.
+                </p>
+              </div>
+
+              {/* Corporate Sign-off Card */}
+              <div className="bg-[#0A1E3F] text-white p-5 sm:p-6 border-l-4 border-brand-orange shadow-xs flex flex-col justify-center space-y-1.5">
+                <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-widest text-brand-orange font-bold">
+                  HANVI GLOBAL TECH
+                </span>
+                <p className="font-display font-bold text-sm sm:text-base text-white tracking-tight">
+                  Engineering Intelligence. Integrating Technology. Securing the Future.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
