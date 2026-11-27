@@ -1306,11 +1306,10 @@ export function HanviSite() {
   const renderClientsSection = () => (
     <section
       id="clients"
-      className={`scroll-mt-20 bg-brand-cream-alt text-foreground border-t border-brand-orange/10 ${
-        activeSection === "clients"
-          ? "h-[calc(100vh-135px)] min-h-[calc(100vh-135px)] flex flex-col justify-center overflow-hidden py-3 sm:py-4 md:py-6"
-          : "py-6 sm:py-8 md:py-10"
-      }`}
+      className={`scroll-mt-20 bg-brand-cream-alt text-foreground border-t border-brand-orange/10 ${activeSection === "clients"
+        ? "h-[calc(100vh-135px)] min-h-[calc(100vh-135px)] flex flex-col justify-center overflow-hidden py-3 sm:py-4 md:py-6"
+        : "py-6 sm:py-8 md:py-10"
+        }`}
     >
       <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 my-auto flex flex-col justify-center">
         <div className="flex flex-col gap-1 shrink-0" data-reveal>
@@ -1344,9 +1343,8 @@ export function HanviSite() {
                 className="group flex flex-col items-center shrink-0 w-[240px] sm:w-[280px] md:w-[clamp(320px,50vh,500px)] lg:w-[clamp(360px,54vh,540px)] xl:w-[clamp(390px,60vh,600px)]"
               >
                 <div
-                  className={`relative flex w-full h-[150px] sm:h-[180px] md:h-[clamp(205px,34vh,340px)] lg:h-[clamp(235px,38vh,380px)] xl:h-[clamp(260px,44vh,440px)] items-center justify-center overflow-hidden border-2 border-[#16446C]/35 bg-white ${
-                    'isFullImage' in client && client.isFullImage ? 'p-0' : 'px-4 py-3'
-                  } shadow-xs transition-all duration-300 group-hover:border-brand-orange group-hover:shadow-[0_12px_28px_-4px_rgba(255,106,0,0.24)] group-hover:scale-[1.02]`}
+                  className={`relative flex w-full h-[150px] sm:h-[180px] md:h-[clamp(205px,34vh,340px)] lg:h-[clamp(235px,38vh,380px)] xl:h-[clamp(260px,44vh,440px)] items-center justify-center overflow-hidden border-2 border-[#16446C]/35 bg-white ${'isFullImage' in client && client.isFullImage ? 'p-0' : 'px-4 py-3'
+                    } shadow-xs transition-all duration-300 group-hover:border-brand-orange group-hover:shadow-[0_12px_28px_-4px_rgba(255,106,0,0.24)] group-hover:scale-[1.02]`}
                   title={client.name}
                 >
                   <div className="flex h-full w-full items-center justify-center">
@@ -1377,11 +1375,10 @@ export function HanviSite() {
   const renderPartnersSection = () => (
     <section
       id="partners"
-      className={`scroll-mt-20 bg-brand-cream text-foreground border-t border-brand-orange/10 ${
-        activeSection === "partners"
-          ? "h-[calc(100vh-135px)] min-h-[calc(100vh-135px)] flex flex-col justify-center overflow-hidden py-3 sm:py-4 md:py-6"
-          : "py-6 sm:py-8 md:py-10"
-      }`}
+      className={`scroll-mt-20 bg-brand-cream text-foreground border-t border-brand-orange/10 ${activeSection === "partners"
+        ? "h-[calc(100vh-135px)] min-h-[calc(100vh-135px)] flex flex-col justify-center overflow-hidden py-3 sm:py-4 md:py-6"
+        : "py-6 sm:py-8 md:py-10"
+        }`}
     >
       <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 my-auto flex flex-col justify-center">
         <div className="flex flex-col gap-1 shrink-0" data-reveal>
