@@ -301,6 +301,11 @@ p {
     color: var(--color-foreground);
     font-family: var(--font-sans);
   }
+
+  p:not(.text-center):not(.text-right) {
+    text-align: justify;
+    text-justify: inter-word;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -1297,11 +1297,15 @@ export function HanviSite() {
 
           {/* Right Column: About Content & 4 Cards */}
           <div className="flex flex-col justify-center">
-            <h2 className="font-display text-2xl font-bold tracking-tight text-foreground sm:text-3xl lg:text-[2rem] leading-tight">
+            <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-orange font-bold">
+              <span className="brand-gradient h-0.5 w-5" aria-hidden="true" />
+              <span>About us</span>
+            </div>
+            <h2 className="font-display text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-foreground leading-tight">
               About <span className="text-[#E02424] font-black">Hanvi Global Tech</span>
             </h2>
 
-            <p className="mt-2.5 text-xs sm:text-sm lg:text-[14px] leading-relaxed text-muted-foreground text-left">
+            <p className="mt-2.5 text-xs sm:text-sm lg:text-[14px] leading-relaxed text-muted-foreground text-justify">
               Hanvi Global Tech Pvt Ltd is a technology solutions company delivering reliable, scalable, and integrated systems for safety, security, communication, and smart automation. We help businesses, institutions, and homeowners build safer, smarter, and more connected environments.
             </p>
 
@@ -1364,7 +1368,7 @@ export function HanviSite() {
                 <span className="brand-gradient h-0.5 w-5" aria-hidden="true" />
                 <span>Why Choose Us</span>
               </div>
-              <h2 className="font-display text-xl font-semibold tracking-tight text-foreground sm:text-2xl lg:text-[1.75rem]">
+              <h2 className="font-display text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-foreground leading-tight">
                 Engineered for excellence. Trusted for reliability.
               </h2>
             </div>
@@ -1373,7 +1377,7 @@ export function HanviSite() {
               The HANVI Advantage
             </span>
           </div>
-          <p className="text-xs sm:text-sm text-muted-foreground max-w-3xl">
+          <p className="text-xs sm:text-sm text-muted-foreground max-w-3xl text-justify">
             Empowering commercial and industrial enterprises with turnkey engineering, certified life-safety compliance, authorized OEM technology, and 24/7 mission-critical support.
           </p>
         </div>
@@ -1442,14 +1446,14 @@ export function HanviSite() {
       <div className="relative mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
         {/* Section Header */}
         <div className="flex flex-col items-start text-left mb-4 sm:mb-5" data-reveal>
-          <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-50 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-[#E02424]">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#E02424] animate-pulse" />
+          <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-orange font-bold">
+            <span className="brand-gradient h-0.5 w-5" aria-hidden="true" />
             <span>Specialized Services</span>
           </div>
-          <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900">
+          <h2 className="font-display text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-foreground leading-tight">
             Engineering reliable, intelligent, and secure environments.
           </h2>
-          <p className="mt-1.5 text-xs sm:text-sm text-slate-600 max-w-none whitespace-normal md:whitespace-nowrap">
+          <p className="mt-1.5 text-xs sm:text-sm text-slate-600 max-w-3xl text-justify">
             Comprehensive life safety, high-pressure fire systems, tier-standard cyber data centers, structured communications, and smart automation.
           </p>
         </div>
@@ -1548,7 +1552,7 @@ export function HanviSite() {
                 <span className="brand-gradient h-0.5 w-5" aria-hidden="true" />
                 <span>Clients</span>
               </div>
-              <h2 className="font-display text-xl sm:text-2xl lg:text-3xl 2xl:text-4xl font-bold tracking-tight text-foreground uppercase">
+              <h2 className="font-display text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-foreground leading-tight uppercase">
                 OUR ESTEEMED CLIENTS
               </h2>
             </div>
@@ -1569,11 +1573,11 @@ export function HanviSite() {
           </div>
 
           {/* Institutional Description */}
-          <div className="max-w-5xl space-y-1 text-xs sm:text-[13px] lg:text-sm leading-relaxed text-muted-foreground">
-            <p>
+          <div className="max-w-5xl space-y-1 text-xs sm:text-[13px] lg:text-sm leading-relaxed text-muted-foreground text-justify">
+            <p className="text-justify">
               At Hanvi Global Tech, we take pride in serving a diverse portfolio of government institutions, law enforcement agencies, healthcare organizations, infrastructure developers and corporate enterprises.
             </p>
-            <p>
+            <p className="text-justify">
               Our client portfolio reflects our commitment to delivering reliable, scalable and integrated technology solutions across demanding operational environments.
             </p>
           </div>
@@ -1740,7 +1744,7 @@ export function HanviSite() {
                 <span className="brand-gradient h-0.5 w-5" aria-hidden="true" />
                 <span>Partners</span>
               </div>
-              <h2 className="font-display text-lg sm:text-xl lg:text-2xl 2xl:text-3xl font-semibold tracking-tight text-foreground">
+              <h2 className="font-display text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-foreground leading-tight">
                 Stronger, side by side.
               </h2>
             </div>
@@ -1749,7 +1753,7 @@ export function HanviSite() {
               Global Alliances
             </span>
           </div>
-          <p className="text-xs sm:text-sm 2xl:text-base text-muted-foreground lg:whitespace-nowrap">
+          <p className="text-xs sm:text-sm 2xl:text-base text-muted-foreground max-w-3xl text-justify">
             Collaborating with world-class OEM hardware manufacturers, cybersecurity alliances, and IoT smart ecosystem providers.
           </p>
         </div>
@@ -1781,10 +1785,10 @@ export function HanviSite() {
               <span className="brand-gradient h-0.5 w-5" aria-hidden="true" />
               <span>Contact us</span>
             </div>
-            <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-semibold leading-tight text-foreground">
+            <h2 className="font-display text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-foreground leading-tight">
               Let’s start a conversation.
             </h2>
-            <p className="mt-2 max-w-md text-xs sm:text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-2 max-w-md text-xs sm:text-sm leading-relaxed text-muted-foreground text-justify">
               Get in touch with our team for enterprise project inquiries, site inspections, and customized safety &amp; automation solutions.
             </p>
 
