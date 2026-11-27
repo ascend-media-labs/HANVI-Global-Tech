@@ -1319,8 +1319,8 @@ export function HanviSite() {
                 <span className="brand-gradient h-0.5 w-5" aria-hidden="true" />
                 <span>Clients</span>
               </div>
-              <h2 className="font-display text-lg sm:text-xl lg:text-2xl 2xl:text-3xl font-semibold tracking-tight text-foreground">
-                Built on meaningful connections.
+              <h2 className="font-display text-xl sm:text-2xl lg:text-3xl 2xl:text-4xl font-bold tracking-tight text-foreground uppercase">
+                OUR ESTEEMED CLIENTS
               </h2>
             </div>
             <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-brand-orange px-3 py-1 rounded-full bg-brand-orange/10 border border-brand-orange/25 w-fit">
@@ -1328,9 +1328,6 @@ export function HanviSite() {
               Enterprise Network
             </span>
           </div>
-          <p className="text-xs sm:text-sm 2xl:text-base text-muted-foreground lg:whitespace-nowrap">
-            Trusted enterprise partners, institutions, and infrastructure clients across diverse commercial &amp; industrial domains.
-          </p>
         </div>
 
         {/* Infinite Horizontal Scroll Animated Track - Single Row */}
