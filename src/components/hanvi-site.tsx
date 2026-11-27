@@ -65,6 +65,7 @@ import ramagundamPoliceImage from "@/assets/ramagundam-police.jpg";
 import sircillaPoliceImage from "@/assets/sircilla-police.jpg";
 import telanganaPoliceLogo from "@/assets/telangana-police-logo.png";
 import cwcImage from "@/assets/central-warehousing-corporation.jpg";
+import cwcOldImage from "@/assets/central-warehousing-corporation-old.jpg";
 import sriSathyaSaiImage from "@/assets/sri-sathya-sai-sanjeevani.jpg";
 import medakPoliceImage from "@/assets/medak-police.jpg";
 import greyhoundsImage from "@/assets/greyhounds-telangana.jpg";
@@ -293,6 +294,7 @@ const services: readonly ServiceDetailItem[] = [
 interface ClientItem {
   name: string;
   tag: string;
+  badge?: string;
   isFullImage?: boolean;
   logo: React.ReactNode;
 }
@@ -413,6 +415,63 @@ const clientCategories: ClientCategory[] = [
               <img
                 src={siddipetPoliceImage}
                 alt="Siddipet Police Commissionerate"
+                className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+            ),
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "central-gov-psu",
+    categoryNumber: "2",
+    categoryTitle: "CENTRAL GOVERNMENT & PUBLIC SECTOR",
+    groups: [
+      {
+        subTitle: "Central Warehousing Corporation (CWC)",
+        clients: [
+          {
+            name: "Central Warehousing Corporation (CWC)",
+            tag: "Govt. of India Undertaking",
+            badge: "Regional Coverage: Telangana & Andhra Pradesh",
+            isFullImage: true,
+            logo: (
+              <img
+                src={cwcImage}
+                alt="Central Warehousing Corporation (CWC)"
+                className="h-full w-full object-cover object-[center_35%] transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+            ),
+          },
+        ],
+      },
+      {
+        subTitle: "Regional Coverage",
+        clients: [
+          {
+            name: "Central Warehousing Corporation – Telangana",
+            tag: "Regional Coverage",
+            isFullImage: true,
+            logo: (
+              <img
+                src={cwcImage}
+                alt="Central Warehousing Corporation – Telangana"
+                className="h-full w-full object-cover object-[center_35%] transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+            ),
+          },
+          {
+            name: "Central Warehousing Corporation – Andhra Pradesh",
+            tag: "Regional Coverage",
+            isFullImage: true,
+            logo: (
+              <img
+                src={cwcOldImage}
+                alt="Central Warehousing Corporation – Andhra Pradesh"
                 className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
               />
@@ -1447,6 +1506,11 @@ export function HanviSite() {
                               <h4 className="font-display font-bold text-xs sm:text-[12px] md:text-[13px] text-[#0A1E3F] tracking-tight text-center truncate w-full transition-colors duration-300 group-hover:text-brand-orange">
                                 {client.name}
                               </h4>
+                              {client.badge && (
+                                <span className="text-[10px] sm:text-[10.5px] font-semibold text-brand-orange/90 text-center tracking-tight mt-0.5">
+                                  {client.badge}
+                                </span>
+                              )}
                             </div>
                           </div>
                         </div>
