@@ -1312,7 +1312,7 @@ export function HanviSite() {
         }`}
     >
       <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 my-auto flex flex-col justify-center">
-        <div className="flex flex-col gap-1 shrink-0" data-reveal>
+        <div className="flex flex-col gap-1.5 shrink-0" data-reveal>
           <div className="flex flex-col justify-between gap-2 sm:flex-row sm:items-end">
             <div>
               <div className="mb-0.5 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-orange font-bold">
@@ -1327,6 +1327,22 @@ export function HanviSite() {
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" aria-hidden="true" />
               Enterprise Network
             </span>
+          </div>
+
+          {/* Subhead Content */}
+          <div className="flex flex-col gap-1 text-slate-700 mt-1">
+            <p className="text-xs sm:text-sm md:text-base font-semibold text-foreground">
+              Trusted by Institutions. Driven by Technology.
+            </p>
+            <p className="text-[11px] sm:text-xs md:text-sm font-semibold text-brand-orange tracking-wide">
+              IT Infrastructure | Intelligent CCTV Surveillance | Integrated Security Solutions
+            </p>
+            <p className="text-[11px] sm:text-xs md:text-[13px] text-muted-foreground leading-relaxed max-w-5xl">
+              At Hanvi Global Tech, we take pride in serving a diverse portfolio of government institutions, law enforcement agencies, healthcare organizations, infrastructure developers and corporate enterprises.
+            </p>
+            <p className="text-[11px] sm:text-xs md:text-[13px] text-muted-foreground leading-relaxed max-w-5xl">
+              Our client portfolio reflects our commitment to delivering reliable, scalable and integrated technology solutions across demanding operational environments.
+            </p>
           </div>
         </div>
 
