@@ -1676,159 +1676,248 @@ export function HanviSite() {
             <>
               {/* Categorized Clients Section */}
               <div className="space-y-6 sm:space-y-8 mt-5 sm:mt-6">
-                {clientCategories.map((category) => (
-                  <div key={category.id} className="space-y-5">
-                    {/* Category Header Ribbon */}
-                    <div className="bg-[#0A1E3F] text-white px-4 sm:px-5 py-2.5 sm:py-3 border-l-4 border-brand-orange shadow-xs flex flex-wrap items-center justify-between gap-2.5">
-                      <div className="flex items-center gap-2.5">
+                {/* 1. STATE GOVERNMENT & LAW ENFORCEMENT */}
+                <div className="space-y-5">
+                  <div className="bg-[#0A1E3F] text-white px-4 sm:px-5 py-2.5 sm:py-3 border-l-4 border-brand-orange shadow-xs flex flex-wrap items-center justify-between gap-2.5">
+                    <div className="flex items-center gap-2.5">
+                      <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
+                      <h3 className="font-display font-bold text-sm sm:text-base md:text-lg tracking-wide uppercase">
+                        {clientCategories[0]?.categoryNumber}. {clientCategories[0]?.categoryTitle}
+                      </h3>
+                    </div>
+                    <span className="text-[11px] font-mono font-semibold text-brand-orange tracking-widest uppercase">
+                      Institutional Deployments
+                    </span>
+                  </div>
+
+                  <div className="space-y-5 sm:space-y-6">
+                    {/* Row 1: State Police Department (2 cols) + District Police Offices - Sircilla (1 col in slot 3) */}
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6 items-start">
+                      <div className="lg:col-span-2 space-y-2.5 sm:space-y-3">
+                        <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5">
+                          <span className="w-1.5 h-3.5 bg-brand-orange" />
+                          <h4 className="font-display font-bold text-xs sm:text-sm md:text-base text-[#0A1E3F] tracking-tight uppercase">
+                            State Police Department
+                          </h4>
+                        </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 lg:gap-5 items-stretch">
+                          {clientCategories[0]?.groups[0]?.clients.map((client, cIdx) =>
+                            renderClientCard(client, `law-state-${client.name}-${cIdx}`)
+                          )}
+                        </div>
+                      </div>
+
+                      <div className="lg:col-span-1 space-y-2.5 sm:space-y-3">
+                        <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5">
+                          <span className="w-1.5 h-3.5 bg-brand-orange" />
+                          <h4 className="font-display font-bold text-xs sm:text-sm md:text-base text-[#0A1E3F] tracking-tight uppercase">
+                            District Police Offices
+                          </h4>
+                        </div>
+                        <div className="grid grid-cols-1 items-stretch">
+                          {clientCategories[0]?.groups[1]?.clients[0] &&
+                            renderClientCard(
+                              clientCategories[0].groups[1].clients[0],
+                              `law-dpo-sircilla`
+                            )}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Row 2: Remaining District Police Offices (Medak, Nagarkurnool) + Police Commissionerates (Ramagundam, Siddipet) */}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-6 items-start">
+                      <div className="space-y-2.5 sm:space-y-3">
+                        <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5">
+                          <span className="w-1.5 h-3.5 bg-brand-orange" />
+                          <h4 className="font-display font-bold text-xs sm:text-sm md:text-base text-[#0A1E3F] tracking-tight uppercase">
+                            District Police Offices
+                          </h4>
+                        </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 lg:gap-5 items-stretch">
+                          {clientCategories[0]?.groups[1]?.clients.slice(1).map((client, cIdx) =>
+                            renderClientCard(client, `law-dpo-rem-${client.name}-${cIdx}`)
+                          )}
+                        </div>
+                      </div>
+
+                      <div className="space-y-2.5 sm:space-y-3">
+                        <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5">
+                          <span className="w-1.5 h-3.5 bg-brand-orange" />
+                          <h4 className="font-display font-bold text-xs sm:text-sm md:text-base text-[#0A1E3F] tracking-tight uppercase">
+                            Police Commissionerates
+                          </h4>
+                        </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 lg:gap-5 items-stretch">
+                          {clientCategories[0]?.groups[2]?.clients.map((client, cIdx) =>
+                            renderClientCard(client, `law-cp-${client.name}-${cIdx}`)
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* 2. CENTRAL GOVERNMENT & PUBLIC SECTOR */}
+                <div className="space-y-5">
+                  <div className="bg-[#0A1E3F] text-white px-4 sm:px-5 py-2.5 sm:py-3 border-l-4 border-brand-orange shadow-xs flex flex-wrap items-center justify-between gap-2.5">
+                    <div className="flex items-center gap-2.5">
+                      <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
+                      <h3 className="font-display font-bold text-sm sm:text-base md:text-lg tracking-wide uppercase">
+                        {clientCategories[1]?.categoryNumber}. {clientCategories[1]?.categoryTitle}
+                      </h3>
+                    </div>
+                    <span className="text-[11px] font-mono font-semibold text-brand-orange tracking-widest uppercase">
+                      Institutional Deployments
+                    </span>
+                  </div>
+
+                  <div className="space-y-5 sm:space-y-6">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6 items-start">
+                      {/* Col 1: CWC Main */}
+                      <div className="lg:col-span-1 space-y-2.5 sm:space-y-3">
+                        <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5">
+                          <span className="w-1.5 h-3.5 bg-brand-orange" />
+                          <h4 className="font-display font-bold text-xs sm:text-sm md:text-base text-[#0A1E3F] tracking-tight uppercase">
+                            {clientCategories[1]?.groups[0]?.subTitle || "Central Warehousing Corporation (CWC)"}
+                          </h4>
+                        </div>
+                        <div className="grid grid-cols-1 items-stretch">
+                          {clientCategories[1]?.groups[0]?.clients[0] &&
+                            renderClientCard(
+                              clientCategories[1].groups[0].clients[0],
+                              `cwc-main`
+                            )}
+                        </div>
+                      </div>
+
+                      {/* Col 2 & 3: Regional Coverage */}
+                      <div className="lg:col-span-2 space-y-2.5 sm:space-y-3">
+                        <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5">
+                          <span className="w-1.5 h-3.5 bg-brand-orange" />
+                          <h4 className="font-display font-bold text-xs sm:text-sm md:text-base text-[#0A1E3F] tracking-tight uppercase">
+                            {clientCategories[1]?.groups[1]?.subTitle || "Regional Coverage"}
+                          </h4>
+                        </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 lg:gap-5 items-stretch">
+                          {clientCategories[1]?.groups[1]?.clients.map((client, cIdx) =>
+                            renderClientCard(client, `cwc-reg-${client.name}-${cIdx}`)
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* TWO-ROW COMBINED LAYOUT FOR CATEGORIES 3 TO 6 (Zero Gaps, 100% Full Rows) */}
+                {/* ROW A: Categories 3 & 4 (1 col + 2 cols = 3 cols full) */}
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6 items-start">
+                  {/* Category 3: Urban Development (1 col) */}
+                  <div className="lg:col-span-1 space-y-4">
+                    <div className="bg-[#0A1E3F] text-white px-3 sm:px-4 py-2.5 sm:py-3 border-l-4 border-brand-orange shadow-xs flex items-center justify-between gap-2">
+                      <div className="flex items-center gap-2">
                         <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
-                        <h3 className="font-display font-bold text-sm sm:text-base md:text-lg tracking-wide uppercase">
-                          {category.categoryNumber}. {category.categoryTitle}
+                        <h3 className="font-display font-bold text-xs sm:text-sm md:text-base tracking-wide uppercase truncate">
+                          3. URBAN DEVELOPMENT
                         </h3>
                       </div>
-                      <span className="text-[11px] font-mono font-semibold text-brand-orange tracking-widest uppercase">
+                    </div>
+                    <div className="space-y-2.5 sm:space-y-3">
+                      <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5">
+                        <span className="w-1.5 h-3.5 bg-brand-orange" />
+                        <h4 className="font-display font-bold text-xs sm:text-sm md:text-base text-[#0A1E3F] tracking-tight uppercase">
+                          Urban Development Authority
+                        </h4>
+                      </div>
+                      <div className="grid grid-cols-1 items-stretch">
+                        {clientCategories[2]?.groups[0]?.clients[0] &&
+                          renderClientCard(clientCategories[2].groups[0].clients[0], "cat3-kuda")}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Category 4: Healthcare & Hospital Infrastructure (2 cols) */}
+                  <div className="lg:col-span-2 space-y-4">
+                    <div className="bg-[#0A1E3F] text-white px-4 sm:px-5 py-2.5 sm:py-3 border-l-4 border-brand-orange shadow-xs flex items-center justify-between gap-2.5">
+                      <div className="flex items-center gap-2.5">
+                        <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
+                        <h3 className="font-display font-bold text-xs sm:text-sm md:text-base tracking-wide uppercase">
+                          4. HEALTHCARE &amp; HOSPITAL INFRASTRUCTURE
+                        </h3>
+                      </div>
+                      <span className="text-[10px] sm:text-[11px] font-mono font-semibold text-brand-orange tracking-widest uppercase hidden sm:inline">
                         Institutional Deployments
                       </span>
                     </div>
-
-                    {/* Sub-groups */}
-                    {category.id === "law-enforcement" ? (
-                      <div className="space-y-5 sm:space-y-6">
-                        {/* Row 1: State Police Department (2 cols) + District Police Offices - Sircilla (1 col in slot 3) */}
-                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6 items-start">
-                          {/* Left 2 Cols: State Police Department */}
-                          <div className="lg:col-span-2 space-y-2.5 sm:space-y-3">
-                            <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5">
-                              <span className="w-1.5 h-3.5 bg-brand-orange" />
-                              <h4 className="font-display font-bold text-xs sm:text-sm md:text-base text-[#0A1E3F] tracking-tight uppercase">
-                                State Police Department
-                              </h4>
-                            </div>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 lg:gap-5 items-stretch">
-                              {category.groups[0]?.clients.map((client, cIdx) =>
-                                renderClientCard(client, `law-state-${client.name}-${cIdx}`)
-                              )}
-                            </div>
-                          </div>
-
-                          {/* Right 1 Col: District Police Offices (Rajanna Sircilla) */}
-                          <div className="lg:col-span-1 space-y-2.5 sm:space-y-3">
-                            <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5">
-                              <span className="w-1.5 h-3.5 bg-brand-orange" />
-                              <h4 className="font-display font-bold text-xs sm:text-sm md:text-base text-[#0A1E3F] tracking-tight uppercase">
-                                District Police Offices
-                              </h4>
-                            </div>
-                            <div className="grid grid-cols-1 items-stretch">
-                              {category.groups[1]?.clients[0] &&
-                                renderClientCard(
-                                  category.groups[1].clients[0],
-                                  `law-dpo-sircilla`
-                                )}
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Row 2: Remaining District Police Offices (Medak, Nagarkurnool) + Police Commissionerates (Ramagundam, Siddipet) */}
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-6 items-start">
-                          {/* Remaining DPOs */}
-                          <div className="space-y-2.5 sm:space-y-3">
-                            <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5">
-                              <span className="w-1.5 h-3.5 bg-brand-orange" />
-                              <h4 className="font-display font-bold text-xs sm:text-sm md:text-base text-[#0A1E3F] tracking-tight uppercase">
-                                District Police Offices
-                              </h4>
-                            </div>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 lg:gap-5 items-stretch">
-                              {category.groups[1]?.clients.slice(1).map((client, cIdx) =>
-                                renderClientCard(client, `law-dpo-rem-${client.name}-${cIdx}`)
-                              )}
-                            </div>
-                          </div>
-
-                          {/* Police Commissionerates */}
-                          <div className="space-y-2.5 sm:space-y-3">
-                            <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5">
-                              <span className="w-1.5 h-3.5 bg-brand-orange" />
-                              <h4 className="font-display font-bold text-xs sm:text-sm md:text-base text-[#0A1E3F] tracking-tight uppercase">
-                                Police Commissionerates
-                              </h4>
-                            </div>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 lg:gap-5 items-stretch">
-                              {category.groups[2]?.clients.map((client, cIdx) =>
-                                renderClientCard(client, `law-cp-${client.name}-${cIdx}`)
-                              )}
-                            </div>
-                          </div>
-                        </div>
+                    <div className="space-y-2.5 sm:space-y-3">
+                      <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5">
+                        <span className="w-1.5 h-3.5 bg-brand-orange" />
+                        <h4 className="font-display font-bold text-xs sm:text-sm md:text-base text-[#0A1E3F] tracking-tight uppercase">
+                          Hospital &amp; Medical Infrastructure
+                        </h4>
                       </div>
-                    ) : category.id === "central-gov-psu" ? (
-                      <div className="space-y-5 sm:space-y-6">
-                        {/* 1 Row: CWC Main (1 col) + Regional Coverage (2 cols) = 3 cols full */}
-                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6 items-start">
-                          {/* Col 1: CWC Main */}
-                          <div className="lg:col-span-1 space-y-2.5 sm:space-y-3">
-                            <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5">
-                              <span className="w-1.5 h-3.5 bg-brand-orange" />
-                              <h4 className="font-display font-bold text-xs sm:text-sm md:text-base text-[#0A1E3F] tracking-tight uppercase">
-                                {category.groups[0]?.subTitle || "Central Warehousing Corporation (CWC)"}
-                              </h4>
-                            </div>
-                            <div className="grid grid-cols-1 items-stretch">
-                              {category.groups[0]?.clients[0] &&
-                                renderClientCard(
-                                  category.groups[0].clients[0],
-                                  `cwc-main`
-                                )}
-                            </div>
-                          </div>
-
-                          {/* Col 2 & 3: Regional Coverage */}
-                          <div className="lg:col-span-2 space-y-2.5 sm:space-y-3">
-                            <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5">
-                              <span className="w-1.5 h-3.5 bg-brand-orange" />
-                              <h4 className="font-display font-bold text-xs sm:text-sm md:text-base text-[#0A1E3F] tracking-tight uppercase">
-                                {category.groups[1]?.subTitle || "Regional Coverage"}
-                              </h4>
-                            </div>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 lg:gap-5 items-stretch">
-                              {category.groups[1]?.clients.map((client, cIdx) =>
-                                renderClientCard(client, `cwc-reg-${client.name}-${cIdx}`)
-                              )}
-                            </div>
-                          </div>
-                        </div>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 lg:gap-5 items-stretch">
+                        {clientCategories[3]?.groups[0]?.clients.map((client, idx) =>
+                          renderClientCard(client, `cat4-${client.name}-${idx}`)
+                        )}
                       </div>
-                    ) : (
-                      <div className="space-y-5 sm:space-y-6">
-                        {category.groups.map((group, gIdx) => (
-                          <div key={gIdx} className="space-y-2.5 sm:space-y-3">
-                            <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5">
-                              <span className="w-1.5 h-3.5 bg-brand-orange" />
-                              <h4 className="font-display font-bold text-xs sm:text-sm md:text-base text-[#0A1E3F] tracking-tight uppercase">
-                                {group.subTitle}
-                              </h4>
-                            </div>
-
-                            <div
-                              className={`grid gap-3 sm:gap-4 lg:gap-5 items-stretch ${
-                                group.clients.length === 1
-                                  ? "grid-cols-1 max-w-sm sm:max-w-md"
-                                  : group.clients.length === 2
-                                  ? "grid-cols-1 sm:grid-cols-2 max-w-3xl lg:max-w-4xl"
-                                  : "grid-cols-1 sm:grid-cols-2 md:grid-cols-3"
-                              }`}
-                            >
-                              {group.clients.map((client, cIdx) =>
-                                renderClientCard(client, `${client.name}-${cIdx}`)
-                              )}
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    )}
+                    </div>
                   </div>
-                ))}
+                </div>
+
+                {/* ROW B: Categories 5 & 6 (2 cols + 1 col = 3 cols full) */}
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6 items-start">
+                  {/* Category 5: Construction & Infrastructure (2 cols) */}
+                  <div className="lg:col-span-2 space-y-4">
+                    <div className="bg-[#0A1E3F] text-white px-4 sm:px-5 py-2.5 sm:py-3 border-l-4 border-brand-orange shadow-xs flex items-center justify-between gap-2.5">
+                      <div className="flex items-center gap-2.5">
+                        <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
+                        <h3 className="font-display font-bold text-xs sm:text-sm md:text-base tracking-wide uppercase">
+                          5. CONSTRUCTION &amp; INFRASTRUCTURE DEVELOPMENT
+                        </h3>
+                      </div>
+                      <span className="text-[10px] sm:text-[11px] font-mono font-semibold text-brand-orange tracking-widest uppercase hidden sm:inline">
+                        Institutional Deployments
+                      </span>
+                    </div>
+                    <div className="space-y-2.5 sm:space-y-3">
+                      <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5">
+                        <span className="w-1.5 h-3.5 bg-brand-orange" />
+                        <h4 className="font-display font-bold text-xs sm:text-sm md:text-base text-[#0A1E3F] tracking-tight uppercase">
+                          Construction &amp; Infrastructure Developers
+                        </h4>
+                      </div>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 lg:gap-5 items-stretch">
+                        {clientCategories[4]?.groups[0]?.clients.map((client, idx) =>
+                          renderClientCard(client, `cat5-${client.name}-${idx}`)
+                        )}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Category 6: Automotive & Industrial (1 col) */}
+                  <div className="lg:col-span-1 space-y-4">
+                    <div className="bg-[#0A1E3F] text-white px-3 sm:px-4 py-2.5 sm:py-3 border-l-4 border-brand-orange shadow-xs flex items-center justify-between gap-2">
+                      <div className="flex items-center gap-2">
+                        <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
+                        <h3 className="font-display font-bold text-xs sm:text-sm md:text-base tracking-wide uppercase truncate">
+                          6. AUTOMOTIVE &amp; INDUSTRIAL
+                        </h3>
+                      </div>
+                    </div>
+                    <div className="space-y-2.5 sm:space-y-3">
+                      <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5">
+                        <span className="w-1.5 h-3.5 bg-brand-orange" />
+                        <h4 className="font-display font-bold text-xs sm:text-sm md:text-base text-[#0A1E3F] tracking-tight uppercase">
+                          Automotive &amp; Industrial Manufacturing
+                        </h4>
+                      </div>
+                      <div className="grid grid-cols-1 items-stretch">
+                        {clientCategories[5]?.groups[0]?.clients[0] &&
+                          renderClientCard(clientCategories[5].groups[0].clients[0], "cat6-hella")}
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               {/* Technology Capabilities & Trust Showcase Footer Block */}
