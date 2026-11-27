@@ -1692,24 +1692,96 @@ export function HanviSite() {
                     </div>
 
                     {/* Sub-groups */}
-                    <div className="space-y-5 sm:space-y-6">
-                      {category.groups.map((group, gIdx) => (
-                        <div key={gIdx} className="space-y-2.5 sm:space-y-3">
-                          <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5">
-                            <span className="w-1.5 h-3.5 bg-brand-orange" />
-                            <h4 className="font-display font-bold text-xs sm:text-sm md:text-base text-[#0A1E3F] tracking-tight uppercase">
-                              {group.subTitle}
-                            </h4>
+                    {category.id === "law-enforcement" ? (
+                      <div className="space-y-5 sm:space-y-6">
+                        {/* Row 1: State Police Department (2 cols) + District Police Offices - Sircilla (1 col in slot 3) */}
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6 items-start">
+                          {/* Left 2 Cols: State Police Department */}
+                          <div className="lg:col-span-2 space-y-2.5 sm:space-y-3">
+                            <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5">
+                              <span className="w-1.5 h-3.5 bg-brand-orange" />
+                              <h4 className="font-display font-bold text-xs sm:text-sm md:text-base text-[#0A1E3F] tracking-tight uppercase">
+                                State Police Department
+                              </h4>
+                            </div>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 lg:gap-5 items-stretch">
+                              {category.groups[0]?.clients.map((client, cIdx) =>
+                                renderClientCard(client, `law-state-${client.name}-${cIdx}`)
+                              )}
+                            </div>
                           </div>
 
-                          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 lg:gap-5 items-stretch">
-                            {group.clients.map((client, cIdx) =>
-                              renderClientCard(client, `${client.name}-${cIdx}`)
-                            )}
+                          {/* Right 1 Col: District Police Offices (Rajanna Sircilla) */}
+                          <div className="lg:col-span-1 space-y-2.5 sm:space-y-3">
+                            <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5">
+                              <span className="w-1.5 h-3.5 bg-brand-orange" />
+                              <h4 className="font-display font-bold text-xs sm:text-sm md:text-base text-[#0A1E3F] tracking-tight uppercase">
+                                District Police Offices
+                              </h4>
+                            </div>
+                            <div className="grid grid-cols-1 items-stretch">
+                              {category.groups[1]?.clients[0] &&
+                                renderClientCard(
+                                  category.groups[1].clients[0],
+                                  `law-dpo-sircilla`
+                                )}
+                            </div>
                           </div>
                         </div>
-                      ))}
-                    </div>
+
+                        {/* Row 2: Remaining District Police Offices (Medak, Nagarkurnool) + Police Commissionerates (Ramagundam, Siddipet) */}
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-6 items-start">
+                          {/* Remaining DPOs */}
+                          <div className="space-y-2.5 sm:space-y-3">
+                            <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5">
+                              <span className="w-1.5 h-3.5 bg-brand-orange" />
+                              <h4 className="font-display font-bold text-xs sm:text-sm md:text-base text-[#0A1E3F] tracking-tight uppercase">
+                                District Police Offices
+                              </h4>
+                            </div>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 lg:gap-5 items-stretch">
+                              {category.groups[1]?.clients.slice(1).map((client, cIdx) =>
+                                renderClientCard(client, `law-dpo-rem-${client.name}-${cIdx}`)
+                              )}
+                            </div>
+                          </div>
+
+                          {/* Police Commissionerates */}
+                          <div className="space-y-2.5 sm:space-y-3">
+                            <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5">
+                              <span className="w-1.5 h-3.5 bg-brand-orange" />
+                              <h4 className="font-display font-bold text-xs sm:text-sm md:text-base text-[#0A1E3F] tracking-tight uppercase">
+                                Police Commissionerates
+                              </h4>
+                            </div>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 lg:gap-5 items-stretch">
+                              {category.groups[2]?.clients.map((client, cIdx) =>
+                                renderClientCard(client, `law-cp-${client.name}-${cIdx}`)
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="space-y-5 sm:space-y-6">
+                        {category.groups.map((group, gIdx) => (
+                          <div key={gIdx} className="space-y-2.5 sm:space-y-3">
+                            <div className="flex items-center gap-2 border-b border-[#16446C]/15 pb-1.5">
+                              <span className="w-1.5 h-3.5 bg-brand-orange" />
+                              <h4 className="font-display font-bold text-xs sm:text-sm md:text-base text-[#0A1E3F] tracking-tight uppercase">
+                                {group.subTitle}
+                              </h4>
+                            </div>
+
+                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 lg:gap-5 items-stretch">
+                              {group.clients.map((client, cIdx) =>
+                                renderClientCard(client, `${client.name}-${cIdx}`)
+                              )}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
