@@ -69,6 +69,7 @@ import cwcOldImage from "@/assets/central-warehousing-corporation-old.jpg";
 import sriSathyaSaiImage from "@/assets/sri-sathya-sai-sanjeevani.jpg";
 import medakPoliceImage from "@/assets/medak-police.jpg";
 import greyhoundsImage from "@/assets/greyhounds-telangana.jpg";
+import kudaImage from "@/assets/kuda-warangal.jpg";
 
 const navigation = [
   { label: "Home", id: "home" },
@@ -472,6 +473,32 @@ const clientCategories: ClientCategory[] = [
               <img
                 src={cwcOldImage}
                 alt="Central Warehousing Corporation – Andhra Pradesh"
+                className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+            ),
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "urban-development",
+    categoryNumber: "3",
+    categoryTitle: "URBAN DEVELOPMENT & PUBLIC INFRASTRUCTURE",
+    groups: [
+      {
+        subTitle: "Urban Development Authority",
+        clients: [
+          {
+            name: "Kakatiya Urban Development Authority (KUDA)",
+            tag: "Urban Development Authority",
+            badge: "Warangal, Telangana",
+            isFullImage: true,
+            logo: (
+              <img
+                src={kudaImage}
+                alt="Kakatiya Urban Development Authority (KUDA) - Warangal, Telangana"
                 className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
               />
