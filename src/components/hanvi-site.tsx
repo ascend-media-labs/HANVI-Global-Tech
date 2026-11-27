@@ -1308,19 +1308,19 @@ export function HanviSite() {
       id="clients"
       className={`scroll-mt-20 bg-brand-cream-alt text-foreground border-t border-brand-orange/10 ${
         activeSection === "clients"
-          ? "h-[calc(100vh-135px)] flex flex-col justify-center overflow-hidden py-3 sm:py-4"
+          ? "h-[calc(100vh-135px)] min-h-[calc(100vh-135px)] flex flex-col justify-center overflow-hidden py-3 sm:py-4 md:py-6"
           : "py-6 sm:py-8 md:py-10"
       }`}
     >
-      <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 my-auto">
-        <div className="flex flex-col gap-1" data-reveal>
+      <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 my-auto flex flex-col justify-center">
+        <div className="flex flex-col gap-1 shrink-0" data-reveal>
           <div className="flex flex-col justify-between gap-2 sm:flex-row sm:items-end">
             <div>
               <div className="mb-0.5 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-orange font-bold">
                 <span className="brand-gradient h-0.5 w-5" aria-hidden="true" />
                 <span>Clients</span>
               </div>
-              <h2 className="font-display text-lg sm:text-xl lg:text-2xl font-semibold tracking-tight text-foreground">
+              <h2 className="font-display text-lg sm:text-xl lg:text-2xl 2xl:text-3xl font-semibold tracking-tight text-foreground">
                 Built on meaningful connections.
               </h2>
             </div>
@@ -1329,39 +1329,39 @@ export function HanviSite() {
               Enterprise Network
             </span>
           </div>
-          <p className="text-xs sm:text-sm text-muted-foreground lg:whitespace-nowrap">
+          <p className="text-xs sm:text-sm 2xl:text-base text-muted-foreground lg:whitespace-nowrap">
             Trusted enterprise partners, institutions, and infrastructure clients across diverse commercial &amp; industrial domains.
           </p>
         </div>
 
         {/* Infinite Horizontal Scroll Animated Track - Single Row */}
-        <div className="relative mt-3 sm:mt-4 overflow-hidden pause-hover select-none">
+        <div className="relative mt-3 sm:mt-4 md:mt-5 lg:mt-6 overflow-hidden pause-hover select-none">
           {/* Single Row: Infinite Scrolling Track */}
-          <div className="animate-marquee-left flex gap-5 sm:gap-6 py-2 sm:py-2.5">
+          <div className="animate-marquee-left flex gap-5 sm:gap-6 lg:gap-7 py-2 sm:py-2.5">
             {[...clientPlaceholders, ...clientPlaceholders, ...clientPlaceholders, ...clientPlaceholders].map((client, index) => (
               <div
                 key={`single-${client.name}-${index}`}
-                className="group flex flex-col items-center shrink-0 w-[220px] sm:w-[250px] md:w-[280px] lg:w-[305px] xl:w-[325px]"
+                className="group flex flex-col items-center shrink-0 w-[240px] sm:w-[280px] md:w-[clamp(320px,50vh,500px)] lg:w-[clamp(360px,54vh,540px)] xl:w-[clamp(390px,60vh,600px)]"
               >
                 <div
-                  className={`relative flex w-full h-[145px] sm:h-[160px] md:h-[175px] lg:h-[190px] xl:h-[200px] items-center justify-center overflow-hidden border-2 border-[#16446C]/35 bg-white ${
+                  className={`relative flex w-full h-[150px] sm:h-[180px] md:h-[clamp(205px,34vh,340px)] lg:h-[clamp(235px,38vh,380px)] xl:h-[clamp(260px,44vh,440px)] items-center justify-center overflow-hidden border-2 border-[#16446C]/35 bg-white ${
                     'isFullImage' in client && client.isFullImage ? 'p-0' : 'px-4 py-3'
-                  } shadow-xs transition-all duration-300 group-hover:border-brand-orange group-hover:shadow-[0_12px_28px_-4px_rgba(255,106,0,0.24)] group-hover:scale-[1.03]`}
+                  } shadow-xs transition-all duration-300 group-hover:border-brand-orange group-hover:shadow-[0_12px_28px_-4px_rgba(255,106,0,0.24)] group-hover:scale-[1.02]`}
                   title={client.name}
                 >
                   <div className="flex h-full w-full items-center justify-center">
                     {client.logo}
                   </div>
                 </div>
-                <div className="mt-2 sm:mt-2.5 w-full flex flex-col items-center">
-                  <div className="w-full flex flex-col items-center justify-center py-1.5 sm:py-2 px-3 bg-white border border-[#16446C]/25 shadow-xs transition-all duration-300 group-hover:border-brand-orange group-hover:shadow-[0_8px_20px_-3px_rgba(255,106,0,0.22)]">
+                <div className="mt-2 sm:mt-2.5 lg:mt-3 w-full flex flex-col items-center">
+                  <div className="w-full flex flex-col items-center justify-center py-1.5 sm:py-2 lg:py-2.5 px-3 sm:px-4 bg-white border border-[#16446C]/25 shadow-xs transition-all duration-300 group-hover:border-brand-orange group-hover:shadow-[0_8px_20px_-3px_rgba(255,106,0,0.22)]">
                     <div className="flex items-center gap-1.5 mb-0.5">
                       <span className="size-1 rounded-full bg-brand-orange animate-pulse" aria-hidden="true" />
-                      <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-brand-orange font-mono">
+                      <span className="text-[9px] sm:text-[10px] md:text-[11px] font-bold uppercase tracking-widest text-brand-orange font-mono">
                         {client.tag}
                       </span>
                     </div>
-                    <h4 className="font-display font-bold text-xs sm:text-[13px] md:text-[14px] text-[#0A1E3F] tracking-tight text-center truncate w-full transition-colors duration-300 group-hover:text-brand-orange">
+                    <h4 className="font-display font-bold text-xs sm:text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] text-[#0A1E3F] tracking-tight text-center truncate w-full transition-colors duration-300 group-hover:text-brand-orange">
                       {client.name}
                     </h4>
                   </div>
